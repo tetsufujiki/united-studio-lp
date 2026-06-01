@@ -37,19 +37,29 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
+  const [showBg, setShowBg] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowBg(true), 800);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <html lang="ja">
       <body className={`${notoSansJP.variable} font-sans antialiased`}>
-        <CinematicBackground />
+        
+        {showBg && <CinematicBackground />}
+
         <div className="relative z-10">
           {children}
         </div>
+
         <StickyCTABar />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
-  )
+  );
 }
