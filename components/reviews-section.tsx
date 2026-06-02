@@ -11,8 +11,9 @@ export function ReviewsSection() {
           fill
           className="object-cover object-center"
           style={{ filter: 'brightness(0.55) contrast(1.05) saturate(0.9)' }}
-          quality={85}
+          quality={70}
           loading="lazy"
+          sizes="100vw"
         />
         {/* Single gradient overlay */}
         <div 

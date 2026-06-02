@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 
 export function ClosingSection() {
   return (
@@ -39,12 +40,15 @@ export function ClosingSection() {
           <div className="mb-12 grid grid-cols-3 gap-5 max-w-lg">
             {/* Microphones */}
             <div className="group relative aspect-square overflow-hidden rounded-lg bg-[#1c1810]/80 border border-[#3a3530]/40 cursor-pointer transition-all duration-300 hover:border-[#4a4540]/60">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110"
-                style={{
-                  backgroundImage: 'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/studio0-ZOOWNFvPvK3sUitqmggrSwRF8mUD38.jpg")',
-                  filter: 'saturate(0.75) brightness(0.95) contrast(1.05)',
-                }}
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/studio0-ZOOWNFvPvK3sUitqmggrSwRF8mUD38.jpg"
+                alt="Studio"
+                fill
+                className="object-cover object-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110"
+                style={{ filter: 'saturate(0.75) brightness(0.95) contrast(1.05)' }}
+                loading="lazy"
+                quality={60}
+                sizes="(max-width: 768px) 33vw, 150px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f1014]/85 via-[#0f1014]/20 to-transparent transition-opacity duration-300 group-hover:opacity-80" />
               <div className="absolute bottom-2 left-2">
@@ -54,12 +58,15 @@ export function ClosingSection() {
 
             {/* Outboard Gear */}
             <div className="group relative aspect-square overflow-hidden rounded-lg bg-[#1c1810]/80 border border-[#3a3530]/40 cursor-pointer transition-all duration-300 hover:border-[#4a4540]/60">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110"
-                style={{
-                  backgroundImage: 'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/usi-otIfdpT4abQL3yw8TF7Nv1ccXKWdmK.jpg")',
-                  filter: 'saturate(0.75) brightness(0.95) contrast(1.05)',
-                }}
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/usi-otIfdpT4abQL3yw8TF7Nv1ccXKWdmK.jpg"
+                alt="Outboard"
+                fill
+                className="object-cover object-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110"
+                style={{ filter: 'saturate(0.75) brightness(0.95) contrast(1.05)' }}
+                loading="lazy"
+                quality={60}
+                sizes="(max-width: 768px) 33vw, 150px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f1014]/85 via-[#0f1014]/20 to-transparent transition-opacity duration-300 group-hover:opacity-80" />
               <div className="absolute bottom-2 left-2">
@@ -69,12 +76,15 @@ export function ClosingSection() {
 
             {/* Monitoring */}
             <div className="group relative aspect-square overflow-hidden rounded-lg bg-[#1c1810]/80 border border-[#3a3530]/40 cursor-pointer transition-all duration-300 hover:border-[#4a4540]/60">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110"
-                style={{
-                  backgroundImage: 'url("https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sv2_4-FcLCt2J9LHMJsXHEILtup2DQwZFuV1.jpg")',
-                  filter: 'saturate(0.75) brightness(0.95) contrast(1.05)',
-                }}
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/sv2_4-FcLCt2J9LHMJsXHEILtup2DQwZFuV1.jpg"
+                alt="Instrument"
+                fill
+                className="object-cover object-center transition-all duration-500 ease-out group-hover:scale-105 group-hover:brightness-110"
+                style={{ filter: 'saturate(0.75) brightness(0.95) contrast(1.05)' }}
+                loading="lazy"
+                quality={60}
+                sizes="(max-width: 768px) 33vw, 150px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0f1014]/85 via-[#0f1014]/20 to-transparent transition-opacity duration-300 group-hover:opacity-80" />
               <div className="absolute bottom-2 left-2">
