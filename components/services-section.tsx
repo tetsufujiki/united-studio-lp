@@ -1,4 +1,4 @@
-import { Mic, Music, Headphones, Radio, Clock, Gift, Crown, Trophy } from "lucide-react";
+import { Mic, Music, Headphones, Radio, Clock, Gift, Crown, Trophy, Check } from "lucide-react";
 
 // Ranking badge configurations for premium medal styling
 const rankingStyles = {
@@ -222,6 +222,28 @@ export function ServicesSection() {
             <span className="rounded-full bg-[#06C755]/10 px-3 py-0.5 text-sm font-semibold text-[#06C755]">
               ¥2,000-OFF
             </span>
+          </div>
+        </div>
+
+        {/* Trust Benefits Section */}
+        <div className="mt-8 flex justify-center">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-8">
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                <Check className="h-3 w-3 text-primary" strokeWidth={3} />
+              </div>
+              <span className="text-sm font-medium text-foreground/70">
+                専属エンジニアが対応
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                <Check className="h-3 w-3 text-primary" strokeWidth={3} />
+              </div>
+              <span className="text-sm font-medium text-foreground/70">
+                各種キャッシュレス決済対応
+              </span>
+            </div>
           </div>
         </div>
       </div>
