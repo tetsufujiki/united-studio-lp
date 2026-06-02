@@ -6,8 +6,8 @@ const trustItems = [
     description: "エンジニアが全セッションに同席",
   },
   {
-    title: "各種デジタルマネー支払い可能",
-    description: "クレジットカード・電子決済対応",
+    title: "キャッシュレス決済対応",
+    description: "現金のほか、クレジットカード・電子マネー対応",
   },
   {
     title: "キャンセル料なし",
