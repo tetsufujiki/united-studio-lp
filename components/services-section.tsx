@@ -225,24 +225,45 @@ export function ServicesSection() {
           </div>
         </div>
 
-        {/* Trust Benefits Section */}
-        <div className="mt-8 flex justify-center">
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-8">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                <Check className="h-3 w-3 text-primary" strokeWidth={3} />
-              </div>
-              <span className="text-sm font-medium text-foreground/70">
-                専属エンジニアが対応
+        {/* Trust Guarantee Section */}
+        <div className="mt-10 flex justify-center">
+          <div className="relative rounded-2xl border border-amber-500/20 bg-gradient-to-br from-amber-950/20 via-card/60 to-amber-950/10 px-8 py-6 sm:px-10 sm:py-7">
+            {/* Section Label */}
+            <div className="mb-5 flex items-center justify-center gap-3">
+              <span className="h-px w-6 bg-gradient-to-r from-transparent to-amber-500/40" />
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-500/70">
+                安心の保証
               </span>
+              <span className="h-px w-6 bg-gradient-to-l from-transparent to-amber-500/40" />
             </div>
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
-                <Check className="h-3 w-3 text-primary" strokeWidth={3} />
+            
+            {/* Trust Items */}
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
+              <div className="flex items-center gap-3">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10">
+                  <Check className="h-3 w-3 text-amber-500" strokeWidth={3} />
+                </div>
+                <span className="text-sm font-medium text-foreground/80">
+                  エンジニア付き
+                </span>
               </div>
-              <span className="text-sm font-medium text-foreground/70">
-                各種キャッシュレス決済対応
-              </span>
+              <div className="flex items-center gap-3">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10">
+                  <Check className="h-3 w-3 text-amber-500" strokeWidth={3} />
+                </div>
+                <span className="text-sm font-medium text-foreground/80">
+                  各種デジタルマネー対応
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10">
+                  <Check className="h-3 w-3 text-amber-500" strokeWidth={3} />
+                </div>
+                <span className="text-sm font-medium text-foreground/80">
+                  キャンセル料なし
+                  <span className="ml-1 text-xs text-muted-foreground/60">（条件あり）</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
