@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 const trustItems = [
   {
     title: "エンジニア付き",
-    description: "専属エンジニアが全セッションに同席",
+    description: "エンジニアが全セッションに同席",
   },
   {
     title: "各種デジタルマネー支払い可能",
