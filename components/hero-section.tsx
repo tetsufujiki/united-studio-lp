@@ -7,7 +7,7 @@ export function HeroSection() {
     <section id="hero" className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
-        {/* Mobile background image - high quality for premium studio clarity */}
+        {/* Mobile background image - optimized for performance */}
         <Image
           src="/assets/studio-mobile.jpg"
           alt="Professional recording studio"
@@ -15,10 +15,10 @@ export function HeroSection() {
           className="object-cover object-center md:hidden"
           style={{ filter: 'brightness(0.7) contrast(1.05) saturate(0.95)' }}
           priority
-          quality={100}
+          quality={75}
           sizes="100vw"
         />
-        {/* Desktop background image - high quality for premium studio clarity */}
+        {/* Desktop background image - optimized for performance */}
         <Image
           src="/assets/studio-desktop.jpg"
           alt="Professional recording studio"
@@ -26,7 +26,7 @@ export function HeroSection() {
           className="hidden object-cover object-center md:block"
           style={{ filter: 'brightness(0.7) contrast(1.05) saturate(0.95)' }}
           priority
-          quality={100}
+          quality={80}
           sizes="100vw"
         />
         {/* Single cinematic gradient overlay - replaces multiple overlays */}

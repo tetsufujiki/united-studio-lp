@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_JP, Geist_Mono } from 'next/font/google'
+import { Noto_Sans_JP } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { StickyCTABar } from '@/components/sticky-cta-bar'
-import { CinematicBackground } from '@/components/cinematic-background'
+import { LazyCinematicBackground } from '@/components/lazy-cinematic-background'
 import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({ 
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "700"],
+  display: "swap",
 });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'USI新河岸音楽工務所 | プロ基準を、すべてのクリエイターへ',
@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${notoSansJP.variable} font-sans antialiased`}>
-        <CinematicBackground />
+        <LazyCinematicBackground />
         <div className="relative z-10">
           {children}
         </div>
