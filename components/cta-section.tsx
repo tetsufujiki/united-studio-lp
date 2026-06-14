@@ -57,7 +57,7 @@ export function CtaSection() {
               {/* ===== LAYER 3: PRICE HERO - DOMINANT ELEMENT ===== */}
               <div className="mb-2">
                 <h3 className="text-5xl font-black text-foreground sm:text-6xl md:text-8xl lg:text-9xl leading-tight tracking-tight">
-                  ¥14,000
+                  ¥14,000<span className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-widest ml-1">-</span>
                 </h3>
               </div>
 
