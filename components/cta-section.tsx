@@ -34,42 +34,51 @@ export function CtaSection() {
             {/* Subtle shimmer overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
             
-            {/* Content with clear hierarchy */}
+            {/* Content with sophisticated luxury hierarchy */}
             <div className="relative z-10 flex flex-col items-center text-center">
-              {/* ===== LAYER 1: TOP - BADGE ===== */}
-              <div className="mb-8 flex w-full flex-col items-center">
-                <p className="text-xs font-semibold uppercase tracking-widest text-primary/70">
+              {/* ===== LAYER 1: PREMIUM BADGE - STANDALONE ===== */}
+              <div className="mb-10 inline-flex items-center rounded-full border border-primary/40 bg-gradient-to-r from-primary/15 to-primary/10 px-6 py-2.5 shadow-lg shadow-primary/10 backdrop-blur-sm">
+                <span className="text-xs font-semibold uppercase tracking-widest text-primary/90">
                   Pro Standard
-                </p>
+                </span>
               </div>
 
-              {/* ===== LAYER 2: MIDDLE - PRICE HERO ===== */}
-              <div className="mb-12 w-full flex flex-col items-center">
-                {/* Supporting text before price */}
-                <p className="mb-4 text-sm font-medium text-muted-foreground/80">
-                  プロ基準を、
+              {/* ===== LAYER 2: SETUP TEXT ===== */}
+              <p className="mb-6 text-base font-semibold text-primary/85 md:text-lg">
+                プロ基準を、
+              </p>
+
+              {/* ===== LAYER 3: DURATION BADGE - Premium visual treatment ===== */}
+              <div className="mb-8 inline-flex items-center rounded-full border-2 border-primary/50 bg-gradient-to-br from-primary/20 to-primary/5 px-8 py-3 shadow-md shadow-primary/15">
+                <span className="text-xl font-bold text-foreground md:text-2xl tracking-wide">
+                  2時間
+                </span>
+              </div>
+
+              {/* ===== LAYER 4: PRICE HERO - DOMINANT ELEMENT ===== */}
+              <div className="mb-2">
+                <h3 className="text-7xl font-black text-foreground md:text-8xl lg:text-9xl leading-tight tracking-tight">
+                  ¥14,000
+                </h3>
+              </div>
+
+              {/* ===== LAYER 5: PRICE SUFFIX ===== */}
+              <p className="mb-12 text-2xl font-medium text-muted-foreground/70 md:text-3xl">
+                から。
+              </p>
+
+              {/* ===== LAYER 6: VALUE PROPOSITION - Secondary headline ===== */}
+              <div className="mb-12 w-full space-y-2 px-4">
+                <p className="text-xl font-bold text-foreground md:text-2xl">
+                  録音・ミックス・撮影込み
                 </p>
-
-                {/* HERO: Price - Largest element, strongest visual impact */}
-                <div className="mb-8 w-full">
-                  <h3 className="text-6xl font-black tracking-tight text-foreground sm:text-7xl md:text-8xl lg:text-9xl leading-none">
-                    2時間14,000円から。
-                  </h3>
-                </div>
-
-                {/* Value proposition - supporting the price */}
-                <div className="w-full space-y-3 px-4 sm:px-6">
-                  <p className="text-base font-semibold text-foreground md:text-lg">
-                    録音・ミックス・撮影込み
-                  </p>
-                  <p className="text-sm font-medium text-muted-foreground/80 md:text-base">
-                    作品完成までワンストップ
-                  </p>
-                </div>
+                <p className="text-base font-semibold text-muted-foreground/75 md:text-lg">
+                  作品完成までワンストップ
+                </p>
               </div>
 
               {/* Elegant divider */}
-              <div className="mb-12 h-px w-32 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+              <div className="mb-12 h-px w-40 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
               {/* ===== LAYER 3: BOTTOM - OFFER & CTA (UNCHANGED) ===== */}
               <div className="w-full flex flex-col items-center gap-6">
