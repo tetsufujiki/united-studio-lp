@@ -36,14 +36,14 @@ export function CtaSection() {
             
             {/* Content with sophisticated luxury hierarchy */}
             <div className="relative z-10 flex flex-col items-center text-center">
-              {/* ===== BRAND STATEMENT — editorial typography, no UI container ===== */}
-              <div className="mb-14 flex flex-col items-center gap-3">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/55">
-                  Pro Standard
-                </span>
-                <div className="h-px w-8 bg-primary/40" />
-                <span className="text-2xl font-bold tracking-[0.12em] text-primary/90 md:text-3xl">
+              {/* ===== BRAND MARK — luxury certification signature ===== */}
+              <div className="mb-14 flex flex-col items-center gap-2.5">
+                <span className="text-[10px] font-medium tracking-[0.2em] text-primary/50">
                   プロ基準
+                </span>
+                <div className="h-px w-6 bg-primary/35" />
+                <span className="text-3xl font-black uppercase tracking-[0.18em] text-primary/90 md:text-4xl">
+                  Pro Standard
                 </span>
               </div>
 
@@ -68,7 +68,7 @@ export function CtaSection() {
 
               {/* ===== LAYER 5: VALUE PROPOSITION - Secondary headline ===== */}
               <div className="mb-12 w-full space-y-2 px-4">
-                <p className="text-xl font-bold text-foreground md:text-2xl">
+                <p className="whitespace-nowrap text-xl font-bold text-foreground md:text-2xl">
                   録音・ミックス・撮影込み
                 </p>
                 <p className="text-base font-semibold text-muted-foreground/75 md:text-lg">
