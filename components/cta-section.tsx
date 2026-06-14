@@ -38,7 +38,7 @@ export function CtaSection() {
             <div className="relative z-10 flex flex-col items-center text-center">
               {/* ===== BRAND MARK — luxury certification signature ===== */}
               <div className="mb-14 flex flex-col items-center gap-2.5">
-                <span className="text-[10px] font-medium tracking-[0.2em] text-primary/50">
+                <span className="text-base font-semibold tracking-[0.15em] text-primary/75 md:text-lg">
                   プロ基準
                 </span>
                 <div className="h-px w-6 bg-primary/35" />
