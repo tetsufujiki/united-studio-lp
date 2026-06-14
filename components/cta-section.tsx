@@ -34,7 +34,7 @@ export function CtaSection() {
             {/* Subtle shimmer overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
             
-            {/* Content with 3-layer structure */}
+            {/* Content with clear hierarchy */}
             <div className="relative z-10 flex flex-col items-center text-center">
               {/* ===== LAYER 1: TOP - BADGE ===== */}
               <div className="mb-8 flex w-full flex-col items-center">
@@ -43,33 +43,33 @@ export function CtaSection() {
                 </p>
               </div>
 
-              {/* ===== LAYER 2: MIDDLE - VALUE HERO MESSAGE ===== */}
-              <div className="mb-10 w-full flex flex-col items-center gap-6">
-                {/* Main value headline - HERO MESSAGE */}
-                <div className="space-y-2">
-                  <h3 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-                    <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
-                      録音・ミックス・撮影込み
-                    </span>
+              {/* ===== LAYER 2: MIDDLE - PRICE HERO ===== */}
+              <div className="mb-12 w-full flex flex-col items-center">
+                {/* Supporting text before price */}
+                <p className="mb-4 text-sm font-medium text-muted-foreground/80">
+                  プロ基準を、
+                </p>
+
+                {/* HERO: Price - Largest element, strongest visual impact */}
+                <div className="mb-8 w-full">
+                  <h3 className="text-6xl font-black tracking-tight text-foreground sm:text-7xl md:text-8xl lg:text-9xl leading-none">
+                    2時間14,000円から。
                   </h3>
-                  <p className="text-lg font-semibold text-muted-foreground/80 md:text-xl lg:text-2xl">
-                    作品完成までワンストップ
-                  </p>
                 </div>
 
-                {/* Supporting headline */}
-                <div className="max-w-xl">
-                  <p className="text-base font-medium text-muted-foreground md:text-lg">
-                    プロ基準を、
+                {/* Value proposition - supporting the price */}
+                <div className="w-full space-y-3 px-4 sm:px-6">
+                  <p className="text-base font-semibold text-foreground md:text-lg">
+                    録音・ミックス・撮影込み
                   </p>
-                  <p className="text-2xl font-bold text-foreground md:text-3xl">
-                    2時間14,000円から。
+                  <p className="text-sm font-medium text-muted-foreground/80 md:text-base">
+                    作品完成までワンストップ
                   </p>
                 </div>
               </div>
 
               {/* Elegant divider */}
-              <div className="mb-10 h-px w-32 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+              <div className="mb-12 h-px w-32 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
               {/* ===== LAYER 3: BOTTOM - OFFER & CTA (UNCHANGED) ===== */}
               <div className="w-full flex flex-col items-center gap-6">
