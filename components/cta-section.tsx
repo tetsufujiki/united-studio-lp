@@ -36,12 +36,13 @@ export function CtaSection() {
             
             {/* Content with sophisticated luxury hierarchy */}
             <div className="relative z-10 flex flex-col items-center text-center">
-              {/* ===== LAYER 1: PREMIUM BRAND SEAL - UNIFIED DESIGNATION ===== */}
-              <div className="mb-12 inline-flex flex-col items-center gap-1.5 rounded-full border-2 border-primary/40 bg-gradient-to-b from-primary/10 to-primary/5 px-7 py-4 shadow-lg shadow-primary/15 backdrop-blur-sm">
-                <span className="text-xs font-semibold uppercase tracking-widest text-primary/80">
+              {/* ===== BRAND STATEMENT — editorial typography, no UI container ===== */}
+              <div className="mb-14 flex flex-col items-center gap-3">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary/55">
                   Pro Standard
                 </span>
-                <span className="text-base font-bold text-primary/90 tracking-wide">
+                <div className="h-px w-8 bg-primary/40" />
+                <span className="text-2xl font-bold tracking-[0.12em] text-primary/90 md:text-3xl">
                   プロ基準
                 </span>
               </div>
