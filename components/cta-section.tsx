@@ -121,7 +121,7 @@ export function CtaSection() {
                 </div>
 
                 {/* Microcopy */}
-                <p className="text-xs text-muted-foreground/70">
+                <p className="text-xs text-muted-foreground/90">
                   追加後すぐにクーポンが届きます
                 </p>
 
