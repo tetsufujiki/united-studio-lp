@@ -36,38 +36,36 @@ export function CtaSection() {
             
             {/* Content with sophisticated luxury hierarchy */}
             <div className="relative z-10 flex flex-col items-center text-center">
-              {/* ===== LAYER 1: PREMIUM BADGE - STANDALONE ===== */}
-              <div className="mb-10 inline-flex items-center rounded-full border border-primary/40 bg-gradient-to-r from-primary/15 to-primary/10 px-6 py-2.5 shadow-lg shadow-primary/10 backdrop-blur-sm">
-                <span className="text-xs font-semibold uppercase tracking-widest text-primary/90">
+              {/* ===== LAYER 1: PREMIUM BRAND SEAL - UNIFIED DESIGNATION ===== */}
+              <div className="mb-12 inline-flex flex-col items-center gap-1.5 rounded-full border-2 border-primary/40 bg-gradient-to-b from-primary/10 to-primary/5 px-7 py-4 shadow-lg shadow-primary/15 backdrop-blur-sm">
+                <span className="text-xs font-semibold uppercase tracking-widest text-primary/80">
                   Pro Standard
+                </span>
+                <span className="text-base font-bold text-primary/90 tracking-wide">
+                  プロ基準
                 </span>
               </div>
 
-              {/* ===== LAYER 2: SETUP TEXT ===== */}
-              <p className="mb-6 text-base font-semibold text-primary/85 md:text-lg">
-                プロ基準を、
-              </p>
-
-              {/* ===== LAYER 3: DURATION BADGE - Premium visual treatment ===== */}
+              {/* ===== LAYER 2: DURATION BADGE - Premium visual treatment ===== */}
               <div className="mb-8 inline-flex items-center rounded-full border-2 border-primary/50 bg-gradient-to-br from-primary/20 to-primary/5 px-8 py-3 shadow-md shadow-primary/15">
                 <span className="text-xl font-bold text-foreground md:text-2xl tracking-wide">
                   2時間
                 </span>
               </div>
 
-              {/* ===== LAYER 4: PRICE HERO - DOMINANT ELEMENT ===== */}
+              {/* ===== LAYER 3: PRICE HERO - DOMINANT ELEMENT ===== */}
               <div className="mb-2">
                 <h3 className="text-7xl font-black text-foreground md:text-8xl lg:text-9xl leading-tight tracking-tight">
                   ¥14,000
                 </h3>
               </div>
 
-              {/* ===== LAYER 5: PRICE SUFFIX ===== */}
+              {/* ===== LAYER 4: PRICE SUFFIX ===== */}
               <p className="mb-12 text-2xl font-medium text-muted-foreground/70 md:text-3xl">
                 から。
               </p>
 
-              {/* ===== LAYER 6: VALUE PROPOSITION - Secondary headline ===== */}
+              {/* ===== LAYER 5: VALUE PROPOSITION - Secondary headline ===== */}
               <div className="mb-12 w-full space-y-2 px-4">
                 <p className="text-xl font-bold text-foreground md:text-2xl">
                   録音・ミックス・撮影込み
@@ -80,7 +78,7 @@ export function CtaSection() {
               {/* Elegant divider */}
               <div className="mb-12 h-px w-40 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
-              {/* ===== LAYER 3: BOTTOM - OFFER & CTA (UNCHANGED) ===== */}
+              {/* ===== LAYER 6: BOTTOM - OFFER & CTA (UNCHANGED) ===== */}
               <div className="w-full flex flex-col items-center gap-6">
                 {/* First visit offer badge */}
                 <div className="flex w-full flex-col items-center gap-3 rounded-2xl border border-[#06C755]/30 bg-[#06C755]/10 px-6 py-5 backdrop-blur-sm">
