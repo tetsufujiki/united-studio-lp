@@ -99,7 +99,7 @@ export function HeroSection() {
             href="https://unitedstudio.stores.jp/reserve/usi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mb-12 md:mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm"
+            className="mb-12 md:mb-8 mt-20 md:mt-0 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
