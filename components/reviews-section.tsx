@@ -139,8 +139,8 @@ export function ReviewsSection() {
                     src="https://unitedstudio.stores.jp/reserve/usi/reviews"
                     className="w-full border-0 rounded-lg"
                     style={{ 
-                      height: "calc(100% + 280px)",
-                      marginTop: "-280px",
+                      height: "calc(100% + 200px)",
+                      marginTop: "-200px",
                       backgroundColor: "white"
                     }}
                     title="All Customer Reviews"
