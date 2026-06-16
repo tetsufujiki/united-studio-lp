@@ -96,41 +96,43 @@ export function ReviewsSection() {
 
         {/* Review card with glassmorphism */}
         <div className="flex flex-col items-center gap-14 md:gap-16">
-          {/* Single review card - floating with premium styling */}
-          <div className="w-full max-w-2xl">
-            <div 
-              className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/[0.07] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_60px_-12px_rgba(0,0,0,0.42)]"
-              style={{
-                backdropFilter: "blur(12px)",
-              }}
-            >
-              {/* Top inner highlight for glass effect */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
-
-              {/* Review iframe wrapper - fixed height for exactly 1 review, no scroll */}
-              <div className="relative h-80 overflow-hidden md:h-72">
-                <iframe
-                  src="https://unitedstudio.stores.jp/reserve/usi/reviews"
-                  className="pointer-events-auto w-full border-0"
-                  style={{ 
-                    marginTop: "-200px", 
-                    height: "calc(100% + 200px)",
-                    backgroundColor: "transparent"
-                  }}
-                  title="Customer Reviews"
-                  loading="lazy"
-                  scrolling="no"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Button - View all reviews */}
+          {/* Dialog wrapper - triggers from both card and button */}
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            {/* Single review card - floating with premium styling, fully clickable */}
             <DialogTrigger asChild>
               <button
-                className="group inline-flex items-center gap-2.5 rounded-full border border-[#c9a382]/50 bg-white px-9 py-4 text-sm md:text-base font-medium text-[#1a1510] shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c9a382] hover:shadow-[0_18px_40px_-8px_rgba(201,163,130,0.45)]"
+                className="w-full max-w-2xl cursor-pointer rounded-3xl border border-white/20 bg-white/[0.07] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_60px_-12px_rgba(0,0,0,0.42)] overflow-hidden relative group focus:outline-hidden focus:ring-2 focus:ring-[#c9a382] focus:ring-offset-2 focus:ring-offset-[transparent]"
+                style={{
+                  backdropFilter: "blur(12px)",
+                }}
+                aria-label="レビューカードを見て全レビューを表示"
+              >
+                {/* Top inner highlight for glass effect */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+
+                {/* Review iframe wrapper - fixed height for exactly 1 review, no scroll */}
+                <div className="relative h-80 overflow-hidden md:h-72 pointer-events-none">
+                  <iframe
+                    src="https://unitedstudio.stores.jp/reserve/usi/reviews"
+                    className="w-full border-0"
+                    style={{ 
+                      marginTop: "-200px", 
+                      height: "calc(100% + 200px)",
+                      backgroundColor: "transparent"
+                    }}
+                    title="Customer Reviews"
+                    loading="lazy"
+                    scrolling="no"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </div>
+              </button>
+            </DialogTrigger>
+
+            {/* CTA Button - View all reviews (same dialog trigger) */}
+            <DialogTrigger asChild>
+              <button
+                className="group inline-flex items-center gap-2.5 rounded-full border border-[#c9a382]/50 bg-white px-9 py-4 text-sm md:text-base font-medium text-[#1a1510] shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c9a382] hover:shadow-[0_18px_40px_-8px_rgba(201,163,130,0.45)] cursor-pointer"
               >
                 すべてのレビューを見る
                 <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +141,7 @@ export function ReviewsSection() {
               </button>
             </DialogTrigger>
 
-            {/* Modal for full reviews */}
+            {/* Modal for full reviews - rendered once, triggered by both card and button */}
             <DialogContent 
               className="p-0 border-0 rounded-3xl overflow-hidden flex flex-col items-center justify-center h-[90vh] w-[calc(100%-1.5rem)] md:h-[85vh] md:max-w-4xl"
               showCloseButton={true}
