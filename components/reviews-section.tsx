@@ -128,19 +128,17 @@ export function ReviewsSection() {
 
             {/* Modal for full reviews */}
             <DialogContent 
-              className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:w-full md:max-w-4xl md:-translate-x-1/2 md:-translate-y-1/2 h-[90vh] md:h-[85vh] p-0 border-0 rounded-3xl overflow-hidden flex flex-col items-center justify-center"
+              className="p-0 border-0 rounded-3xl overflow-hidden flex flex-col items-center justify-center h-[90vh] md:h-[85vh] md:max-w-4xl"
               showCloseButton={true}
             >
               {/* Modal iframe wrapper with full review list - centered layout */}
-              <div className="flex flex-col items-center justify-center w-full h-full px-4 md:px-8 py-6 bg-white overflow-hidden">
+              <div className="w-full h-full flex items-center justify-center px-4 md:px-8 py-6 bg-white overflow-hidden">
                 {/* Custom scrollable area for iframe with center alignment */}
-                <div className="relative w-full h-full flex flex-col items-center justify-start overflow-y-auto">
+                <div className="relative w-full h-full max-w-[600px] flex flex-col items-center justify-start overflow-y-auto">
                   <iframe
                     src="https://unitedstudio.stores.jp/reserve/usi/reviews"
-                    className="border-0 rounded-lg"
+                    className="w-full border-0 rounded-lg"
                     style={{ 
-                      width: "100%",
-                      maxWidth: "600px",
                       height: "100%",
                       backgroundColor: "white"
                     }}
