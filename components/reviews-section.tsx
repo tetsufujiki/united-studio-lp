@@ -132,7 +132,7 @@ export function ReviewsSection() {
               <button
                 className="group inline-flex items-center gap-2.5 rounded-full border border-[#c9a382]/50 bg-white px-9 py-4 text-sm md:text-base font-medium text-[#1a1510] shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c9a382] hover:shadow-[0_18px_40px_-8px_rgba(201,163,130,0.45)]"
               >
-                100件以上のレビューを見る
+                すべてのレビューを見る
                 <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
                 </svg>
