@@ -99,7 +99,7 @@ export function HeroSection() {
             href="https://unitedstudio.stores.jp/reserve/usi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm"
+            className="mb-12 md:mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm"
           >
             <span className="relative flex h-2 w-2">
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
@@ -109,7 +109,7 @@ export function HeroSection() {
 
           {/* Main Headline - Premium Split Design */}
           <h1
-            className="mx-auto mb-5 px-4 text-[2.25rem] font-bold leading-[1.2] tracking-tight text-foreground sm:text-5xl sm:leading-tight md:mb-6 md:text-6xl md:leading-[1.15] lg:text-7xl"
+            className="mx-auto mb-5 px-4 text-[2.25rem] font-bold leading-[1.2] tracking-tight text-foreground sm:text-5xl sm:leading-tight md:mb-6 md:text-6xl md:leading-[1.15] lg:text-7xl mt-10 md:mt-0"
           >
             <span className="flex flex-col items-center justify-center text-center md:flex-row md:justify-center md:flex-wrap md:gap-2">
               <span className="inline-block bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
