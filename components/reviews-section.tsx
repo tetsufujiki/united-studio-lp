@@ -64,8 +64,13 @@ export function ReviewsSection() {
       <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-24 md:px-12 md:pt-44 md:pb-40">
         {/* Section header */}
         <div className="mb-8 text-center md:mb-10">
-          <h2 className="text-2xl font-light tracking-tight text-[#f7f1e8] md:text-3xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] max-w-xs md:max-w-none mx-auto">
-            STORES予約に寄せられたレビュー
+          <h2 className="text-2xl font-light tracking-tight text-[#f7f1e8] md:text-3xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
+            <span className="inline md:hidden">
+              STORES予約に寄せられた<br />レビュー
+            </span>
+            <span className="hidden md:inline">
+              STORES予約に寄せられたレビュー
+            </span>
           </h2>
           <div className="mt-4 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-[#c9a382]/70" />
