@@ -116,7 +116,7 @@ export function HeroSection() {
                 秘密基地のような
               </span>
               <span className="inline-block">
-                スタジオへ。
+                スタジオへ
               </span>
             </span>
           </h1>
