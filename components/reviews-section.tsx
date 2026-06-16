@@ -29,7 +29,7 @@ export function ReviewsSection() {
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(15,12,8,0.82) 0%, rgba(20,16,11,0.62) 30%, rgba(20,16,11,0.62) 70%, rgba(15,12,8,0.82) 100%)",
+            "linear-gradient(to bottom, rgba(15,12,8,0.75) 0%, rgba(20,16,11,0.52) 30%, rgba(20,16,11,0.52) 70%, rgba(15,12,8,0.75) 100%)",
         }}
         aria-hidden="true"
       />
@@ -65,7 +65,7 @@ export function ReviewsSection() {
         {/* Section header */}
         <div className="mb-16 text-center">
           <h2 className="text-2xl font-light tracking-tight text-[#f7f1e8] md:text-3xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
-            STORES予約に寄せられた<span className="font-medium">レビュー</span>
+            STORES予約に寄せられたレビュー
           </h2>
           <div className="mt-4 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-[#c9a382]/70" />
@@ -77,7 +77,7 @@ export function ReviewsSection() {
         </div>
 
         {/* Review card with glassmorphism */}
-        <div className="flex flex-col items-center gap-8">
+        <div className="flex flex-col items-center gap-12">
           {/* Single review card - floating with premium styling */}
           <div className="w-full max-w-2xl">
             <div 
@@ -89,8 +89,8 @@ export function ReviewsSection() {
               {/* Top inner highlight for glass effect */}
               <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
-              {/* Review iframe wrapper - fixed height for exactly 1 review */}
-              <div className="relative h-80 overflow-hidden md:h-96">
+              {/* Review iframe wrapper - fixed height for exactly 1 review, no scroll */}
+              <div className="relative h-80 overflow-hidden md:h-72">
                 <iframe
                   src="https://unitedstudio.stores.jp/reserve/usi/reviews"
                   className="pointer-events-auto w-full border-0"
@@ -101,6 +101,7 @@ export function ReviewsSection() {
                   }}
                   title="Customer Reviews"
                   loading="lazy"
+                  scrolling="no"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 />
               </div>
@@ -108,7 +109,7 @@ export function ReviewsSection() {
           </div>
 
           {/* Review count text */}
-          <p className="text-center text-base md:text-lg text-[#e8d9c4] font-light tracking-wide">
+          <p className="text-center text-base md:text-lg text-[#e8d9c4] font-light tracking-wide mt-4">
             100件以上のレビューをいただいています
           </p>
 
@@ -116,7 +117,7 @@ export function ReviewsSection() {
           <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
               <button
-                className="inline-flex items-center gap-2 rounded-full border border-[#c9a382]/60 bg-gradient-to-r from-[#c9a382]/10 to-[#d8c5ab]/5 px-8 py-3.5 text-sm md:text-base font-medium text-[#e8d2b3] shadow-[0_8px_24px_rgba(201,163,130,0.15)] backdrop-blur-sm transition-all duration-300 hover:border-[#c9a382] hover:bg-[#c9a382]/15 hover:shadow-[0_12px_32px_rgba(201,163,130,0.25)]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#c9a382]/40 bg-white/90 px-8 py-3.5 text-sm md:text-base font-medium text-[#1a1510] shadow-[0_8px_24px_rgba(0,0,0,0.15)] backdrop-blur-sm transition-all duration-300 hover:bg-white hover:border-[#c9a382]/60 hover:shadow-[0_12px_32px_rgba(0,0,0,0.2)]"
               >
                 すべてのレビューを見る
                 <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,18 +128,20 @@ export function ReviewsSection() {
 
             {/* Modal for full reviews */}
             <DialogContent 
-              className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:w-full md:max-w-4xl md:-translate-x-1/2 md:-translate-y-1/2 h-[90vh] md:h-[85vh] p-0 border-0 rounded-3xl overflow-hidden"
+              className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:w-full md:max-w-4xl md:-translate-x-1/2 md:-translate-y-1/2 h-[90vh] md:h-[85vh] p-0 border-0 rounded-3xl overflow-hidden flex flex-col items-center justify-center"
               showCloseButton={true}
             >
-              {/* Modal iframe wrapper with full review list */}
-              <div className="relative w-full h-full overflow-hidden bg-white">
-                {/* Custom scrollable area for iframe */}
-                <div className="relative w-full h-full overflow-y-auto">
+              {/* Modal iframe wrapper with full review list - centered layout */}
+              <div className="flex flex-col items-center justify-center w-full h-full px-4 md:px-8 py-6 bg-white overflow-hidden">
+                {/* Custom scrollable area for iframe with center alignment */}
+                <div className="relative w-full h-full flex flex-col items-center justify-start overflow-y-auto">
                   <iframe
                     src="https://unitedstudio.stores.jp/reserve/usi/reviews"
-                    className="w-full border-0"
+                    className="border-0 rounded-lg"
                     style={{ 
-                      minHeight: "100%",
+                      width: "100%",
+                      maxWidth: "600px",
+                      height: "100%",
                       backgroundColor: "white"
                     }}
                     title="All Customer Reviews"
