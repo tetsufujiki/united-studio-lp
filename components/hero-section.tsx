@@ -293,8 +293,11 @@ export function HeroSection() {
             </div>
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground">1000+</p>
-            <p className="text-xs text-foreground/80">��リエイタ���利用���</p>
+            <p className="text-sm font-bold text-foreground">1000+</p>
+            <p className="text-xs text-foreground/80 font-normal">
+              <span className="block whitespace-nowrap">クリエイター</span>
+              <span className="block whitespace-nowrap">利用中</span>
+            </p>
           </div>
         </div>
       </div>
