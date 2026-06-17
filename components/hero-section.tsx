@@ -277,24 +277,24 @@ export function HeroSection() {
       </div>
 
       {/* Floating Elements - User Count */}
-      <div
-        className="absolute bottom-32 right-8 hidden rounded-lg border border-border/50 bg-card/85 p-4 backdrop-blur-md lg:block"
-      >
-        <div className="flex items-center gap-3">
+      <div className="absolute bottom-32 right-8 hidden overflow-hidden rounded-xl border border-white/10 bg-[oklch(0.21_0.03_250)]/65 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/5 backdrop-blur-xl lg:block">
+        {/* Orange accent bar */}
+        <div className="absolute inset-y-0 left-0 w-1 bg-primary" />
+        <div className="flex items-center gap-3 py-4 pl-6 pr-5">
           <div className="flex -space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/30 text-xs font-bold text-primary">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/80 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
               A
             </div>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 text-xs font-bold text-primary">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/60 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
               B
             </div>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/50 text-xs font-bold text-primary">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
               C
             </div>
           </div>
           <div>
-            <p className="text-sm font-bold text-foreground">1000+</p>
-            <p className="text-xs text-foreground/80 font-normal">
+            <p className="text-sm font-bold leading-tight text-primary">1000+</p>
+            <p className="text-xs font-normal leading-tight text-white/70">
               <span className="block whitespace-nowrap">クリエイター</span>
               <span className="block whitespace-nowrap">利用中</span>
             </p>
