@@ -68,7 +68,8 @@ export function ClosingCTASection() {
 
             {/* Generous whitespace */}
             <p className="mt-10 text-sm font-light leading-relaxed text-[#5a5250] sm:mt-12 sm:text-base md:text-lg">
-              初めてのレコーディングも歓迎しています。
+              <span className="block whitespace-nowrap">初めてのレコーディングを、</span>
+              <span className="block whitespace-nowrap">大切にしています。</span>
             </p>
 
             {/* Generous whitespace before CTA */}
