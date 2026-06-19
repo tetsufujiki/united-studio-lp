@@ -253,6 +253,26 @@ export function HeroSection() {
               <div className="h-px w-8 bg-foreground/40" />
             </div>
           </div>
+
+          {/* Mobile & Tablet Only - 1000+ Creators Badge */}
+          <div className="mt-8 flex justify-center lg:hidden">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/30 bg-[oklch(0.21_0.03_250)]/50 py-1.5 pl-2.5 pr-4 backdrop-blur-md">
+              <div className="flex -space-x-1.5">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/80 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
+                  A
+                </span>
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/60 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
+                  B
+                </span>
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/40 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
+                  C
+                </span>
+              </div>
+              <span className="text-xs font-medium tracking-wide text-foreground/90">
+                <span className="font-bold text-primary">1000+</span> Creators
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Scroll Indicator - Hidden on mobile, visible on desktop */}
