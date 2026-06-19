@@ -99,17 +99,18 @@ export function HeroSection() {
             href="https://unitedstudio.stores.jp/reserve/usi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group mb-12 md:mb-8 inline-flex cursor-pointer items-center gap-2.5"
+            className="group mb-12 md:mb-8 inline-flex cursor-pointer items-center gap-2.5 rounded-lg"
             style={{
-              marginTop: 'clamp(3rem, 15vh, 6rem)'
+              marginTop: 'clamp(3rem, 15vh, 6rem)',
+              padding: '5px 12px',
+              backgroundColor: 'rgba(0,0,0,0.18)',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)',
             }}
           >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-pulse rounded-full bg-[#f59e0b]" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f59e0b] brightness-100 transition-[filter] duration-300 group-hover:brightness-125" />
-            </span>
-            <span className="text-sm font-medium uppercase tracking-[0.15em] text-white/90 transition-opacity duration-300 group-hover:text-white">
-              Now Booking
+            <span className="status-dot inline-block h-2.5 w-2.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_1px_rgba(245,158,11,0.55)] transition-[box-shadow] duration-300 group-hover:shadow-[0_0_12px_2px_rgba(245,158,11,0.75)]" />
+            <span className="text-sm font-medium uppercase tracking-[0.18em] text-white/95 transition-opacity duration-300 group-hover:text-white">
+              Recording Available
             </span>
           </a>
 
