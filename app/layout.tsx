@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { StickyCTABar } from '@/components/sticky-cta-bar'
 import { ScrollToTopButton } from '@/components/scroll-to-top-button'
 import { LazyCinematicBackground } from '@/components/lazy-cinematic-background'
+import { SchemaOrg } from '@/components/schema-org'
 import './globals.css'
 
 // Self-hosted, subsetted Noto Sans JP (only the glyphs used on this page).
@@ -78,7 +79,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-<body className={`${notoSansJP.variable} font-sans antialiased`}>
+      <head>
+        <SchemaOrg />
+      </head>
+      <body className={`${notoSansJP.variable} font-sans antialiased`}>
  <noscript>
     <iframe
       src="https://www.googletagmanager.com/ns.html?id=GTM-MKJ484H"
@@ -123,8 +127,7 @@ export default function RootLayout({
     `}
   </Script>
   {process.env.NODE_ENV === 'production' && <Analytics />}
-</body>
-	 
+      </body>
     </html>
   )
 }
