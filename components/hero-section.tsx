@@ -63,7 +63,7 @@ export function HeroSection() {
           </div>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           <a
             href="#popular-rankings-heading"
             className="text-sm text-muted-foreground hover:text-foreground"
