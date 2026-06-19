@@ -99,15 +99,18 @@ export function HeroSection() {
             href="https://unitedstudio.stores.jp/reserve/usi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="mb-12 md:mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm"
+            className="group mb-12 md:mb-8 inline-flex cursor-pointer items-center gap-2.5"
             style={{
               marginTop: 'clamp(3rem, 15vh, 6rem)'
             }}
           >
             <span className="relative flex h-2 w-2">
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              <span className="absolute inline-flex h-full w-full animate-pulse rounded-full bg-[#f59e0b]" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#f59e0b] brightness-100 transition-[filter] duration-300 group-hover:brightness-125" />
             </span>
-            <span className="text-sm text-white">予約受付中 — Now Booking</span>
+            <span className="text-sm font-medium uppercase tracking-[0.15em] text-white/90 transition-opacity duration-300 group-hover:text-white">
+              Now Booking
+            </span>
           </a>
 
           {/* Main Headline - Premium Split Design */}
