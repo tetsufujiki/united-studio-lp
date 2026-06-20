@@ -237,14 +237,14 @@ export default function GuidePage() {
             {[
               { icon: CreditCard, title: '現金', desc: 'スタジオでお支払いください' },
               { icon: CreditCard, title: 'クレジットカード', desc: '主要なカードに対応' },
-              { icon: CreditCard, title: '各種電子決済', desc: 'PayPayなど対応' },
+              { icon: CreditCard, title: '各種電子決済', desc: 'PayPay・Rakuten Payなど対応' },
             ].map((method, idx) => {
               const Icon = method.icon
               return (
                 <div key={idx} className="bg-white rounded-lg p-6 border border-slate-200 text-center hover:shadow-md transition-shadow">
                   <Icon className="h-10 w-10 text-blue-600 mx-auto mb-3" />
                   <h3 className="font-bold text-slate-900 mb-2">{method.title}</h3>
-                  <p className="text-sm text-slate-600">{method.desc}</p>
+                  <p className="text-sm text-slate-600 whitespace-normal leading-snug">{method.desc}</p>
                 </div>
               )
             })}
