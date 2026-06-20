@@ -82,6 +82,7 @@ export default function GuidePage() {
             <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
               <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">キャンセル</div>
               <div className="text-lg font-bold text-slate-900">無料</div>
+              <div className="text-xs text-slate-400 mt-1">※条件あり</div>
             </div>
           </div>
         </div>
