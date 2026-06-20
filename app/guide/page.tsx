@@ -207,16 +207,22 @@ export default function GuidePage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">予約変更・キャンセル</h2>
-          <div className="max-w-2xl mx-auto bg-amber-50 rounded-lg p-8 border border-amber-200">
-            <div className="flex gap-4 mb-4">
-              <ChevronDown className="h-6 w-6 text-amber-600 flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-bold text-slate-900 mb-3">予約日の2日前まで予約サイトから変更・キャンセルが可能です。</h3>
-                <div className="space-y-2 text-sm text-slate-700">
-                  <p>• キャンセル料金はいただいておりません。</p>
-                  <p>• ただし当日キャンセルまたは無断キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただきます。</p>
-                  <p>• あらかじめご了承ください。</p>
-                </div>
+          <div className="space-y-6">
+            <div className="max-w-2xl mx-auto bg-amber-50 rounded-lg p-8 border border-amber-200">
+              <div className="flex gap-4">
+                <ChevronDown className="h-6 w-6 text-amber-600 flex-shrink-0 mt-1" />
+                <h3 className="font-bold text-slate-900">予約日の2日前まで予約サイトから変更・キャンセルが可能です。</h3>
+              </div>
+            </div>
+            
+            <div className="max-w-2xl mx-auto bg-blue-50 rounded-lg p-8 border border-blue-200">
+              <div className="space-y-6">
+                <p className="text-lg font-semibold text-slate-900">
+                  キャンセル料金はいただいておりません。
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  ただし当日キャンセルまたは無断キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただきます。あらかじめご了承ください。
+                </p>
               </div>
             </div>
           </div>
