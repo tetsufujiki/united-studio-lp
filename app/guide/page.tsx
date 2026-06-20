@@ -343,62 +343,6 @@ export default function GuidePage() {
               USI新河岸音楽工務所
             </p>
           </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 最寄駅 */}
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <MapPinIcon className="h-5 w-5 text-blue-600" />
-                最寄駅
-              </h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">都営三田線</p>
-                  <ul className="text-slate-700 space-y-1 ml-4">
-                    <li>• 志村坂上駅 A3出口 徒歩12分</li>
-                    <li>• 志村三丁目駅 徒歩12分</li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">JR埼京線</p>
-                  <ul className="text-slate-700 space-y-1 ml-4">
-                    <li>• 浮間舟渡駅 徒歩17分</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* バス */}
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <MapPinIcon className="h-5 w-5 text-blue-600" />
-                バス
-              </h3>
-              <p className="text-slate-700">
-                国際興業バス
-                <br />
-                志村坂下バス停 徒歩4分
-              </p>
-            </div>
-          </div>
-
-          {/* 駐車場 */}
-          <div className="max-w-2xl mx-auto mb-12">
-            <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
-              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <MapPinIcon className="h-5 w-5 text-blue-600" />
-                駐車場
-              </h3>
-              <p className="text-slate-700">
-                マンション敷地内コインパーキングあり
-              </p>
-            </div>
-          </div>
 
           {/* Google Mapsプレースホルダー */}
           <div className="max-w-2xl mx-auto mb-8">
