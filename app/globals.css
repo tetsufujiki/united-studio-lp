@@ -128,19 +128,30 @@
 }
 
 @keyframes status-dot-pulse {
-  0%,
+  /* 点灯 */
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.75);
+  }
+  /* 素早くフェードアウト開始 */
+  30% {
+    opacity: 0.05;
+    box-shadow: 0 0 0px 0px rgba(245, 158, 11, 0);
+  }
+  /* ほぼ消灯状態をキープ */
+  70% {
+    opacity: 0.05;
+    box-shadow: 0 0 0px 0px rgba(245, 158, 11, 0);
+  }
+  /* 素早く点灯に戻る */
   100% {
     opacity: 1;
-    box-shadow: 0 0 7px 2px rgba(245, 158, 11, 0.7);
-  }
-  50% {
-    opacity: 0.22;
-    box-shadow: 0 0 2px 0px rgba(245, 158, 11, 0.15);
+    box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.75);
   }
 }
 
 .status-dot {
-  animation: status-dot-pulse 2.4s ease-in-out infinite;
+  animation: status-dot-pulse 2s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
