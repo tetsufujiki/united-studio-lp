@@ -40,6 +40,11 @@ export default function GuidePage() {
       {/* ヒーローセクション */}
       <section className="pt-20 pb-16 px-4 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-4">
+            <span className="inline-block text-sm font-medium text-slate-500 tracking-widest uppercase mb-6">
+              USI新河岸音楽工務所
+            </span>
+          </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight">
             レコーディングスタジオ
             <br />
