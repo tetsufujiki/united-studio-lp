@@ -95,24 +95,45 @@ export function HeroSection() {
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:min-h-[calc(100vh-88px)] md:pb-0 lg:px-20">
         <div className="mx-auto max-w-5xl text-center">
           {/* Badge */}
-          <a
-            href="https://unitedstudio.stores.jp/reserve/usi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mb-12 md:mb-8 inline-flex cursor-pointer items-center gap-2.5 rounded-lg"
-            style={{
-              marginTop: 'clamp(3rem, 15vh, 6rem)',
-              padding: '5px 12px',
-              backgroundColor: 'rgba(0,0,0,0.18)',
-              backdropFilter: 'blur(6px)',
-              WebkitBackdropFilter: 'blur(6px)',
-            }}
+          <div
+            className="relative mb-12 md:mb-8 inline-flex items-center justify-center"
+            style={{ marginTop: 'clamp(3rem, 15vh, 6rem)' }}
           >
-            <span className="status-dot inline-block h-2.5 w-2.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_1px_rgba(245,158,11,0.55)] transition-[box-shadow] duration-300 group-hover:shadow-[0_0_12px_2px_rgba(245,158,11,0.75)]" />
-            <span className="text-sm font-medium uppercase tracking-[0.18em] text-white/95 transition-opacity duration-300 group-hover:text-white">
-              Recording Available
-            </span>
-          </a>
+            {/* Edge fade lines evoking studio equipment indicators */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute right-full top-1/2 h-px w-8 -translate-y-1/2 sm:w-12"
+              style={{
+                background:
+                  'linear-gradient(to left, rgba(255,255,255,0.28), rgba(255,255,255,0))',
+              }}
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute left-full top-1/2 h-px w-8 -translate-y-1/2 sm:w-12"
+              style={{
+                background:
+                  'linear-gradient(to right, rgba(255,255,255,0.28), rgba(255,255,255,0))',
+              }}
+            />
+            <a
+              href="https://unitedstudio.stores.jp/reserve/usi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/15 px-2.5 py-1.5 transition-colors duration-300 hover:border-white/25"
+              style={{
+                backgroundColor: 'rgba(255,255,255,0.12)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                boxShadow: '0 0 16px 0 rgba(255,255,255,0.10)',
+              }}
+            >
+              <span className="status-dot inline-block h-2 w-2 rounded-full bg-[#f59e0b]" />
+              <span className="text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-white/80">
+                Recording Available
+              </span>
+            </a>
+          </div>
 
           {/* Main Headline - Premium Split Design */}
           <h1
