@@ -258,9 +258,10 @@ export default function GuidePage() {
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">アクセス</h2>
           
           {/* アクセス情報グリッド */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {/* 住所 */}
-            <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
+          <div className="max-w-4xl mx-auto px-4 md:px-0 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* 住所 */}
+              <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
               <div className="flex gap-4">
                 <MapPin className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div className="flex-1">
@@ -318,6 +319,7 @@ export default function GuidePage() {
               <p className="text-slate-700 leading-relaxed">
                 マンション敷地内コインパーキングあり
               </p>
+            </div>
             </div>
           </div>
 
