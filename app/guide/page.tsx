@@ -324,7 +324,7 @@ export default function GuidePage() {
           </div>
 
           {/* Google Maps埋め込み */}
-          <div className="max-w-4xl mx-auto mb-8">
+          <div className="max-w-4xl mx-auto px-4 md:px-0 mb-8">
             <div className="relative w-full rounded-lg overflow-hidden border border-slate-200 shadow-sm" style={{ paddingBottom: '56.25%', height: 0 }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8405378245586!2d139.71428632346177!3d35.74523847253568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f2d3d3d3d3d%3A0x0!2z5Z2C5L6h5Yi26aSo!5e0!3m2!1sja!2sjp!4v1234567890"
