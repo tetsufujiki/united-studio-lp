@@ -96,7 +96,7 @@ export function HeroSection() {
         <div className="mx-auto max-w-5xl text-center">
           {/* Badge */}
           <div
-            className="relative mb-12 md:mb-8 inline-flex items-center justify-center"
+            className="relative mb-12 inline-flex scale-[0.90] items-center justify-center sm:scale-100 md:mb-8"
             style={{ marginTop: 'clamp(3rem, 15vh, 6rem)' }}
           >
             {/* Edge fade lines evoking studio equipment indicators */}
