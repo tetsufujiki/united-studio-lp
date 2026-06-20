@@ -69,7 +69,7 @@ export default function GuidePage() {
             </div>
             <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
               <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">サービス</div>
-              <div className="text-lg font-bold text-slate-900">ミックス・<br />マスタリング込み</div>
+              <div className="text-lg font-bold text-slate-900">ミックス・<br />マスタリング<br />込み</div>
             </div>
             <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
               <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">受取</div>
