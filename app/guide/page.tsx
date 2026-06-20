@@ -235,7 +235,7 @@ export default function GuidePage() {
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">お支払い方法</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
             {[
-              { icon: CreditCard, title: '現金', desc: 'スタジオでお支払いください' },
+              { icon: CreditCard, title: '現金', desc: <>スタジオでお支払い<br />ください</> },
               { icon: CreditCard, title: 'クレジットカード', desc: '主要なカードに対応' },
               { icon: CreditCard, title: '各種電子決済', desc: 'PayPay・Rakuten Payなど対応' },
             ].map((method, idx) => {
@@ -244,7 +244,7 @@ export default function GuidePage() {
                 <div key={idx} className="bg-white rounded-lg p-6 border border-slate-200 text-center hover:shadow-md transition-shadow">
                   <Icon className="h-10 w-10 text-blue-600 mx-auto mb-3" />
                   <h3 className="font-bold text-slate-900 mb-2">{method.title}</h3>
-                  <p className="text-sm text-slate-600 whitespace-normal leading-snug">{method.desc}</p>
+                  <p className="text-sm text-slate-600 leading-snug">{method.desc}</p>
                 </div>
               )
             })}
@@ -267,7 +267,7 @@ export default function GuidePage() {
                   <p className="text-lg font-semibold text-slate-900 leading-relaxed">
                     〒174-0042
                     <br />
-                    東京都板橋区東坂下1-19-24
+                    東京都��橋区東坂下1-19-24
                     <br />
                     志幸42シャンソン110号室
                   </p>
