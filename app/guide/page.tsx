@@ -180,7 +180,7 @@ export default function GuidePage() {
             <div className="flex justify-center">
               <div className="max-w-md w-full bg-white rounded-lg p-6 border border-slate-200">
                 <p className="text-center text-sm text-blue-700 font-medium leading-relaxed">
-                  そのほかのご要望にも可能な限り対応しておりますので、お気軽にご相談ください。
+                  そのほかのご要望にも可能な限り対応しておりますので、<br />お気軽にご相談ください。
                 </p>
               </div>
             </div>
