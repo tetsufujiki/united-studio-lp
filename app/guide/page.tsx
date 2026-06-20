@@ -95,32 +95,33 @@ export default function GuidePage() {
           
           {/* デスクトップ水平レイアウト */}
           <div className="hidden md:block">
-            <div className="relative">
-              <div className="flex items-start justify-between">
+            <div className="relative pb-8">
+              <div className="flex gap-4 items-stretch">
                 {[
                   { step: '1', title: 'ご予約', desc: '予約専用サイトから24時間受付しております。' },
                   { step: '2', title: 'ご来店', desc: 'ご予約時間までにスタジオへお越しください。' },
                   { step: '3', title: 'レコーディング', desc: 'スタッフが進行をサポートいたします。' },
                   { step: '4', title: '完成データお渡し', desc: 'ミックス・マスタリング後、完成した音源をその場でお渡しします。' },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex-1 flex flex-col items-center">
-                    <div className="flex items-center justify-center h-14 w-14 rounded-full bg-blue-600 text-white font-bold text-lg shadow-md">
-                      {item.step}
+                  <div key={idx} className="flex-1 flex flex-col">
+                    <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6 flex-1 flex flex-col">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold text-base shadow-md">
+                          {item.step}
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                      </div>
+                      <p className="text-sm text-slate-600 leading-relaxed flex-1">{item.desc}</p>
                     </div>
-                    <div className="mt-6 text-center flex-1">
-                      <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                      <p className="text-sm text-slate-600 mt-2">{item.desc}</p>
-                    </div>
+                    {idx < 3 && (
+                      <div className="flex items-center justify-center pt-4">
+                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </div>
+                    )}
                   </div>
                 ))}
-              </div>
-              {/* 接続線 */}
-              <div className="absolute top-7 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 -z-10">
-                <div className="flex justify-between h-full">
-                  {[0, 1, 2].map(i => (
-                    <div key={i} className="w-1 bg-blue-600"></div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
