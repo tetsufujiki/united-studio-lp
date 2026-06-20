@@ -194,8 +194,11 @@ export default function GuidePage() {
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">営業時間</h2>
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-sm p-8 border border-slate-200 text-center">
             <Clock className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            <div className="text-4xl font-bold text-slate-900 mb-2">13:00〜22:00</div>
-            <p className="text-sm text-slate-600">毎日営業しています</p>
+            <div className="text-4xl font-bold text-slate-900 mb-6">13:00〜22:00</div>
+            <div className="space-y-1 text-sm text-slate-700">
+              <p className="font-medium">完全予約制</p>
+              <p className="font-medium">不定休</p>
+            </div>
           </div>
         </div>
       </section>
