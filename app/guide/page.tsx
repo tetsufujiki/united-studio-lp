@@ -62,32 +62,26 @@ export default function GuidePage() {
           </div>
 
           {/* 特徴カード */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-slate-100 hover:shadow-md transition-shadow">
-              <div className="text-sm font-semibold text-blue-600 mb-2">料金</div>
-              <div className="text-2xl font-bold text-slate-900">2時間</div>
-              <div className="text-lg font-bold text-slate-900">14,000円</div>
-              <p className="text-xs text-slate-500 mt-2">税込</p>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8">
+            <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">料金</div>
+              <div className="text-lg font-bold text-slate-900">2時間<br />14,000円</div>
             </div>
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-slate-100 hover:shadow-md transition-shadow">
-              <div className="text-sm font-semibold text-blue-600 mb-2">サービス</div>
-              <div className="text-sm font-bold text-slate-900">ミックス・</div>
-              <div className="text-sm font-bold text-slate-900">マスタリング込み</div>
+            <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">サービス</div>
+              <div className="text-lg font-bold text-slate-900">ミックス・<br />マスタリング込み</div>
             </div>
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-slate-100 hover:shadow-md transition-shadow">
-              <div className="text-sm font-semibold text-blue-600 mb-2">受取</div>
-              <div className="text-sm font-bold text-slate-900">当日データ</div>
-              <div className="text-sm font-bold text-slate-900">持ち帰り</div>
+            <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">受取</div>
+              <div className="text-lg font-bold text-slate-900">当日データ<br />持ち帰り</div>
             </div>
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-slate-100 hover:shadow-md transition-shadow">
-              <div className="text-sm font-semibold text-blue-600 mb-2">対象</div>
-              <div className="text-sm font-bold text-slate-900">初心者</div>
-              <div className="text-sm font-bold text-slate-900">歓迎</div>
+            <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">対象</div>
+              <div className="text-lg font-bold text-slate-900">初心者<br />歓迎</div>
             </div>
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-slate-100 hover:shadow-md transition-shadow">
-              <div className="text-sm font-semibold text-blue-600 mb-2">キャンセル</div>
-              <div className="text-sm font-bold text-slate-900">無料</div>
-              <p className="text-xs text-slate-500 mt-3">予約日の2日前まで</p>
+            <div className="bg-white rounded-lg shadow-sm p-4 border border-slate-100 hover:shadow-md transition-shadow">
+              <div className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">キャンセル</div>
+              <div className="text-lg font-bold text-slate-900">無料</div>
             </div>
           </div>
         </div>
