@@ -95,56 +95,61 @@ export default function GuidePage() {
           
           {/* デスクトップ水平レイアウト */}
           <div className="hidden md:block">
-            <div className="flex items-center justify-between">
-              {[
-                { step: '1', title: 'ご予約', desc: '予約専用サイトから24時間受付しております。' },
-                { step: '2', title: 'ご来店', desc: 'ご予約時間までにスタジオへお越しください。' },
-                { step: '3', title: 'レコーディング', desc: 'スタッフが進行をサポートいたします。' },
-                { step: '4', title: 'お渡し', desc: '完成した音源をその場でお渡しします。' },
-              ].map((item, idx) => (
-                <div key={idx} className="flex-1">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold text-lg">
-                        {item.step}
-                      </div>
+            <div className="relative">
+              <div className="flex items-start justify-between">
+                {[
+                  { step: '1', title: 'ご予約', desc: '予約専用サイトから24時間受付しております。' },
+                  { step: '2', title: 'ご来店', desc: 'ご予約時間までにスタジオへお越しください。' },
+                  { step: '3', title: 'レコーディング', desc: 'スタッフが進行をサポートいたします。' },
+                  { step: '4', title: '完成データお渡し', desc: 'ミックス・マスタリング後、完成した音源をその場でお渡しします。' },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex-1 flex flex-col items-center">
+                    <div className="flex items-center justify-center h-14 w-14 rounded-full bg-blue-600 text-white font-bold text-lg shadow-md">
+                      {item.step}
                     </div>
-                    <div className="flex-1">
+                    <div className="mt-6 text-center flex-1">
                       <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                      <p className="text-sm text-slate-600 mt-1">{item.desc}</p>
+                      <p className="text-sm text-slate-600 mt-2">{item.desc}</p>
                     </div>
                   </div>
-                  {idx < 3 && (
-                    <div className="absolute mt-6 ml-20 text-2xl text-slate-300">→</div>
-                  )}
+                ))}
+              </div>
+              {/* 接続線 */}
+              <div className="absolute top-7 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200 -z-10">
+                <div className="flex justify-between h-full">
+                  {[0, 1, 2].map(i => (
+                    <div key={i} className="w-1 bg-blue-600"></div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
           {/* モバイルタイムラインレイアウト */}
-          <div className="md:hidden space-y-8">
-            {[
-              { step: '1', title: 'ご予約', desc: '予約専用サイトから24時間受付しております。' },
-              { step: '2', title: 'ご来店', desc: 'ご予約時間までにスタジオへお越しください。' },
-              { step: '3', title: 'レコーディング', desc: 'スタッフが進行をサポートいたします。' },
-              { step: '4', title: 'お渡し', desc: '完成した音源をその場でお渡しします。' },
-            ].map((item, idx) => (
-              <div key={idx} className="flex gap-4">
-                <div className="flex flex-col items-center">
-                  <div className="flex items-center justify-center h-10 w-10 rounded-full bg-blue-600 text-white font-bold">
-                    {item.step}
+          <div className="md:hidden flex justify-center">
+            <div className="space-y-8 w-full max-w-xs">
+              {[
+                { step: '1', title: 'ご予約', desc: '予約専用サイトから24時間受付しております。' },
+                { step: '2', title: 'ご来店', desc: 'ご予約時間までにスタジオへお越しください。' },
+                { step: '3', title: 'レコーディング', desc: 'スタッフが進行をサポートいたします。' },
+                { step: '4', title: '完成データお渡し', desc: 'ミックス・マスタリング後、完成した音源をその場でお渡しします。' },
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-4">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white font-bold shadow-md">
+                      {item.step}
+                    </div>
+                    {idx < 3 && (
+                      <div className="w-1 h-16 bg-blue-200 mt-2" />
+                    )}
                   </div>
-                  {idx < 3 && (
-                    <div className="w-1 h-12 bg-blue-200 mt-2" />
-                  )}
+                  <div className="pb-4 pt-1">
+                    <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                    <p className="text-sm text-slate-600 mt-2">{item.desc}</p>
+                  </div>
                 </div>
-                <div className="pb-4">
-                  <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                  <p className="text-sm text-slate-600 mt-1">{item.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
