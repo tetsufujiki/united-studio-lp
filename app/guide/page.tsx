@@ -257,21 +257,92 @@ export default function GuidePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">アクセス</h2>
           
-          {/* 住所 */}
-          <div className="max-w-2xl mx-auto mb-8">
+          {/* アクセス情報グリッド */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {/* 住所 */}
             <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
               <div className="flex gap-4">
                 <MapPin className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-2">住所</h3>
-                  <p className="text-lg font-semibold text-slate-900 leading-relaxed">
-                    〒174-0042
-                    <br />
-                    東京都��橋区東坂下1-19-24
-                    <br />
+                <div className="flex-1">
+                  <h3 className="font-bold text-slate-900 mb-4">住所</h3>
+                  <p className="text-base font-semibold text-slate-900 leading-relaxed">
+                    〒174-0042<br />
+                    東京都板橋区東坂下1-19-24<br />
                     志幸42シャンソン110号室
                   </p>
                 </div>
+              </div>
+            </div>
+
+            {/* 最寄駅 */}
+            <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
+              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <MapPinIcon className="h-5 w-5 text-blue-600" />
+                最寄駅
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold text-slate-900 mb-2">都営三田線</p>
+                  <ul className="text-sm text-slate-700 space-y-1 ml-4">
+                    <li>• 志村坂上駅 A3出口 徒歩12分</li>
+                    <li>• 志村三丁目駅 徒歩12分</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 mb-2">JR埼京線</p>
+                  <ul className="text-sm text-slate-700 space-y-1 ml-4">
+                    <li>• 浮間舟渡駅 徒歩17分</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* バス */}
+            <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
+              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <MapPinIcon className="h-5 w-5 text-blue-600" />
+                バス
+              </h3>
+              <p className="text-slate-700 leading-relaxed">
+                国際興業バス<br />
+                志村坂下バス停 徒歩4分
+              </p>
+            </div>
+
+            {/* 駐車場 */}
+            <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm">
+              <h3 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <MapPinIcon className="h-5 w-5 text-blue-600" />
+                駐車場
+              </h3>
+              <p className="text-slate-700 leading-relaxed">
+                マンション敷地内コインパーキングあり
+              </p>
+            </div>
+          </div>
+
+          {/* Google Maps埋め込み */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="relative w-full rounded-lg overflow-hidden border border-slate-200 shadow-sm" style={{ paddingBottom: '56.25%', height: 0 }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8405378245586!2d139.71428632346177!3d35.74523847253568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f2d3d3d3d3d%3A0x0!2z5Z2C5L6h5Yi26aSo!5e0!3m2!1sja!2sjp!4v1234567890"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 0,
+                }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <p className="text-center text-sm text-slate-600 mt-4 font-medium">
+              USI新河岸音楽工務所
+            </p>
+          </div>
               </div>
             </div>
           </div>
