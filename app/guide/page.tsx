@@ -167,16 +167,18 @@ export default function GuidePage() {
               <p className="text-slate-600 mt-2">（税込）</p>
             </div>
             <p className="text-center text-slate-700 font-semibold mb-6">料金には基本的に以下が含まれます。</p>
-            <div className="space-y-3 mb-6">
-              {['レコーディング', 'ピッチ修正', 'リズム修正', 'ミックス', 'マスタリング'].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                  <span className="text-slate-700">{item}</span>
-                </div>
-              ))}
+            <div className="flex justify-center mb-6">
+              <div className="space-y-3">
+                {['レコーディング', 'ピッチ修正', 'リズム修正', 'ミックス', 'マスタリング'].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-blue-600 flex-shrink-0" />
+                    <span className="text-slate-700">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="bg-white rounded-lg p-4 border border-slate-200">
-              <p className="text-sm text-slate-600 leading-relaxed">
+              <p className="text-sm text-blue-700 font-medium leading-relaxed">
                 そのほかのご要望にも可能な限り対応しておりますので、お気軽にご相談ください。
               </p>
             </div>
