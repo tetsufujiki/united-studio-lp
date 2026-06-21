@@ -354,7 +354,7 @@ export default function GuidePage() {
                   USI新河岸音楽工務所
                 </p>
                 <a
-                  href="https://www.google.com/maps/place/0x6018f3a2b77fc8d1:0xb4b171924c684959"
+                  href="https://maps.app.goo.gl/EuL5pQJgPUTSEQgE8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
