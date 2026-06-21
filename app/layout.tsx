@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { StickyCTABar } from '@/components/sticky-cta-bar'
 import { ScrollToTopButton } from '@/components/scroll-to-top-button'
 import { LazyCinematicBackground } from '@/components/lazy-cinematic-background'
+import { SchemaOrg } from '@/components/schema-org'
 import './globals.css'
 
 // Self-hosted, subsetted Noto Sans JP (only the glyphs used on this page).
@@ -31,15 +32,15 @@ const notoSansJP = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rec.united-studio.com'),
-  title: '東京のレコーディングスタジオ・音楽制作・ミックス・撮影対応 | USI新河岸音楽工務所',
-  description: 'ボーカル収録、歌ってみた、声優オーディションなど、ミックス・マスタリングに対応。初心者からプロまで、すべてのクリエイターを支援する東京のレコーディングスタジオ。',
+  title: '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ｜USI新河岸音楽工務所',
+  description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。\nボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。\n当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
   generator: 'v0.app',
 
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    title: '東京のレコーディングスタジオ・音楽制作・ミックス・撮影対応 | USI新河岸音楽工務所',
-    description: 'ボーカル収録、歌ってみた、声優オーディションなど、ミックス・マスタリングに対応。初心者からプロまで、すべてのクリエイターを支援する東京のレコーディングスタジオ。',
+    title: '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ｜USI新河岸音楽工務所',
+    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。\nボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。\n当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
     url: 'https://rec.united-studio.com',
     siteName: 'USI新河岸音楽工務所',
     images: [
@@ -54,8 +55,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: '東京のレコーディングスタジオ・音楽制作・ミックス・撮影対応 | USI新河岸音楽工務所',
-    description: 'ボーカル収録、歌ってみた、声優オーディションなど、ミックス・マスタリングに対応。初心者からプロまで、すべてのクリエイターを支援する東京のレコーディングスタジオ。',
+    title: '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ｜USI新河岸音楽工務所',
+    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。\nボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。\n当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
     images: ['https://rec.united-studio.com/ogp.jpg'],
   },
 
@@ -78,7 +79,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-<body className={`${notoSansJP.variable} font-sans antialiased`}>
+      <head>
+        <SchemaOrg />
+      </head>
+      <body className={`${notoSansJP.variable} font-sans antialiased`}>
  <noscript>
     <iframe
       src="https://www.googletagmanager.com/ns.html?id=GTM-MKJ484H"
@@ -123,8 +127,7 @@ export default function RootLayout({
     `}
   </Script>
   {process.env.NODE_ENV === 'production' && <Analytics />}
-</body>
-	 
+      </body>
     </html>
   )
 }

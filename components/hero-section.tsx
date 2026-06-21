@@ -63,7 +63,7 @@ export function HeroSection() {
           </div>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           <a
             href="#popular-rankings-heading"
             className="text-sm text-muted-foreground hover:text-foreground"
@@ -95,28 +95,56 @@ export function HeroSection() {
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:min-h-[calc(100vh-88px)] md:pb-0 lg:px-20">
         <div className="mx-auto max-w-5xl text-center">
           {/* Badge */}
-          <a
-            href="https://unitedstudio.stores.jp/reserve/usi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 backdrop-blur-sm"
+          <div
+            className="relative mb-12 inline-flex scale-[0.90] items-center justify-center sm:scale-100 md:mb-8"
+            style={{ marginTop: 'clamp(3rem, 15vh, 6rem)' }}
           >
-            <span className="relative flex h-2 w-2">
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-            </span>
-            <span className="text-sm text-white">予約受付中 — Now Booking</span>
-          </a>
+            {/* Edge fade lines evoking studio equipment indicators */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute right-full top-1/2 h-px w-8 -translate-y-1/2 sm:w-12"
+              style={{
+                background:
+                  'linear-gradient(to left, rgba(255,255,255,0.28), rgba(255,255,255,0))',
+              }}
+            />
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute left-full top-1/2 h-px w-8 -translate-y-1/2 sm:w-12"
+              style={{
+                background:
+                  'linear-gradient(to right, rgba(255,255,255,0.28), rgba(255,255,255,0))',
+              }}
+            />
+            <a
+              href="https://unitedstudio.stores.jp/reserve/usi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/15 px-2.5 py-1.5 transition-colors duration-300 hover:border-white/25"
+              style={{
+                backgroundColor: 'rgba(255,255,255,0.12)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                boxShadow: '0 0 16px 0 rgba(255,255,255,0.10)',
+              }}
+            >
+              <span className="status-dot inline-block h-2 w-2 rounded-full bg-[#f59e0b]" />
+              <span className="text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-white/80">
+                Recording Available
+              </span>
+            </a>
+          </div>
 
           {/* Main Headline - Premium Split Design */}
           <h1
-            className="mx-auto mb-5 px-4 text-[2.25rem] font-bold leading-[1.2] tracking-tight text-foreground sm:text-5xl sm:leading-tight md:mb-6 md:text-6xl md:leading-[1.15] lg:text-7xl"
+            className="mx-auto mb-5 px-4 text-[2.25rem] font-bold leading-[1.2] tracking-tight text-foreground sm:text-5xl sm:leading-tight md:mb-6 md:text-6xl md:leading-[1.15] lg:text-7xl mt-10 md:mt-0"
           >
             <span className="flex flex-col items-center justify-center text-center md:flex-row md:justify-center md:flex-wrap md:gap-2">
               <span className="inline-block bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
                 秘密基地のような
               </span>
               <span className="inline-block">
-                スタジオへ。
+                スタジオへ
               </span>
             </span>
           </h1>
@@ -250,6 +278,26 @@ export function HeroSection() {
               <div className="h-px w-8 bg-foreground/40" />
             </div>
           </div>
+
+          {/* Mobile & Tablet Only - 1000+ Creators Badge */}
+          <div className="mt-8 flex justify-center lg:hidden">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/30 bg-[oklch(0.21_0.03_250)]/50 py-1.5 pl-2.5 pr-4 backdrop-blur-md">
+              <div className="flex -space-x-1.5">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/80 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
+                  A
+                </span>
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/60 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
+                  B
+                </span>
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/40 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
+                  C
+                </span>
+              </div>
+              <span className="text-xs font-medium tracking-wide text-foreground/90">
+                <span className="font-bold text-primary">1000+</span> Creators
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Scroll Indicator - Hidden on mobile, visible on desktop */}
@@ -274,24 +322,27 @@ export function HeroSection() {
       </div>
 
       {/* Floating Elements - User Count */}
-      <div
-        className="absolute bottom-32 right-8 hidden rounded-lg border border-border/50 bg-card/85 p-4 backdrop-blur-md lg:block"
-      >
-        <div className="flex items-center gap-3">
+      <div className="absolute bottom-32 right-8 hidden overflow-hidden rounded-xl border border-white/10 bg-[oklch(0.21_0.03_250)]/65 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/5 backdrop-blur-xl lg:block">
+        {/* Orange accent bar */}
+        <div className="absolute inset-y-0 left-0 w-1 bg-primary" />
+        <div className="flex items-center gap-3 py-4 pl-6 pr-5">
           <div className="flex -space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/30 text-xs font-bold text-primary">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/80 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
               A
             </div>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 text-xs font-bold text-primary">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/60 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
               B
             </div>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/50 text-xs font-bold text-primary">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
               C
             </div>
           </div>
           <div>
-            <p className="text-sm font-medium text-foreground">1000+</p>
-            <p className="text-xs text-foreground/80">��リエイタ���利用���</p>
+            <p className="text-sm font-bold leading-tight text-primary">1000+</p>
+            <p className="text-xs font-normal leading-tight text-white/70">
+              <span className="block whitespace-nowrap">クリエイター</span>
+              <span className="block whitespace-nowrap">利用中</span>
+            </p>
           </div>
         </div>
       </div>

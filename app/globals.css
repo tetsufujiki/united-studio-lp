@@ -126,3 +126,41 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes status-dot-pulse {
+  /* 完全点灯 */
+  0% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.75);
+  }
+  /* ふわっと消灯（25%地点で最暗） */
+  25% {
+    opacity: 0.06;
+    box-shadow: 0 0 0px 0px rgba(245, 158, 11, 0);
+  }
+  /* 消灯をキープ（50%まで暗い状態を維持） */
+  50% {
+    opacity: 0.06;
+    box-shadow: 0 0 0px 0px rgba(245, 158, 11, 0);
+  }
+  /* ふわっと点灯（75%地点で最亮） */
+  75% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.75);
+  }
+  /* 点灯をキープ（100%まで明るい状態を維持） */
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 8px 2px rgba(245, 158, 11, 0.75);
+  }
+}
+
+.status-dot {
+  animation: status-dot-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
+}

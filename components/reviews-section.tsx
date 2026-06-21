@@ -1,25 +1,35 @@
+'use client'
+
 import Image from "next/image";
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export function ReviewsSection() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden">
-      {/* Studio atmosphere photo background - sets the premium world */}
+      {/* Studio atmosphere photo background - brightened for luxury feel */}
       <Image
         src="/assets/booth-atmosphere.jpg"
         alt=""
         fill
         sizes="100vw"
         quality={80}
-        className="-z-20 object-cover"
+        className="-z-20 object-cover brightness-110"
         aria-hidden="true"
       />
 
-      {/* Soft dark gradient overlay - depth + readability */}
+      {/* Adjusted soft overlay - lighter to show more of the white sofa area */}
       <div
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(15,12,8,0.92) 0%, rgba(20,16,11,0.78) 30%, rgba(20,16,11,0.78) 70%, rgba(15,12,8,0.92) 100%)",
+            "linear-gradient(to bottom, rgba(15,12,8,0.75) 0%, rgba(20,16,11,0.52) 30%, rgba(20,16,11,0.52) 70%, rgba(15,12,8,0.75) 100%)",
         }}
         aria-hidden="true"
       />
@@ -29,8 +39,8 @@ export function ReviewsSection() {
         className="pointer-events-none absolute left-1/2 top-0 -z-10 h-72 w-[420px] -translate-x-1/2 rounded-full"
         style={{
           background:
-            "radial-gradient(closest-side, rgba(201,163,130,0.20), transparent)",
-          filter: "blur(40px)",
+            "radial-gradient(closest-side, rgba(201,163,130,0.25), transparent)",
+          filter: "blur(50px)",
         }}
         aria-hidden="true"
       />
@@ -46,56 +56,121 @@ export function ReviewsSection() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(120% 80% at 50% 50%, transparent 55%, rgba(0,0,0,0.45) 100%)",
+            "radial-gradient(120% 80% at 50% 50%, transparent 55%, rgba(0,0,0,0.35) 100%)",
         }}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-28 pb-16 md:px-12 md:pt-40 md:pb-24">
-        {/* Section header - light over photo */}
-        <div className="mb-10 text-center md:text-left">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pt-32 pb-24 md:px-12 md:pt-44 md:pb-40">
+        {/* Section header */}
+        <div className="mb-8 text-center md:mb-10">
           <h2 className="text-2xl font-light tracking-tight text-[#f7f1e8] md:text-3xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
-            実際にご利用いただいた方の<span className="font-medium">声</span>
+            <span className="inline md:hidden">
+              STORES予約に寄せられた<br />レビュー
+            </span>
+            <span className="hidden md:inline">
+              STORES予約に寄せられたレビュー
+            </span>
           </h2>
-          <div className="mt-3 flex items-center justify-center gap-3 md:justify-start">
+          <div className="mt-4 flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-[#c9a382]/70" />
             <p className="text-[11px] tracking-[0.25em] uppercase text-[#d8c5ab]">
               Reviews
             </p>
+            <span className="h-px w-8 bg-[#c9a382]/70" />
           </div>
         </div>
 
-        {/* Iframe container - bright readable card floating over the photo */}
-        <div className="relative">
-          <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/95 shadow-[0_24px_60px_rgba(0,0,0,0.45)] ring-1 ring-[#c9a382]/20 backdrop-blur-sm">
-            {/* Soft champagne inner highlight */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#e8d9c4] to-transparent" />
-
-            {/* Iframe wrapper - scrollable with offset */}
-            <div className="relative h-[780px] overflow-hidden md:h-[700px]">
-              <iframe
-                src="https://unitedstudio.stores.jp/reserve/usi/reviews"
-                className="pointer-events-none w-full border-0"
-                style={{ marginTop: "-140px", height: "calc(100% + 140px)" }}
-                title="Customer Reviews"
-                loading="lazy"
-                scrolling="no"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              />
+        {/* Premium review-count badge - placed before the card to build trust first */}
+        <div className="mb-14 flex justify-center md:mb-16">
+          <div className="inline-flex flex-col items-center gap-2.5 rounded-2xl border border-[#c9a382]/30 bg-white/[0.07] px-7 py-4 shadow-[0_8px_28px_rgba(0,0,0,0.18)] backdrop-blur-md">
+            {/* Five gold stars */}
+            <div className="flex items-center gap-1" aria-hidden="true">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <svg key={i} className="h-4 w-4 text-[#d8a86b]" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.367 2.446a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.366-2.446a1 1 0 00-1.175 0l-3.366 2.446c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.293 9.384c-.783-.57-.38-1.81.588-1.81h4.161a1 1 0 00.951-.69l1.286-3.957z" />
+                </svg>
+              ))}
             </div>
+            <p className="flex items-baseline gap-1.5 text-[#f7f1e8]">
+              <span className="text-2xl font-medium tracking-tight md:text-[28px]">100</span>
+              <span className="text-sm font-light tracking-wide text-[#e8d9c4] md:text-base">件以上のレビュー</span>
+            </p>
           </div>
+        </div>
 
-          {/* External link to full reviews - high-contrast champagne gold pill */}
-          <div className="mt-6 flex justify-center">
-            <a
-              href="https://unitedstudio.stores.jp/reserve/usi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#c9a382]/50 bg-[#1a1510]/60 px-6 py-3 text-sm font-medium text-[#e8d2b3] shadow-[0_6px_20px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-colors hover:bg-[#c9a382] hover:text-[#1a1510]"
+        {/* Review card with glassmorphism */}
+        <div className="flex flex-col items-center gap-14 md:gap-16">
+          {/* Dialog wrapper - triggers from both card and button */}
+          <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            {/* Single review card - floating with premium styling, fully clickable */}
+            <DialogTrigger asChild>
+              <button
+                className="w-full max-w-2xl cursor-pointer rounded-3xl border border-white/20 bg-white/[0.07] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_60px_-12px_rgba(0,0,0,0.42)] overflow-hidden relative group focus:outline-hidden focus:ring-2 focus:ring-[#c9a382] focus:ring-offset-2 focus:ring-offset-[transparent]"
+                style={{
+                  backdropFilter: "blur(12px)",
+                }}
+                aria-label="レビューカードを見て全レビューを表示"
+              >
+                {/* Top inner highlight for glass effect */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+
+                {/* Review iframe wrapper - fixed height for exactly 1 review, no scroll */}
+                <div className="relative h-80 overflow-hidden md:h-72 pointer-events-none">
+                  <iframe
+                    src="https://unitedstudio.stores.jp/reserve/usi/reviews"
+                    className="w-full border-0"
+                    style={{ 
+                      marginTop: "-200px", 
+                      height: "calc(100% + 200px)",
+                      backgroundColor: "transparent"
+                    }}
+                    title="Customer Reviews"
+                    loading="lazy"
+                    scrolling="no"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </div>
+              </button>
+            </DialogTrigger>
+
+            {/* CTA Button - View all reviews (same dialog trigger) */}
+            <DialogTrigger asChild>
+              <button
+                className="group inline-flex items-center gap-2.5 rounded-full border border-[#c9a382]/50 bg-white px-9 py-4 text-sm md:text-base font-medium text-[#1a1510] shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c9a382] hover:shadow-[0_18px_40px_-8px_rgba(201,163,130,0.45)] cursor-pointer"
+              >
+                すべてのレビューを見る
+                <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </DialogTrigger>
+
+            {/* Modal for full reviews - rendered once, triggered by both card and button */}
+            <DialogContent 
+              className="p-0 border-0 rounded-3xl overflow-hidden flex flex-col items-center justify-center h-[90vh] w-[calc(100%-1.5rem)] md:h-[85vh] md:max-w-4xl"
+              showCloseButton={true}
             >
-              続きは予約ページでご確認いただけます
-            </a>
-          </div>
+              {/* Modal iframe wrapper with full review list - centered layout */}
+              <div className="w-full h-full flex items-center justify-center px-3 md:px-8 py-6 bg-white overflow-hidden">
+                {/* Custom scrollable area for iframe with center alignment */}
+                <div className="relative w-full h-full max-w-[600px] flex flex-col items-center justify-start overflow-hidden">
+                  <iframe
+                    src="https://unitedstudio.stores.jp/reserve/usi/reviews"
+                    className="w-full border-0 rounded-lg"
+                    style={{ 
+                      height: "calc(100% + 200px)",
+                      marginTop: "-200px",
+                      backgroundColor: "white"
+                    }}
+                    title="All Customer Reviews"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  />
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </section>
