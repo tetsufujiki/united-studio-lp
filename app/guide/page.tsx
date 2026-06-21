@@ -366,15 +366,7 @@ export default function GuidePage() {
             </div>
           </div>
 
-          {/* Google Mapsプレースホルダー */}
-          <div className="max-w-2xl mx-auto mb-8">
-            <div className="bg-slate-100 rounded-lg h-96 border border-slate-300 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-slate-400 mx-auto mb-2" />
-                <p className="text-slate-500 font-medium">Google Mapsプレースホルダー</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
