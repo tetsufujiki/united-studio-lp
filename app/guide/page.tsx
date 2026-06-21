@@ -261,11 +261,11 @@ export default function GuidePage() {
           <div className="max-w-4xl mx-auto px-4 md:px-0 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* 住所 */}
-              <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
+              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                <div className="flex gap-4">
                   <MapPin className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
-                    <h3 className="font-bold text-slate-900 mb-4">住所</h3>
+                    <h3 className="font-bold text-slate-900 mb-4">住��</h3>
                     <p className="text-base font-semibold text-slate-900 leading-relaxed">
                       〒174-0042<br />
                       東京都板橋区東坂下1-19-24<br />
@@ -276,8 +276,8 @@ export default function GuidePage() {
               </div>
 
               {/* 最寄駅 */}
-              <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
+              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                <div className="flex gap-4">
                   <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 mb-4">最寄駅</h3>
@@ -301,8 +301,8 @@ export default function GuidePage() {
               </div>
 
               {/* バス */}
-              <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
+              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                <div className="flex gap-4">
                   <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 mb-4">バス</h3>
@@ -315,8 +315,8 @@ export default function GuidePage() {
               </div>
 
               {/* 駐車場 */}
-              <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
+              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                <div className="flex gap-4">
                   <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 mb-4">駐車場</h3>
