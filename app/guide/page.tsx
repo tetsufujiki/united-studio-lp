@@ -258,71 +258,73 @@ export default function GuidePage() {
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-900">アクセス</h2>
           
           {/* アクセス情報グリッド */}
-          <div className="max-w-4xl mx-auto px-4 md:px-0 mb-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* 住所 */}
-              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
-                  <MapPin className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h3 className="font-bold text-slate-900 mb-4">住��</h3>
-                    <p className="text-base font-semibold text-slate-900 leading-relaxed">
-                      〒174-0042<br />
-                      東京都板橋区東坂下1-19-24<br />
-                      志幸42シャンソン110号室
-                    </p>
+          <div className="flex justify-center mb-12">
+            <div className="max-w-4xl px-4 md:px-0 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* 住所 */}
+                <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                  <div className="flex gap-4">
+                    <MapPin className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="font-bold text-slate-900 mb-4">住所</h3>
+                      <p className="text-base font-semibold text-slate-900 leading-relaxed">
+                        〒174-0042<br />
+                        東京都板橋区東坂下1-19-24<br />
+                        志幸42シャンソン110号室
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* 最寄駅 */}
-              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
-                  <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h3 className="font-bold text-slate-900 mb-4">最寄駅</h3>
-                    <div className="space-y-4">
-                      <div>
-                        <p className="font-semibold text-slate-900 mb-2">都営三田線</p>
-                        <ul className="text-sm text-slate-700 space-y-1">
-                          <li>• 志村坂上駅 A3出口 徒歩12分</li>
-                          <li>• 志村三丁目駅 徒歩12分</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-slate-900 mb-2">JR埼京線</p>
-                        <ul className="text-sm text-slate-700 space-y-1">
-                          <li>• 浮間舟渡駅 徒歩17分</li>
-                        </ul>
+                {/* 最寄駅 */}
+                <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                  <div className="flex gap-4">
+                    <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="font-bold text-slate-900 mb-4">最寄駅</h3>
+                      <div className="space-y-4">
+                        <div>
+                          <p className="font-semibold text-slate-900 mb-2">都営三田線</p>
+                          <ul className="text-sm text-slate-700 space-y-1">
+                            <li>• 志村坂上駅 A3出口 徒歩12分</li>
+                            <li>• 志村三丁目駅 徒歩12分</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="font-semibold text-slate-900 mb-2">JR埼京線</p>
+                          <ul className="text-sm text-slate-700 space-y-1">
+                            <li>• 浮間舟渡駅 徒歩17分</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* バス */}
-              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
-                  <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h3 className="font-bold text-slate-900 mb-4">バス</h3>
-                    <p className="text-base text-slate-700 leading-relaxed">
-                      国際興業バス<br />
-                      志村坂下バス停 徒歩4分
-                    </p>
+                {/* バス */}
+                <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                  <div className="flex gap-4">
+                    <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="font-bold text-slate-900 mb-4">バス</h3>
+                      <p className="text-base text-slate-700 leading-relaxed">
+                        国際興業バス<br />
+                        志村坂下バス停 徒歩4分
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* 駐車場 */}
-              <div className="max-w-sm mx-auto md:max-w-none md:mx-0 bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
-                  <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h3 className="font-bold text-slate-900 mb-4">駐車場</h3>
-                    <p className="text-base text-slate-700 leading-relaxed">
-                      マンション敷地内コインパーキングあり
-                    </p>
+                {/* 駐車場 */}
+                <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
+                  <div className="flex gap-4">
+                    <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
+                    <div className="flex-1">
+                      <h3 className="font-bold text-slate-900 mb-4">駐車場</h3>
+                      <p className="text-base text-slate-700 leading-relaxed">
+                        マンション敷地内コインパーキングあり
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
