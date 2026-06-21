@@ -262,7 +262,7 @@ export default function GuidePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* 住所 */}
               <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
+                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
                   <MapPin className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 mb-4">住所</h3>
@@ -277,7 +277,7 @@ export default function GuidePage() {
 
               {/* 最寄駅 */}
               <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
+                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
                   <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 mb-4">最寄駅</h3>
@@ -302,7 +302,7 @@ export default function GuidePage() {
 
               {/* バス */}
               <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
+                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
                   <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 mb-4">バス</h3>
@@ -316,7 +316,7 @@ export default function GuidePage() {
 
               {/* 駐車場 */}
               <div className="bg-white rounded-lg p-6 border border-slate-200 shadow-sm h-full">
-                <div className="flex gap-4">
+                <div className="flex gap-4 md:gap-4 px-2 md:px-0">
                   <MapPinIcon className="h-6 w-6 text-blue-600 flex-shrink-0 mt-1" />
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 mb-4">駐車場</h3>
