@@ -332,26 +332,38 @@ export default function GuidePage() {
           </div>
 
           {/* Google Maps埋め込み */}
-          <div className="max-w-4xl mx-auto px-4 md:px-0 mb-8">
-            <div className="relative w-full rounded-lg overflow-hidden border border-slate-200 shadow-sm" style={{ paddingBottom: '56.25%', height: 0 }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8405378245586!2d139.71428632346177!3d35.74523847253568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188f2d3d3d3d3d%3A0x0!2z5Z2C5L6h5Yi26aSo!5e0!3m2!1sja!2sjp!4v1234567890"
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  border: 0,
-                }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+          <div className="flex justify-center mb-12">
+            <div className="max-w-4xl px-4 md:px-0 w-full">
+              <div className="relative w-full rounded-lg overflow-hidden border border-slate-200 shadow-sm" style={{ height: 'auto' }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d809.1756419730758!2d139.68976746903422!3d35.78268190680937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f3a2b77fc8d1%3A0xb4b171924c684959!2z44Om44OK44Kk44OG44OD44OJ44K544K_44K444Kq44ix!5e0!3m2!1sja!2sjp!4v1782006781323!5m2!1sja!2sjp"
+                  width="100%"
+                  height="320"
+                  className="md:h-[450px] w-full"
+                  style={{
+                    border: 0,
+                    borderRadius: '0.5rem',
+                  }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+              
+              <div className="text-center mt-6 space-y-4">
+                <p className="text-sm font-medium text-slate-700">
+                  USI新河岸音楽工務所
+                </p>
+                <a
+                  href="https://www.google.com/maps/place/0x6018f3a2b77fc8d1:0xb4b171924c684959"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Googleマップで開く
+                </a>
+              </div>
             </div>
-            <p className="text-center text-sm text-slate-600 mt-4 font-medium">
-              USI新河岸音楽工務所
-            </p>
           </div>
 
           {/* Google Mapsプレースホルダー */}
