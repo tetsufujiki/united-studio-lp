@@ -38,7 +38,7 @@ export function ScrollToTopButton() {
     <button
       onClick={scrollToTop}
       aria-label="ページトップへ戻る"
-      className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 p-2.5 rounded-full bg-[#c9a382]/80 hover:bg-[#c9a382] text-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 pointer-events-auto"
+      className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 p-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 pointer-events-auto"
     >
       <ArrowUp className="w-5 h-5" />
     </button>
