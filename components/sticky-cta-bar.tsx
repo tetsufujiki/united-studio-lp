@@ -1,10 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 export function StickyCTABar() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
+
+  // Do not render on guide page — it has its own CTA section
+  if (pathname === "/guide") {
+    return null;
+  }
 
   useEffect(() => {
     const heroSection = document.getElementById("hero");
