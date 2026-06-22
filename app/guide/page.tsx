@@ -41,14 +41,14 @@ export default function GuidePage() {
             alt="USI新河岸音楽工務所 スタジオ機材 — プリアンプ・EQラック"
             fill
             className="object-cover object-center"
-            style={{ filter: 'brightness(0.50) contrast(1.08) saturate(0.85)' }}
+            style={{ filter: 'brightness(0.75) contrast(1.05) saturate(0.90)' }}
             priority
             sizes="100vw"
             quality={85}
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.10) 50%, rgba(0,0,0,0.65) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.45) 100%)' }}
           />
         </div>
 
