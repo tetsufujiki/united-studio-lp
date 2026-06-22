@@ -72,8 +72,8 @@ export default function GuidePage() {
           </a>
         </nav>
 
-        {/* Hero text */}
-        <div className="relative z-10 flex flex-col items-center justify-center px-6 pb-16 pt-8 md:pb-20 md:pt-12 lg:px-20">
+        {/* Hero text — vertically centered */}
+        <div className="relative z-10 flex h-[calc(100%-6rem)] flex-col items-center justify-center px-6 lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary/90">
               USI新河岸音楽工務所
@@ -86,24 +86,6 @@ export default function GuidePage() {
             <p className="mt-6 text-base text-white/75 md:text-lg text-balance max-w-xl mx-auto">
               初めての方も安心してご利用いただけます。
             </p>
-
-            {/* Quick stats row */}
-            <div className="mt-10 inline-flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-white/15 bg-white/8 px-8 py-5 backdrop-blur-sm">
-              <div className="text-center">
-                <p className="text-xs font-medium uppercase tracking-widest text-white/55">料金</p>
-                <p className="mt-0.5 text-base font-bold text-white">2時間 14,000円</p>
-              </div>
-              <div className="hidden h-8 w-px bg-white/20 sm:block" />
-              <div className="text-center">
-                <p className="text-xs font-medium uppercase tracking-widest text-white/55">サービス</p>
-                <p className="mt-0.5 text-base font-bold text-white">Mix・Master込み</p>
-              </div>
-              <div className="hidden h-8 w-px bg-white/20 sm:block" />
-              <div className="text-center">
-                <p className="text-xs font-medium uppercase tracking-widest text-white/55">受取</p>
-                <p className="mt-0.5 text-base font-bold text-white">当日データ持ち帰り</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -228,7 +210,7 @@ export default function GuidePage() {
                 </p>
               </div>
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm">
-                <p className="text-sm font-semibold text-slate-800">キャンセル料金はいただいておりません。</p>
+                <p className="text-sm font-semibold text-slate-800">キャンセル料金はいただい��おりません。</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   ただし当日キャンセルまたは無��キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただく場合があります。あらかじめご了承ください。
                 </p>
