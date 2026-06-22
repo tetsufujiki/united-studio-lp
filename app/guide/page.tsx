@@ -75,15 +75,15 @@ export default function GuidePage() {
         {/* Hero text — vertically centered in remaining space */}
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary/90">
+            <p className="mb-4 text-base font-medium uppercase tracking-[0.2em] text-primary/90">
               USI新河岸音楽工務所
             </p>
-            <h1 className="text-3xl font-bold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl text-balance">
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance">
               レコーディングスタジオ
               <br />
               <span className="text-primary">利用ガイド</span>
             </h1>
-            <p className="mt-6 text-base text-white/75 md:text-lg text-balance max-w-xl mx-auto">
+            <p className="mt-6 text-lg text-white/75 md:text-xl text-balance max-w-xl mx-auto">
               初めての方も安心してご利用いただけます。
             </p>
           </div>
