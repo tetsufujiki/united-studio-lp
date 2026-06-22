@@ -210,9 +210,9 @@ export default function GuidePage() {
                 </p>
               </div>
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm">
-                <p className="text-sm font-semibold text-slate-800">キャンセル料金はいただい��おりません。</p>
+                <p className="text-sm font-semibold text-slate-800">キャンセル料金はいただいておりません。</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  ただし当日キャンセルまたは無��キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただく場合があります。あらかじめご了承ください。
+                  ただし当日キャンセルまたは無断キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただきます。あらかじめご了承ください。
                 </p>
               </div>
             </div>
