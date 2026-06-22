@@ -33,7 +33,7 @@ export default function GuidePage() {
       {/* =========================================================
           HERO SECTION — dark, cinematic, matches homepage brand
          ========================================================= */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] overflow-hidden bg-black">
+      <section className="relative flex min-h-screen flex-col overflow-hidden bg-black">
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
@@ -72,8 +72,8 @@ export default function GuidePage() {
           </a>
         </nav>
 
-        {/* Hero text — vertically centered */}
-        <div className="relative z-10 flex h-[calc(100%-6rem)] flex-col items-center justify-center px-6 lg:px-20">
+        {/* Hero text — vertically centered in remaining space */}
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-primary/90">
               USI新河岸音楽工務所
