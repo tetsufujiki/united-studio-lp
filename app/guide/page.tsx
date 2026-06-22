@@ -107,11 +107,11 @@ export default function GuidePage() {
                 { label: 'サービス', value: 'ミックス・マスタリング込み' },
                 { label: '受取', value: '当日データ持ち帰り' },
                 { label: '対象', value: '初心者歓迎' },
-                { label: 'キャンセル', value: '無料 ※条件あり' },
+                { label: 'キャンセル', value: '無料\u00a0\u00a0※条件あり' },
               ].map((item) => (
                 <div key={item.label} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{item.label}</p>
-                  <p className="mt-1 text-sm font-bold text-slate-800">{item.value}</p>
+                  <p className="text-sm font-bold uppercase tracking-wide text-primary">{item.label}</p>
+                  <p className="mt-2 text-sm font-bold text-slate-800">{item.value}</p>
                 </div>
               ))}
             </div>
