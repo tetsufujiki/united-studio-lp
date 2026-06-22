@@ -37,26 +37,18 @@ export default function GuidePage() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/assets/studio-mobile.jpg"
-            alt="USI新河岸音楽工務所 レコーディングスタジオ"
+            src="/assets/equip.jpg"
+            alt="USI新河岸音楽工務所 スタジオ機材 — プリアンプ・EQラック"
             fill
-            className="object-cover object-center md:hidden"
-            style={{ filter: 'brightness(0.55) contrast(1.05) saturate(0.9)' }}
+            className="object-cover object-center"
+            style={{ filter: 'brightness(0.50) contrast(1.08) saturate(0.85)' }}
             priority
             sizes="100vw"
-          />
-          <Image
-            src="/assets/studio-desktop.jpg"
-            alt="USI新河岸音楽工務所 レコーディングスタジオ"
-            fill
-            className="hidden object-cover object-center md:block"
-            style={{ filter: 'brightness(0.55) contrast(1.05) saturate(0.9)' }}
-            priority
-            sizes="100vw"
+            quality={85}
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.60) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.10) 50%, rgba(0,0,0,0.65) 100%)' }}
           />
         </div>
 
@@ -238,7 +230,7 @@ export default function GuidePage() {
               <div className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm">
                 <p className="text-sm font-semibold text-slate-800">キャンセル料金はいただいておりません。</p>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
-                  ただし当日キャンセルまたは無断キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただく場合があります。あらかじめご了承ください。
+                  ただし当日キャンセルまたは無��キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただく場合があります。あらかじめご了承ください。
                 </p>
               </div>
             </div>
