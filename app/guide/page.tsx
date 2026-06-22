@@ -79,7 +79,7 @@ export default function GuidePage() {
               USI新河岸音楽工務所
             </p>
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance">
-              レコーディングスタジオ
+              <span className="whitespace-nowrap">レコーディングスタジオ</span>
               <br />
               <span className="text-primary">利用ガイド</span>
             </h1>
