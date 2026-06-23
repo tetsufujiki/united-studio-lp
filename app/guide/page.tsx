@@ -146,11 +146,18 @@ export default function GuidePage() {
                 >
                   <p className="text-base font-bold uppercase tracking-wide text-primary">{item.label}</p>
                   {item.label === 'キャンセル' ? (
-                    <p className="mt-3 text-lg font-bold leading-snug text-slate-900">
-                      無料
-                      <br />
-                      <span className="whitespace-nowrap">※条件あり</span>
-                    </p>
+                    <>
+                      {/* Mobile: single line */}
+                      <p className="mt-3 text-lg font-bold leading-snug text-slate-900 sm:hidden">
+                        無料\u00a0\u00a0※条件あり
+                      </p>
+                      {/* Desktop/Tablet: two lines */}
+                      <p className="mt-3 hidden text-lg font-bold leading-snug text-slate-900 sm:block">
+                        無料
+                        <br />
+                        <span className="whitespace-nowrap">※条件あり</span>
+                      </p>
+                    </>
                   ) : (
                     <p className="mt-3 text-lg font-bold leading-snug text-slate-900">{item.value}</p>
                   )}
