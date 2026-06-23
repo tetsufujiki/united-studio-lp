@@ -201,9 +201,9 @@ export default function GuidePage() {
             <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 md:text-3xl">料金</h2>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm md:p-10">
               <div className="text-center">
-                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">一律料金</p>
-                <div className="mt-3 inline-block">
-                  <p className="text-lg font-bold text-slate-700">2時間</p>
+                <p className="text-lg font-bold uppercase tracking-widest text-primary md:text-xl">一律料金</p>
+                <div className="mt-4 inline-block">
+                  <p className="text-base font-semibold text-slate-600">2時間</p>
                   <p className="text-5xl font-black text-primary md:text-6xl">14,000円</p>
                   <p className="mt-1 text-sm text-slate-500">（税込）</p>
                 </div>
@@ -212,7 +212,7 @@ export default function GuidePage() {
               <div className="mt-8 border-t border-slate-200 pt-8">
                 <p className="mb-5 text-center text-sm font-semibold text-slate-700">料金には基本的に以下が含まれます。</p>
                 <ul className="mx-auto grid max-w-sm grid-cols-1 gap-3 sm:grid-cols-2">
-                  {['レコーディング', 'ピッチ修正', 'リズム修正', 'ミックス', 'マスタリング'].map((item) => (
+                  {['レコーディング', 'ピッチ修正', 'リズム修正', 'ミックス', 'マスタリング', '撮影'].map((item) => (
                     <li key={item} className="flex items-center gap-2.5">
                       <CheckCircle className="h-4 w-4 flex-shrink-0 text-primary" />
                       <span className="text-sm text-slate-700">{item}</span>
