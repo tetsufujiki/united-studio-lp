@@ -107,10 +107,14 @@ export default function GuidePage() {
               </h2>
               <div className="mx-auto mt-8 max-w-xl space-y-5 text-center">
                 <p className="text-lg leading-[1.95] text-slate-700 md:text-xl">
-                  USI新河岸音楽工務所は東京都板橋区のレコーディングスタジオです。
+                  USI新河岸音楽工務所は東京都板橋区の
+                  <br />
+                  レコーディングスタジオです。
                 </p>
                 <p className="text-lg leading-[1.95] text-slate-700 md:text-xl">
-                  ボーカル録音・ナレーション録音・弾き語り録音・音源制作などに対応しています。
+                  ボーカル録音・ナレーション録音・
+                  <br />
+                  弾き語り録音・音源制作などに対応しています。
                 </p>
               </div>
             </div>
@@ -289,7 +293,7 @@ export default function GuidePage() {
                   <p className="mt-1 text-sm leading-relaxed text-slate-600">
                     〒174-0042<br />
                     東京都板橋区東坂下１−１９−２４<br />
-                    志幸４２シャンソン１１０号室
+                    志幸４２シャンソン１１０���室
                   </p>
                 </div>
               </div>
