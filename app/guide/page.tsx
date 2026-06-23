@@ -149,7 +149,7 @@ export default function GuidePage() {
                     <>
                       {/* Mobile: single line */}
                       <p className="mt-3 text-lg font-bold leading-snug text-slate-900 sm:hidden">
-                        無料\u00a0\u00a0※条件あり
+                        無料　　※条件あり
                       </p>
                       {/* Desktop/Tablet: two lines */}
                       <p className="mt-3 hidden text-lg font-bold leading-snug text-slate-900 sm:block">
