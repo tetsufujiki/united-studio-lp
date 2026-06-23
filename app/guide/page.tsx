@@ -96,20 +96,39 @@ export default function GuidePage() {
       <div className="bg-slate-50">
 
         {/* Section 1: Introduction */}
-        <section className="bg-white py-16 md:py-20">
-          <div className="mx-auto max-w-2xl px-6 text-center md:px-12">
-            <p className="text-lg leading-[1.9] text-slate-700 md:text-xl">
-              USI新河岸音楽工務所は東京都板橋区のレコーディングスタジオです。
-              <br className="hidden sm:block" />
-              ボーカル録音、ナレーション録音、弾き語り録音、音源制作などに対応しています。
-            </p>
+        <section className="bg-[#FFFDF8] py-20 md:py-28">
+          <div className="mx-auto max-w-[800px] px-6">
+            <div className="rounded-3xl bg-white px-8 py-12 shadow-[0_8px_40px_-12px_rgba(15,23,42,0.12)] md:px-14 md:py-16">
+              <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+                Studio Guide
+              </p>
+              <h2 className="mt-4 text-center text-2xl font-bold leading-snug tracking-tight text-slate-900 md:text-3xl text-balance">
+                🎙 レコーディングスタジオについて
+              </h2>
+              <div className="mx-auto mt-8 max-w-xl space-y-5 text-center">
+                <p className="text-lg leading-[1.95] text-slate-700 md:text-xl">
+                  USI新河岸音楽工務所は東京都板橋区のレコーディングスタジオです。
+                </p>
+                <p className="text-lg leading-[1.95] text-slate-700 md:text-xl">
+                  ボーカル録音・ナレーション録音・弾き語り録音・音源制作などに対応しています。
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Section 2: Studio Summary Cards */}
-        <section className="bg-slate-50 py-14 md:py-16">
-          <div className="mx-auto max-w-3xl px-6 md:px-12">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {/* Section 2: Studio Summary */}
+        <section className="bg-[#F6F8FB] py-20 md:py-24">
+          <div className="mx-auto max-w-5xl px-6 md:px-12">
+            <div className="mb-12 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+                Studio Info
+              </p>
+              <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl text-balance">
+                ひと目でわかるスタジオ概要
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {[
                 { label: '料金', value: '2時間 14,000円' },
                 { label: 'サービス', value: 'ミックス・マスタリング込み' },
@@ -117,9 +136,12 @@ export default function GuidePage() {
                 { label: '対象', value: '初心者歓迎' },
                 { label: 'キャンセル', value: '無料\u00a0\u00a0※条件あり' },
               ].map((item) => (
-                <div key={item.label} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-                  <p className="text-sm font-bold uppercase tracking-wide text-primary">{item.label}</p>
-                  <p className="mt-2 text-sm font-bold text-slate-800">{item.value}</p>
+                <div
+                  key={item.label}
+                  className="flex flex-col rounded-2xl bg-white px-6 py-7 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.10)] transition-shadow hover:shadow-[0_8px_32px_-8px_rgba(15,23,42,0.16)]"
+                >
+                  <p className="text-base font-bold uppercase tracking-wide text-primary">{item.label}</p>
+                  <p className="mt-3 text-lg font-bold leading-snug text-slate-900">{item.value}</p>
                 </div>
               ))}
             </div>
@@ -283,7 +305,7 @@ export default function GuidePage() {
                   <p className="font-semibold text-slate-900">最寄駅</p>
                   <div className="mt-3 space-y-4">
                     <div>
-                      <p className="text-sm font-semibold text-slate-700">都営三田線</p>
+                      <p className="text-sm font-semibold text-slate-700">都営三���線</p>
                       <ul className="mt-1 space-y-1">
                         <li className="flex items-center gap-2 text-sm text-slate-600">
                           <span className="h-1.5 w-1.5 rounded-full bg-primary/60 flex-shrink-0" />
