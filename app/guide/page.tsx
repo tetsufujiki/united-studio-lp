@@ -95,13 +95,21 @@ export default function GuidePage() {
          ========================================================= */}
       <div className="bg-slate-50">
 
-        {/* Intro blurb */}
-        <section className="mx-auto max-w-3xl px-6 py-12 md:py-16 md:px-12">
-          <div className="rounded-2xl border border-slate-200 bg-white px-8 py-7 shadow-sm">
-            <p className="leading-relaxed text-slate-700">
-              USI新河岸音楽工務所は東京都板橋区のレコーディングスタジオです。ボーカル録音、ナレーション録音、弾き語り録音、音源制作などに対応しています。
+        {/* Section 1: Introduction */}
+        <section className="bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-2xl px-6 text-center md:px-12">
+            <p className="text-lg leading-[1.9] text-slate-700 md:text-xl">
+              USI新河岸音楽工務所は東京都板橋区のレコーディングスタジオです。
+              <br className="hidden sm:block" />
+              ボーカル録音、ナレーション録音、弾き語り録音、音源制作などに対応しています。
             </p>
-            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          </div>
+        </section>
+
+        {/* Section 2: Studio Summary Cards */}
+        <section className="bg-slate-50 py-14 md:py-16">
+          <div className="mx-auto max-w-3xl px-6 md:px-12">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {[
                 { label: '料金', value: '2時間 14,000円' },
                 { label: 'サービス', value: 'ミックス・マスタリング込み' },
@@ -109,7 +117,7 @@ export default function GuidePage() {
                 { label: '対象', value: '初心者歓迎' },
                 { label: 'キャンセル', value: '無料\u00a0\u00a0※条件あり' },
               ].map((item) => (
-                <div key={item.label} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <div key={item.label} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                   <p className="text-sm font-bold uppercase tracking-wide text-primary">{item.label}</p>
                   <p className="mt-2 text-sm font-bold text-slate-800">{item.value}</p>
                 </div>
