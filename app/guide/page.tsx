@@ -83,7 +83,7 @@ export default function GuidePage() {
               <br />
               <span className="text-primary">利用ガイド</span>
             </h1>
-            <p className="mt-6 text-lg text-white/75 md:text-xl text-balance max-w-xl mx-auto">
+            <p className="mt-16 text-lg text-white/75 md:text-xl text-balance max-w-xl mx-auto">
               初めての方も安心してご利用いただけます。
             </p>
           </div>
