@@ -138,21 +138,29 @@ export default function GuidePage() {
                 { label: 'サービス', value: 'ミックス・マスタリング込み' },
                 { label: '受取', value: '当日データ持ち帰り' },
                 { label: '対象', value: '初心者歓迎' },
-                { label: 'キャンセル', value: '無料\u00a0\u00a0※条件あり' },
+                { label: 'キャンセル' },
               ].map((item) => (
                 <div
                   key={item.label}
                   className="flex flex-col rounded-2xl bg-white px-6 py-7 shadow-[0_4px_24px_-8px_rgba(15,23,42,0.10)] transition-shadow hover:shadow-[0_8px_32px_-8px_rgba(15,23,42,0.16)]"
                 >
                   <p className="text-base font-bold uppercase tracking-wide text-primary">{item.label}</p>
-                  <p className="mt-3 text-lg font-bold leading-snug text-slate-900">{item.value}</p>
+                  {item.label === 'キャンセル' ? (
+                    <p className="mt-3 text-lg font-bold leading-snug text-slate-900">
+                      無料
+                      <br />
+                      <span className="whitespace-nowrap">※条件あり</span>
+                    </p>
+                  ) : (
+                    <p className="mt-3 text-lg font-bold leading-snug text-slate-900">{item.value}</p>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ご利用の流れ */}
+        {/* ご利用の流��� */}
         <section className="mx-auto max-w-3xl px-6 pb-16 md:pb-20 md:px-12">
           <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">ご利用の流れ</h2>
           <div className="space-y-4">
