@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -94,14 +95,12 @@ export function FAQSection() {
         <div className="mt-12 md:mt-14 pt-8 md:pt-10 border-t border-[#d4d0cc]/20">
           <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
             その他ご不明な点は、
-            <a
-              href="https://united-studio.com/utattemita#faq"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/faq"
               className="text-[#c9a382] hover:text-[#b8956f] underline underline-offset-2 transition-colors duration-200"
             >
               よくある質問
-            </a>
+            </Link>
             ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
           </p>
         </div>

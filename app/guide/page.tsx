@@ -209,6 +209,36 @@ export default function GuidePage() {
           </div>
         </section>
 
+        {/* ご利用の流れ */}
+        <section className="bg-gradient-to-b from-white to-slate-50 py-16 md:py-20">
+          <div className="mx-auto max-w-2xl px-6 text-center md:px-12">
+            <div className="rounded-2xl bg-white px-8 py-12 shadow-sm md:px-12 md:py-14 border border-slate-100">
+              <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
+                初めての方も安心してご利用いただけます
+              </h3>
+              <div className="mt-8 space-y-3 text-slate-700">
+                <p className="text-sm md:text-base">「2時間で何曲録れる？」</p>
+                <p className="text-sm md:text-base">「録音データはもらえる？」</p>
+                <p className="text-sm md:text-base">「初めてでも大丈夫？」</p>
+              </div>
+              <p className="mt-8 text-sm leading-relaxed text-slate-600 md:text-base">
+                など、ご利用前によくいただく質問をまとめています。
+              </p>
+              <div className="mt-8 flex justify-center">
+                <a
+                  href="/faq"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm hover:bg-primary/90 transition-colors md:px-7 md:py-3 md:text-base"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  よくある質問を見る
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* お支払い方法 */}
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 md:px-12">
