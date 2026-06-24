@@ -278,7 +278,7 @@ export default function GuidePage() {
               <Clock className="mx-auto mb-5 h-10 w-10 text-primary/70" />
               <p className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">13:00〜22:00</p>
               <div className="mt-4 flex justify-center gap-4 text-sm text-slate-500">
-                <span>完全予約制</span>
+                <span>���全予約制</span>
                 <span>・</span>
                 <span>不定休</span>
               </div>
@@ -433,24 +433,30 @@ export default function GuidePage() {
       </div>{/* end light area */}
 
       {/* =========================================================
-          CLOSING CTA — dark, bookends the page like the Hero
+          CLOSING CTA — deep black, premium conversion section
          ========================================================= */}
-      <section className="relative overflow-hidden bg-black py-20 md:py-28">
+      <section className="relative overflow-hidden bg-black py-24 md:py-32">
         {/* Subtle warm glow */}
         <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/10 blur-[80px]" />
 
         <div className="relative mx-auto max-w-3xl px-6 text-center md:px-12">
-          <h2 className="text-2xl font-bold text-white md:text-4xl text-balance">
+          {/* Main Heading */}
+          <h2 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl text-balance leading-tight">
             レコーディング予約はこちら
           </h2>
-          <p className="mt-4 text-white/65 md:text-lg text-balance max-w-xl mx-auto">
-            ご予約は24時間いつでも受け付けています。
+
+          {/* Description */}
+          <p className="mt-6 md:mt-8 text-base md:text-lg text-white/75 text-balance max-w-2xl mx-auto leading-relaxed">
+            ご予約は24時間いつでも受け付けています。<br className="hidden md:inline" />
+            ご不明な点がある場合は、よくある質問をご確認ください。
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          {/* CTA Buttons */}
+          <div className="mt-10 md:mt-12 flex flex-col gap-6 sm:flex-row sm:justify-center sm:gap-8 md:gap-10">
+            {/* Primary CTA Button */}
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-primary/40"
+              className="h-15 md:h-16 w-56 md:w-64 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base md:text-lg shadow-lg shadow-primary/30 hover:shadow-primary/40 transition-all duration-300"
               asChild
             >
               <a
@@ -459,16 +465,33 @@ export default function GuidePage() {
                 rel="noopener noreferrer"
               >
                 予約する
-                <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
+
+            {/* Secondary CTA Button */}
+            <a
+              href="/faq"
+              className="h-15 md:h-16 w-56 md:w-64 inline-flex items-center justify-center rounded-2xl border-2 border-blue-400 bg-transparent text-blue-400 font-semibold text-base md:text-lg transition-all duration-300 hover:bg-blue-400/12 hover:border-blue-300 hover:text-blue-300"
+            >
+              ？ よくある質問を見る
+            </a>
           </div>
 
-          <p className="mt-8 text-xs text-white/35">
-            初めての方のご利用も歓迎しております。
+          {/* Welcome Message */}
+          <p className="mt-8 md:mt-12 text-base text-white/80 font-light flex items-center justify-center gap-2">
+            <span>✨</span>
+            <span>初めての方のご利用も歓迎しております</span>
           </p>
-          <p className="mt-2 text-xs text-white/25">
-            本内容はお知らせなく変更される場合があります。あらかじめご了承ください。
+        </div>
+      </section>
+
+      {/* =========================================================
+          FOOTER NOTICE BAR — separate section with different background
+         ========================================================= */}
+      <section className="relative bg-slate-950 border-t border-slate-800/50 py-4 md:py-5">
+        <div className="relative mx-auto max-w-6xl px-6 text-center md:px-12">
+          <p className="text-xs md:text-sm text-slate-400 leading-relaxed">
+            ※掲載内容は予告なく変更される場合があります。
           </p>
         </div>
       </section>
