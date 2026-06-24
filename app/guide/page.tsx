@@ -223,7 +223,7 @@ export default function GuidePage() {
 
               <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-4 text-center">
                 <p className="text-sm text-slate-700">
-                  そのほかのご要望にも可能な限り対応しておりますので、<br className="hidden sm:block" />
+                  そのほかのご要望にも可��な限り対応しておりますので、<br className="hidden sm:block" />
                   お気軽にご相談ください。
                 </p>
               </div>
@@ -258,9 +258,9 @@ export default function GuidePage() {
                   予約日の2日前まで予約サイトから変更・キャンセルが可能です。
                 </p>
               </div>
-              <div className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm">
+              <div className="rounded-xl border-l-4 border-l-slate-400 border border-slate-200 bg-slate-50 px-6 py-5 shadow-sm">
                 <p className="text-sm font-semibold text-slate-800">キャンセル料金はいただいておりません。</p>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                <p className="mt-3 border-t border-slate-200 pt-3 text-sm leading-relaxed text-slate-900">
                   ただし当日キャンセルまたは無断キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただきます。あらかじめご了承ください。
                 </p>
               </div>
