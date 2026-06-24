@@ -201,7 +201,7 @@ export default function GuidePage() {
 
               <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-4 text-center">
                 <p className="text-sm text-slate-700">
-                  そのほかのご要望にも可��な���り対応しておりますので、<br className="hidden sm:block" />
+                  そのほかのご要望にも可能な限り対応しておりますので、<br className="hidden sm:block" />
                   お気軽にご相談ください。
                 </p>
               </div>
