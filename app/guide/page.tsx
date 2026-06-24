@@ -397,7 +397,7 @@ export default function GuidePage() {
             {/* Map */}
             <div className="overflow-hidden rounded-xl border border-slate-200 shadow-sm">
               <iframe
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=35.782666251112474,139.690424164405&zoom=14"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103574.31483333957!2d139.62875284492281!3d35.782810339093544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f3a2b77fc8d1%3A0xb4b171924c684959!2z44Om44OK44Kk44OG44OD44OJ44K544K_44K444Kq44ix!5e0!3m2!1sja!2sus!4v1782107196208!5m2!1sja!2sus"
                 width="100%"
                 height="300"
                 style={{ border: 0, display: 'block' }}
@@ -410,7 +410,7 @@ export default function GuidePage() {
             <p className="mt-3 text-center text-sm text-slate-600">USI新河岸音楽工務所</p>
             <div className="mt-2 flex justify-center">
               <a
-                href="https://www.google.com/maps?q=35.782666251112474,139.690424164405"
+                href="https://maps.app.goo.gl/JrgphNgEJBYbBy346"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-colors"
