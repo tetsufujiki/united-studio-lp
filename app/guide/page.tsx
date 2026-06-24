@@ -149,7 +149,7 @@ export default function GuidePage() {
                     <>
                       {/* Mobile: single line */}
                       <p className="mt-3 text-lg font-bold leading-snug text-slate-900 sm:hidden">
-                        無料　　※条件あり
+                        無料　　※条件��り
                       </p>
                       {/* Desktop/Tablet: two lines */}
                       <p className="mt-3 hidden text-lg font-bold leading-snug text-slate-900 sm:block">
@@ -231,6 +231,37 @@ export default function GuidePage() {
           </div>
         </section>
 
+        {/* お支払い方法 */}
+        <section className="py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-6 md:px-12">
+            <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 md:text-3xl">お支払い方法</h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {[
+                { title: '現金', description: 'スタジオで\nお支払いください', mobile: 'スタジオでお支払いください' },
+                { title: 'クレジットカード', description: '主要なカードに対応' },
+                { title: '各種電子決済', description: 'PayPay・Rakuten Payなど対応' },
+              ].map((method) => (
+                <div key={method.title} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm text-center">
+                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                    <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                  </div>
+                  <p className="font-semibold text-slate-900">{method.title}</p>
+                  {method.title === '現金' ? (
+                    <>
+                      <p className="mt-1 hidden text-sm text-slate-500 sm:block whitespace-pre-line">{method.description}</p>
+                      <p className="mt-1 text-sm text-slate-500 sm:hidden">{method.mobile}</p>
+                    </>
+                  ) : (
+                    <p className="mt-1 text-sm text-slate-500">{method.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* 営業時間 */}
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 md:px-12">
@@ -264,30 +295,6 @@ export default function GuidePage() {
                   ただし当日キャンセルまたは無断キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただきます。あらかじめご了承ください。
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* お支払い方法 */}
-        <section className="py-16 md:py-20">
-          <div className="mx-auto max-w-3xl px-6 md:px-12">
-            <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 md:text-3xl">お支払い方法</h2>
-            <div className="grid gap-4 md:grid-cols-3">
-              {[
-                { title: '現金', description: 'スタジオでお支払いください' },
-                { title: 'クレジットカード', description: '主要なカードに対応' },
-                { title: '各種電子決済', description: 'PayPay・Rakuten Payなど対応' },
-              ].map((method) => (
-                <div key={method.title} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm text-center">
-                  <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <svg className="h-5 w-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                    </svg>
-                  </div>
-                  <p className="font-semibold text-slate-900">{method.title}</p>
-                  <p className="mt-1 text-sm text-slate-500">{method.description}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
