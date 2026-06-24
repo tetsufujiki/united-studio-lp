@@ -260,43 +260,58 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Bottom CTA Section */}
-      <section className="px-6 py-16 md:px-12 md:py-20">
-        <div className="mx-auto max-w-2xl">
-          <div className="rounded-3xl bg-gradient-to-br from-blue-50/50 to-slate-50/50 border border-slate-200/50 px-8 py-12 md:px-12 md:py-16 text-center shadow-sm">
-            <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
-              レコーディング予約はこちら
-            </h2>
-            <p className="mt-4 text-lg text-slate-600 md:text-xl">
-              24時間いつでも予約受付中です。
-            </p>
+      {/* Main CTA Section */}
+      <section className="bg-black px-6 py-20 md:py-28 md:px-12">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-4xl font-bold text-white md:text-5xl text-balance">
+            レコーディング予約はこちら
+          </h2>
+          <p className="mt-6 text-lg text-white/65 md:text-xl leading-relaxed text-balance">
+            ご予約は24時間いつでも受け付けています。<br />
+            ご不明な点がある場合は、よくある質問をご確認ください。
+          </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-white"
-                asChild
+          {/* CTA Buttons */}
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
+            {/* Primary CTA Button */}
+            <Button
+              className="h-15 w-56 bg-primary text-white font-bold text-lg hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-200"
+              asChild
+            >
+              <a
+                href="https://page.line.me/568repew"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <a
-                  href="https://page.line.me/568repew"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  予約する
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-slate-300 text-slate-900 hover:bg-slate-50"
-                asChild
-              >
-                <a href="mailto:info@united-studio.com">
-                  お問い合わせ
-                </a>
-              </Button>
-            </div>
+                予約する
+              </a>
+            </Button>
+
+            {/* Secondary CTA Button */}
+            <Button
+              className="h-15 w-56 border-2 border-blue-400 bg-transparent text-blue-400 font-semibold text-lg hover:bg-blue-400/10 hover:border-blue-300 hover:text-blue-300 transition-all duration-200"
+              asChild
+            >
+              <a href="/faq" className="flex items-center justify-center gap-2">
+                <span>？</span>
+                <span>よくある質問を見る</span>
+              </a>
+            </Button>
           </div>
+
+          {/* Welcome Message */}
+          <p className="mt-10 text-base text-white/75">
+            ✨ 初めての方のご利用も歓迎しております
+          </p>
+        </div>
+      </section>
+
+      {/* Footer Notice Bar */}
+      <section className="border-t border-slate-700/20 bg-slate-950 px-6 py-16 md:px-12">
+        <div className="flex items-center justify-center h-14 md:h-16">
+          <p className="text-center text-12 md:text-13 text-gray-400">
+            ※掲載内容は予告なく変更される場合があります。
+          </p>
         </div>
       </section>
     </main>
