@@ -223,7 +223,7 @@ export default function GuidePage() {
 
               <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-4 text-center">
                 <p className="text-sm text-slate-700">
-                  そのほかのご要望にも可��な限り対応しておりますので、<br className="hidden sm:block" />
+                  そのほかのご要望にも可��な���り対応しておりますので、<br className="hidden sm:block" />
                   お気軽にご相談ください。
                 </p>
               </div>
@@ -315,8 +315,9 @@ export default function GuidePage() {
                   <p className="mt-1 text-sm leading-relaxed text-slate-600">
                     〒174-0042<br />
                     東京都板橋区東坂下１−１９−２４<br />
-                    志幸４２シャンソン１１０���室
+                    志幸４２シャンソン１１０号室
                   </p>
+                  <p className="mt-2 text-xs text-slate-500">（マンション1F）</p>
                 </div>
               </div>
             </div>
@@ -331,7 +332,7 @@ export default function GuidePage() {
                   <p className="font-semibold text-slate-900">最寄駅</p>
                   <div className="mt-3 space-y-4">
                     <div>
-                      <p className="text-sm font-semibold text-slate-700">都営三���線</p>
+                      <p className="text-sm font-semibold text-slate-700">都営三田線</p>
                       <ul className="mt-1 space-y-1">
                         <li className="flex items-center gap-2 text-sm text-slate-600">
                           <span className="h-1.5 w-1.5 rounded-full bg-primary/60 flex-shrink-0" />
@@ -363,10 +364,19 @@ export default function GuidePage() {
                 <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   <Bus className="h-5 w-5 text-primary" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="font-semibold text-slate-900">バス</p>
-                  <p className="mt-1 text-sm text-slate-600">国際興業バス</p>
-                  <p className="text-sm text-slate-600">志村坂下バス停 徒歩4分</p>
+                  <div className="mt-3 space-y-2">
+                    <div>
+                      <p className="text-sm font-semibold text-slate-700">国際興業バス</p>
+                      <ul className="mt-1 space-y-1">
+                        <li className="flex items-center gap-2 text-sm text-slate-600">
+                          <span className="h-1.5 w-1.5 rounded-full bg-primary/60 flex-shrink-0" />
+                          志村坂下バス停 徒歩4分
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
