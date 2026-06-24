@@ -2,31 +2,9 @@
 
 import { MapPin, Train, Bus, ParkingCircle, Clock, CheckCircle, ExternalLink, ArrowRight, Mic2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import Image from "next/image";
 
 export default function GuidePage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqItems = [
-    {
-      question: '用意するものはありますか？',
-      answer: '伴奏音源（カラオケ）をご用意ください。あとは喉を潤すお水などをご持参いただければ大丈夫です。',
-    },
-    {
-      question: '初めてですが大丈夫ですか？',
-      answer: 'もちろん大丈夫です。ご利用者の半数が初めてのレコーディングです。少しずつ緊張もほぐれ、楽しく収録できる方がほとんどです。',
-    },
-    {
-      question: 'ミックスは別料金ですか？',
-      answer: 'いいえ。料金内でミックスからマスタリングまで行い、その日のうちにお持ち帰りいただけます。',
-    },
-    {
-      question: 'Mixは別の方にお願いするので歌だけ録って欲しいです。',
-      answer: 'はい。レコーディングした音素材をファイルでお渡しいたします。',
-    },
-  ];
-
   return (
     <main>
 
@@ -422,51 +400,6 @@ export default function GuidePage() {
           </div>
         </section>
 
-        {/* よくある質問 */}
-        <section className="py-16 md:py-20">
-          <div className="mx-auto max-w-3xl px-6 md:px-12">
-            <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">よくある質問</h2>
-            <div className="space-y-3">
-              {faqItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="flex w-full items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition-colors"
-                  >
-                    <span className="flex-1 pr-4 text-sm font-semibold text-slate-800 md:text-base">
-                      {item.question}
-                    </span>
-                    <svg
-                      className={`h-4 w-4 flex-shrink-0 text-primary transition-transform duration-300 ${
-                        openIndex === index ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      openIndex === index ? 'max-h-96' : 'max-h-0'
-                    }`}
-                  >
-                    <div className="border-t border-slate-100 bg-slate-50 px-6 py-5">
-                      <p className="text-sm leading-relaxed text-slate-600 md:text-base">
-                        {item.answer}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
       </div>{/* end light area */}
 
       {/* =========================================================
@@ -481,8 +414,7 @@ export default function GuidePage() {
             レコーディング予約はこちら
           </h2>
           <p className="mt-4 text-white/65 md:text-lg text-balance max-w-xl mx-auto">
-            ご予約は24時間いつでも受け付けています。<br className="hidden sm:block" />
-            ご不明な点がある場合は、よくある質問をご確認ください。
+            ご予約は24時間いつでも受け付けています。
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -498,20 +430,6 @@ export default function GuidePage() {
               >
                 予約する
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:text-white"
-              asChild
-            >
-              <a
-                href="https://page.line.me/568repew"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                よくある質問を見る
               </a>
             </Button>
           </div>
