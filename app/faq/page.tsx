@@ -153,7 +153,7 @@ export default function FAQPage() {
       items: [
         {
           question: '何名までレコーディングできますか？',
-          answer: 'コーラスなどの同時録音の場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
+          answer: 'コーラスなどの同時録音の場合���5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
         },
       ],
     },
@@ -276,6 +276,61 @@ export default function FAQPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* =========================================================
+          CLOSING CTA — deep black, premium conversion section
+         ========================================================= */}
+      <section className="relative overflow-hidden bg-black py-24 md:py-32">
+        {/* Subtle warm glow */}
+        <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/10 blur-[80px]" />
+
+        <div className="relative mx-auto max-w-3xl px-6 text-center md:px-12">
+          {/* Main Heading */}
+          <h2 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl text-balance leading-tight">
+            レコーディング予約はこちら
+          </h2>
+
+          {/* Description */}
+          <p className="mt-6 md:mt-8 text-base md:text-lg text-white/75 text-balance max-w-2xl mx-auto leading-relaxed">
+            ご予約は24時間いつでも受け付けています。<br className="hidden md:inline" />
+            その他ご不明な点は、下のLINEボタンからお気軽にお問い合わせください。
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="mt-10 md:mt-12 flex flex-col gap-6 sm:flex-row sm:justify-center sm:gap-8 md:gap-10">
+            {/* Primary CTA Button */}
+            <Button
+              size="lg"
+              className="h-15 md:h-16 w-56 md:w-64 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base md:text-lg shadow-lg shadow-primary/30 hover:shadow-primary/40 transition-all duration-300"
+              asChild
+            >
+              <a
+                href="https://unitedstudio.stores.jp/reserve/usi/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                予約する
+              </a>
+            </Button>
+
+            {/* Secondary CTA Button - LINE */}
+            <a
+              href="https://page.line.me/568repew"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-15 md:h-16 w-56 md:w-64 inline-flex items-center justify-center rounded-2xl border-2 border-green-500 bg-transparent text-green-500 font-semibold text-base md:text-lg transition-all duration-300 hover:bg-green-500/12 hover:border-green-400 hover:text-green-400"
+            >
+              LINEで相談する
+            </a>
+          </div>
+
+          {/* Welcome Message */}
+          <p className="mt-8 md:mt-12 text-base text-white/80 font-light flex items-center justify-center gap-2">
+            <span>✨</span>
+            <span>初めての方のご利用も歓迎しております</span>
+          </p>
         </div>
       </section>
 
