@@ -192,8 +192,8 @@ export default function FAQPage() {
                 onClick={() => scrollToSection(category.id)}
                 className="group rounded-2xl border border-slate-200 bg-white px-6 py-8 text-center shadow-sm transition-all hover:border-primary/30 hover:shadow-md hover:bg-primary/5"
               >
-                <p className="text-xs font-semibold text-slate-400 group-hover:text-primary transition-colors">
-                  {String(category.number).padStart(2, '0')}
+                <p className="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
+                  {category.number}
                 </p>
                 <p className="mt-4 text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
                   {category.title}
