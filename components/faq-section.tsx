@@ -13,17 +13,12 @@ const faqs = [
   {
     question: '初めてですが大丈夫ですか？',
     answer:
-      'もちろん大丈夫です。ご利用者の半数が初めてのレコーディングです。少しずつ緊張もほぐれ、楽しく収録できる方がほとんどです。',
+      'もちろん大丈夫です。初めての方も多くご利用いただいています。',
   },
   {
     question: 'ミックスは別料金ですか？',
     answer:
-      'いいえ。料金内でミックスからマスタリングまで行い、その日のうちにお持ち帰りいただけます。',
-  },
-  {
-    question: 'Mixは別の方にお願いするので歌だけ録って欲しいです。',
-    answer:
-      'はい。レコーディングした音素材をファイルでお渡しいたします。',
+      'はい、ミックスは別メニューになります。詳細はFAQページをご覧ください。',
   },
 ];
 
@@ -93,16 +88,27 @@ export function FAQSection() {
 
         {/* FAQ Footer Section */}
         <div className="mt-12 md:mt-14 pt-8 md:pt-10 border-t border-[#d4d0cc]/20">
-          <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
-            その他ご不明な点は、
+          <div className="flex flex-col items-center gap-6">
+            <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
+              その他ご不明な点は、
+              <Link
+                href="/faq"
+                className="text-[#c9a382] hover:text-[#b8956f] underline underline-offset-2 transition-colors duration-200"
+              >
+                よくある質問
+              </Link>
+              ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
+            </p>
+            
+            {/* More FAQ Link Button */}
             <Link
               href="/faq"
-              className="text-[#c9a382] hover:text-[#b8956f] underline underline-offset-2 transition-colors duration-200"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#c9a382] hover:bg-[#b8956f] text-white px-6 py-3 font-medium transition-colors duration-200"
             >
-              よくある質問
+              <span>👉</span>
+              <span>もっと詳しいFAQを見る</span>
             </Link>
-            ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
-          </p>
+          </div>
         </div>
       </div>
     </section>
