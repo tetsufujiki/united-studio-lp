@@ -71,7 +71,7 @@ export default function GuidePage() {
       {/* =========================================================
           LIGHT CONTENT AREA — all guide sections
          ========================================================= */}
-      <div className="bg-slate-50">
+      <div className="bg-white">
 
         {/* Section 1: Introduction */}
         <section className="bg-[#FFFDF8] py-20 md:py-28">
@@ -100,7 +100,7 @@ export default function GuidePage() {
         </section>
 
         {/* Section 2: Studio Summary */}
-        <section className="bg-[#F6F8FB] py-20 md:py-24">
+        <section className="bg-[#FFFBF7] py-20 md:py-24">
           <div className="mx-auto max-w-5xl px-6 md:px-12">
             <div className="mb-12 text-center">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
@@ -145,9 +145,10 @@ export default function GuidePage() {
           </div>
         </section>
 
-        {/* ご利用の流��� */}
-        <section className="mx-auto max-w-3xl px-6 pb-16 md:pb-20 md:px-12">
-          <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">ご利用の流れ</h2>
+        {/* ご利用の流れ */}
+        <section className="bg-[#FFF9F4] py-16 md:py-20">
+          <div className="mx-auto max-w-3xl px-6 md:px-12">
+            <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">ご利用の流れ</h2>
           <div className="space-y-4">
             {[
               { step: 1, title: 'ご予約', description: '予約専用サイトから24時間いつでも受け付けております。' },
@@ -171,10 +172,11 @@ export default function GuidePage() {
               </div>
             ))}
           </div>
+          </div>
         </section>
 
         {/* 初めての方も安心してご利用いただけます */}
-        <section className="bg-gradient-to-b from-white to-slate-50 py-16 md:py-20">
+        <section className="bg-blue-50 py-16 md:py-20">
           <div className="mx-auto max-w-2xl px-6 text-center md:px-12">
             <div className="rounded-2xl bg-white px-8 py-12 shadow-sm md:px-12 md:py-14 border border-slate-100">
               <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
@@ -204,7 +206,7 @@ export default function GuidePage() {
         </section>
 
         {/* 料金 */}
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-slate-100 py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 md:px-12">
             <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 md:text-3xl">料金</h2>
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-sm md:p-10">
@@ -240,7 +242,7 @@ export default function GuidePage() {
         </section>
 
         {/* お支払い方法 */}
-        <section className="py-16 md:py-20">
+        <section className="bg-slate-100 py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 md:px-12">
             <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 md:text-3xl">お支払い方法</h2>
             <div className="grid gap-4 md:grid-cols-3">
@@ -271,7 +273,7 @@ export default function GuidePage() {
         </section>
 
         {/* 営業時間 */}
-        <section className="py-16 md:py-20">
+        <section className="bg-[#FFFBF7] py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 md:px-12">
             <h2 className="mb-8 text-center text-2xl font-bold text-slate-900 md:text-3xl">営業時間</h2>
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm md:p-12 text-center">
@@ -287,9 +289,9 @@ export default function GuidePage() {
         </section>
 
         {/* 予約変更・キャンセル */}
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-slate-50 py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 md:px-12">
-            <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">予約変更・キャンセル</h2>
+            <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">予約変更・キャンセ��</h2>
             <div className="space-y-4">
               <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-6 py-5">
                 <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
@@ -308,7 +310,7 @@ export default function GuidePage() {
         </section>
 
         {/* アクセス */}
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-[#FFFDF8] py-16 md:py-20">
           <div className="mx-auto max-w-3xl px-6 md:px-12">
             <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">アクセス</h2>
 
