@@ -90,7 +90,7 @@ export default function GuidePage() {
                     <br />
                     レコーディングスタジオです。
                   </p>
-                  <p className="text-left text-lg leading-[1.95] font-medium text-slate-800 md:text-xl">
+                  <p className="text-left text-lg leading-[1.95] font-normal text-slate-600 md:text-xl">
                     ボーカル録音・ナレーション録音・
                     <br />
                     弾き語り録音・音源制作などに対応しています。
