@@ -8,8 +8,8 @@ export function StickyCTABar() {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Do not render on guide page — it has its own CTA section
-  if (pathname === "/guide") {
+  // Do not render on guide and faq pages — they have their own content
+  if (pathname === "/guide" || pathname === "/faq") {
     return null;
   }
 
