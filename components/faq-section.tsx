@@ -87,32 +87,29 @@ export function FAQSection() {
         </div>
 
         {/* FAQ Footer Section */}
-        <div className="mt-12 md:mt-14 pt-8 md:pt-10 border-t border-[#d4d0cc]/20">
-          <div className="flex flex-col items-center gap-6">
-            <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
-  その他ご不明な点は、
-  <span>
-    <Link
+     <div className="mt-12 md:mt-14 pt-8 md:pt-10 border-t border-[#d4d0cc]/20">
+
+  <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
+
+    その他ご不明な点は、
+
+    <a
+
       href="/faq"
+
       className="text-[#c9a382] hover:text-[#b8956f] underline underline-offset-2 transition-colors duration-200"
+
     >
+
       よくある質問
-    </Link>
-  </span>
-  ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
-</p>
-            
-            {/* More FAQ Link Button */}
-            <Link
-              href="/faq"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#c9a382] hover:bg-[#b8956f] text-white px-6 py-3 font-medium transition-colors duration-200"
-            >
-              <span>👉</span>
-              <span>もっと詳しいFAQを見る</span>
-            </Link>
-          </div>
-        </div>
-      </div>
+
+    </a>
+
+    ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
+
+  </p>
+
+</div>
     </section>
   );
 }
