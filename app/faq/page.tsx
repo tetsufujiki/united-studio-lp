@@ -20,6 +20,7 @@ interface FAQSection {
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<{ section: number; item: number } | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('recording');
 
   const categories = [
     { id: 'recording', number: 1, title: '録音について', icon: <Mic2 className="h-6 w-6" /> },
@@ -186,23 +187,39 @@ export default function FAQPage() {
       <section className="bg-white px-6 py-12 md:px-12 md:py-16">
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => scrollToSection(category.id)}
-                className="group rounded-2xl border border-slate-200 bg-white px-6 py-8 text-center shadow-sm transition-all hover:border-primary/30 hover:shadow-md hover:bg-primary/5"
-              >
-                <p className="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-                  {category.number}
-                </p>
-                <p className="mt-4 text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">
-                  {category.title}
-                </p>
-                <div className="mt-5 flex justify-center text-slate-300 group-hover:text-primary/60 transition-colors">
-                  {category.icon}
-                </div>
-              </button>
-            ))}
+            {categories.map((category) => {
+              const isActive = activeCategory === category.id;
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => {
+                    setActiveCategory(category.id);
+                    scrollToSection(category.id);
+                  }}
+                  className={`group rounded-2xl px-6 py-8 text-center shadow-sm transition-all ${
+                    isActive
+                      ? 'border border-primary/30 bg-primary/5 shadow-md'
+                      : 'border border-slate-200 bg-white hover:border-primary/30 hover:shadow-md hover:bg-primary/5'
+                  }`}
+                >
+                  <p className={`text-lg font-bold transition-colors ${
+                    isActive ? 'text-primary' : 'text-slate-900 group-hover:text-primary'
+                  }`}>
+                    {category.number}
+                  </p>
+                  <p className={`mt-4 text-lg font-bold transition-colors ${
+                    isActive ? 'text-primary' : 'text-slate-900 group-hover:text-primary'
+                  }`}>
+                    {category.title}
+                  </p>
+                  <div className={`mt-5 flex justify-center transition-colors ${
+                    isActive ? 'text-primary/60' : 'text-slate-300 group-hover:text-primary/60'
+                  }`}>
+                    {category.icon}
+                  </div>
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
