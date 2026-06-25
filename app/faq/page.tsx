@@ -153,7 +153,7 @@ export default function FAQPage() {
       items: [
         {
           question: '同時に何名のレコーディングができますか？',
-          answer: 'コーラスなどの同時録音の場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
+          answer: 'コーラスなどの同時録音���場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
         },
       ],
     },
@@ -169,7 +169,7 @@ export default function FAQPage() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#FFFDF8] to-white py-16 md:py-24">
+      <section className="bg-gradient-to-b from-[#FFFAF6] to-[#FFFEF9] py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">FAQ</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl text-balance">
@@ -184,7 +184,7 @@ export default function FAQPage() {
       </section>
 
       {/* Category Navigation */}
-      <section className="bg-white px-6 py-12 md:px-12 md:py-16">
+      <section className="bg-[#F9F6F2] px-6 py-12 md:px-12 md:py-16">
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => {
@@ -225,7 +225,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Sections */}
-      <section className="bg-slate-50/50 px-6 py-16 md:px-12 md:py-20">
+      <section className="bg-white px-6 py-16 md:px-12 md:py-20">
         <div className="mx-auto max-w-2xl space-y-16">
           {faqSections.map((section) => (
             <div key={section.id} id={section.id} className="scroll-mt-24">
