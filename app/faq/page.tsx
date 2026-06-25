@@ -121,7 +121,7 @@ export default function FAQPage() {
       items: [
         {
           question: '2時間で撮影込みは可能ですか？',
-          answer: '可能です。歌の完成まで約90分、残り時間で動画撮影を行うケースが一般的です。ご希望に応じて時間配分を調整できます。',
+          answer: '可能です。歌の完成まで約90分、残り時間で動画撮影を行うケースが一般的です。ご希望��応じて時間配分を調整できます。',
         },
         {
           question: 'YouTubeへアップできますか？',
@@ -153,7 +153,7 @@ export default function FAQPage() {
       items: [
         {
           question: '何名までレコーディングできますか？',
-          answer: 'コーラスなどの同時録音の場合は5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
+          answer: 'コーラスなどの同時録音の場合���5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
         },
       ],
     },
@@ -276,52 +276,6 @@ export default function FAQPage() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Main CTA Section */}
-      <section className="bg-black px-6 py-20 md:py-28 md:px-12">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-bold text-white md:text-5xl text-balance">
-            レコーディング予約はこちら
-          </h2>
-          <p className="mt-6 text-lg text-white/65 md:text-xl leading-relaxed text-balance">
-            ご予約は24時間いつでも受け付けています。<br />
-            ご不明な点がある場合は、よくある質問をご確認ください。
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
-            {/* Primary CTA Button */}
-            <Button
-              className="h-15 w-56 bg-primary text-white font-bold text-lg hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-200"
-              asChild
-            >
-              <a
-                href="https://page.line.me/568repew"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                予約する
-              </a>
-            </Button>
-
-            {/* Secondary CTA Button */}
-            <Button
-              className="h-15 w-56 border-2 border-blue-400 bg-transparent text-blue-400 font-semibold text-lg hover:bg-blue-400/10 hover:border-blue-300 hover:text-blue-300 transition-all duration-200"
-              asChild
-            >
-              <a href="/faq" className="flex items-center justify-center gap-2">
-                <span>？</span>
-                <span>よくある質問を見る</span>
-              </a>
-            </Button>
-          </div>
-
-          {/* Welcome Message */}
-          <p className="mt-10 text-base text-white/75">
-            ✨ 初めての方のご利用も歓迎しております
-          </p>
         </div>
       </section>
 
