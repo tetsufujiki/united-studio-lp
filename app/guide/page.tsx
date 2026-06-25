@@ -83,17 +83,19 @@ export default function GuidePage() {
               <h2 className="mt-4 text-center text-2xl font-bold leading-snug tracking-tight text-slate-900 md:text-3xl text-balance">
                 🎙 レコーディングスタジオについて
               </h2>
-              <div className="mx-auto mt-8 max-w-xl space-y-5">
-                <p className="text-left text-lg leading-[1.95] text-slate-700 md:text-xl">
-                  USI新河岸音楽工務所は東京都板橋区の
-                  <br />
-                  レコーディングスタジオです。
-                </p>
-                <p className="text-left text-lg leading-[1.95] text-slate-700 md:text-xl">
-                  ボーカル録音・ナレーション録音・
-                  <br />
-                  弾き語り録音・音源制作などに対応しています。
-                </p>
+              <div className="mt-8 flex justify-center">
+                <div className="w-full max-w-lg space-y-5">
+                  <p className="text-left text-lg leading-[1.95] font-medium text-slate-800 md:text-xl">
+                    USI新河岸音楽工務所は東京都板橋区の
+                    <br />
+                    レコーディングスタジオです。
+                  </p>
+                  <p className="text-left text-lg leading-[1.95] font-medium text-slate-800 md:text-xl">
+                    ボーカル録音・ナレーション録音・
+                    <br />
+                    弾き語り録音・音源制作などに対応しています。
+                  </p>
+                </div>
               </div>
             </div>
           </div>
