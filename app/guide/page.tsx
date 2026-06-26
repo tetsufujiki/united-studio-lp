@@ -200,7 +200,7 @@ export default function GuidePage() {
         </section>
 
         {/* 初めての方も安心してご利用いただけます */}
-        <section className="py-16 md:py-20" style={{ background: 'linear-gradient(135deg, #FFFDF8 0%, #FFF8F0 25%, #FFFBF5 50%, #FFFAF2 75%, #FFFBF5 100%)' }}>
+        <section className="bg-[#FFFDF8] py-16 md:py-20">
           <div className="mx-auto max-w-2xl px-6 text-center md:px-12">
             <div className="rounded-2xl px-8 py-12 shadow-sm md:px-12 md:py-14 border border-slate-200/60" style={{ background: 'linear-gradient(135deg, rgba(230,240,250,0.45) 0%, rgba(235,245,255,0.35) 100%)' }}>
               <h3 className="text-xl font-bold text-slate-900 md:text-2xl">
