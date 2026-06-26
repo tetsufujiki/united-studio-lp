@@ -47,7 +47,7 @@ export default function GuidePage() {
             <p className="mb-4 text-base font-medium uppercase tracking-[0.2em] text-primary/90">
               USI新河岸音楽工務所
             </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance">
+            <h1 className="text-3xl font-bold leading-tight tracking-tighter text-white md:text-6xl lg:text-7xl text-balance md:tracking-tight">
               <span className="whitespace-nowrap">レコーディングスタジオ</span>
               <br />
               <span className="text-primary">利用ガイド</span>
@@ -101,8 +101,9 @@ export default function GuidePage() {
                 >
                   Studio Guide
                 </p>
-                <h2 className="mt-4 text-center text-2xl font-bold leading-snug tracking-tight text-white md:text-3xl text-balance">
-                  レコーディングスタジオについて
+                <h2 className="mt-4 text-center text-xl font-bold leading-snug tracking-tight text-white sm:text-2xl md:text-3xl text-balance" style={{ wordBreak: 'keep-all' }}>
+                  <span className="block sm:inline">レコーディング</span>
+                  <span className="block sm:inline">スタジオについて</span>
                 </h2>
                 <div className="mt-8 flex justify-center px-4 md:px-0">
                   <div className="w-full max-w-sm sm:max-w-md space-y-5">
