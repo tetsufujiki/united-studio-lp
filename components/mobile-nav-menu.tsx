@@ -40,17 +40,17 @@ export function MobileNavMenu() {
         <div
           id="nav-menu"
           role="menu"
-          className="absolute left-0 right-0 top-full z-30 border-b border-white/10 bg-black/90 px-6 py-5 backdrop-blur-md"
+          className="absolute right-6 top-full z-30 mt-2 border border-white/10 bg-black/90 px-4 py-3 backdrop-blur-md rounded-lg md:right-12"
           style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}
         >
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-0.5">
             {NAV_ITEMS.map(({ label, href }) => (
               <Link
                 key={href}
                 href={href}
                 role="menuitem"
                 onClick={() => setMenuOpen(false)}
-                className={`rounded-md px-3 py-2.5 text-base font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 ${
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70 whitespace-nowrap ${
                   isActive(href)
                     ? "text-primary underline underline-offset-4"
                     : "text-foreground/85 hover:bg-white/5 hover:text-foreground"
