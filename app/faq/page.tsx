@@ -65,18 +65,18 @@ export default function FAQPage() {
         <div className="absolute top-1/3 left-1/4 h-80 w-80 rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
 
         {/* Hero text — vertically centered in remaining space */}
-        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 lg:px-20">
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-5 sm:px-6 lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-6 text-xl font-semibold uppercase tracking-[0.25em] text-primary md:text-3xl lg:text-4xl" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.55)' }}>
+            <p className="mb-4 text-base font-semibold uppercase tracking-[0.15em] text-primary sm:text-lg sm:tracking-[0.2em] md:text-2xl md:tracking-[0.25em] lg:text-3xl" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.55)' }}>
               よくある質問
             </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance mb-6">
-              <span className="block whitespace-nowrap">レコーディングスタジオ</span>
+            <h1 className="text-2xl font-bold leading-tight tracking-tighter text-white sm:text-3xl md:text-5xl lg:text-7xl text-balance mb-5 sm:mb-6 md:tracking-tight">
+              <span className="block">レコーディングスタジオ</span>
               <span className="block text-primary">FAQ</span>
             </h1>
-            <p className="mt-8 text-lg text-white/75 md:text-xl max-w-2xl mx-auto" style={{ wordBreak: 'keep-all' }}>
-              <span className="block md:inline">初めてレコーディングされる方から、</span>
-              <span className="block md:inline">動画撮影をご希望の方まで。</span>
+            <p className="mt-6 sm:mt-7 md:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed" style={{ wordBreak: 'keep-all' }}>
+              <span className="block sm:inline">初めてレコーディングされる方から、</span>
+              <span className="block sm:inline">動画撮影をご希望の方まで。</span>
               <br />
               <span className="block">ご利用前によくいただくご質問をまとめました。</span>
             </p>
