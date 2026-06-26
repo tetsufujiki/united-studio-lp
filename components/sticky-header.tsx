@@ -16,7 +16,7 @@ export function StickyHeader() {
         {/* Brand icon — USI favicon links to top page */}
         <Link
           href="/"
-          className="flex items-center gap-3 rounded-md transition-opacity duration-200 hover:opacity-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
+          className="flex items-center gap-3 rounded-md opacity-75 transition-opacity duration-200 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
           aria-label="USI新河岸音楽工務所 トップへ"
         >
           <Image
