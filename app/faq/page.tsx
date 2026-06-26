@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Mic2, Clock, Music, HardDrive, Video, Music2, Users, ChevronDown, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 interface FAQItem {
@@ -153,7 +154,7 @@ export default function FAQPage() {
       items: [
         {
           question: '同時に何名のレコーディングができますか？',
-          answer: 'コーラスなどの同時録音���場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
+          answer: 'コーラスなど同時録音が必要な場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
         },
       ],
     },
@@ -168,25 +169,58 @@ export default function FAQPage() {
 
   return (
     <main className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#FFFAF6] to-[#FFFEF9] py-16 md:py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center md:px-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">FAQ</p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl text-balance">
-            レコーディングスタジオFAQ
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600 md:text-xl text-balance">
-            初めてレコーディングされる方から、動画撮影をご希望の方まで。
-            <br />
-            ご利用前によくいただくご質問をまとめました。
-          </p>
+      {/* Hero Section — matches Guide page design with background image */}
+      <section className="relative flex min-h-screen flex-col overflow-hidden bg-black">
+        {/* Background image */}
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src="/assets/ksd2.jpg"
+            alt="USI新河岸音楽工務所 レコーディングスタジオ音響機器"
+            fill
+            className="object-cover object-center"
+            style={{ filter: 'brightness(0.55) contrast(1.08) saturate(0.85)' }}
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+            quality={80}
+          />
+          {/* Layered overlay: strong base + bottom-heavy gradient for text readability */}
+          <div
+            className="absolute inset-0"
+            style={{ background: 'rgba(0,0,0,0.30)' }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 35%, rgba(0,0,0,0.55) 100%)' }}
+          />
+        </div>
+
+        {/* Ambient warm glow */}
+        <div className="absolute top-1/3 left-1/4 h-80 w-80 rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
+
+        {/* Hero text — vertically centered in remaining space */}
+        <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 lg:px-20">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-4 text-base font-medium uppercase tracking-[0.2em] text-primary/90">
+              FAQ
+            </p>
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance">
+              <span className="whitespace-nowrap">レコーディングスタジオ</span>
+              <br />
+              <span className="text-primary">FAQ</span>
+            </h1>
+            <p className="mt-8 text-lg text-white/75 md:text-xl text-balance max-w-xl mx-auto">
+              初めてレコーディングされる方から、動画撮影をご希望の方まで。
+              <br />
+              ご利用前によくいただくご質問をまとめました。
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Category Navigation */}
-      <section className="bg-[#F9F6F2] px-6 py-12 md:px-12 md:py-16">
+      {/* Category Navigation — Compacted for better mobile experience */}
+      <section className="bg-white px-6 py-10 md:px-12 md:py-14">
         <div className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
             {categories.map((category) => {
               const isActive = activeCategory === category.id;
               return (
@@ -196,27 +230,22 @@ export default function FAQPage() {
                     setActiveCategory(category.id);
                     scrollToSection(category.id);
                   }}
-                  className={`group rounded-2xl px-6 py-8 text-center shadow-sm transition-all ${
+                  className={`group rounded-xl px-4 py-5 text-center shadow-sm transition-all ${
                     isActive
                       ? 'border border-primary/30 bg-primary/5 shadow-md'
-                      : 'border border-slate-200 bg-white hover:border-primary/30 hover:shadow-md hover:bg-primary/5'
+                      : 'border border-slate-200 bg-slate-50 hover:border-primary/30 hover:shadow-md hover:bg-primary/5'
                   }`}
                 >
-                  <p className={`text-lg font-bold transition-colors ${
-                    isActive ? 'text-primary' : 'text-slate-900 group-hover:text-primary'
+                  <div className={`flex justify-center transition-colors mb-2 ${
+                    isActive ? 'text-primary' : 'text-slate-600 group-hover:text-primary'
                   }`}>
-                    {category.number}
-                  </p>
-                  <p className={`mt-4 text-lg font-bold transition-colors ${
+                    {category.icon}
+                  </div>
+                  <p className={`text-xs font-bold transition-colors ${
                     isActive ? 'text-primary' : 'text-slate-900 group-hover:text-primary'
                   }`}>
                     {category.title}
                   </p>
-                  <div className={`mt-5 flex justify-center transition-colors ${
-                    isActive ? 'text-primary/60' : 'text-slate-300 group-hover:text-primary/60'
-                  }`}>
-                    {category.icon}
-                  </div>
                 </button>
               );
             })}
