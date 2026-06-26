@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Train, Bus, ParkingCircle, Clock, CheckCircle, ExternalLink, ArrowRight, Mic2 } from "lucide-react";
+import { MapPin, Train, Bus, ParkingCircle, Clock, CheckCircle, ExternalLink, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -34,22 +34,7 @@ export default function GuidePage() {
         {/* Ambient warm glow */}
         <div className="absolute top-1/3 left-1/4 h-80 w-80 rounded-full bg-primary/8 blur-[100px] pointer-events-none" />
 
-        {/* Nav */}
-        <nav className="relative z-20 flex items-center justify-between px-6 py-6 md:px-12">
-          <a href="https://rec.united-studio.com" className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/20 backdrop-blur-sm">
-              <Mic2 className="h-4 w-4 text-primary" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm font-bold tracking-tight text-white">
-                USI新河岸音楽工務所
-              </span>
-              <span className="text-[11px] font-light uppercase tracking-[0.15em] text-white/60">
-                Boutique Recording Studio
-              </span>
-            </div>
-          </a>
-        </nav>
+
 
         {/* Hero text — vertically centered in remaining space */}
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 lg:px-20">
