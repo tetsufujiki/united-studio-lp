@@ -67,25 +67,51 @@ export default function GuidePage() {
         {/* Section 1: Introduction */}
         <section className="bg-[#FFFDF8] py-20 md:py-28">
           <div className="mx-auto max-w-[800px] px-6">
-            <div className="rounded-3xl bg-white px-8 py-12 shadow-[0_8px_40px_-12px_rgba(15,23,42,0.12)] md:px-14 md:py-16">
-              <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-                Studio Guide
-              </p>
-              <h2 className="mt-4 text-center text-2xl font-bold leading-snug tracking-tight text-slate-900 md:text-3xl text-balance">
-                🎙 レコーディングスタジオについて
-              </h2>
-              <div className="mt-8 flex justify-center px-4 md:px-0">
-                <div className="w-full max-w-md space-y-5">
-                  <p className="text-left text-lg leading-[1.95] font-medium text-slate-800 md:text-xl">
-                    USI新河岸音楽工務所は東京都板橋区の
-                    <br />
-                    レコーディングスタジオです。
-                  </p>
-                  <p className="text-left text-lg leading-[1.95] font-normal text-slate-600 md:text-xl">
-                    ボーカル録音・ナレーション録音・
-                    <br />
-                    弾き語り録音・音源制作などに対応しています。
-                  </p>
+            <div
+              className="relative overflow-hidden rounded-3xl shadow-[0_8px_40px_-12px_rgba(15,23,42,0.30)] md:px-14 md:py-16 px-8 py-12"
+            >
+              {/* Background image — same source as hero, cropped to showcase red card */}
+              <div className="pointer-events-none absolute inset-0">
+                <Image
+                  src="/assets/usi_sign.jpg"
+                  alt=""
+                  fill
+                  aria-hidden="true"
+                  className="object-cover"
+                  style={{ objectPosition: '60% 40%', filter: 'brightness(0.60) contrast(1.10) saturate(0.80)' }}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 800px"
+                  quality={75}
+                />
+                {/* Base dark overlay */}
+                <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.28)' }} />
+                {/* Cinematic vignette — edges darker, centre lighter */}
+                <div
+                  className="absolute inset-0"
+                  style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.00) 30%, rgba(0,0,0,0.40) 100%)' }}
+                />
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+                  Studio Guide
+                </p>
+                <h2 className="mt-4 text-center text-2xl font-bold leading-snug tracking-tight text-white md:text-3xl text-balance">
+                  レコーディングスタジオについて
+                </h2>
+                <div className="mt-8 flex justify-center px-4 md:px-0">
+                  <div className="w-full max-w-md space-y-5">
+                    <p className="text-left text-lg leading-[1.95] font-medium text-white/95 md:text-xl">
+                      USI新河岸音楽工務所は東京都板橋区の
+                      <br />
+                      レコーディングスタジオです。
+                    </p>
+                    <p className="text-left text-lg leading-[1.95] font-normal text-white/75 md:text-xl">
+                      ボーカル録音・ナレーション録音・
+                      <br />
+                      弾き語り録音・音源制作などに対応しています。
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
