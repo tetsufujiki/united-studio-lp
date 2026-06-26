@@ -427,8 +427,8 @@ export default function GuidePage() {
                   <ParkingCircle className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold text-slate-900">駐車場</p>
-                  <p className="mt-1 text-sm text-slate-600">���ンション敷地内コインパーキングあり</p>
+                <p className="font-semibold text-slate-900">駐車場</p>
+                <p className="mt-1 text-sm text-slate-600">マンション敷地内コインパーキングあり</p>
                 </div>
               </div>
             </div>
