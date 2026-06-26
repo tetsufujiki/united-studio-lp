@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { generateFAQPageSchema } from '@/lib/faq-data'
 
 export const metadata: Metadata = {
   title: 'レコーディングスタジオ よくある質問（FAQ）｜USI新河岸音楽工務所',
@@ -38,5 +39,15 @@ export default function FAQLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  const faqSchema = generateFAQPageSchema()
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      {children}
+    </>
+  )
 }
