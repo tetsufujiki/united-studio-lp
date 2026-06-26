@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MobileNavMenu } from "@/components/mobile-nav-menu";
 
 export function StickyHeader() {
@@ -13,13 +14,13 @@ export function StickyHeader() {
         aria-label="サイトナビゲーション"
       >
         {/* Brand icon — USI favicon links to top page */}
-        <a
+        <Link
           href="/"
           className="flex items-center gap-3 rounded-md transition-opacity duration-200 hover:opacity-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
           aria-label="USI新河岸音楽工務所 トップへ"
         >
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-9pHTIjFrNOOBx7jILE3epzpIOFL9jG.png"
+            src="/images/usi-logo.png"
             alt="USI"
             width={36}
             height={36}
@@ -37,7 +38,7 @@ export function StickyHeader() {
               Boutique Recording, Mixing &amp; Mastering Studio
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Hamburger menu — all screen sizes */}
         <MobileNavMenu />
