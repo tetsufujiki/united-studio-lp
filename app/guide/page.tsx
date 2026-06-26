@@ -2,6 +2,7 @@
 
 import { MapPin, Train, Bus, ParkingCircle, Clock, CheckCircle, ExternalLink, ArrowRight, Mic2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function GuidePage() {
@@ -193,7 +194,7 @@ export default function GuidePage() {
                 など、ご利用前によくいただく質問をまとめています。
               </p>
               <div className="mt-8 flex justify-center">
-                <a
+                <Link
                   href="/faq"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm hover:bg-primary/90 transition-colors md:px-7 md:py-3 md:text-base"
                 >
@@ -201,7 +202,7 @@ export default function GuidePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   よくある質問を見る
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -473,12 +474,12 @@ export default function GuidePage() {
             </Button>
 
             {/* Secondary CTA Button */}
-            <a
+            <Link
               href="/faq"
               className="h-15 md:h-16 w-56 md:w-64 inline-flex items-center justify-center rounded-2xl border-2 border-blue-400 bg-transparent text-blue-400 font-semibold text-base md:text-lg transition-all duration-300 hover:bg-blue-400/12 hover:border-blue-300 hover:text-blue-300"
             >
               ？ よくある質問を見る
-            </a>
+            </Link>
           </div>
 
           {/* Welcome Message */}

@@ -103,10 +103,9 @@ export function FAQSection() {
             {/* More FAQ Link Button */}
             <Link
               href="/faq"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#c9a382] hover:bg-[#b8956f] text-white px-6 py-3 font-medium transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-sky-600 to-blue-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-blue-900/20 transition-all duration-200 hover:from-sky-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-900/30 hover:-translate-y-0.5"
             >
-              <span>👉</span>
-              <span>もっと詳しいFAQを見る</span>
+              もっと詳しいFAQを見る
             </Link>
           </div>
         </div>

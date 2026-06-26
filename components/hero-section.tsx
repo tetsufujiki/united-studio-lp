@@ -1,7 +1,13 @@
-import { Mic2, Play, ChevronDown } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Mic2, Play, ChevronDown, Menu, X } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function HeroSection() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Image with Overlay */}
@@ -63,33 +69,57 @@ export function HeroSection() {
           </div>
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
-          <a
-            href="#popular-rankings-heading"
-            className="text-sm text-muted-foreground hover:text-foreground"
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-8 md:flex">
+          <Link
+            href="/guide"
+            className="text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-foreground"
           >
-            サービス
-          </a>
-          <a
-            href="#all-inclusive-heading"
-            className="text-sm text-muted-foreground hover:text-foreground"
+            スタジオガイド
+          </Link>
+          <Link
+            href="/faq"
+            className="text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-foreground"
           >
-            料金
-          </a>
-          <a
-            href="#access-heading"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            アクセス
-          </a>
-          <a
-            href="#equipment-pro-section"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            設備
-          </a>
+            よくある質問
+          </Link>
         </div>
+
+        {/* Mobile hamburger button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="flex items-center justify-center rounded-lg border border-white/15 bg-white/10 p-2 backdrop-blur-sm transition-colors duration-200 hover:bg-white/20 md:hidden"
+          aria-label="メニューを開く"
+        >
+          {menuOpen ? (
+            <X className="h-5 w-5 text-foreground" />
+          ) : (
+            <Menu className="h-5 w-5 text-foreground" />
+          )}
+        </button>
       </nav>
+
+      {/* Mobile dropdown menu */}
+      {menuOpen && (
+        <div className="relative z-30 border-b border-white/10 bg-black/80 px-6 py-4 backdrop-blur-md md:hidden">
+          <div className="flex flex-col gap-4">
+            <Link
+              href="/guide"
+              onClick={() => setMenuOpen(false)}
+              className="text-base font-medium text-foreground/90 transition-colors duration-200 hover:text-foreground"
+            >
+              スタジオガイド
+            </Link>
+            <Link
+              href="/faq"
+              onClick={() => setMenuOpen(false)}
+              className="text-base font-medium text-foreground/90 transition-colors duration-200 hover:text-foreground"
+            >
+              よくある質問
+            </Link>
+          </div>
+        </div>
+      )}
 
       {/* Hero Content */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:min-h-[calc(100vh-88px)] md:pb-0 lg:px-20">
@@ -266,6 +296,34 @@ export function HeroSection() {
                 集中できる制作環境
               </p>
             </div>
+          </div>
+
+          {/* Guide info card — beginner reassurance, placed below feature cards */}
+          <div className="mt-6 w-full">
+            <Link
+              href="/guide"
+              className="group relative block w-full overflow-hidden rounded-xl border border-white/10 px-6 py-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:shadow-lg hover:shadow-black/40"
+              style={{
+                background: "rgba(255,255,255,0.06)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+              }}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/50">
+                    初めての方へ
+                  </p>
+                  <p className="mt-1.5 text-sm font-medium text-foreground/90 md:text-base">
+                    ご利用の流れ・準備・当日の進め方をまとめています
+                  </p>
+                </div>
+                <div className="flex flex-shrink-0 items-center gap-1.5 text-xs font-medium text-foreground/60 transition-colors duration-200 group-hover:text-foreground/90">
+                  <span>読む（約3分）</span>
+                  <ChevronDown className="h-4 w-4 -rotate-90 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </div>
+              </div>
+            </Link>
           </div>
 
           {/* Brand Heritage */}

@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const trustItems = [
   {
@@ -60,6 +61,19 @@ export function TrustSection() {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Guide CTA — below the 3 trust items */}
+          <div className="mt-12 flex flex-col items-center gap-2 border-t border-amber-700/15 pt-10">
+            <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground/60">
+              初めての方も安心してご利用いただけます
+            </p>
+            <Link
+              href="/guide"
+              className="mt-3 inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-sky-600 to-blue-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-blue-900/30 transition-all duration-200 hover:from-sky-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-900/40 hover:-translate-y-0.5"
+            >
+              レコーディングスタジオ利用ガイド
+            </Link>
           </div>
         </div>
       </div>
