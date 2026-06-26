@@ -3,9 +3,13 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function MobileNavMenu() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <>
@@ -29,14 +33,22 @@ export function MobileNavMenu() {
             <Link
               href="/guide"
               onClick={() => setMenuOpen(false)}
-              className="text-base font-medium text-foreground/90 transition-colors duration-200 hover:text-foreground"
+              className={`text-base font-medium transition-all duration-200 ${
+                isActive('/guide')
+                  ? 'text-primary'
+                  : 'text-foreground/90 hover:text-foreground'
+              }`}
             >
               スタジオガイド
             </Link>
             <Link
               href="/faq"
               onClick={() => setMenuOpen(false)}
-              className="text-base font-medium text-foreground/90 transition-colors duration-200 hover:text-foreground"
+              className={`text-base font-medium transition-all duration-200 ${
+                isActive('/faq')
+                  ? 'text-primary'
+                  : 'text-foreground/90 hover:text-foreground'
+              }`}
             >
               よくある質問
             </Link>

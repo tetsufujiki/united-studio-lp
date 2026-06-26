@@ -1,7 +1,6 @@
-import { Mic2, Play, ChevronDown } from "lucide-react";
+import { Play, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { MobileNavMenu } from "@/components/mobile-nav-menu";
 
 export function HeroSection() {
   return (
@@ -42,52 +41,8 @@ export function HeroSection() {
       {/* Ambient Light Effects - simplified */}
       <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/8 blur-[100px]" />
 
-      {/* Navigation */}
-      <nav
-        className="relative z-20 flex items-center justify-between px-6 py-6 md:px-12 lg:px-20"
-        style={{ position: 'relative' }}
-      >
-        <a 
-          href="https://rec.united-studio.com" 
-          className="flex items-center gap-3"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 backdrop-blur-sm">
-            <Mic2 className="h-5 w-5 text-primary" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-bold tracking-tight text-foreground">
-              USI新河岸音楽工務所
-            </span>
-            <span className="text-[11px] sm:text-[12px] font-light sm:font-light uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground/70 sm:text-foreground/60" style={{
-              textShadow: '0 1px 2px rgba(0,0,0,0.1)'
-            }}>
-              Boutique Recording, Mixing & Mastering Studio
-            </span>
-          </div>
-        </a>
-
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          <Link
-            href="/guide"
-            className="text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-foreground"
-          >
-            スタジオガイド
-          </Link>
-          <Link
-            href="/faq"
-            className="text-sm font-medium text-foreground/80 transition-colors duration-200 hover:text-foreground"
-          >
-            よくある質問
-          </Link>
-        </div>
-
-        {/* Mobile hamburger + dropdown (client component) */}
-        <MobileNavMenu />
-      </nav>
-
       {/* Hero Content */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:min-h-[calc(100vh-88px)] md:pb-0 lg:px-20">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:pb-0 lg:px-20">
         <div className="mx-auto max-w-5xl text-center">
           {/* Badge */}
           <div

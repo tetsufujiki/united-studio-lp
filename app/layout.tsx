@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/next'
+import { StickyHeader } from '@/components/sticky-header'
 import { StickyCTABar } from '@/components/sticky-cta-bar'
 import { ScrollToTopButton } from '@/components/scroll-to-top-button'
 import { LazyCinematicBackground } from '@/components/lazy-cinematic-background'
@@ -112,6 +113,7 @@ export default function RootLayout({
     }}
   />
 
+  <StickyHeader />
   <LazyCinematicBackground />
   <div className="relative z-10">{children}</div>
   <StickyCTABar />
