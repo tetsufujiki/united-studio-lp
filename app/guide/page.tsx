@@ -105,16 +105,20 @@ export default function GuidePage() {
                   レコーディングスタジオについて
                 </h2>
                 <div className="mt-8 flex justify-center px-4 md:px-0">
-                  <div className="w-full max-w-md space-y-5">
-                    <p className="text-left text-lg leading-[1.95] font-medium text-white/95 md:text-xl">
-                      USI新河岸音楽工務所は東京都板橋区の
-                      <br />
-                      レコーディングスタジオです。
+                  <div className="w-full max-w-sm sm:max-w-md space-y-5">
+                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-[1.95] font-medium text-white/95 md:text-xl" style={{ wordBreak: 'keep-all' }}>
+                      USI新河岸音楽工務所は
+                      <br className="sm:hidden" />
+                      東京都板橋区のレコーディング
+                      <br className="sm:hidden" />
+                      スタジオです。
                     </p>
-                    <p className="text-left text-lg leading-[1.95] font-normal text-white/75 md:text-xl">
-                      ボーカル録音・ナレーション録音・
-                      <br />
-                      弾き語り録音・音源制作などに対応しています。
+                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-[1.95] font-normal text-white/75 md:text-xl" style={{ wordBreak: 'keep-all' }}>
+                      ボーカル録音・ナレーション
+                      <br className="sm:hidden" />
+                      録音・弾き語り録音・音源制作
+                      <br className="sm:hidden" />
+                      などに対応しています。
                     </p>
                   </div>
                 </div>
@@ -423,7 +427,7 @@ export default function GuidePage() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900">駐車場</p>
-                  <p className="mt-1 text-sm text-slate-600">マンション敷地内コインパーキングあり</p>
+                  <p className="mt-1 text-sm text-slate-600">���ンション敷地内コインパーキングあり</p>
                 </div>
               </div>
             </div>
