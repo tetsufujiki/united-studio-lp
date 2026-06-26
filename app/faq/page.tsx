@@ -154,7 +154,7 @@ export default function FAQPage() {
       items: [
         {
           question: '同時に何名のレコーディングができますか？',
-          answer: 'コーラスなど同時録音が必要な場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
+          answer: '���ーラスなど同時録音が必要な場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
         },
       ],
     },
@@ -200,18 +200,16 @@ export default function FAQPage() {
         {/* Hero text — vertically centered in remaining space */}
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-base font-medium uppercase tracking-[0.2em] text-primary/90">
-              FAQ
-            </p>
-            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance">
-              <span className="whitespace-nowrap">レコーディングスタジオ</span>
-              <br />
-              <span className="text-primary">FAQ</span>
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance mb-6">
+              <span className="block">よくある質問</span>
+              <span className="block whitespace-nowrap">レコーディングスタジオ</span>
+              <span className="block text-primary">FAQ</span>
             </h1>
-            <p className="mt-8 text-lg text-white/75 md:text-xl text-balance max-w-xl mx-auto">
-              初めてレコーディングされる方から、動画撮影をご希望の方まで。
+            <p className="mt-8 text-lg text-white/75 md:text-xl max-w-2xl mx-auto" style={{ wordBreak: 'keep-all' }}>
+              <span className="block md:inline">初めてレコーディングされる方から、</span>
+              <span className="block md:inline">動画撮影をご希望の方まで。</span>
               <br />
-              ご利用前によくいただくご質問をまとめました。
+              <span className="block">ご利用前によくいただくご質問をまとめました。</span>
             </p>
           </div>
         </div>
