@@ -303,7 +303,7 @@ export default function GuidePage() {
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm md:p-12 text-center">
               <Clock className="mx-auto mb-5 h-10 w-10 text-primary/70" />
               <p className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">13:00〜22:00</p>
-              <div className="mt-4 flex justify-center gap-4 text-sm text-slate-500">
+              <div className="mt-4 flex justify-center gap-4 text-base font-semibold text-slate-700 md:text-lg">
                 <span>完全予約制</span>
                 <span>・</span>
                 <span>不定休</span>
@@ -319,7 +319,7 @@ export default function GuidePage() {
             <div className="space-y-4">
               <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-6 py-5">
                 <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
-                <p className="text-sm font-semibold text-amber-800">
+                <p className="text-base font-semibold text-amber-800 md:text-lg">
                   予約日の2日前まで予約サイトから変更・キャンセルが可能です。
                 </p>
               </div>
