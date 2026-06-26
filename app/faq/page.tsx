@@ -154,7 +154,7 @@ export default function FAQPage() {
       items: [
         {
           question: '同時に何名のレコーディングができますか？',
-          answer: '�����ーラスなど同時録音が必要な場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
+          answer: '�������ーラスなど同時録音が必要な場合、5〜6名程度まで対応可能です。人数が多い場合は時間に余裕を持ったご予約をおすすめいたします。',
         },
       ],
     },
@@ -200,7 +200,7 @@ export default function FAQPage() {
         {/* Hero text — vertically centered in remaining space */}
         <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 lg:px-20">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-primary" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.55)' }}>
+            <p className="mb-6 text-xl font-semibold uppercase tracking-[0.25em] text-primary md:text-3xl lg:text-4xl" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.55)' }}>
               よくある質問
             </p>
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl text-balance mb-6">
