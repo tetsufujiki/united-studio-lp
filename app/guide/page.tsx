@@ -214,12 +214,12 @@ export default function GuidePage() {
               <p className="mt-8 text-sm leading-relaxed text-slate-600 md:text-base">
                 など、ご利用前によくいただく質問をまとめています。
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-10 flex justify-center">
                 <Link
                   href="/faq"
-                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white shadow-sm hover:bg-primary/90 transition-colors md:px-7 md:py-3 md:text-base"
+                  className="inline-flex items-center justify-center gap-3 rounded-full bg-blue-600 px-10 py-4 text-base font-semibold text-white shadow-[0_10px_30px_-6px_rgba(37,99,235,0.4)] transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-[0_16px_38px_-8px_rgba(37,99,235,0.5)] md:px-12 md:py-4.5 md:text-lg"
                 >
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   よくある質問を見る
