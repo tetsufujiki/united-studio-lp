@@ -84,6 +84,8 @@ export default function GuidePage() {
                 />
                 {/* Base dark overlay */}
                 <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.28)' }} />
+                {/* Subtle warm amber tint — adds colour temperature without overpowering */}
+                <div className="absolute inset-0" style={{ background: 'rgba(180,90,20,0.10)' }} />
                 {/* Cinematic vignette — edges darker, centre lighter */}
                 <div
                   className="absolute inset-0"
@@ -93,7 +95,10 @@ export default function GuidePage() {
 
               {/* Content */}
               <div className="relative z-10">
-                <p className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+                <p
+                  className="text-center text-xs font-semibold uppercase tracking-[0.25em] text-primary"
+                  style={{ textShadow: '0 1px 6px rgba(0,0,0,0.55)' }}
+                >
                   Studio Guide
                 </p>
                 <h2 className="mt-4 text-center text-2xl font-bold leading-snug tracking-tight text-white md:text-3xl text-balance">
