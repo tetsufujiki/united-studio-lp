@@ -1,67 +1,45 @@
-"use client";
-
-import { Mic2 } from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { MobileNavMenu } from "@/components/mobile-nav-menu";
 
 export function StickyHeader() {
-  const pathname = usePathname();
-
-  const isActive = (path: string) => pathname === path;
-
   return (
     <header className="sticky top-0 z-40 w-full">
-      {/* Sticky nav container */}
-      <nav className="relative flex items-center justify-between border-b border-white/5 bg-black/40 px-6 py-4 backdrop-blur-md md:px-12 lg:px-20" style={{
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
-      }}>
-        {/* Logo and branding */}
-        <a 
-          href="/" 
-          className="flex items-center gap-3"
+      <nav
+        className="relative flex items-center justify-between border-b border-white/5 bg-black/40 px-6 py-3 backdrop-blur-md md:px-12 lg:px-20"
+        style={{
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+        }}
+        aria-label="サイトナビゲーション"
+      >
+        {/* Brand icon — USI favicon links to top page */}
+        <a
+          href="/"
+          className="flex items-center gap-3 rounded-md transition-opacity duration-200 hover:opacity-75 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/70"
+          aria-label="USI新河岸音楽工務所 トップへ"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 backdrop-blur-sm">
-            <Mic2 className="h-5 w-5 text-primary" />
-          </div>
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/favicon-32x32-9pHTIjFrNOOBx7jILE3epzpIOFL9jG.png"
+            alt="USI"
+            width={36}
+            height={36}
+            className="rounded-sm"
+            priority
+          />
           <div className="flex flex-col">
             <span className="text-sm font-bold tracking-tight text-foreground">
               USI新河岸音楽工務所
             </span>
-            <span className="text-[11px] sm:text-[12px] font-light sm:font-light uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground/70 sm:text-foreground/60" style={{
-              textShadow: '0 1px 2px rgba(0,0,0,0.1)'
-            }}>
-              Boutique Recording, Mixing & Mastering Studio
+            <span
+              className="text-[11px] font-light uppercase tracking-[0.15em] text-foreground/60 sm:text-[12px] sm:tracking-[0.2em]"
+              style={{ textShadow: "0 1px 2px rgba(0,0,0,0.1)" }}
+            >
+              Boutique Recording, Mixing &amp; Mastering Studio
             </span>
           </div>
         </a>
 
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          <Link
-            href="/guide"
-            className={`text-sm font-medium transition-all duration-200 ${
-              isActive('/guide')
-                ? 'text-primary underline underline-offset-4'
-                : 'text-foreground/80 hover:text-foreground'
-            }`}
-          >
-            スタジオガイド
-          </Link>
-          <Link
-            href="/faq"
-            className={`text-sm font-medium transition-all duration-200 ${
-              isActive('/faq')
-                ? 'text-primary underline underline-offset-4'
-                : 'text-foreground/80 hover:text-foreground'
-            }`}
-          >
-            よくある質問
-          </Link>
-        </div>
-
-        {/* Mobile hamburger + dropdown (client component) */}
+        {/* Hamburger menu — all screen sizes */}
         <MobileNavMenu />
       </nav>
     </header>
