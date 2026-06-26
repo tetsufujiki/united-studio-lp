@@ -1,13 +1,9 @@
-"use client";
-
-import { useState } from "react";
-import { Mic2, Play, ChevronDown, Menu, X } from "lucide-react";
+import { Mic2, Play, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { MobileNavMenu } from "@/components/mobile-nav-menu";
 
 export function HeroSection() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Image with Overlay */}
@@ -49,6 +45,7 @@ export function HeroSection() {
       {/* Navigation */}
       <nav
         className="relative z-20 flex items-center justify-between px-6 py-6 md:px-12 lg:px-20"
+        style={{ position: 'relative' }}
       >
         <a 
           href="https://rec.united-studio.com" 
@@ -85,41 +82,9 @@ export function HeroSection() {
           </Link>
         </div>
 
-        {/* Mobile hamburger button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="flex items-center justify-center rounded-lg border border-white/15 bg-white/10 p-2 backdrop-blur-sm transition-colors duration-200 hover:bg-white/20 md:hidden"
-          aria-label="メニューを開く"
-        >
-          {menuOpen ? (
-            <X className="h-5 w-5 text-foreground" />
-          ) : (
-            <Menu className="h-5 w-5 text-foreground" />
-          )}
-        </button>
+        {/* Mobile hamburger + dropdown (client component) */}
+        <MobileNavMenu />
       </nav>
-
-      {/* Mobile dropdown menu */}
-      {menuOpen && (
-        <div className="relative z-30 border-b border-white/10 bg-black/80 px-6 py-4 backdrop-blur-md md:hidden">
-          <div className="flex flex-col gap-4">
-            <Link
-              href="/guide"
-              onClick={() => setMenuOpen(false)}
-              className="text-base font-medium text-foreground/90 transition-colors duration-200 hover:text-foreground"
-            >
-              スタジオガイド
-            </Link>
-            <Link
-              href="/faq"
-              onClick={() => setMenuOpen(false)}
-              className="text-base font-medium text-foreground/90 transition-colors duration-200 hover:text-foreground"
-            >
-              よくある質問
-            </Link>
-          </div>
-        </div>
-      )}
 
       {/* Hero Content */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:min-h-[calc(100vh-88px)] md:pb-0 lg:px-20">

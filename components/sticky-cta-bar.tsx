@@ -8,12 +8,10 @@ export function StickyCTABar() {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Do not render on guide and faq pages — they have their own content
-  if (pathname === "/guide" || pathname === "/faq") {
-    return null;
-  }
+  const isHidden = pathname === "/guide" || pathname === "/faq";
 
   useEffect(() => {
+    if (isHidden) return;
     const heroSection = document.getElementById("hero");
     if (!heroSection) {
       setIsVisible(true);
@@ -38,7 +36,7 @@ export function StickyCTABar() {
     };
   }, []);
 
-  if (!isVisible) {
+  if (isHidden || !isVisible) {
     return null;
   }
 
