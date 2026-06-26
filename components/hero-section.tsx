@@ -11,7 +11,7 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-0">
         {/* Mobile background image - optimized for performance */}
         <Image
           src="/assets/studio-mobile.jpg"
