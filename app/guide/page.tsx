@@ -14,20 +14,25 @@ export default function GuidePage() {
          ========================================================= */}
       <section className="relative flex min-h-screen flex-col overflow-hidden bg-black">
         {/* Background image */}
-        <div className="absolute inset-0">
+        <div className="pointer-events-none absolute inset-0">
           <Image
-            src="/assets/equip.jpg"
-            alt="USI新河岸音楽工務所 スタジオ機材 — プリアンプ・EQラック"
+            src="/assets/usi_sign.jpg"
+            alt="USI新河岸音楽工務所 ブランドサイン — 新河岸音楽工務所"
             fill
             className="object-cover object-center"
-            style={{ filter: 'brightness(0.75) contrast(1.05) saturate(0.90)' }}
+            style={{ filter: 'brightness(0.55) contrast(1.08) saturate(0.85)' }}
             priority
-            sizes="100vw"
-            quality={85}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+            quality={80}
+          />
+          {/* Layered overlay: strong base + bottom-heavy gradient for text readability */}
+          <div
+            className="absolute inset-0"
+            style={{ background: 'rgba(0,0,0,0.30)' }}
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.45) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 35%, rgba(0,0,0,0.55) 100%)' }}
           />
         </div>
 
