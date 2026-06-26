@@ -317,9 +317,9 @@ export default function GuidePage() {
           <div className="mx-auto max-w-3xl px-6 md:px-12">
             <h2 className="mb-8 text-2xl font-bold text-slate-900 md:text-3xl">予約変更・キャンセル</h2>
             <div className="space-y-4">
-              <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-6 py-5">
-                <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" />
-                <p className="text-base font-semibold text-amber-800 md:text-lg">
+              <div className="flex items-start gap-3 rounded-xl border border-rose-800 bg-rose-900 px-6 py-5">
+                <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-rose-200" />
+                <p className="text-base font-semibold text-white md:text-lg">
                   予約日の2日前まで予約サイトから変更・キャンセルが可能です。
                 </p>
               </div>
