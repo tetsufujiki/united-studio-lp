@@ -478,7 +478,7 @@ export default function GuidePage() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-10 md:mt-12 flex flex-col gap-6 sm:flex-row sm:justify-center sm:gap-8 md:gap-10">
+          <div className="mt-10 md:mt-12 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-8 md:gap-10">
             {/* Primary CTA Button */}
             <Button
               size="lg"
