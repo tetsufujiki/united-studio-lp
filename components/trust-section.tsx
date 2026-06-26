@@ -28,9 +28,10 @@ export function TrustSection() {
       <div className="relative z-10 mx-auto max-w-4xl px-6 md:px-12">
         {/* Elegant background panel */}
         <div 
-          className="rounded-2xl border border-amber-700/15 px-8 py-12 md:px-12 md:py-16"
+          className="rounded-2xl border border-amber-600/30 px-8 py-12 md:px-12 md:py-16"
           style={{
-            background: "linear-gradient(180deg, rgba(30, 25, 20, 0.4) 0%, rgba(20, 18, 15, 0.3) 100%)",
+            background: "linear-gradient(180deg, rgba(38, 32, 24, 0.65) 0%, rgba(28, 23, 18, 0.55) 100%)",
+            boxShadow: "0 0 0 1px rgba(180,120,50,0.08), 0 8px 40px -8px rgba(0,0,0,0.5)",
           }}
         >
           {/* Trust items - responsive grid */}
@@ -65,7 +66,7 @@ export function TrustSection() {
 
           {/* Guide CTA — below the 3 trust items */}
           <div className="mt-12 flex flex-col items-center gap-2 border-t border-amber-700/15 pt-10">
-            <p className="text-xs tracking-[0.15em] uppercase text-muted-foreground/60">
+            <p className="text-xs tracking-[0.15em] uppercase text-amber-200/70">
               初めての方も安心してご利用いただけます
             </p>
             <Link

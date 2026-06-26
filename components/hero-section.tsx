@@ -267,32 +267,32 @@ export function HeroSection() {
           <div className="mt-6 w-full">
             <Link
               href="/guide"
-              className="group relative block w-full overflow-hidden rounded-xl border border-white/10 px-6 py-5 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:shadow-lg hover:shadow-black/40"
+              className="group relative block w-full overflow-hidden rounded-xl border border-stone-300/60 px-6 py-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-stone-300/90 hover:shadow-md hover:shadow-black/20"
               style={{
-                background: "rgba(255,255,255,0.06)",
+                background: "linear-gradient(135deg, rgba(255,252,246,0.94) 0%, rgba(250,247,240,0.92) 100%)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
               }}
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex-1">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/50">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">
                     初めての方へ
                   </p>
-                  <p className="mt-1.5 text-sm font-medium text-foreground/90 md:text-base">
+                  <p className="mt-1.5 text-sm font-medium text-stone-700 md:text-base">
                     ご利用の流れ・準備・当日の進め方をまとめています
                   </p>
                 </div>
-                <div className="flex flex-shrink-0 items-center gap-1.5 text-xs font-medium text-foreground/60 transition-colors duration-200 group-hover:text-foreground/90">
+                <div className="flex flex-shrink-0 items-center gap-1 text-xs font-medium text-stone-400 transition-all duration-200 group-hover:text-stone-600 group-hover:gap-1.5">
                   <span>読む（約3分）</span>
-                  <ChevronDown className="h-4 w-4 -rotate-90 transition-transform duration-200 group-hover:translate-x-0.5" />
+                  <ChevronDown className="h-4 w-4 -rotate-90 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
               </div>
             </Link>
           </div>
 
           {/* Brand Heritage */}
-          <div className="mt-6 flex flex-col items-center gap-3">
+          <div className="mt-14 flex flex-col items-center gap-3 md:mt-16">
             <div className="flex items-center gap-3">
               <div className="h-px w-8 bg-foreground/40" />
               <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-foreground/90">
