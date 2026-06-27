@@ -222,8 +222,13 @@ export default function FAQPage() {
             </a>
           </div>
 
-          {/* Welcome Message */}
-          <p className="mt-8 md:mt-12 text-base text-white/80 font-light flex items-center justify-center gap-2">
+        </div>
+      </section>
+
+      {/* Welcome Message Section — dark gray transitional background */}
+      <section className="border-t border-slate-700/30 bg-slate-800 px-6 py-8 md:px-12 md:py-10">
+        <div className="mx-auto max-w-3xl">
+          <p className="text-base text-white/85 font-light flex items-center justify-center gap-2">
             <span>✨</span>
             <span>初めての方のご利用も歓迎しております</span>
           </p>
@@ -231,20 +236,20 @@ export default function FAQPage() {
       </section>
 
       {/* Supplementary Navigation — subtle page transition aid */}
-      <section className="border-t border-slate-200/10 bg-white px-6 py-6 md:px-12 md:py-8">
+      <section className="border-t border-slate-700/20 bg-slate-700 px-6 py-6 md:px-12 md:py-8">
         <div className="mx-auto max-w-5xl">
-          <nav className="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-slate-600">
+          <nav className="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-slate-300">
             <Link
               href="/guide"
-              className="inline-flex items-center gap-1 hover:text-slate-800 transition-colors duration-200"
+              className="inline-flex items-center gap-1 hover:text-white transition-colors duration-200"
             >
               <ChevronLeft className="h-4 w-4" />
               <span>利用ガイドへ戻る</span>
             </Link>
-            <span className="text-slate-400">｜</span>
+            <span className="text-slate-500">｜</span>
             <Link
               href="/"
-              className="inline-flex items-center gap-1 hover:text-slate-800 transition-colors duration-200"
+              className="inline-flex items-center gap-1 hover:text-white transition-colors duration-200"
             >
               <span>トップページへ</span>
             </Link>
@@ -253,9 +258,9 @@ export default function FAQPage() {
       </section>
 
       {/* Footer Notice Bar */}
-      <section className="border-t border-slate-200/40 bg-slate-50 px-6 py-8 md:px-12 md:py-10">
+      <section className="border-t border-slate-300/40 bg-slate-100 px-6 py-8 md:px-12 md:py-10">
         <div className="flex items-center justify-center">
-          <p className="text-center text-xs md:text-sm text-slate-600">
+          <p className="text-center text-xs md:text-sm text-slate-700">
             ※掲載内容は予告なく変更される場合があります。
           </p>
         </div>
