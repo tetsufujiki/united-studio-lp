@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const faqs = [
   {
@@ -12,17 +13,12 @@ const faqs = [
   {
     question: '初めてですが大丈夫ですか？',
     answer:
-      'もちろん大丈夫です。ご利用者の半数が初めてのレコーディングです。少しずつ緊張もほぐれ、楽しく収録できる方がほとんどです。',
+      'もちろん大丈夫です。初めての方も多くご利用いただいています。',
   },
   {
     question: 'ミックスは別料金ですか？',
     answer:
-      'いいえ。料金内でミックスからマスタリングまで行い、その日のうちにお持ち帰りいただけます。',
-  },
-  {
-    question: 'Mixは別の方にお願いするので歌だけ録って欲しいです。',
-    answer:
-      'はい。レコーディングした音素材をファイルでお渡しいたします。',
+      'はい、ミックスは別メニューになります。詳細はFAQページをご覧ください。',
   },
 ];
 
@@ -92,18 +88,26 @@ export function FAQSection() {
 
         {/* FAQ Footer Section */}
         <div className="mt-12 md:mt-14 pt-8 md:pt-10 border-t border-[#d4d0cc]/20">
-          <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
-            その他ご不明な点は、
-            <a
-              href="https://united-studio.com/utattemita#faq"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#c9a382] hover:text-[#b8956f] underline underline-offset-2 transition-colors duration-200"
+          <div className="flex flex-col items-center gap-6">
+            <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
+              その他ご不明な点は、
+              <Link
+                href="/faq"
+                className="text-[#c9a382] hover:text-[#b8956f] underline underline-offset-2 transition-colors duration-200"
+              >
+                よくある質問
+              </Link>
+              ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
+            </p>
+
+            {/* More FAQ Link Button */}
+            <Link
+              href="/faq"
+              className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-sky-600 to-blue-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-blue-900/20 transition-all duration-200 hover:from-sky-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-900/30 hover:-translate-y-0.5"
             >
-              よくある質問
-            </a>
-            ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
-          </p>
+              もっと詳しいFAQを見る
+            </Link>
+          </div>
         </div>
       </div>
     </section>

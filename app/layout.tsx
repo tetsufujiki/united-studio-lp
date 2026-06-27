@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/next'
+import { StickyHeader } from '@/components/sticky-header'
 import { StickyCTABar } from '@/components/sticky-cta-bar'
 import { ScrollToTopButton } from '@/components/scroll-to-top-button'
 import { LazyCinematicBackground } from '@/components/lazy-cinematic-background'
@@ -33,14 +34,18 @@ const notoSansJP = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://rec.united-studio.com'),
   title: '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ｜USI新河岸音楽工務所',
-  description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。\nボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。\n当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
+  description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
   generator: 'v0.app',
+
+  alternates: {
+    canonical: 'https://rec.united-studio.com/',
+  },
 
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
     title: '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ｜USI新河岸音楽工務所',
-    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。\nボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。\n当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
+    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
     url: 'https://rec.united-studio.com',
     siteName: 'USI新河岸音楽工務所',
     images: [
@@ -56,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ｜USI新河岸音楽工務所',
-    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。\nボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。\n当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
+    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様、ワンプライスの明瞭会計で安心して利用できます。',
     images: ['https://rec.united-studio.com/ogp.jpg'],
   },
 
@@ -112,6 +117,7 @@ export default function RootLayout({
     }}
   />
 
+  <StickyHeader />
   <LazyCinematicBackground />
   <div className="relative z-10">{children}</div>
   <StickyCTABar />

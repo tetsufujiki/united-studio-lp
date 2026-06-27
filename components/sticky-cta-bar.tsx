@@ -1,12 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 export function StickyCTABar() {
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(false);
 
+  const isHidden = pathname === "/guide" || pathname === "/faq";
+
   useEffect(() => {
+    if (isHidden) return;
     const heroSection = document.getElementById("hero");
     if (!heroSection) {
       setIsVisible(true);
@@ -31,7 +36,7 @@ export function StickyCTABar() {
     };
   }, []);
 
-  if (!isVisible) {
+  if (isHidden || !isVisible) {
     return null;
   }
 

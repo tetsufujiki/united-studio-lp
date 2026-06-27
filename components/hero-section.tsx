@@ -1,11 +1,12 @@
-import { Mic2, Play, ChevronDown } from "lucide-react";
+import { Play, ChevronDown } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 export function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-background">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-0">
         {/* Mobile background image - optimized for performance */}
         <Image
           src="/assets/studio-mobile.jpg"
@@ -40,59 +41,8 @@ export function HeroSection() {
       {/* Ambient Light Effects - simplified */}
       <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/8 blur-[100px]" />
 
-      {/* Navigation */}
-      <nav
-        className="relative z-20 flex items-center justify-between px-6 py-6 md:px-12 lg:px-20"
-      >
-        <a 
-          href="https://rec.united-studio.com" 
-          className="flex items-center gap-3"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 backdrop-blur-sm">
-            <Mic2 className="h-5 w-5 text-primary" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-bold tracking-tight text-foreground">
-              USI新河岸音楽工務所
-            </span>
-            <span className="text-[11px] sm:text-[12px] font-light sm:font-light uppercase tracking-[0.15em] sm:tracking-[0.2em] text-foreground/70 sm:text-foreground/60" style={{
-              textShadow: '0 1px 2px rgba(0,0,0,0.1)'
-            }}>
-              Boutique Recording, Mixing & Mastering Studio
-            </span>
-          </div>
-        </a>
-
-        <div className="hidden items-center gap-8 lg:flex">
-          <a
-            href="#popular-rankings-heading"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            サービス
-          </a>
-          <a
-            href="#all-inclusive-heading"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            料金
-          </a>
-          <a
-            href="#access-heading"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            アクセス
-          </a>
-          <a
-            href="#equipment-pro-section"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            設備
-          </a>
-        </div>
-      </nav>
-
       {/* Hero Content */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:min-h-[calc(100vh-88px)] md:pb-0 lg:px-20">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:pb-0 lg:px-20">
         <div className="mx-auto max-w-5xl text-center">
           {/* Badge */}
           <div
@@ -268,8 +218,36 @@ export function HeroSection() {
             </div>
           </div>
 
+          {/* Guide info card — beginner reassurance, placed below feature cards */}
+          <div className="mt-6 w-full">
+            <Link
+              href="/guide"
+              className="group relative block w-full overflow-hidden rounded-xl border border-stone-300/60 px-6 py-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-stone-300/90 hover:shadow-md hover:shadow-black/20"
+              style={{
+                background: "linear-gradient(135deg, rgba(255,252,246,0.94) 0%, rgba(250,247,240,0.92) 100%)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+              }}
+            >
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">
+                    初めての方へ
+                  </p>
+                  <p className="mt-1.5 text-sm font-medium text-stone-700 md:text-base">
+                    ご利用の流れ・準備・当日の進め方をまとめています
+                  </p>
+                </div>
+                <div className="flex flex-shrink-0 items-center gap-1 text-xs font-medium text-stone-400 transition-all duration-200 group-hover:text-stone-600 group-hover:gap-1.5">
+                  <span>読む（約3分）</span>
+                  <ChevronDown className="h-4 w-4 -rotate-90 transition-transform duration-200 group-hover:translate-x-1" />
+                </div>
+              </div>
+            </Link>
+          </div>
+
           {/* Brand Heritage */}
-          <div className="mt-6 flex flex-col items-center gap-3">
+          <div className="mt-24 flex flex-col items-center gap-3 md:mt-32 lg:mt-40">
             <div className="flex items-center gap-3">
               <div className="h-px w-8 bg-foreground/40" />
               <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-foreground/90">
