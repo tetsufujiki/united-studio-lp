@@ -71,11 +71,10 @@ export function TrustSection() {
             </p>
             <Link
               href="/guide"
-              className="mt-3 inline-flex flex-col items-center gap-0.5 rounded-full bg-gradient-to-r from-sky-600 to-blue-500 px-5 sm:px-7 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-md shadow-blue-900/30 transition-all duration-200 hover:from-sky-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-900/40 hover:-translate-y-0.5"
+              className="mt-3 inline-flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-0.5 sm:gap-2 rounded-full bg-gradient-to-r from-sky-600 to-blue-500 px-5 sm:px-7 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-white shadow-md shadow-blue-900/30 transition-all duration-200 hover:from-sky-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-900/40 hover:-translate-y-0.5"
               style={{ textAlign: 'center', lineHeight: '1.2' }}
             >
-              <span className="block sm:inline">レコーディングスタジオ</span>
-              <span className="block sm:inline">利用ガイド</span>
+              レコーディングスタジオ利用ガイド
             </Link>
           </div>
         </div>
