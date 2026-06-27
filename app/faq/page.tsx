@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mic2, Clock, Music, HardDrive, Video, Music2, Users, ChevronDown, ExternalLink } from 'lucide-react';
+import { Mic2, Clock, Music, HardDrive, Video, Music2, Users, ChevronDown, ExternalLink, ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -227,6 +227,28 @@ export default function FAQPage() {
             <span>✨</span>
             <span>初めての方のご利用も歓迎しております</span>
           </p>
+        </div>
+      </section>
+
+      {/* Supplementary Navigation — subtle page transition aid */}
+      <section className="border-t border-slate-200/10 bg-white px-6 py-6 md:px-12 md:py-8">
+        <div className="mx-auto max-w-5xl">
+          <nav className="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-slate-600">
+            <Link
+              href="/guide"
+              className="inline-flex items-center gap-1 hover:text-slate-800 transition-colors duration-200"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              <span>利用ガイドへ戻る</span>
+            </Link>
+            <span className="text-slate-400">｜</span>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1 hover:text-slate-800 transition-colors duration-200"
+            >
+              <span>トップページへ</span>
+            </Link>
+          </nav>
         </div>
       </section>
 
