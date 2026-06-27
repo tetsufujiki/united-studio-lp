@@ -106,20 +106,16 @@ export default function GuidePage() {
                   <span className="block sm:inline">スタジオについて</span>
                 </h2>
                 <div className="mt-8 flex justify-center px-4 md:px-0">
-                  <div className="w-full max-w-sm sm:max-w-md space-y-5">
-                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-[1.95] font-medium text-white/95 md:text-xl" style={{ wordBreak: 'keep-all' }}>
-                      USI新河岸音楽工務所は
-                      <br className="sm:hidden" />
-                      東京都板橋区のレコーディング
-                      <br className="sm:hidden" />
-                      スタジオです。
+                  <div className="w-full max-w-sm sm:max-w-2xl space-y-5 md:space-y-4">
+                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-snug font-medium text-white/95 md:text-base md:leading-normal lg:text-lg" style={{ wordBreak: 'keep-all' }}>
+                      <span className="block sm:inline">USI新河岸音楽工務所は東京都板橋区の</span>
+                      <span className="hidden md:inline"> </span>
+                      <span className="block md:inline">レコーディングスタジオです。</span>
                     </p>
-                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-[1.95] font-normal text-white/75 md:text-xl" style={{ wordBreak: 'keep-all' }}>
-                      ボーカル録音・ナレーション
-                      <br className="sm:hidden" />
-                      録音・弾き語り録音・音源制作
-                      <br className="sm:hidden" />
-                      などに対応しています。
+                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-snug font-normal text-white/75 md:text-base md:leading-normal lg:text-lg" style={{ wordBreak: 'keep-all' }}>
+                      <span className="block sm:inline">ボーカル録音・ナレーション録音・弾き語り録音・</span>
+                      <span className="hidden md:inline"> </span>
+                      <span className="block md:inline">音源制作などに対応しています。</span>
                     </p>
                   </div>
                 </div>
