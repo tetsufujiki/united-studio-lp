@@ -70,8 +70,8 @@ export default function FAQPage() {
             <p className="mb-4 text-base font-semibold uppercase tracking-[0.15em] text-primary sm:text-lg sm:tracking-[0.2em] md:text-2xl md:tracking-[0.25em] lg:text-3xl" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.55)' }}>
               よくある質問
             </p>
-            <h1 className="text-2xl font-bold leading-tight tracking-tighter text-white sm:text-3xl md:text-5xl lg:text-7xl text-balance mb-5 sm:mb-6 md:tracking-tight">
-              <span className="block">レコーディングスタジオ</span>
+            <h1 className="text-2xl font-bold leading-tight tracking-tighter text-white sm:text-3xl md:text-5xl lg:text-7xl text-balance mb-5 sm:mb-6 md:tracking-tight md:text-balance">
+              <span className="block md:whitespace-nowrap">レコーディングスタジオ</span>
               <span className="block text-primary">FAQ</span>
             </h1>
             <p className="mt-6 sm:mt-7 md:mt-8 text-sm sm:text-base md:text-lg lg:text-xl text-white/75 max-w-2xl mx-auto leading-relaxed" style={{ wordBreak: 'keep-all' }}>
