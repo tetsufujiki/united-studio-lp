@@ -253,9 +253,9 @@ export default function FAQPage() {
       </section>
 
       {/* Footer Notice Bar */}
-      <section className="border-t border-slate-700/20 bg-slate-950 px-6 py-16 md:px-12">
-        <div className="flex items-center justify-center h-14 md:h-16">
-          <p className="text-center text-12 md:text-13 text-gray-400">
+      <section className="border-t border-slate-200/40 bg-slate-50 px-6 py-8 md:px-12 md:py-10">
+        <div className="flex items-center justify-center">
+          <p className="text-center text-xs md:text-sm text-slate-600">
             ※掲載内容は予告なく変更される場合があります。
           </p>
         </div>
