@@ -225,8 +225,8 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* Welcome Message Section — dark gray transitional background */}
-      <section className="border-t border-slate-700/30 bg-slate-800 px-6 py-8 md:px-12 md:py-10">
+      {/* Welcome Message Section — warm neutral transitional background */}
+      <section className="border-t border-stone-700/30 bg-stone-800 px-6 py-8 md:px-12 md:py-10">
         <div className="mx-auto max-w-3xl">
           <p className="text-base text-white/85 font-light flex items-center justify-center gap-2">
             <span>✨</span>
@@ -236,9 +236,9 @@ export default function FAQPage() {
       </section>
 
       {/* Supplementary Navigation — subtle page transition aid */}
-      <section className="border-t border-slate-700/20 bg-slate-700 px-6 py-6 md:px-12 md:py-8">
+      <section className="border-t border-stone-700/20 bg-stone-700 px-6 py-6 md:px-12 md:py-8">
         <div className="mx-auto max-w-5xl">
-          <nav className="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-slate-300">
+          <nav className="flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-stone-300">
             <Link
               href="/guide"
               className="inline-flex items-center gap-1 hover:text-white transition-colors duration-200"
@@ -246,7 +246,7 @@ export default function FAQPage() {
               <ChevronLeft className="h-4 w-4" />
               <span>利用ガイドへ戻る</span>
             </Link>
-            <span className="text-slate-500">｜</span>
+            <span className="text-stone-500">｜</span>
             <Link
               href="/"
               className="inline-flex items-center gap-1 hover:text-white transition-colors duration-200"
@@ -258,9 +258,9 @@ export default function FAQPage() {
       </section>
 
       {/* Footer Notice Bar */}
-      <section className="border-t border-slate-300/40 bg-slate-100 px-6 py-8 md:px-12 md:py-10">
+      <section className="border-t border-stone-300/40 bg-stone-100 px-6 py-8 md:px-12 md:py-10">
         <div className="flex items-center justify-center">
-          <p className="text-center text-xs md:text-sm text-slate-700">
+          <p className="text-center text-xs md:text-sm text-stone-700">
             ※掲載内容は予告なく変更される場合があります。
           </p>
         </div>
