@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { faqSections } from '@/lib/faq-data';
 
 export default function FAQPage() {
-  const [openIndex, setOpenIndex] = useState<{ section: number; item: number } | null>(null);
+  const [openIndex, setOpenIndex] = useState<{ section: number; item: number } | null>({ section: 1, item: 0 });
   const [activeCategory, setActiveCategory] = useState<string>('recording');
 
   const categories = [
