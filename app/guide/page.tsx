@@ -106,7 +106,7 @@ export default function GuidePage() {
                   <span className="block sm:inline">スタジオについて</span>
                 </h2>
                 <div className="mt-8 flex justify-center px-3 sm:px-4 md:px-0">
-                  <div className="w-full max-w-xs sm:max-w-sm md:max-w-2xl space-y-4 sm:space-y-5 md:space-y-4">
+                  <div className="w-full max-w-xs sm:max-w-sm md:max-w-2xl space-y-4 sm:space-y-5 md:space-y-4 md:ml-24 lg:ml-28">
                     <p className="text-left text-sm sm:text-base md:text-base md:leading-normal lg:text-lg leading-[1.6] sm:leading-[1.75] font-medium text-white/95" style={{ wordBreak: 'keep-all' }}>
                       <span className="block sm:inline">USI新河岸音楽工務所は東京都板橋区の</span>
                       <span className="hidden md:inline"> </span>
