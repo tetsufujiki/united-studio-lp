@@ -105,17 +105,17 @@ export default function GuidePage() {
                   <span className="block sm:inline">レコーディング</span>
                   <span className="block sm:inline">スタジオについて</span>
                 </h2>
-                <div className="mt-8 flex justify-center px-4 md:px-0">
-                  <div className="w-full max-w-sm sm:max-w-2xl space-y-5 md:space-y-4">
-                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-snug font-medium text-white/95 md:text-base md:leading-normal lg:text-lg" style={{ wordBreak: 'keep-all' }}>
+                <div className="mt-8 flex justify-center px-3 sm:px-4 md:px-0">
+                  <div className="w-full max-w-xs sm:max-w-sm md:max-w-2xl space-y-4 sm:space-y-5 md:space-y-4">
+                    <p className="text-left text-sm sm:text-base md:text-base md:leading-normal lg:text-lg leading-[1.6] sm:leading-[1.75] font-medium text-white/95" style={{ wordBreak: 'keep-all' }}>
                       <span className="block sm:inline">USI新河岸音楽工務所は東京都板橋区の</span>
                       <span className="hidden md:inline"> </span>
                       <span className="block md:inline">レコーディングスタジオです。</span>
                     </p>
-                    <p className="text-left text-base sm:text-lg leading-[1.75] sm:leading-snug font-normal text-white/75 md:text-base md:leading-normal lg:text-lg" style={{ wordBreak: 'keep-all' }}>
-                      <span className="block sm:inline">ボーカル録音・ナレーション録音・弾き語り録音・</span>
-                      <span className="hidden md:inline"> </span>
-                      <span className="block md:inline">音源制作などに対応しています。</span>
+                    <p className="text-left text-sm sm:text-base md:text-base md:leading-normal lg:text-lg leading-[1.6] sm:leading-[1.75] font-normal text-white/75" style={{ wordBreak: 'keep-all' }}>
+                      <span className="block">ボーカル録音・ナレーション録音・</span>
+                      <span className="block">弾き語り録音・音源制作などに</span>
+                      <span className="block md:inline">対応しています。</span>
                     </p>
                   </div>
                 </div>
