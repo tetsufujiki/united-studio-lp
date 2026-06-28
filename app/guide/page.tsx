@@ -113,9 +113,9 @@ export default function GuidePage() {
                       <span className="block md:inline">レコーディングスタジオです。</span>
                     </p>
                     <p className="text-left text-sm sm:text-base md:text-base md:leading-normal lg:text-lg leading-[1.6] sm:leading-[1.75] font-normal text-white/75" style={{ wordBreak: 'keep-all' }}>
-                      <span className="block">ボーカル録音・ナレーション録音・</span>
-                      <span className="block">弾き語り録音・音源制作などに</span>
-                      <span className="block md:inline">対応しています。</span>
+                      <span className="block md:inline">ボーカル録音・ナレーション録音・</span>
+                      <span className="block md:inline">弾き語り録音・音源制作などに</span>
+                      <span className="block">対応しています。</span>
                     </p>
                   </div>
                 </div>
