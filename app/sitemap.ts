@@ -1,73 +1,78 @@
 import type { MetadataRoute } from 'next'
+import { getStaticPages } from '@/lib/seo-config'
 
 /**
- * Generate a dynamic XML sitemap for Google Search Console and SEO.
- * 
+ * XML Sitemap Generation for Google Search Console
+ *
+ * This file automatically generates a sitemap.xml that includes all public pages
+ * for search engine indexing and discovery.
+ *
  * INCLUDED URLS:
- * - Homepage (/)
- * - FAQ page (/faq)
- * - Guide page (/guide)
- * 
- * EXCLUDED URLS:
- * - API routes
- * - Admin/internal pages
- * - Draft or unpublished content
+ * - Static pages: /, /faq, /guide
+ * - Future dynamic content: news articles, productions, reviews, portfolio items (from Supabase)
+ *
+ * EXCLUDED URLS (by design):
+ * - /api/* (API routes)
+ * - /admin/* (admin pages)
+ * - /.next/* (Next.js internal)
+ * - Unpublished or draft content
  * - Error pages
- * 
+ *
+ * ARCHITECTURE:
+ * 1. Static pages are defined in lib/seo-config.ts (getStaticPages)
+ * 2. Dynamic content functions are added to lib/seo-config.ts
+ * 3. Each content type gets its own getter function
+ * 4. All are combined here using Promise.all() for parallel fetching
+ * 5. Combined array returned as sitemap
+ *
  * ENVIRONMENT VARIABLES:
- * - NEXT_PUBLIC_SITE_URL: The production site URL (e.g., https://rec.united-studio.com)
- *   If not set, the sitemap will use a fallback, but you should configure this for production.
- * 
- * TO ADD NEW PAGES:
- * 1. Static pages: Add a new entry to the pages array below
- * 2. Dynamic database content (e.g., blog posts, portfolio items):
- *    - Create a section that fetches from your database (Supabase, PostgreSQL, etc.)
- *    - Map each item to a URL with appropriate lastModified timestamp
- *    - Example:
- *      const posts = await fetchBlogPosts();
- *      const dynamicUrls = posts.map(post => ({
- *        url: `${baseUrl}/blog/${post.slug}`,
- *        lastModified: new Date(post.updated_at),
- *        changeFrequency: 'monthly' as const,
- *        priority: 0.7,
- *      }));
+ * - NEXT_PUBLIC_SITE_URL: Base URL for all sitemap entries
+ *   Defaults to 'https://rec.united-studio.com' if not set
+ *
+ * HOW TO ADD NEW CONTENT:
+ * 1. Create a new function in lib/seo-config.ts:
+ *    export async function get{ContentType}(): Promise<MetadataRoute.Sitemap> {
+ *      // Fetch from Supabase or database
+ *      // Map each item to sitemap entry
+ *      // Return array or empty array on error
+ *    }
+ *
+ * 2. Import the function here:
+ *    import { getStaticPages, get{ContentType} } from '@/lib/seo-config'
+ *
+ * 3. Add to Promise.all() below:
+ *    const dynamicPages = await get{ContentType}()
+ *    return [...staticPages, ...dynamicPages, ...]
+ *
+ * EXAMPLES FOR FUTURE CONTENT TYPES:
+ * - News Articles: /news/{slug}
+ * - Productions: /productions/{slug}
+ * - Reviews: /reviews/{slug}
+ * - Portfolio Items: /portfolio/{slug}
+ *
+ * All functions should handle errors gracefully and return empty arrays
+ * so one failed content source doesn't break the entire sitemap.
+ *
+ * Google Search Console: ✓ Compatible
  */
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  // Get base URL from environment variable or use fallback
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rec.united-studio.com'
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  // Get static pages
+  const staticPages = getStaticPages()
 
-  // Static pages with their properties
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}`,
-      lastModified: new Date('2025-06-30'),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: new Date('2025-06-30'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guide`,
-      lastModified: new Date('2025-06-30'),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ]
-
-  // IMPORTANT: To add dynamic content from a database:
-  // 1. Import your database client or API function
-  // 2. Create an async function to fetch items
-  // 3. Map each item to a sitemap entry
-  // 4. Combine with staticPages array
+  // FUTURE: Fetch dynamic content from Supabase
+  // Uncomment and add as content sources become available:
   //
-  // Example for blog posts:
-  // const dynamicPages = await getDynamicPages();
-  // return [...staticPages, ...dynamicPages];
+  // const [newsPages, productionPages, reviewPages] = await Promise.all([
+  //   getNewsArticles(),
+  //   getProductions(),
+  //   getReviews(),
+  // ])
 
+  // Combine all pages (static + dynamic)
+  // Return only staticPages for now; add dynamic sources as they're created
   return staticPages
+
+  // FINAL RETURN (when dynamic content is added):
+  // return [...staticPages, ...newsPages, ...productionPages, ...reviewPages]
 }
