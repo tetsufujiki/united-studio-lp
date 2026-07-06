@@ -124,8 +124,14 @@ export async function ReviewsSection() {
             ))}
           </div>
         ) : (
-          /* Graceful fallback when API is unreachable */
-          <div className="mb-14 md:mb-16" />
+          /* Fallback: API not yet available */
+          <div className="mb-14 md:mb-16">
+            {process.env.NODE_ENV !== 'production' && (
+              <p className="text-center text-sm text-[#d8c5ab]/60">
+                レビューを読み込めませんでした（API未接続 — reserve サイトの /api/public/reviews を確認してください）
+              </p>
+            )}
+          </div>
         )}
 
         {/* "すべてのレビューを見る" — unchanged link target */}
