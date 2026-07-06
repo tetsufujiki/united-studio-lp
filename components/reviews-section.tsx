@@ -1,19 +1,32 @@
-'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import { fetchReviews } from '@/lib/reviews-api'
+import { ReviewCard } from '@/components/review-card'
 
-import Image from "next/image";
-import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+const RESERVE_REVIEWS_URL =
+  process.env.NEXT_PUBLIC_RESERVE_URL
+    ? `${process.env.NEXT_PUBLIC_RESERVE_URL}/reviews`
+    : 'https://reserve.united-studio.com/reviews'
 
-export function ReviewsSection() {
-  const [isOpen, setIsOpen] = useState(false);
+/**
+ * ReviewsSection — async RSC
+ *
+ * Fetches up to 3 approved reviews from the reserve site public API at build /
+ * revalidation time (ISR, 10-minute cache). On fetch failure the section still
+ * renders — review cards are simply omitted and the badge still shows.
+ *
+ * To increase the number of cards shown, change the `limit` argument passed to
+ * fetchReviews(). The API supports up to 12.
+ */
+export async function ReviewsSection() {
+  const { reviews, total_count } = await fetchReviews(3)
+
+  // Use live total if available; fall back to a conservative display value.
+  const displayCount = total_count > 0 ? total_count : null
 
   return (
     <section className="relative overflow-hidden">
-      {/* Studio atmosphere photo background - brightened for luxury feel */}
+      {/* Studio atmosphere photo background */}
       <Image
         src="/assets/booth-atmosphere.jpg"
         alt=""
@@ -24,39 +37,38 @@ export function ReviewsSection() {
         aria-hidden="true"
       />
 
-      {/* Adjusted soft overlay - lighter to show more of the white sofa area */}
+      {/* Soft overlay */}
       <div
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(15,12,8,0.75) 0%, rgba(20,16,11,0.52) 30%, rgba(20,16,11,0.52) 70%, rgba(15,12,8,0.75) 100%)",
+            'linear-gradient(to bottom, rgba(15,12,8,0.75) 0%, rgba(20,16,11,0.52) 30%, rgba(20,16,11,0.52) 70%, rgba(15,12,8,0.75) 100%)',
         }}
         aria-hidden="true"
       />
 
-      {/* Subtle champagne-gold light bloom (top center) */}
+      {/* Champagne-gold light bloom */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 -z-10 h-72 w-[420px] -translate-x-1/2 rounded-full"
         style={{
-          background:
-            "radial-gradient(closest-side, rgba(201,163,130,0.25), transparent)",
-          filter: "blur(50px)",
+          background: 'radial-gradient(closest-side, rgba(201,163,130,0.25), transparent)',
+          filter: 'blur(50px)',
         }}
         aria-hidden="true"
       />
 
-      {/* Thin glass gloss layer across the top edge */}
+      {/* Top-edge gloss line */}
       <div
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-[#e8d9c4]/40 to-transparent"
         aria-hidden="true"
       />
 
-      {/* Gentle vignette */}
+      {/* Vignette */}
       <div
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(120% 80% at 50% 50%, transparent 55%, rgba(0,0,0,0.35) 100%)",
+            'radial-gradient(120% 80% at 50% 50%, transparent 55%, rgba(0,0,0,0.35) 100%)',
         }}
         aria-hidden="true"
       />
@@ -66,10 +78,10 @@ export function ReviewsSection() {
         <div className="mb-8 text-center md:mb-10">
           <h2 className="text-2xl font-light tracking-tight text-[#f7f1e8] md:text-3xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
             <span className="inline md:hidden">
-              STORES予約に寄せられた<br />レビュー
+              お客様のレビュー
             </span>
             <span className="hidden md:inline">
-              STORES予約に寄せられたレビュー
+              お客様のレビュー
             </span>
           </h2>
           <div className="mt-4 flex items-center justify-center gap-3">
@@ -81,10 +93,9 @@ export function ReviewsSection() {
           </div>
         </div>
 
-        {/* Premium review-count badge - placed before the card to build trust first */}
+        {/* Review-count badge */}
         <div className="mb-14 flex justify-center md:mb-16">
           <div className="inline-flex flex-col items-center gap-2.5 rounded-2xl border border-[#c9a382]/30 bg-white/[0.07] px-7 py-4 shadow-[0_8px_28px_rgba(0,0,0,0.18)] backdrop-blur-md">
-            {/* Five gold stars */}
             <div className="flex items-center gap-1" aria-hidden="true">
               {[0, 1, 2, 3, 4].map((i) => (
                 <svg key={i} className="h-4 w-4 text-[#d8a86b]" viewBox="0 0 20 20" fill="currentColor">
@@ -93,86 +104,51 @@ export function ReviewsSection() {
               ))}
             </div>
             <p className="flex items-baseline gap-1.5 text-[#f7f1e8]">
-              <span className="text-2xl font-medium tracking-tight md:text-[28px]">100</span>
-              <span className="text-sm font-light tracking-wide text-[#e8d9c4] md:text-base">件以上のレビュー</span>
+              {displayCount !== null && (
+                <span className="text-2xl font-medium tracking-tight md:text-[28px]">
+                  {displayCount}
+                </span>
+              )}
+              <span className="text-sm font-light tracking-wide text-[#e8d9c4] md:text-base">
+                {displayCount !== null ? '件以上のレビュー' : 'レビュー多数'}
+              </span>
             </p>
           </div>
         </div>
 
-        {/* Review card with glassmorphism */}
-        <div className="flex flex-col items-center gap-14 md:gap-16">
-          {/* Dialog wrapper - triggers from both card and button */}
-          <Dialog open={isOpen} onOpenChange={setIsOpen}>
-            {/* Single review card - floating with premium styling, fully clickable */}
-            <DialogTrigger asChild>
-              <button
-                className="w-full max-w-2xl cursor-pointer rounded-3xl border border-white/20 bg-white/[0.07] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_60px_-12px_rgba(0,0,0,0.42)] overflow-hidden relative group focus:outline-hidden focus:ring-2 focus:ring-[#c9a382] focus:ring-offset-2 focus:ring-offset-[transparent]"
-                style={{
-                  backdropFilter: "blur(12px)",
-                }}
-                aria-label="レビューカードを見て全レビューを表示"
-              >
-                {/* Top inner highlight for glass effect */}
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+        {/* Review cards */}
+        {reviews.length > 0 ? (
+          <div className="mb-14 grid grid-cols-1 gap-5 md:mb-16 md:grid-cols-3">
+            {reviews.map((review) => (
+              <ReviewCard key={review.id} review={review} />
+            ))}
+          </div>
+        ) : (
+          /* Graceful fallback when API is unreachable */
+          <div className="mb-14 md:mb-16" />
+        )}
 
-                {/* Review iframe wrapper - fixed height for exactly 1 review, no scroll */}
-                <div className="relative h-80 overflow-hidden md:h-72 pointer-events-none">
-                  <iframe
-                    src="https://unitedstudio.stores.jp/reserve/usi/reviews"
-                    className="w-full border-0"
-                    style={{ 
-                      marginTop: "-200px", 
-                      height: "calc(100% + 200px)",
-                      backgroundColor: "transparent"
-                    }}
-                    title="Customer Reviews"
-                    loading="lazy"
-                    scrolling="no"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  />
-                </div>
-              </button>
-            </DialogTrigger>
-
-            {/* CTA Button - View all reviews (same dialog trigger) */}
-            <DialogTrigger asChild>
-              <button
-                className="group inline-flex items-center gap-2.5 rounded-full border border-[#c9a382]/50 bg-white px-9 py-4 text-sm md:text-base font-medium text-[#1a1510] shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c9a382] hover:shadow-[0_18px_40px_-8px_rgba(201,163,130,0.45)] cursor-pointer"
-              >
-                すべてのレビューを見る
-                <svg className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </DialogTrigger>
-
-            {/* Modal for full reviews - rendered once, triggered by both card and button */}
-            <DialogContent 
-              className="p-0 border-0 rounded-3xl overflow-hidden flex flex-col items-center justify-center h-[90vh] w-[calc(100%-1.5rem)] md:h-[85vh] md:max-w-4xl"
-              showCloseButton={true}
+        {/* "すべてのレビューを見る" — unchanged link target */}
+        <div className="flex justify-center">
+          <Link
+            href={RESERVE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 rounded-full border border-[#c9a382]/50 bg-white px-9 py-4 text-sm md:text-base font-medium text-[#1a1510] shadow-[0_12px_32px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c9a382] hover:shadow-[0_18px_40px_-8px_rgba(201,163,130,0.45)]"
+          >
+            すべてのレビューを見る
+            <svg
+              className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
             >
-              {/* Modal iframe wrapper with full review list - centered layout */}
-              <div className="w-full h-full flex items-center justify-center px-3 md:px-8 py-6 bg-white overflow-hidden">
-                {/* Custom scrollable area for iframe with center alignment */}
-                <div className="relative w-full h-full max-w-[600px] flex flex-col items-center justify-start overflow-hidden">
-                  <iframe
-                    src="https://unitedstudio.stores.jp/reserve/usi/reviews"
-                    className="w-full border-0 rounded-lg"
-                    style={{ 
-                      height: "calc(100% + 200px)",
-                      marginTop: "-200px",
-                      backgroundColor: "white"
-                    }}
-                    title="All Customer Reviews"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  />
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
-  );
+  )
 }
