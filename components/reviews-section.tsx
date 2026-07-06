@@ -110,7 +110,7 @@ export async function ReviewsSection() {
                 </span>
               )}
               <span className="text-sm font-light tracking-wide text-[#e8d9c4] md:text-base">
-                {displayCount !== null ? '件以上のレビュー' : 'レビュー多数'}
+                {displayCount !== null ? '件のレビュー' : 'レビュー多数'}
               </span>
             </p>
           </div>
