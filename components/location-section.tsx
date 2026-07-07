@@ -84,6 +84,25 @@ export function LocationSection() {
               <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
               Google Mapで開く
             </a>
+
+            {/* 建物入口確認用補助導線 */}
+            <div className="mt-8 rounded-xl border border-[#e4ddd2]/60 bg-gradient-to-br from-[#faf8f6] to-[#f7f4f1] px-5 py-4 shadow-[0_2px_8px_rgba(120,100,70,0.05)]">
+              <p className="mb-3 text-xs font-medium tracking-[0.15em] uppercase text-[#9a8f80]">
+                初めてのご来店
+              </p>
+              <p className="mb-4 text-sm leading-relaxed text-[#3a352e]">
+                建物入口の写真とGoogleマップはこちら
+              </p>
+              <a
+                href="https://maps.app.goo.gl/GLR535CdUZR26G8Q9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#c9a382]/40 bg-white/60 px-4 py-2 text-sm font-medium text-[#3a352e] transition-all duration-200 hover:border-[#c9a382]/70 hover:bg-white hover:shadow-[0_4px_12px_rgba(193,155,115,0.15)] active:scale-95 sm:py-2.5 sm:px-5"
+              >
+                <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
+                Googleマップで見る
+              </a>
+            </div>
           </div>
         </div>
       </section>
