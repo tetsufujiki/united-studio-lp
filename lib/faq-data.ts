@@ -137,7 +137,7 @@ export const faqSections: FAQSection[] = [
 
 /**
  * Generate FAQ Page JSON-LD schema
- * Returns an array of mainEntity items for FAQPage schema
+ * Returns a complete FAQPage schema with proper structure and references
  */
 export function generateFAQPageSchema() {
   const mainEntity = faqSections.flatMap(section =>
@@ -154,6 +154,13 @@ export function generateFAQPageSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': 'https://rec.united-studio.com/faq#webpage',
+    url: 'https://rec.united-studio.com/faq',
+    name: 'よくある質問 | USI新河岸音楽工務所',
+    inLanguage: 'ja-JP',
+    about: {
+      '@id': 'https://rec.united-studio.com/#localbusiness',
+    },
     mainEntity,
   };
 }
