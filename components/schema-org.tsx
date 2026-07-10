@@ -1,30 +1,4 @@
 export function SchemaOrg() {
-  const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://rec.united-studio.com/#organization',
-    name: 'ユナイテッドスタジオ（株）',
-    url: 'https://rec.united-studio.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://rec.united-studio.com/assets/usi_logo.png',
-      width: 250,
-      height: 250,
-    },
-    sameAs: [
-      'https://www.youtube.com/@unitedstudio',
-      'https://x.com/unitedstudio',
-      'https://www.facebook.com/unitedstudio',
-    ],
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '03-6682-4537',
-      contactType: 'Customer Service',
-      areaServed: 'JP',
-      availableLanguage: 'ja',
-    },
-  };
-
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -35,10 +9,10 @@ export function SchemaOrg() {
       '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。',
     address: {
       '@type': 'PostalAddress',
+      postalCode: '174-0042',
       streetAddress: '東坂下1-19-24-110',
       addressLocality: '板橋区',
       addressRegion: '東京都',
-      postalCode: '',
       addressCountry: 'JP',
     },
     telephone: '03-6682-4537',
@@ -49,8 +23,8 @@ export function SchemaOrg() {
       width: 250,
       height: 250,
     },
-    organization: {
-      '@id': 'https://rec.united-studio.com/#organization',
+    parentOrganization: {
+      '@id': 'https://united-studio.com/#organization',
     },
     priceRange: '¥14,000-',
     openingHoursSpecification: {
@@ -70,7 +44,7 @@ export function SchemaOrg() {
       'ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様。',
     serviceType: 'Recording Studio',
     provider: {
-      '@id': 'https://rec.united-studio.com/#organization',
+      '@id': 'https://united-studio.com/#organization',
     },
     areaServed: 'JP',
     availableLanguage: 'ja',
@@ -83,7 +57,7 @@ export function SchemaOrg() {
     name: 'USI新河岸音楽工務所',
     url: 'https://rec.united-studio.com',
     publisher: {
-      '@id': 'https://rec.united-studio.com/#organization',
+      '@id': 'https://united-studio.com/#organization',
     },
     description:
       '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ。',
@@ -101,16 +75,12 @@ export function SchemaOrg() {
       '@id': 'https://rec.united-studio.com/#website',
     },
     publisher: {
-      '@id': 'https://rec.united-studio.com/#organization',
+      '@id': 'https://united-studio.com/#organization',
     },
   };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
