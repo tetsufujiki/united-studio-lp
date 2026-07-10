@@ -24,6 +24,7 @@ export function SchemaOrg() {
       height: 250,
     },
     parentOrganization: {
+      '@type': 'Organization',
       '@id': 'https://united-studio.com/#organization',
     },
     priceRange: '¥14,000-',
@@ -44,6 +45,7 @@ export function SchemaOrg() {
       'ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様。',
     serviceType: 'Recording Studio',
     provider: {
+      '@type': 'Organization',
       '@id': 'https://united-studio.com/#organization',
     },
     areaServed: 'JP',
@@ -57,6 +59,7 @@ export function SchemaOrg() {
     name: 'USI新河岸音楽工務所',
     url: 'https://rec.united-studio.com',
     publisher: {
+      '@type': 'Organization',
       '@id': 'https://united-studio.com/#organization',
     },
     description:
@@ -72,9 +75,11 @@ export function SchemaOrg() {
     description:
       '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。',
     isPartOf: {
+      '@type': 'WebSite',
       '@id': 'https://rec.united-studio.com/#website',
     },
     publisher: {
+      '@type': 'Organization',
       '@id': 'https://united-studio.com/#organization',
     },
   };
