@@ -44,6 +44,35 @@ export function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:pb-0 lg:px-20">
         <div className="mx-auto max-w-5xl text-center">
+          {/* Migration Banner */}
+          <div
+            className="mx-auto mb-8 w-full max-w-xl rounded-2xl px-6 py-5 text-left"
+            style={{
+              background: 'rgba(253, 248, 241, 0.92)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
+              border: '1px solid rgba(200, 175, 155, 0.35)',
+            }}
+          >
+            <p className="mb-0.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-400">
+              お知らせ
+            </p>
+            <p className="mt-2 text-sm font-medium leading-relaxed text-stone-700">
+              8月以降のご予約は、新しい予約サイトをご利用ください。
+            </p>
+            <a
+              href="https://reserve.united-studio.com/"
+              className="mt-3 block w-full rounded-xl border border-stone-300/70 bg-white/70 px-5 py-2.5 text-center text-sm font-semibold text-stone-700 transition-colors duration-200 hover:bg-stone-50 sm:inline-block sm:w-auto"
+              style={{ boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
+            >
+              8月のご予約はこちら
+            </a>
+            <p className="mt-3 text-xs leading-relaxed text-stone-500">
+              8月より平日・休日料金制となります。
+            </p>
+          </div>
+
           {/* Badge */}
           <div
             className="relative mb-12 inline-flex scale-[0.90] items-center justify-center sm:scale-100 md:mb-8"
