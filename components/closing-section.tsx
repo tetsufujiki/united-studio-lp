@@ -92,7 +92,7 @@ export function ClosingSection() {
           {/* Premium CTA Button - light luxury treatment */}
           <div className="text-center md:text-left">
             <a
-              href="https://united-studio.com/studio"
+              href="https://studio.united-studio.com"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 rounded-full border border-[#e0d3bf] bg-white/80 px-7 py-4 text-sm text-[#4a423c] shadow-[0_6px_22px_rgba(120,100,70,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#c9a382] hover:bg-[#c9a382] hover:text-white hover:shadow-[0_10px_30px_rgba(201,163,130,0.30)]"
