@@ -53,17 +53,31 @@ export function CtaSection() {
               </div>
             </div>
 
-            {/* Price hero — dominant campaign anchor */}
+            {/* Price hero — weekday / weekend split, 2-hour rate */}
             <div className="mt-10 md:mt-14">
-              <p className="flex flex-wrap items-baseline gap-x-4">
-                <span className="text-6xl font-black leading-none tracking-tight text-usi-cream sm:text-7xl md:text-8xl lg:text-9xl">
-                  ¥14,000
-                  <span className="font-light text-usi-accent">-</span>
-                </span>
-                <span className="text-2xl font-medium text-usi-cream-muted md:text-3xl">
-                  から。
-                </span>
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream-muted">
+                2-Hour Session
               </p>
+              <div className="mt-5 border-t border-usi-hairline-dark">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
+                  <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">
+                    平日
+                  </span>
+                  <span className="text-5xl font-black leading-none tracking-tight text-usi-cream sm:text-6xl md:text-7xl">
+                    ¥14,000
+                    <span className="font-light text-usi-accent">-</span>
+                  </span>
+                </div>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
+                  <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">
+                    土日祝日
+                  </span>
+                  <span className="text-5xl font-black leading-none tracking-tight text-usi-cream sm:text-6xl md:text-7xl">
+                    ¥18,000
+                    <span className="font-light text-usi-accent">-</span>
+                  </span>
+                </div>
+              </div>
 
               <div className="mt-8 border-l-2 border-usi-accent pl-5 md:mt-10">
                 <p className="text-xl font-bold text-usi-cream md:text-2xl">
@@ -111,7 +125,7 @@ export function CtaSection() {
 
             {/* Secondary booking link */}
             <a
-              href="https://unitedstudio.stores.jp/reserve/usi/"
+              href="https://reserve.united-studio.com"
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-4 inline-flex h-12 items-center justify-center gap-2 border border-usi-cream/30 px-6 text-sm font-medium text-usi-cream transition-colors duration-200 hover:border-usi-cream/60 hover:bg-white/5 md:h-[52px]"

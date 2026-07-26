@@ -57,7 +57,7 @@ export function HeroSection() {
         <div className="w-full">
           {/* Status badge — recording availability link */}
           <a
-            href="https://unitedstudio.stores.jp/reserve/usi/"
+            href="https://reserve.united-studio.com"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2.5 border border-usi-hairline-dark bg-usi-ink/40 px-3.5 py-2 backdrop-blur-sm transition-colors duration-300 hover:border-usi-cream/40"
@@ -83,7 +83,7 @@ export function HeroSection() {
           {/* Primary CTA row — booking action carries the campaign orange */}
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-10">
             <a
-              href="https://unitedstudio.stores.jp/reserve/usi/"
+              href="https://reserve.united-studio.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center gap-2.5 bg-usi-accent px-7 text-sm font-semibold text-white transition-colors duration-200 hover:bg-usi-accent-strong md:h-[52px] md:text-base"

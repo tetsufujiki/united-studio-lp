@@ -59,7 +59,7 @@ export function StickyCTABar() {
           </p>
 
           <a
-            href="https://unitedstudio.stores.jp/reserve/usi/"
+            href="https://reserve.united-studio.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-11 w-full items-center justify-center bg-usi-accent px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-usi-accent-strong sm:w-auto sm:min-w-[220px] md:h-12 md:text-base"
