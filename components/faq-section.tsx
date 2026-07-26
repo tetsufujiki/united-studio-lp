@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const faqs = [
@@ -26,45 +26,46 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 md:py-32 lg:py-40">
-      {/* Background */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(to bottom, #faf8f5 0%, #f5f3f0 50%, #f0ebe4 100%)`,
-        }}
-      />
-
-      <div className="relative z-10 mx-auto max-w-3xl px-6 md:px-12">
-        {/* Section Header */}
-        <div className="mb-16 md:mb-20 text-center md:text-left">
-          <h2 className="text-2xl font-light tracking-tight text-[#1a1612] sm:text-3xl md:text-4xl lg:text-4xl leading-relaxed">
+    <section className="relative bg-usi-sand-soft py-24 md:py-32">
+      <div className="mx-auto max-w-3xl px-6 md:px-12">
+        {/* Section header */}
+        <div className="mb-12 md:mb-16">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
+              FAQ
+            </span>
+            <span className="h-px flex-1 bg-usi-hairline" />
+          </div>
+          <h2 className="mt-8 text-2xl font-light tracking-tight text-usi-text sm:text-3xl md:text-4xl">
             よくある質問
           </h2>
-          <p className="mt-3 text-xs tracking-[0.2em] uppercase text-[#7a7570]">
-            FAQ
-          </p>
         </div>
 
-        {/* FAQ Items */}
-        <div className="space-y-3">
+        {/* FAQ items — hairline-divided list */}
+        <div className="border-y border-usi-hairline">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="rounded-lg border border-[#d4d0cc]/30 bg-white/60 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-[#c9a382]/50 hover:bg-white/80"
+              className={index > 0 ? 'border-t border-usi-hairline' : ''}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="flex w-full items-center justify-between px-6 py-5 md:px-8 md:py-6 text-left transition-all duration-300 bg-[#f5f3f0]/50 hover:bg-[#ede9e4]/60"
+                aria-expanded={openIndex === index}
+                className="flex w-full items-center justify-between gap-4 py-6 text-left transition-colors duration-200 hover:text-usi-accent-strong md:py-7"
               >
-                <div className="flex items-center gap-3 flex-1 min-w-0 pr-4">
-                  <HelpCircle className="h-5 w-5 flex-shrink-0 text-[#c9a382]/70" />
-                  <span className="text-base font-medium text-[#1a1612] md:text-lg leading-relaxed break-words">
+                <div className="flex min-w-0 flex-1 items-baseline gap-4">
+                  <span
+                    className="font-mono text-[11px] font-medium tracking-[0.1em] text-usi-text-muted"
+                    aria-hidden="true"
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="break-words text-base font-medium leading-relaxed text-usi-text md:text-lg">
                     {faq.question}
                   </span>
                 </div>
                 <ChevronDown
-                  className={`h-5 w-5 flex-shrink-0 text-[#c9a382] transition-transform duration-300 ${
+                  className={`h-5 w-5 flex-shrink-0 text-usi-accent transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
@@ -76,38 +77,34 @@ export function FAQSection() {
                   openIndex === index ? 'max-h-96' : 'max-h-0'
                 }`}
               >
-                <div className="border-t border-[#d4d0cc]/20 px-6 py-5 md:px-8 md:py-6 bg-white/50">
-                  <p className="text-base leading-relaxed text-[#3a3530] md:text-lg">
-                    {faq.answer}
-                  </p>
-                </div>
+                <p className="pb-7 pl-9 pr-4 text-base leading-relaxed text-usi-text-muted md:pl-10 md:text-lg">
+                  {faq.answer}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* FAQ Footer Section */}
-        <div className="mt-12 md:mt-14 pt-8 md:pt-10 border-t border-[#d4d0cc]/20">
-          <div className="flex flex-col items-center gap-6">
-            <p className="text-sm md:text-base leading-relaxed text-[#7a7570]">
-              その他ご不明な点は、
-              <Link
-                href="/faq"
-                className="text-[#c9a382] hover:text-[#b8956f] underline underline-offset-2 transition-colors duration-200"
-              >
-                よくある質問
-              </Link>
-              ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
-            </p>
-
-            {/* More FAQ Link Button */}
+        {/* FAQ footer */}
+        <div className="mt-12 flex flex-col items-start gap-6 md:mt-14">
+          <p className="text-sm leading-relaxed text-usi-text-muted md:text-base">
+            その他ご不明な点は、
             <Link
               href="/faq"
-              className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-sky-600 to-blue-500 px-7 py-3 text-sm font-semibold text-white shadow-md shadow-blue-900/20 transition-all duration-200 hover:from-sky-500 hover:to-blue-400 hover:shadow-lg hover:shadow-blue-900/30 hover:-translate-y-0.5"
+              className="text-usi-accent-strong underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent"
             >
-              もっと詳しいFAQを見る
+              よくある質問
             </Link>
-          </div>
+            ページをご覧いただくか、下のLINEボタンからお気軽にお問い合わせください。
+          </p>
+
+          <Link
+            href="/faq"
+            className="group inline-flex items-center gap-2.5 border border-usi-text/25 px-6 py-3 text-sm font-semibold text-usi-text transition-colors duration-200 hover:border-usi-text hover:bg-usi-text hover:text-usi-sand-soft"
+          >
+            もっと詳しいFAQを見る
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </div>
     </section>
