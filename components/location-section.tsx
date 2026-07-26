@@ -2,67 +2,66 @@ import { MapPin, Phone, Train, Bus, ParkingCircle, ExternalLink } from "lucide-r
 
 export function LocationSection() {
   return (
-    <div
-      className="relative overflow-hidden"
-      style={{ background: "linear-gradient(to bottom, #f5f3f0 0%, #f7f4ef 50%, #faf8f5 100%)" }}
-    >
+    <div className="relative bg-usi-sand">
       {/* SECTION 1: ADDRESS / TELEPHONE */}
       <section className="relative z-10 py-20 md:py-28">
-        <div className="mx-auto max-w-5xl px-6 md:px-12">
-          {/* Section header - Japanese prominent, English secondary */}
-          <div className="mb-10 text-center md:mb-14 md:text-left">
-            <h2 id="access-heading" className="scroll-mt-24 text-2xl font-light tracking-tight text-[#1a1612] md:text-3xl">
+        <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
+          {/* Section header */}
+          <div className="mb-12 md:mb-16">
+            <div className="flex items-center gap-4">
+              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
+                Address / Telephone
+              </span>
+              <span className="h-px flex-1 bg-usi-hairline" />
+            </div>
+            <h2
+              id="access-heading"
+              className="mt-8 scroll-mt-24 text-3xl font-light tracking-tight text-usi-text md:text-4xl"
+            >
               <span className="font-medium">所在地・電話</span>
             </h2>
-            <div className="mt-3 flex items-center justify-center gap-3 md:justify-start">
-              <span className="h-px w-8 bg-[#c9a382]/50" />
-              <p className="text-[11px] tracking-[0.25em] uppercase text-[#9a8f80]">
-                Address / Telephone
-              </p>
-            </div>
           </div>
 
-          {/* Content Grid */}
-          <div className="grid gap-5 md:grid-cols-2 md:gap-6">
-            {/* Address Card */}
-            <div className="rounded-2xl border border-[#e4ddd2]/70 bg-white/70 p-7 shadow-[0_8px_28px_rgba(120,100,70,0.07)] backdrop-blur-sm transition-colors hover:border-[#c9a382]/45">
-              <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8d9c4] bg-gradient-to-br from-[#f7efe2] to-[#f3ead9] text-[#b08a5f]">
-                  <MapPin className="h-5 w-5" strokeWidth={1.5} />
-                </div>
-                <span className="text-xs tracking-[0.2em] uppercase text-[#9a8f80]">
+          {/* Address / phone — hairline definition rows */}
+          <div className="border-t border-usi-hairline">
+            <div className="grid gap-x-10 gap-y-2 border-b border-usi-hairline py-7 md:grid-cols-[220px_1fr] md:py-8">
+              <div className="flex items-center gap-3">
+                <MapPin className="h-4 w-4 text-usi-text-muted" strokeWidth={1.5} />
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
                   Address
                 </span>
               </div>
-              <div className="space-y-1 text-lg leading-relaxed text-[#2a2620]">
+              <div className="text-base leading-relaxed text-usi-text md:text-lg">
                 <p>東京都板橋区東坂下１−１９−２４</p>
                 <p>志幸４２シャンソン１１０号室</p>
-                <p className="text-base text-[#7a7065]">（マンション1F）</p>
+                <p className="text-sm text-usi-text-muted md:text-base">（マンション1F）</p>
               </div>
             </div>
 
-            {/* Telephone Card */}
-            <div className="rounded-2xl border border-[#e4ddd2]/70 bg-white/70 p-7 shadow-[0_8px_28px_rgba(120,100,70,0.07)] backdrop-blur-sm transition-colors hover:border-[#c9a382]/45">
-              <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8d9c4] bg-gradient-to-br from-[#f7efe2] to-[#f3ead9] text-[#b08a5f]">
-                  <Phone className="h-5 w-5" strokeWidth={1.5} />
-                </div>
-                <span className="text-xs tracking-[0.2em] uppercase text-[#9a8f80]">
+            <div className="grid gap-x-10 gap-y-2 border-b border-usi-hairline py-7 md:grid-cols-[220px_1fr] md:py-8">
+              <div className="flex items-center gap-3">
+                <Phone className="h-4 w-4 text-usi-text-muted" strokeWidth={1.5} />
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
                   Telephone
                 </span>
               </div>
-              <a href="tel:0366824537" className="text-2xl font-medium tracking-wide text-[#2a2620] transition-colors hover:text-[#b08a5f]">
-                03-6682-4537
-              </a>
-              <p className="mt-3 text-sm text-[#7a7065]">
-                ※作業中はお電話に出られない場合がございます
-              </p>
+              <div>
+                <a
+                  href="tel:0366824537"
+                  className="text-2xl font-medium tracking-wide text-usi-text transition-colors hover:text-usi-accent"
+                >
+                  03-6682-4537
+                </a>
+                <p className="mt-2 text-sm text-usi-text-muted">
+                  ※作業中はお電話に出られない場合がございます
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Google Map */}
-          <div className="mt-6">
-            <div className="overflow-hidden rounded-2xl border border-[#e4ddd2]/70 shadow-[0_8px_28px_rgba(120,100,70,0.07)]">
+          <div className="mt-10">
+            <div className="overflow-hidden border border-usi-hairline">
               <iframe
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=35.782666251112474,139.690424164405&zoom=14"
                 width="100%"
@@ -72,32 +71,32 @@ export function LocationSection() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="所在地マップ"
-                className="h-[250px] w-full md:h-[300px]"
+                className="h-[250px] w-full md:h-[320px]"
               />
             </div>
             <a
               href="https://www.google.com/maps?q=35.782666251112474,139.690424164405"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 text-sm text-[#7a7065] transition-colors hover:text-[#b08a5f]"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-usi-text-muted transition-colors hover:text-usi-accent"
             >
               <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
               Google Mapで開く
             </a>
 
             {/* 建物入口確認用補助導線 */}
-            <div className="mt-8 rounded-xl border border-[#e4ddd2]/60 bg-gradient-to-br from-[#faf8f6] to-[#f7f4f1] px-5 py-4 shadow-[0_2px_8px_rgba(120,100,70,0.05)]">
-              <p className="mb-3 text-xs font-medium tracking-[0.15em] uppercase text-[#9a8f80]">
+            <div className="mt-10 border-l-2 border-usi-accent pl-5 md:pl-6">
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
                 初めてのご来店
               </p>
-              <p className="mb-4 text-sm leading-relaxed text-[#3a352e]">
+              <p className="mt-2 text-sm leading-relaxed text-usi-text">
                 建物入口の写真とGoogleマップはこちら
               </p>
               <a
                 href="https://maps.app.goo.gl/GLR535CdUZR26G8Q9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#c9a382]/40 bg-white/60 px-4 py-2 text-sm font-medium text-[#3a352e] transition-all duration-200 hover:border-[#c9a382]/70 hover:bg-white hover:shadow-[0_4px_12px_rgba(193,155,115,0.15)] active:scale-95 sm:py-2.5 sm:px-5"
+                className="mt-4 inline-flex items-center justify-center gap-2 border border-usi-text/25 px-5 py-2.5 text-sm font-medium text-usi-text transition-colors duration-200 hover:border-usi-text hover:bg-usi-text hover:text-usi-sand"
               >
                 <ExternalLink className="h-4 w-4" strokeWidth={1.5} />
                 Googleマップで見る
@@ -109,32 +108,27 @@ export function LocationSection() {
 
       {/* SECTION 2: ACCESS */}
       <section className="relative z-10 py-20 md:py-28">
-        {/* Elegant champagne hairline divider */}
-        <div className="absolute inset-x-0 top-0 mx-auto h-px max-w-5xl bg-gradient-to-r from-transparent via-[#d9cdb8] to-transparent" aria-hidden="true" />
-
-        <div className="mx-auto max-w-5xl px-6 md:px-12">
-          {/* Section header - Japanese prominent, English secondary */}
-          <div className="mb-10 text-center md:mb-14 md:text-left">
-            <h2 className="text-2xl font-light tracking-tight text-[#1a1612] md:text-3xl">
+        <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
+          {/* Section header */}
+          <div className="mb-12 md:mb-16">
+            <div className="flex items-center gap-4">
+              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
+                Access
+              </span>
+              <span className="h-px flex-1 bg-usi-hairline" />
+            </div>
+            <h2 className="mt-8 text-3xl font-light tracking-tight text-usi-text md:text-4xl">
               <span className="font-medium">アクセス</span>
             </h2>
-            <div className="mt-3 flex items-center justify-center gap-3 md:justify-start">
-              <span className="h-px w-8 bg-[#c9a382]/50" />
-              <p className="text-[11px] tracking-[0.25em] uppercase text-[#9a8f80]">
-                Access
-              </p>
-            </div>
           </div>
 
-          {/* Access Content - 3 column grid */}
-          <div className="grid gap-5 md:grid-cols-3 md:gap-6">
-            {/* Train Access Card */}
-            <div className="rounded-2xl border border-[#e4ddd2]/70 bg-white/70 p-7 shadow-[0_8px_28px_rgba(120,100,70,0.07)] backdrop-blur-sm transition-colors hover:border-[#c9a382]/45">
+          {/* Access — hairline-divided columns */}
+          <div className="grid border-y border-usi-hairline md:grid-cols-3">
+            {/* Train */}
+            <div className="py-8 md:py-10 md:pr-8">
               <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8d9c4] bg-gradient-to-br from-[#f7efe2] to-[#f3ead9] text-[#b08a5f]">
-                  <Train className="h-5 w-5" strokeWidth={1.5} />
-                </div>
-                <span className="text-xs tracking-[0.2em] uppercase text-[#9a8f80]">
+                <Train className="h-4 w-4 text-usi-text-muted" strokeWidth={1.5} />
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
                   Train
                 </span>
               </div>
@@ -142,16 +136,16 @@ export function LocationSection() {
               <div className="space-y-6">
                 {/* Toei Mita Line */}
                 <div>
-                  <p className="mb-3 text-base font-medium text-[#2a2620]">
+                  <p className="mb-3 text-base font-medium text-usi-text">
                     都営三田線
                   </p>
                   <ul className="space-y-2">
-                    <li className="flex items-start gap-3 text-sm text-[#3a352e]">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]" />
+                    <li className="flex items-start gap-3 text-sm text-usi-text/85">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-accent" />
                       志村坂上駅 A3 徒歩12分
                     </li>
-                    <li className="flex items-start gap-3 text-sm text-[#3a352e]">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]" />
+                    <li className="flex items-start gap-3 text-sm text-usi-text/85">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-accent" />
                       志村三丁目駅 徒歩12分
                     </li>
                   </ul>
@@ -159,20 +153,20 @@ export function LocationSection() {
 
                 {/* JR Saikyo Line */}
                 <div>
-                  <p className="mb-3 text-base font-medium text-[#2a2620]">
+                  <p className="mb-3 text-base font-medium text-usi-text">
                     JR埼京線
                   </p>
                   <ul className="space-y-2">
-                    <li className="flex items-start gap-3 text-sm text-[#3a352e]">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]" />
+                    <li className="flex items-start gap-3 text-sm text-usi-text/85">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-accent" />
                       浮間舟渡駅 徒歩17分
                     </li>
-                    <li className="flex items-start gap-3 text-sm text-[#8a8075]">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]/40" />
+                    <li className="flex items-start gap-3 text-sm text-usi-text-muted">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-hairline" />
                       駅前ロータリーにタクシー乗場あり
                     </li>
-                    <li className="flex items-start gap-3 text-sm text-[#8a8075]">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]/40" />
+                    <li className="flex items-start gap-3 text-sm text-usi-text-muted">
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-hairline" />
                       ダイチャリ利用可能
                     </li>
                   </ul>
@@ -180,48 +174,44 @@ export function LocationSection() {
               </div>
             </div>
 
-            {/* Bus Access Card */}
-            <div className="rounded-2xl border border-[#e4ddd2]/70 bg-white/70 p-7 shadow-[0_8px_28px_rgba(120,100,70,0.07)] backdrop-blur-sm transition-colors hover:border-[#c9a382]/45">
+            {/* Bus */}
+            <div className="border-t border-usi-hairline py-8 md:border-l md:border-t-0 md:px-8 md:py-10">
               <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8d9c4] bg-gradient-to-br from-[#f7efe2] to-[#f3ead9] text-[#b08a5f]">
-                  <Bus className="h-5 w-5" strokeWidth={1.5} />
-                </div>
-                <span className="text-xs tracking-[0.2em] uppercase text-[#9a8f80]">
+                <Bus className="h-4 w-4 text-usi-text-muted" strokeWidth={1.5} />
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
                   Bus
                 </span>
               </div>
-              <p className="mb-3 text-base font-medium text-[#2a2620]">
+              <p className="mb-3 text-base font-medium text-usi-text">
                 国際興業バス
               </p>
               <ul className="space-y-2">
-                <li className="flex items-start gap-3 text-sm text-[#3a352e]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]" />
+                <li className="flex items-start gap-3 text-sm text-usi-text/85">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-accent" />
                   志村坂下バス停（池21 / 赤02など）徒歩4分
                 </li>
               </ul>
             </div>
 
-            {/* Parking Card */}
-            <div className="rounded-2xl border border-[#e4ddd2]/70 bg-white/70 p-7 shadow-[0_8px_28px_rgba(120,100,70,0.07)] backdrop-blur-sm transition-colors hover:border-[#c9a382]/45">
+            {/* Parking */}
+            <div className="border-t border-usi-hairline py-8 md:border-l md:border-t-0 md:py-10 md:pl-8">
               <div className="mb-6 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#e8d9c4] bg-gradient-to-br from-[#f7efe2] to-[#f3ead9] text-[#b08a5f]">
-                  <ParkingCircle className="h-5 w-5" strokeWidth={1.5} />
-                </div>
-                <span className="text-xs tracking-[0.2em] uppercase text-[#9a8f80]">
+                <ParkingCircle className="h-4 w-4 text-usi-text-muted" strokeWidth={1.5} />
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
                   Parking
                 </span>
               </div>
               <ul className="space-y-2">
-                <li className="flex items-start gap-3 text-sm text-[#3a352e]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]" />
+                <li className="flex items-start gap-3 text-sm text-usi-text/85">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-accent" />
                   タイムパーキング（スタジオ敷地内）
                 </li>
-                <li className="flex items-start gap-3 text-sm text-[#3a352e]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]" />
+                <li className="flex items-start gap-3 text-sm text-usi-text/85">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-accent" />
                   タイムズ東坂下第２
                 </li>
-                <li className="flex items-start gap-3 text-sm text-[#3a352e]">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a382]" />
+                <li className="flex items-start gap-3 text-sm text-usi-text/85">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-usi-accent" />
                   NPC24H志村坂下１丁目
                 </li>
               </ul>

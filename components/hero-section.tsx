@@ -1,328 +1,169 @@
-import { Play, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+const heroFeatures = [
+  {
+    title: "プロ仕様機材完備",
+    description: "業界標準のハイクオリティ機材",
+  },
+  {
+    title: "初心者歓迎",
+    description: "丁寧サポートで安心",
+  },
+  {
+    title: "完全予約制",
+    description: "集中できる制作環境",
+  },
+];
+
 export function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen overflow-hidden bg-background">
+    <section id="hero" className="relative min-h-screen overflow-hidden bg-usi-ink">
       {/* Background Image with Overlay */}
       <div className="pointer-events-none absolute inset-0">
-        {/* Mobile background image - optimized for performance */}
+        {/* Mobile background image */}
         <Image
           src="/assets/studio-mobile.jpg"
           alt="Professional recording studio"
           fill
           className="object-cover object-center md:hidden"
-          style={{ filter: 'brightness(0.7) contrast(1.05) saturate(0.95)' }}
+          style={{ filter: "brightness(0.62) contrast(1.05) saturate(0.9)" }}
           priority
-          
           sizes="100vw"
         />
-        {/* Desktop background image - optimized for performance */}
+        {/* Desktop background image */}
         <Image
           src="/assets/studio-desktop.jpg"
           alt="Professional recording studio"
           fill
           className="hidden object-cover object-center md:block"
-          style={{ filter: 'brightness(0.7) contrast(1.05) saturate(0.95)' }}
+          style={{ filter: "brightness(0.62) contrast(1.05) saturate(0.9)" }}
           priority
-          
           sizes="100vw"
         />
-        {/* Single cinematic gradient overlay - replaces multiple overlays */}
-        <div 
+        {/* Editorial gradient — darkens toward the text block for readability */}
+        <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2))'
+            background:
+              "linear-gradient(to top, rgba(13,15,20,0.92) 0%, rgba(13,15,20,0.55) 40%, rgba(13,15,20,0.35) 70%, rgba(13,15,20,0.45) 100%)",
           }}
         />
       </div>
 
-      {/* Ambient Light Effects - simplified */}
-      <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/8 blur-[100px]" />
-
       {/* Hero Content */}
-      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 md:pb-0 lg:px-20">
-        <div className="mx-auto max-w-5xl text-center">
-
-
-          {/* Badge */}
-          <div
-            className="relative mb-12 inline-flex scale-[0.90] items-center justify-center sm:scale-100 md:mb-8"
-            style={{ marginTop: 'clamp(3rem, 15vh, 6rem)' }}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col justify-end px-6 pb-14 pt-32 md:justify-center md:px-12 md:pb-24 md:pt-28 lg:px-16">
+        <div className="w-full">
+          {/* Status badge — recording availability link */}
+          <a
+            href="https://unitedstudio.stores.jp/reserve/usi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2.5 border border-usi-hairline-dark bg-usi-ink/40 px-3.5 py-2 backdrop-blur-sm transition-colors duration-300 hover:border-usi-cream/40"
           >
-            {/* Edge fade lines evoking studio equipment indicators */}
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute right-full top-1/2 h-px w-8 -translate-y-1/2 sm:w-12"
-              style={{
-                background:
-                  'linear-gradient(to left, rgba(255,255,255,0.28), rgba(255,255,255,0))',
-              }}
-            />
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute left-full top-1/2 h-px w-8 -translate-y-1/2 sm:w-12"
-              style={{
-                background:
-                  'linear-gradient(to right, rgba(255,255,255,0.28), rgba(255,255,255,0))',
-              }}
-            />
+            <span className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-usi-accent" />
+            <span className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream/85">
+              Recording Available
+            </span>
+          </a>
+
+          {/* Main Headline — editorial left alignment */}
+          <h1 className="mt-8 text-balance text-[2.5rem] font-bold leading-[1.18] tracking-tight text-usi-cream sm:text-5xl md:mt-10 md:text-6xl lg:text-7xl">
+            秘密基地のような
+            <br className="sm:hidden" />
+            スタジオへ
+          </h1>
+
+          {/* Sub Headline */}
+          <p className="mt-5 max-w-xl text-pretty text-base font-light leading-relaxed tracking-wide text-usi-cream/85 md:mt-6 md:text-xl">
+            プロ品質のスタジオを、想像より身近に。
+          </p>
+
+          {/* Primary CTA row — booking action carries the campaign orange */}
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-10">
             <a
               href="https://unitedstudio.stores.jp/reserve/usi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/15 px-2.5 py-1.5 transition-colors duration-300 hover:border-white/25"
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.12)',
-                backdropFilter: 'blur(12px)',
-                WebkitBackdropFilter: 'blur(12px)',
-                boxShadow: '0 0 16px 0 rgba(255,255,255,0.10)',
-              }}
+              className="inline-flex h-12 items-center justify-center gap-2.5 bg-usi-accent px-7 text-sm font-semibold text-white transition-colors duration-200 hover:bg-usi-accent-strong md:h-[52px] md:text-base"
             >
-              <span className="status-dot inline-block h-2 w-2 rounded-full bg-[#f59e0b]" />
-              <span className="text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-white/80">
-                Recording Available
-              </span>
+              空き状況・料金確認
+              <ArrowRight className="h-4 w-4" />
+            </a>
+            <a
+              href="https://page.line.me/568repew"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center gap-2.5 border border-usi-cream/30 px-7 text-sm font-medium text-usi-cream transition-colors duration-200 hover:border-usi-cream/60 hover:bg-white/5 md:h-[52px] md:text-base"
+            >
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.064-.022.135-.033.201-.033.209 0 .389.09.51.249l2.439 3.315V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+              </svg>
+              LINEで相談
             </a>
           </div>
 
-          {/* Main Headline - Premium Split Design */}
-          <h1
-            className="mx-auto mb-5 px-4 text-[2.25rem] font-bold leading-[1.2] tracking-tight text-foreground sm:text-5xl sm:leading-tight md:mb-6 md:text-6xl md:leading-[1.15] lg:text-7xl mt-10 md:mt-0"
+          {/* Guide link — beginner reassurance */}
+          <Link
+            href="/guide"
+            className="group mt-5 inline-flex items-center gap-3 border-b border-usi-hairline-dark pb-2 text-sm text-usi-cream/75 transition-colors duration-200 hover:border-usi-cream/50 hover:text-usi-cream"
           >
-            <span className="flex flex-col items-center justify-center text-center md:flex-row md:justify-center md:flex-wrap md:gap-2">
-              <span className="inline-block bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
-                秘密基地のような
-              </span>
-              <span className="inline-block">
-                スタジオへ
-              </span>
+            <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-usi-cream/55">
+              初めての方へ
             </span>
-          </h1>
+            <span>ご利用の流れ・準備・当日の進め方をまとめています</span>
+            <span className="inline-flex items-center gap-1 text-xs text-usi-cream/55 transition-colors duration-200 group-hover:text-usi-cream/85">
+              読む（約3分）
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+            </span>
+          </Link>
 
-          {/* Sub Headline - Enhanced visibility */}
-          <p className="mb-12 px-4 text-base sm:text-lg md:text-2xl text-foreground font-light tracking-wide text-balance max-w-2xl mx-auto">
-            プロ品質のスタジオを、想像より身近に。
-          </p>
-
-          {/* Compact CTA Links - Above Cards */}
-          <div
-            className="mb-16 flex flex-col items-center justify-center gap-3 text-sm"
-          >
-            <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
-              <a
-                href="https://unitedstudio.stores.jp/reserve/usi/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-foreground/20 text-foreground hover:border-primary hover:bg-primary/5 transition-colors"
-              >
-                <Play className="h-4 w-4" />
-                <span>空き状況・料金確認</span>
-              </a>
-              <span className="hidden text-foreground/30 sm:inline">•</span>
-              <a
-                href="https://page.line.me/568repew"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-foreground/20 text-foreground hover:border-primary hover:bg-primary/5 transition-colors"
-              >
-                <svg
-                  className="h-4 w-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M19.365 9.863c.204-1.254.204-2.551.204-3.805 0-5.212-4.031-9.058-9.563-9.058C4.031-2.996 0 1.849 0 7.061c0 3.632 2.632 6.771 6.250 7.625.306.102.612.204.918.408.306.204.510.612.510.918v2.041l2.449-1.356c.306-.204.714-.306 1.122-.306h.306c1.224 0 2.449-.102 3.571-.306 4.183-.51 7.347-3.98 7.347-8.019 0-.306 0-.612-.051-.918zm-11.076 2.04c-.306 0-.612-.102-.918-.102-1.122 0-2.143.408-2.959 1.020l-.918.612-.918-1.632v-1.326c-.51-.814-.816-1.733-.816-2.755 0-3.224 2.551-5.876 5.720-5.876 3.224 0 5.773 2.652 5.773 5.876 0 1.020-.204 2.041-.612 2.959-.918 2.449-3.265 4.183-6.002 4.183-.306 0-.612 0-.918-.102l-1.632.918.408-1.632a1.326 1.326 0 00-.918-1.224zm7.347-5.056c.306 0 .612-.306.612-.612 0-.306-.306-.612-.612-.612-.306 0-.612.306-.612.612 0 .306.306.612.612.612zm2.347 0c.306 0 .612-.306.612-.612 0-.306-.306-.612-.612-.612-.306 0-.612.306-.612.612 0 .306.306.612.612.612z" />
-                </svg>
-                <span>LINEで相談</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Trust & Feature Indicators - Compact Display */}
-          <div
-            className="grid w-full grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6"
-          >
-            {/* Card 1: Professional Equipment */}
-            <div
-              className="rounded-xl border border-teal-500/60 bg-teal-500/40 p-4 md:p-5"
-            >
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-600/60 mx-auto md:mx-0">
-                <svg
-                  className="h-5 w-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2m0-14c0-1.105 1.343-2 3-2s3 .895 3 2m0 14c1.657 0 3-.895 3-2m0-14c-1.657 0-3-.895-3-2"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-base font-semibold text-foreground text-center md:text-left">
-                プロ仕様機材完備
-              </h3>
-              <p className="mt-1 text-sm sm:text-xs md:text-xs text-foreground/95 text-center md:text-left md:text-foreground/80 font-semibold sm:font-medium md:font-normal leading-tight">
-                業界標準のハイクオリティ機材
-              </p>
-            </div>
-
-            {/* Card 2: Beginner Friendly - Emphasized with bright lime green */}
-            <div
-              className="relative rounded-xl border border-lime-400/70 bg-lime-400/50 p-4 md:p-5"
-            >
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-lime-500/70 mx-auto md:mx-0">
-                {/* Young Leaf Mark SVG - 若葉マーク */}
-                <svg
-                  className="h-5 w-5 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z" />
-                </svg>
-              </div>
-              <h3 className="text-base font-bold text-foreground text-center md:text-left">
-                初心者歓迎
-              </h3>
-              <p className="mt-1 text-sm sm:text-xs md:text-xs text-foreground/98 text-center md:text-left md:text-foreground/85 font-bold sm:font-semibold md:font-normal leading-tight">
-                丁寧サポートで安心
-              </p>
-            </div>
-
-            {/* Card 3: Full Reservation */}
-            <div
-              className="rounded-xl border border-teal-500/60 bg-teal-500/40 p-4 md:p-5"
-            >
-              <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-600/60 mx-auto md:mx-0">
-                <svg
-                  className="h-5 w-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-base font-semibold text-foreground text-center md:text-left">
-                完全予約制
-              </h3>
-              <p className="mt-1 text-sm sm:text-xs md:text-xs text-foreground/95 text-center md:text-left md:text-foreground/80 font-semibold sm:font-medium md:font-normal leading-tight">
-                集中できる制作環境
-              </p>
-            </div>
-          </div>
-
-          {/* Guide info card — beginner reassurance, placed below feature cards */}
-          <div className="mt-6 w-full">
-            <Link
-              href="/guide"
-              className="group relative block w-full overflow-hidden rounded-xl border border-stone-300/60 px-6 py-5 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-stone-300/90 hover:shadow-md hover:shadow-black/20"
-              style={{
-                background: "linear-gradient(135deg, rgba(255,252,246,0.94) 0%, rgba(250,247,240,0.92) 100%)",
-                backdropFilter: "blur(12px)",
-                WebkitBackdropFilter: "blur(12px)",
-              }}
-            >
-              <div className="flex items-center justify-between gap-4">
-                <div className="flex-1">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-400">
-                    初めての方へ
-                  </p>
-                  <p className="mt-1.5 text-sm font-medium text-stone-700 md:text-base">
-                    ご利用の流れ・準備・当日の進め方をまとめています
-                  </p>
+          {/* Bottom rail — feature indicators + trust stats, hairline structure */}
+          <div className="mt-14 border-t border-usi-hairline-dark pt-7 md:mt-20 md:pt-8">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 md:gap-8">
+              {heroFeatures.map((feature, index) => (
+                <div key={feature.title} className="flex items-start gap-4">
+                  <span className="font-mono text-[11px] font-medium tracking-[0.15em] text-usi-cream/45 pt-0.5">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold text-usi-cream md:text-base">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-usi-cream/65 md:text-sm">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-shrink-0 items-center gap-1 text-xs font-medium text-stone-400 transition-all duration-200 group-hover:text-stone-600 group-hover:gap-1.5">
-                  <span>読む（約3分）</span>
-                  <ChevronDown className="h-4 w-4 -rotate-90 transition-transform duration-200 group-hover:translate-x-1" />
-                </div>
-              </div>
-            </Link>
-          </div>
+              ))}
+            </div>
 
-          {/* Brand Heritage */}
-          <div className="mt-24 flex flex-col items-center gap-3 md:mt-32 lg:mt-40">
-            <div className="flex items-center gap-3">
-              <div className="h-px w-8 bg-foreground/40" />
-              <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-foreground/90">
+            {/* Trust stats row */}
+            <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-usi-hairline-dark pt-6 md:mt-8">
+              <div className="flex items-baseline gap-2.5">
+                <span className="text-xl font-bold tracking-tight text-usi-cream md:text-2xl">
+                  1000+
+                </span>
+                <span className="text-xs text-usi-cream/65 md:text-sm">
+                  クリエイター利用中
+                </span>
+              </div>
+              <span className="hidden h-4 w-px bg-usi-hairline-dark sm:inline-block" />
+              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.25em] text-usi-cream/55">
                 Since 2006
               </span>
-              <div className="h-px w-8 bg-foreground/40" />
-            </div>
-          </div>
-
-          {/* Mobile & Tablet Only - 1000+ Creators Badge */}
-          <div className="mt-8 flex justify-center lg:hidden">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-primary/30 bg-[oklch(0.21_0.03_250)]/50 py-1.5 pl-2.5 pr-4 backdrop-blur-md">
-              <div className="flex -space-x-1.5">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/80 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
-                  A
-                </span>
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/60 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
-                  B
-                </span>
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary/40 text-[9px] font-bold text-primary-foreground ring-1 ring-[oklch(0.21_0.03_250)]">
-                  C
-                </span>
-              </div>
-              <span className="text-xs font-medium tracking-wide text-foreground/90">
-                <span className="font-bold text-primary">1000+</span> Creators
-              </span>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator - Hidden on mobile, visible on desktop */}
-        <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex"
-        >
-          <div
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="text-xs font-medium text-foreground/85">Scroll</span>
-            <ChevronDown className="h-5 w-5 text-foreground/85" />
-          </div>
-        </div>
-
-        {/* Subtle gradient backing for bottom text readability */}
-        <div 
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-40"
-          style={{
-            background: 'linear-gradient(to top, rgba(0,0,0,0.35), transparent)'
-          }}
-        />
-      </div>
-
-      {/* Floating Elements - User Count */}
-      <div className="absolute bottom-32 right-8 hidden overflow-hidden rounded-xl border border-white/10 bg-[oklch(0.21_0.03_250)]/65 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.6)] ring-1 ring-inset ring-white/5 backdrop-blur-xl lg:block">
-        {/* Orange accent bar */}
-        <div className="absolute inset-y-0 left-0 w-1 bg-primary" />
-        <div className="flex items-center gap-3 py-4 pl-6 pr-5">
-          <div className="flex -space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/80 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
-              A
-            </div>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/60 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
-              B
-            </div>
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/40 text-xs font-bold text-primary-foreground ring-2 ring-[oklch(0.21_0.03_250)]">
-              C
-            </div>
-          </div>
-          <div>
-            <p className="text-sm font-bold leading-tight text-primary">1000+</p>
-            <p className="text-xs font-normal leading-tight text-white/70">
-              <span className="block whitespace-nowrap">クリエイター</span>
-              <span className="block whitespace-nowrap">利用中</span>
-            </p>
+        {/* Scroll Indicator — desktop only */}
+        <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:flex">
+          <div className="flex flex-col items-center gap-1.5">
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-usi-cream/50">
+              Scroll
+            </span>
+            <ChevronDown className="h-4 w-4 text-usi-cream/50" />
           </div>
         </div>
       </div>

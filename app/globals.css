@@ -39,6 +39,24 @@
   --sidebar-accent-foreground: oklch(0.95 0.01 60);
   --sidebar-border: oklch(0.25 0.02 60);
   --sidebar-ring: oklch(0.75 0.15 65);
+
+  /* ============================================================
+     USDL 4.0 × REC Campaign — home page design tokens
+     Scoped additions only: existing tokens above are untouched so
+     /guide and /faq keep their current appearance.
+     ============================================================ */
+  --usi-sand: #f2ede3;          /* warm off-white base for light sections */
+  --usi-sand-soft: #f7f4ee;     /* lighter sand variation */
+  --usi-ink: #14161c;           /* deep navy-charcoal surface */
+  --usi-ink-soft: #1c1f27;      /* raised dark surface */
+  --usi-text: #221f1a;          /* warm near-black text on light */
+  --usi-text-muted: #6d675d;    /* muted text on light */
+  --usi-cream: #f4efe6;         /* light text on dark surfaces */
+  --usi-cream-muted: #a8a297;   /* muted text on dark surfaces */
+  --usi-accent: #d05a1e;        /* REC campaign orange — CTA / key anchors only */
+  --usi-accent-strong: #b8490f; /* hover / deep accent */
+  --usi-hairline: rgba(34, 31, 26, 0.16);   /* hairline on light */
+  --usi-hairline-dark: rgba(244, 239, 230, 0.14); /* hairline on dark */
 }
 
 .dark {
@@ -79,7 +97,20 @@
 
 @theme inline {
   --font-sans: 'Noto Sans JP', 'Geist', sans-serif;
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', 'Menlo', monospace;
+  /* USDL 4.0 × REC Campaign color utilities (home page) */
+  --color-usi-sand: var(--usi-sand);
+  --color-usi-sand-soft: var(--usi-sand-soft);
+  --color-usi-ink: var(--usi-ink);
+  --color-usi-ink-soft: var(--usi-ink-soft);
+  --color-usi-text: var(--usi-text);
+  --color-usi-text-muted: var(--usi-text-muted);
+  --color-usi-cream: var(--usi-cream);
+  --color-usi-cream-muted: var(--usi-cream-muted);
+  --color-usi-accent: var(--usi-accent);
+  --color-usi-accent-strong: var(--usi-accent-strong);
+  --color-usi-hairline: var(--usi-hairline);
+  --color-usi-hairline-dark: var(--usi-hairline-dark);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
