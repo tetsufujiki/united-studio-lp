@@ -40,7 +40,7 @@ export function StickyCTABar() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40">
+    <div data-sticky-cta className="fixed bottom-0 left-0 right-0 z-40">
       {/* Slim reservation bar — matches the USDL ink surface with a hairline top edge */}
       <div
         className="border-t px-4 py-3 md:px-8"
