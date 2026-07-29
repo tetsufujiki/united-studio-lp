@@ -57,6 +57,12 @@
   --usi-accent-strong: #b8490f; /* hover / deep accent */
   --usi-hairline: rgba(34, 31, 26, 0.16);   /* hairline on light */
   --usi-hairline-dark: rgba(244, 239, 230, 0.14); /* hairline on dark */
+
+  /* Fixed CTA bar layout — used to offset the scroll-to-top button on mobile */
+  /* CTA bar: border-t(1px) + py-3(12px top) + h-11(44px button) + py-3(12px bot) = ~69px */
+  --mobile-cta-bar-height: 69px;
+  --mobile-cta-bar-bottom: 0px; /* safe-area-inset-bottom applied via env() in code */
+  --scroll-top-gap: 12px;       /* gap between cta bar top edge and scroll-to-top button */
 }
 
 .dark {
