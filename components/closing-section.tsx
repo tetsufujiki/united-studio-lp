@@ -65,7 +65,7 @@ export function ClosingSection() {
             Equipment &amp; Facility
           </p>
           <a
-            href="https://studio.united-studio.com"
+            href="https://studio.united-studio.com/studio"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 border border-usi-text/25 px-6 py-3 text-sm font-semibold text-usi-text transition-colors duration-200 hover:border-usi-text hover:bg-usi-text hover:text-usi-sand"

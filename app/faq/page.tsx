@@ -7,6 +7,28 @@ import Image from 'next/image';
 import { FooterSection } from '@/components/footer-section';
 import { faqSections } from '@/lib/faq-data';
 
+const LINE_URL = 'https://page.line.me/568repew';
+
+/** Replace [[LINE]] placeholder with an <a> tag; return plain text otherwise */
+function renderAnswer(answer: string) {
+  if (!answer.includes('[[LINE]]')) return answer;
+  const parts = answer.split('[[LINE]]');
+  return (
+    <>
+      {parts[0]}
+      <a
+        href={LINE_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-usi-text underline underline-offset-2 hover:text-usi-accent"
+      >
+        LINE
+      </a>
+      {parts[1]}
+    </>
+  );
+}
+
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<{ section: number; item: number } | null>({ section: 1, item: 0 });
   const [activeCategory, setActiveCategory] = useState<string>('recording');
@@ -176,7 +198,7 @@ export default function FAQPage() {
                         hidden={!isOpen}
                       >
                         <p className="whitespace-pre-line pb-6 pr-4 text-base leading-relaxed text-usi-text-muted md:pb-7 md:text-lg">
-                          {item.answer}
+                          {renderAnswer(item.answer)}
                         </p>
                       </div>
                     </div>
@@ -233,9 +255,7 @@ export default function FAQPage() {
             </a>
           </div>
 
-          <p className="mt-12 border-t border-usi-hairline-dark pt-8 text-sm font-light text-usi-cream-muted">
-            初めての方のご利用も歓迎しております
-          </p>
+
         </div>
       </section>
 

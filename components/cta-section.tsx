@@ -58,6 +58,9 @@ export function CtaSection() {
               <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream-muted">
                 2-Hour Session
               </p>
+              <p className="mt-1.5 text-sm font-medium text-usi-cream-muted">
+                2時間
+              </p>
               <div className="mt-5 border-t border-usi-hairline-dark">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
                   <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">

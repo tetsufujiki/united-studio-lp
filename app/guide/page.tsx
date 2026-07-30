@@ -243,6 +243,9 @@ export default function GuidePage() {
               <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream-muted">
                 2-Hour Session（税込）
               </p>
+              <p className="mt-1.5 text-sm font-medium text-usi-cream-muted">
+                2時間
+              </p>
               <div className="mt-5 border-t border-usi-hairline-dark">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
                   <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">
@@ -311,7 +314,7 @@ export default function GuidePage() {
             {[
               { title: '現金', description: 'スタジオでお支払いください' },
               { title: 'クレジットカード', description: '主要なカードに対応' },
-              { title: '各種電子決済', description: 'PayPay・Rakuten Payなど対応' },
+              { title: '各種電子決済', description: 'PayPay・Rakuten Pay���ど対応' },
             ].map((method) => (
               <div
                 key={method.title}
@@ -562,9 +565,7 @@ export default function GuidePage() {
             </a>
           </div>
 
-          <p className="mt-12 border-t border-usi-hairline-dark pt-8 text-sm font-light text-usi-cream-muted">
-            初めての方のご利用も歓迎しております
-          </p>
+
         </div>
       </section>
 
