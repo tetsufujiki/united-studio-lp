@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 
 export function StickyCTABar() {
   const pathname = usePathname();
@@ -34,44 +33,39 @@ export function StickyCTABar() {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [isHidden]);
 
   if (isHidden || !isVisible) {
     return null;
   }
 
   return (
-    <div
-      className="fixed bottom-0 left-0 right-0 z-40 px-4 pb-5 md:pb-8 pointer-events-none"
-    >
-      {/* Adaptive gradient - works on both light and dark backgrounds */}
-      <div className="pointer-events-none absolute inset-x-0 -top-16 h-16 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-      
-      <div className="mx-auto max-w-sm md:max-w-md pointer-events-auto">
-        {/* Main floating panel - simplified */}
-        <div className="relative">
-          {/* Panel container - semi-transparent with border */}
-          <div className="relative overflow-hidden rounded-2xl border border-white/20 bg-black/80 backdrop-blur-md px-6 py-5 shadow-lg shadow-black/50 md:px-8 md:py-6">
-            {/* Single top highlight */}
-            <div className="pointer-events-none absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-            
-            {/* Primary Button - Booking */}
-            <div className="relative flex items-center justify-center">
-              <Button
-                size="sm"
-                className="relative h-12 min-w-[220px] bg-primary text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/40 md:h-[52px] md:min-w-[240px] md:text-base"
-                asChild
-              >
-                <a 
-                  href="https://unitedstudio.stores.jp/reserve/usi/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  空き状況を確認する
-                </a>
-              </Button>
-            </div>
-          </div>
+    <div data-sticky-cta className="fixed bottom-0 left-0 right-0 z-40">
+      {/* Slim reservation bar — matches the USDL ink surface with a hairline top edge */}
+      <div
+        className="border-t px-4 py-3 md:px-8"
+        style={{
+          background: "rgba(20, 22, 28, 0.94)",
+          borderColor: "rgba(244, 239, 230, 0.14)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))",
+        }}
+      >
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
+          {/* Label — hidden on very small screens to keep the bar unobtrusive */}
+          <p className="hidden font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted sm:block">
+            Booking
+          </p>
+
+          <a
+            href="https://reserve.united-studio.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 w-full items-center justify-center bg-usi-accent px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-usi-accent-strong sm:w-auto sm:min-w-[220px] md:h-12 md:text-base"
+          >
+            空き状況を確認する
+          </a>
         </div>
       </div>
     </div>

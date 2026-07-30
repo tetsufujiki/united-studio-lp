@@ -5,7 +5,7 @@ type Props = {
 }
 
 /**
- * Single review card — USDL glassmorphism style.
+ * Single review card — USDL 4.0 editorial style.
  * Displays rating stars, comment, reviewer name, and date.
  * Intentionally has no interactive state; interaction is handled by the parent.
  */
@@ -17,13 +17,13 @@ export function ReviewCard({ review }: Props) {
   })
 
   return (
-    <article className="flex flex-col gap-4 rounded-2xl border border-white/20 bg-white/[0.07] px-7 py-6 shadow-[0_8px_32px_rgba(0,0,0,0.22)] backdrop-blur-md">
+    <article className="flex flex-col gap-4 bg-usi-ink/85 px-7 py-7 backdrop-blur-sm">
       {/* Stars */}
       <div className="flex items-center gap-1" aria-label={`${review.rating}点`}>
         {[1, 2, 3, 4, 5].map((n) => (
           <svg
             key={n}
-            className={`h-4 w-4 ${n <= review.rating ? 'text-[#d8a86b]' : 'text-white/20'}`}
+            className={`h-3.5 w-3.5 ${n <= review.rating ? 'text-usi-accent' : 'text-usi-cream/20'}`}
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden="true"
@@ -34,18 +34,18 @@ export function ReviewCard({ review }: Props) {
       </div>
 
       {/* Comment */}
-      <p className="flex-1 text-sm leading-relaxed text-[#f7f1e8]/90 md:text-base">
+      <p className="flex-1 text-sm leading-relaxed text-usi-cream/90 md:text-base">
         {review.comment}
       </p>
 
       {/* Footer: name + date */}
-      <div className="flex items-center justify-between border-t border-white/10 pt-3">
-        <span className="text-xs font-medium tracking-wide text-[#d8c5ab]">
+      <div className="flex items-center justify-between border-t border-usi-hairline-dark pt-3">
+        <span className="text-xs font-medium tracking-wide text-usi-cream-muted">
           {review.reviewer_name}
         </span>
         <time
           dateTime={review.created_at}
-          className="text-xs text-[#d8c5ab]/70"
+          className="font-mono text-[11px] text-usi-cream-muted/80"
         >
           {date}
         </time>

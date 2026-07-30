@@ -35,51 +35,52 @@ const philosophyItems = [
 
 export function PhilosophySection() {
   return (
-    <section className="relative overflow-hidden py-32 md:py-40 lg:py-48">
-      {/* Simplified background */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: `radial-gradient(ellipse 80% 60% at 50% 50%, #12141a 0%, #0a0b0e 100%)`
-        }}
-      />
+    <section className="relative bg-usi-ink py-28 md:py-36">
+      <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
+        {/* Section header — studio philosophy, editorial statement */}
+        <div className="mb-16 md:mb-24">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted">
+              Philosophy
+            </span>
+            <span className="h-px flex-1 bg-usi-hairline-dark" />
+          </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 md:px-12">
-        {/* Section header - increased spacing */}
-        <div className="mb-24 md:mb-28">
-          <h2 className="mb-5 text-3xl font-light tracking-tight text-[#e8e6e3] md:text-4xl lg:text-5xl leading-relaxed">
-            This Studio is{" "}
-            <span className="font-semibold italic text-[#f0eeeb]">Not</span> for Everything
+          <h2 className="mt-8 max-w-3xl text-balance text-3xl font-light leading-snug tracking-tight text-usi-cream md:text-4xl lg:text-5xl">
+            This Studio is <span className="font-semibold italic">Not</span> for Everything
           </h2>
-          <p className="text-base tracking-wide text-[#9a9590] leading-relaxed">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed tracking-wide text-usi-cream-muted">
             新河岸音楽工務所は、完全予約制のプライベートスタジオです。
           </p>
         </div>
 
-        {/* Philosophy spec rows - static styling without hover effects */}
-        <div className="space-y-5">
-          {philosophyItems.map((item) => (
+        {/* Philosophy spec list — numbered hairline rows */}
+        <div className="border-t border-usi-hairline-dark">
+          {philosophyItems.map((item, index) => (
             <div
               key={item.titleEn}
-              className="flex items-center gap-6 rounded-lg border border-[#3a3c42]/60 bg-[#1a1c22]/50 px-6 py-5 backdrop-blur-sm"
+              className="grid grid-cols-[auto_1fr] items-start gap-x-5 border-b border-usi-hairline-dark py-6 md:grid-cols-[60px_auto_1fr] md:items-center md:gap-x-8 md:py-7"
             >
-              {/* Icon container - red alert styling */}
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-red-700/50 bg-red-900/40 text-red-400">
-                <item.icon className="h-[18px] w-[18px]" strokeWidth={1.5} />
-              </div>
+              {/* Number */}
+              <span className="pt-0.5 font-mono text-sm font-medium tracking-[0.1em] text-usi-cream/35 md:pt-0">
+                {String(index + 1).padStart(2, "0")}
+              </span>
 
-              {/* Text content - improved line height */}
-              <div className="flex flex-col gap-1.5">
-                {/* English headline - softer off-white */}
-                <span className="text-xs font-semibold tracking-wide text-[#c5c2bd] leading-relaxed">
+              {/* Icon + EN label */}
+              <div className="flex items-center gap-3 md:w-72">
+                <item.icon className="h-4 w-4 shrink-0 text-usi-cream/45" strokeWidth={1.5} />
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-usi-cream/60">
                   {item.titleEn}
                 </span>
+              </div>
 
-                {/* Japanese description - split styling */}
-                <span className="text-base leading-relaxed">
-                  <span className="text-lg text-[#a8a39d]">{item.constraint}</span>
-                  <span className="text-[#5a5650]">　-　</span>
-                  <span className="text-[#6a655f]">{item.explanation}</span>
+              {/* Constraint + explanation */}
+              <div className="col-span-2 mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 md:col-span-1 md:mt-0">
+                <span className="text-base font-medium text-usi-cream md:text-lg">
+                  {item.constraint}
+                </span>
+                <span className="text-sm text-usi-cream-muted">
+                  {item.explanation}
                 </span>
               </div>
             </div>
