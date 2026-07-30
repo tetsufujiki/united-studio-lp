@@ -255,9 +255,7 @@ export default function FAQPage() {
             </a>
           </div>
 
-          <p className="mt-12 border-t border-usi-hairline-dark pt-8 text-sm font-light text-usi-cream-muted">
-            初めての方のご利用も歓迎しております
-          </p>
+
         </div>
       </section>
 
