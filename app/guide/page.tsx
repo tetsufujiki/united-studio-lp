@@ -314,7 +314,7 @@ export default function GuidePage() {
             {[
               { title: '現金', description: 'スタジオでお支払いください' },
               { title: 'クレジットカード', description: '主要なカードに対応' },
-              { title: '各種電子決済', description: 'PayPay・Rakuten Pay���ど対応' },
+              { title: '各種電子決済', description: 'PayPay・Rakuten Payなど対応' },
             ].map((method) => (
               <div
                 key={method.title}

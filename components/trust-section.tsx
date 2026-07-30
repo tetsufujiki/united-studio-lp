@@ -8,7 +8,7 @@ const trustItems = [
   },
   {
     title: "キャッシュレス決済対応",
-    description: "現金のほか、クレジットカード・\u200b電子マネー対応",
+    description: "現金のほか、クレジットカード・電子マネー対応",
   },
   {
     title: "キャンセル料なし",
