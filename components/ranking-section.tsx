@@ -68,27 +68,34 @@ export function RankingSection() {
         <div className="border-t border-usi-hairline">
           {services.map((service) => {
             const isFirst = service.rank === 1;
+            const Wrapper = isFirst ? "a" : "article";
+            const wrapperProps = isFirst
+              ? {
+                  href: "https://utattemita.united-studio.com",
+                  rel: "noopener noreferrer",
+                  "aria-label": "歌ってみた・カバー 歌ってみた制作の詳細を見る",
+                }
+              : {};
+
             return (
-              <article
+              <Wrapper
                 key={service.title}
-                className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-4 border-b border-usi-hairline py-9 md:grid-cols-[100px_minmax(0,1.1fr)_minmax(0,1.6fr)] md:gap-x-10 md:py-12"
+                {...(wrapperProps as any)}
+                className={`group grid cursor-pointer grid-cols-[auto_1fr] gap-x-5 gap-y-4 border-b border-usi-hairline py-9 transition-colors duration-200 md:grid-cols-[100px_minmax(0,1.1fr)_minmax(0,1.6fr)] md:gap-x-10 md:py-12 ${
+                  isFirst ? "hover:bg-usi-sand-soft focus-visible:bg-usi-sand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent focus-visible:ring-offset-2" : "cursor-default"
+                }`}
               >
                 {/* Rank number */}
                 <div className="flex items-start">
-                  {isFirst ? (
-                    <a
-                      href="https://utattemita.united-studio.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-mono text-4xl font-bold leading-none tracking-tight text-usi-accent transition-opacity duration-200 hover:opacity-70 md:text-6xl"
-                    >
-                      {String(service.rank).padStart(2, "0")}
-                    </a>
-                  ) : (
-                    <span className="font-mono text-4xl font-bold leading-none tracking-tight text-usi-text/25 md:text-6xl">
-                      {String(service.rank).padStart(2, "0")}
-                    </span>
-                  )}
+                  <span
+                    className={`font-mono text-4xl font-bold leading-none tracking-tight md:text-6xl ${
+                      isFirst
+                        ? "text-usi-accent underline decoration-usi-accent/40 underline-offset-4 group-hover:opacity-70 group-focus-visible:opacity-70"
+                        : "text-usi-text/25"
+                    }`}
+                  >
+                    {String(service.rank).padStart(2, "0")}
+                  </span>
                 </div>
 
                 {/* Title block */}
@@ -123,19 +130,14 @@ export function RankingSection() {
                     </span>
 
                     {isFirst && (
-                      <a
-                        href="https://utattemita.united-studio.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-usi-accent transition-colors duration-200 hover:text-usi-accent-strong"
-                      >
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-usi-accent">
                         <span>歌ってみた制作を見る</span>
                         <ArrowUpRight className="h-4 w-4 flex-shrink-0" />
-                      </a>
+                      </span>
                     )}
                   </div>
                 </div>
-              </article>
+              </Wrapper>
             );
           })}
         </div>
