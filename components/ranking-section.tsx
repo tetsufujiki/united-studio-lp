@@ -75,13 +75,20 @@ export function RankingSection() {
               >
                 {/* Rank number */}
                 <div className="flex items-start">
-                  <span
-                    className={`font-mono text-4xl font-bold leading-none tracking-tight md:text-6xl ${
-                      isFirst ? "text-usi-accent" : "text-usi-text/25"
-                    }`}
-                  >
-                    {String(service.rank).padStart(2, "0")}
-                  </span>
+                  {isFirst ? (
+                    <a
+                      href="https://utattemita.united-studio.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-4xl font-bold leading-none tracking-tight text-usi-accent transition-opacity duration-200 hover:opacity-70 md:text-6xl"
+                    >
+                      {String(service.rank).padStart(2, "0")}
+                    </a>
+                  ) : (
+                    <span className="font-mono text-4xl font-bold leading-none tracking-tight text-usi-text/25 md:text-6xl">
+                      {String(service.rank).padStart(2, "0")}
+                    </span>
+                  )}
                 </div>
 
                 {/* Title block */}
@@ -117,7 +124,7 @@ export function RankingSection() {
 
                     {isFirst && (
                       <a
-                        href="https://united-studio.com/utattemita"
+                        href="https://utattemita.united-studio.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-usi-accent transition-colors duration-200 hover:text-usi-accent-strong"
