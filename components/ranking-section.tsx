@@ -71,10 +71,23 @@ export function RankingSection() {
             return (
               <article
                 key={service.title}
-                className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-4 border-b border-usi-hairline py-9 md:grid-cols-[100px_minmax(0,1.1fr)_minmax(0,1.6fr)] md:gap-x-10 md:py-12"
+                className={`relative grid grid-cols-[auto_1fr] gap-x-5 gap-y-4 border-b border-usi-hairline py-9 md:grid-cols-[100px_minmax(0,1.1fr)_minmax(0,1.6fr)] md:gap-x-10 md:py-12 ${
+                  isFirst ? "transition-colors duration-200 hover:bg-usi-sand-soft" : ""
+                }`}
               >
+                {/* Stretched link for rank 1 — covers the whole row for mobile tap */}
+                {isFirst && (
+                  <a
+                    href="https://utattemita.united-studio.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="歌ってみた制作サービスの詳細を見る"
+                    className="absolute inset-0 z-0"
+                  />
+                )}
+
                 {/* Rank number */}
-                <div className="flex items-start">
+                <div className="relative z-10 flex items-start">
                   <span
                     className={`font-mono text-4xl font-bold leading-none tracking-tight md:text-6xl ${
                       isFirst ? "text-usi-accent" : "text-usi-text/25"
@@ -85,7 +98,7 @@ export function RankingSection() {
                 </div>
 
                 {/* Title block */}
-                <div className="min-w-0">
+                <div className="relative z-10 min-w-0">
                   <h3 className="text-xl font-bold leading-snug tracking-tight text-usi-text md:text-2xl">
                     {service.rank === 3 ? (
                       <>
@@ -104,7 +117,7 @@ export function RankingSection() {
                 </div>
 
                 {/* Description + meta */}
-                <div className="col-span-2 min-w-0 md:col-span-1">
+                <div className="relative z-10 col-span-2 min-w-0 md:col-span-1">
                   <p className="text-sm leading-relaxed text-usi-text/80 md:text-base">
                     {service.description}
                   </p>
@@ -117,10 +130,10 @@ export function RankingSection() {
 
                     {isFirst && (
                       <a
-                        href="https://united-studio.com/utattemita"
+                        href="https://utattemita.united-studio.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-usi-accent transition-colors duration-200 hover:text-usi-accent-strong"
+                        className="relative z-10 inline-flex items-center gap-1.5 text-sm font-semibold text-usi-accent transition-colors duration-200 hover:text-usi-accent-strong"
                       >
                         <span>歌ってみた制作を見る</span>
                         <ArrowUpRight className="h-4 w-4 flex-shrink-0" />
