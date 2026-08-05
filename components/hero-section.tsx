@@ -150,9 +150,6 @@ export function HeroSection() {
                 </span>
               </div>
               <span className="hidden h-4 w-px bg-usi-hairline-dark sm:inline-block" />
-              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.25em] text-usi-cream/55">
-                Since 2006
-              </span>
             </div>
           </div>
         </div>
