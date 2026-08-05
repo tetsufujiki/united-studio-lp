@@ -30,18 +30,6 @@ export function FooterSection() {
         {/* Top hairline */}
         <div className="mb-10 border-t border-usi-hairline-dark" />
 
-        <div className="mb-8 flex items-center">
-          <a
-            href="https://reserve.united-studio.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.22em] text-usi-cream-muted transition-colors duration-200 hover:text-usi-cream"
-          >
-            BOOKING
-            <span className="transition-transform duration-200 group-hover:translate-x-0.5">&rarr;</span>
-          </a>
-        </div>
-
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           {/* Company name */}
           <p className="text-sm font-medium tracking-wide text-usi-cream md:text-base">
