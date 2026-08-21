@@ -6,6 +6,10 @@
 export interface FAQItem {
   question: string;
   answer: string;
+  link?: {
+    label: string;
+    href: string;
+  };
 }
 
 export interface FAQSection {
@@ -123,6 +127,14 @@ export const faqSections: FAQSection[] = [
       {
         question: '楽器は貸してもらえますか？',
         answer: '基本的にお持ち込みをお願いしております。常設機材として KORG SV-2S 88鍵ステージピアノをご利用いただけます。',
+      },
+      {
+        question: '機材リストはありますか？',
+        answer: 'スタジオ環境・常設機材一覧は',
+        link: {
+          label: 'こちら',
+          href: 'https://studio.united-studio.com/studio',
+        },
       },
     ],
   },
