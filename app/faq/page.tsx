@@ -199,6 +199,19 @@ export default function FAQPage() {
                       >
                         <p className="whitespace-pre-line pb-6 pr-4 text-base leading-relaxed text-usi-text-muted md:pb-7 md:text-lg">
                           {renderAnswer(item.answer)}
+                          {item.link && (
+                            <>
+                              <a
+                                href={item.link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent"
+                              >
+                                {item.link.label}
+                              </a>
+                              <span className="sr-only">（新しいタブで開く）</span>
+                            </>
+                          )}
                         </p>
                       </div>
                     </div>

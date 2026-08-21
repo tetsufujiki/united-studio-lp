@@ -134,6 +134,18 @@ export function HeroSection() {
                     <p className="mt-1 text-xs leading-relaxed text-usi-cream/65 md:text-sm">
                       {feature.description}
                     </p>
+                    {index === 0 && (
+                      <a
+                        href="https://studio.united-studio.com/studio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group mt-2 inline-flex items-center gap-1.5 border-b border-usi-cream/25 pb-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-usi-cream/60 transition-colors duration-200 hover:border-usi-cream/60 hover:text-usi-cream"
+                      >
+                        Studio Details
+                        <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
+                        <span className="sr-only">（新しいタブで開く）</span>
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
