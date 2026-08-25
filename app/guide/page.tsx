@@ -117,18 +117,40 @@ export default function GuidePage() {
               { label: 'サービス', value: 'ミックス・マスタリング込み' },
               { label: '受取', value: '当日データ持ち帰り' },
               { label: '対象', value: '初心者歓迎' },
-              { label: 'キャンセル', value: '無料 ※条件あり' },
+              {
+                label: '予約変更・キャンセル',
+                value: 'キャンセル料 ¥0',
+                notes: [
+                  '変更・キャンセルは2日前まで',
+                  '当日キャンセルは利用制限の対象となる場合があります',
+                ],
+              },
             ].map((item) => (
               <div
                 key={item.label}
                 className="flex flex-col gap-1 border-b border-usi-hairline py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 md:py-6"
               >
-                <span className="text-sm font-semibold tracking-wide text-usi-text-muted sm:w-32 sm:flex-shrink-0">
+                <span
+                  className={`text-sm font-semibold tracking-wide text-usi-text-muted sm:flex-shrink-0 ${
+                    item.label === '予約変更・キャンセル'
+                      ? 'sm:w-40 sm:whitespace-nowrap'
+                      : 'sm:w-32'
+                  }`}
+                >
                   {item.label}
                 </span>
-                <span className="flex-1 text-base font-bold leading-relaxed text-usi-text sm:text-right md:text-lg">
-                  {item.value}
-                </span>
+                <div className="flex-1 sm:text-right">
+                  <span className="block text-base font-bold leading-relaxed text-usi-text md:text-lg">
+                    {item.value}
+                  </span>
+                  {item.notes && (
+                    <div className="mt-2 space-y-1 text-sm font-medium leading-relaxed text-usi-text-muted">
+                      {item.notes.map((note) => (
+                        <p key={note}>{note}</p>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
