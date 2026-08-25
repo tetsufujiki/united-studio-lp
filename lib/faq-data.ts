@@ -9,6 +9,9 @@ export interface FAQItem {
   link?: {
     label: string;
     href: string;
+    newTab?: boolean;
+    separateLine?: boolean;
+    includeInStructuredData?: boolean;
   };
 }
 
@@ -28,6 +31,13 @@ export const faqSections: FAQSection[] = [
       {
         question: '東京で歌ってみた録音に対応したスタジオを探しています。',
         answer: 'USI新河岸音楽工務所は東京・板橋の完全予約制レコーディングスタジオです。録音からMix・Masteringまでエンジニア付きでサポートします。',
+        link: {
+          label: '歌ってみた録音の詳しい流れはこちら',
+          href: 'https://utattemita.united-studio.com/',
+          newTab: false,
+          separateLine: true,
+          includeInStructuredData: true,
+        },
       },
       {
         question: '初めてですが大丈夫ですか？',
@@ -174,7 +184,10 @@ export function generateFAQPageSchema() {
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer,
+        text:
+          item.link?.includeInStructuredData
+            ? `${item.answer}\n\n${item.link.label}: ${item.link.href}`
+            : item.answer,
       },
     }))
   );

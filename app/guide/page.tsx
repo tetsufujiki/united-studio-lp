@@ -87,6 +87,16 @@ export default function GuidePage() {
               <p className="text-base leading-relaxed text-usi-text-muted md:text-lg">
                 ボーカル録音・ナレーション録音・弾き語り録音・音源制作などに対応しています。
               </p>
+              <p className="text-base leading-relaxed text-usi-text-muted md:text-lg">
+                歌ってみた録音をご検討の方は、
+                <a
+                  href="https://utattemita.united-studio.com/"
+                  className="font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent"
+                >
+                  歌ってみた録音の流れを見る
+                </a>
+                から、録音から仕上げまでの流れをご確認いただけます。
+              </p>
             </div>
           </div>
         </div>

@@ -58,13 +58,13 @@ export function getStaticPages(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date('2025-06-30'),
+      lastModified: new Date('2026-08-25'),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/guide`,
-      lastModified: new Date('2025-06-30'),
+      lastModified: new Date('2026-08-25'),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },

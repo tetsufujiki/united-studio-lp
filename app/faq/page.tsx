@@ -203,13 +203,17 @@ export default function FAQPage() {
                             <>
                               <a
                                 href={item.link.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent"
+                                target={item.link.newTab === false ? undefined : '_blank'}
+                                rel={item.link.newTab === false ? undefined : 'noopener noreferrer'}
+                                className={`font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent ${
+                                  item.link.separateLine ? 'mt-4 block w-fit' : ''
+                                }`}
                               >
                                 {item.link.label}
                               </a>
-                              <span className="sr-only">（新しいタブで開く）</span>
+                              {item.link.newTab !== false && (
+                                <span className="sr-only">（新しいタブで開く）</span>
+                              )}
                             </>
                           )}
                         </p>
