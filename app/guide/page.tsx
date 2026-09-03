@@ -132,7 +132,7 @@ export default function GuidePage() {
                 value: 'キャンセル料 ¥0',
                 notes: [
                   '変更・キャンセルは2日前まで',
-                  '当日キャンセルは利用制限の対象となる場合があります',
+                  '当日・無断キャンセルは、次回の事前支払いまたは利用制限の対象となる場合があります',
                 ],
               },
             ].map((item) => (
@@ -419,7 +419,7 @@ export default function GuidePage() {
           <div className="mt-10 max-w-3xl">
             <div className="border-l-2 border-usi-accent pl-5 md:pl-6">
               <p className="text-lg font-bold leading-relaxed text-usi-text md:text-xl">
-                予約日の2日前まで予約サイトから変更・キャンセルが可能です。
+                予約日の2日前までは、予約サイトから変更・キャンセルが可能です。
               </p>
             </div>
             <div className="mt-8 border-t border-usi-hairline pt-6">
@@ -427,7 +427,12 @@ export default function GuidePage() {
                 キャンセル料金はいただいておりません。
               </p>
               <p className="mt-4 text-sm leading-relaxed text-usi-text-muted md:text-base">
-                ただし当日キャンセルまたは無断キャンセルが累計2回あった場合は、予約枠確保の都合上、以後のご利用をお断りさせていただきます。あらかじめご了承ください。
+                ご利用当日のキャンセルや、連絡のないキャンセルは利用履歴として記録されます。
+                <br />
+                ご利用状況によっては、次回のご予約時に事前のお支払いをお願いする場合があります。また、同様のキャンセルが繰り返された場合は、新しいご予約をお受けできないことがあります。
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-usi-text-muted md:text-base">
+                詳しい取り扱いは「キャンセルポリシー」をご確認ください。
               </p>
             </div>
           </div>
