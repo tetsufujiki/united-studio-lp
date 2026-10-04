@@ -68,12 +68,18 @@ export function RankingSection() {
         <div className="border-t border-usi-hairline">
           {services.map((service) => {
             const isFirst = service.rank === 1;
-            const Wrapper = isFirst ? "a" : "article";
-            const wrapperProps = isFirst
+            const isAudition = service.rank === 2;
+            const isLinked = isFirst || isAudition;
+            const Wrapper = isLinked ? "a" : "article";
+            const wrapperProps = isLinked
               ? {
-                  href: "https://utattemita.united-studio.com",
+                  href: isFirst
+                    ? "https://utattemita.united-studio.com"
+                    : "https://studio.united-studio.com/audition-recording",
                   rel: "noopener noreferrer",
-                  "aria-label": "歌ってみた・カバー 歌ってみた制作の詳細を見る",
+                  "aria-label": isFirst
+                    ? "歌ってみた・カバー 歌ってみた制作の詳細を見る"
+                    : "声優オーディション・ボイスサンプル収録の詳細を見る",
                 }
               : {};
 
@@ -82,7 +88,7 @@ export function RankingSection() {
                 key={service.title}
                 {...(wrapperProps as any)}
                 className={`group grid cursor-pointer grid-cols-[auto_1fr] gap-x-5 gap-y-4 border-b border-usi-hairline py-9 transition-colors duration-200 md:grid-cols-[100px_minmax(0,1.1fr)_minmax(0,1.6fr)] md:gap-x-10 md:py-12 ${
-                  isFirst ? "hover:bg-usi-sand-soft focus-visible:bg-usi-sand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent focus-visible:ring-offset-2" : "cursor-default"
+                  isLinked ? "hover:bg-usi-sand-soft focus-visible:bg-usi-sand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent focus-visible:ring-offset-2" : "cursor-default"
                 }`}
               >
                 {/* Rank number */}

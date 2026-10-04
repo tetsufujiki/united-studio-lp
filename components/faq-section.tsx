@@ -105,6 +105,13 @@ export function FAQSection() {
             もっと詳しいFAQを見る
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
+
+          <a
+            href="https://studio.united-studio.com/audition-recording"
+            className="inline-flex min-h-11 items-center text-sm font-medium leading-relaxed text-usi-text-muted underline decoration-usi-text-muted/50 underline-offset-4 transition-colors duration-200 hover:text-usi-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent focus-visible:ring-offset-2 md:text-base"
+          >
+            声優オーディション・ボイスサンプル収録についてはこちら
+          </a>
         </div>
       </div>
     </section>
