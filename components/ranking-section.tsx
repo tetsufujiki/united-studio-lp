@@ -65,7 +65,7 @@ export function RankingSection() {
         </div>
 
         {/* Ranking rows — numbered editorial list */}
-        <div className="border-t border-usi-hairline">
+        <div className="group/ranking border-t border-usi-hairline">
           {services.map((service) => {
             const isFirst = service.rank === 1;
             const isAudition = service.rank === 2;
@@ -87,7 +87,7 @@ export function RankingSection() {
               <Wrapper
                 key={service.title}
                 {...(wrapperProps as any)}
-                className={`group grid cursor-pointer grid-cols-[auto_1fr] gap-x-5 gap-y-4 border-b border-usi-hairline py-9 transition-colors duration-200 md:grid-cols-[100px_minmax(0,1.1fr)_minmax(0,1.6fr)] md:gap-x-10 md:py-12 ${
+                className={`group/row grid cursor-pointer grid-cols-[auto_1fr] gap-x-5 gap-y-4 border-b border-usi-hairline py-9 transition-colors duration-200 md:grid-cols-[100px_minmax(0,1.1fr)_minmax(0,1.6fr)] md:gap-x-10 md:py-12 ${
                   isLinked ? "hover:bg-usi-sand-soft focus-visible:bg-usi-sand-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent focus-visible:ring-offset-2" : "cursor-default"
                 }`}
               >
@@ -96,7 +96,9 @@ export function RankingSection() {
                   <span
                     className={`font-mono text-4xl font-bold leading-none tracking-tight md:text-6xl ${
                       isFirst
-                        ? "text-usi-accent underline decoration-usi-accent/40 underline-offset-4 group-hover:opacity-70 group-focus-visible:opacity-70"
+                        ? "text-usi-accent underline decoration-current/40 underline-offset-4 group-has-[>a:nth-child(2):hover]/ranking:text-usi-text/25"
+                        : isAudition
+                          ? "text-usi-text/25 group-hover/row:text-usi-accent group-focus-visible/row:text-usi-accent group-active/row:text-usi-accent"
                         : "text-usi-text/25"
                     }`}
                   >
@@ -135,9 +137,13 @@ export function RankingSection() {
                       当日仕上げ対応
                     </span>
 
-                    {isFirst && (
+                    {isLinked && (
                       <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-usi-accent">
-                        <span>歌ってみた制作を見る</span>
+                        <span>
+                          {isFirst
+                            ? "歌ってみた制作を見る"
+                            : "声優オーディション収録を見る"}
+                        </span>
                         <ArrowUpRight className="h-4 w-4 flex-shrink-0" />
                       </span>
                     )}
