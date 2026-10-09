@@ -495,7 +495,14 @@ export default function GuidePage() {
                 当日キャンセルが累計2回に達した場合、次回以降のご予約は事前のお支払いが必要です。支払い確認後に管理者が予約を承認します。
               </p>
               <p className="mt-4 text-sm leading-relaxed text-usi-text-muted md:text-base">
-                詳しい取り扱いは「キャンセルポリシー」をご確認ください。
+                詳しい取り扱いは「
+                <a
+                  href="https://reserve.united-studio.com/cancellation-policy"
+                  className="text-usi-accent-strong underline underline-offset-4 transition-colors hover:text-usi-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-usi-accent"
+                >
+                  キャンセルポリシー
+                </a>
+                」をご確認ください。
               </p>
             </div>
           </div>
