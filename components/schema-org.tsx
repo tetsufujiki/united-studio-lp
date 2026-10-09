@@ -63,7 +63,7 @@ export function SchemaOrg() {
       '@id': 'https://united-studio.com/#organization',
     },
     description:
-      '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ。',
+      '1000組+利用・高評価レビュー・即日納品対応のレコーディングスタジオ。',
   };
 
   const webpageSchema = {
@@ -71,7 +71,7 @@ export function SchemaOrg() {
     '@type': 'WebPage',
     '@id': 'https://rec.united-studio.com/#webpage',
     url: 'https://rec.united-studio.com',
-    name: '1000組+利用・高評価レビュー・即日納品ワンプライスのレコーディングスタジオ｜USI新河岸音楽工務所',
+    name: '1000組+利用・高評価レビュー・即日納品対応のレコーディングスタジオ｜USI新河岸音楽工務所',
     description:
       '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。',
     isPartOf: {

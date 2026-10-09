@@ -233,10 +233,10 @@ export function ServicesSection() {
           <div className="flex items-center gap-3 rounded-full border border-border/40 bg-card/40 px-5 py-2.5 backdrop-blur-sm">
             <Gift className="h-4 w-4 text-[#06C755]" />
             <span className="text-sm text-muted-foreground">
-              初回利用 LINEクーポン
+              LINEクーポンのご案内
             </span>
             <span className="rounded-full bg-[#06C755]/10 px-3 py-0.5 text-sm font-semibold text-[#06C755]">
-              ¥2,000-OFF
+              適用条件はLINEで確認
             </span>
           </div>
         </div>
