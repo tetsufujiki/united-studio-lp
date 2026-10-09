@@ -69,43 +69,62 @@ export default function GuidePage() {
               01
             </span>
             <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-text-muted">
-              About
+              Start Here
             </span>
             <span className="h-px flex-1 bg-usi-hairline" />
           </div>
 
-          <div className="mt-10 grid gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
-            <h2 className="text-2xl font-bold leading-snug tracking-tight text-usi-text text-balance md:text-3xl" style={{ wordBreak: 'keep-all' }}>
-              レコーディング
-              <wbr />
-              スタジオについて
+          <div className="mt-10 grid gap-8 md:grid-cols-[1fr_1.2fr] md:gap-16">
+            <h2 className="text-3xl font-bold leading-snug tracking-tight text-usi-text md:text-4xl">
+              はじめての録音も、
+              <br />
+              目的に合わせて。
             </h2>
-            <div className="space-y-5">
+            <div className="space-y-4">
               <p className="text-base font-medium leading-relaxed text-usi-text md:text-lg">
                 USI新河岸音楽工務所は東京都板橋区のレコーディングスタジオです。
               </p>
               <p className="text-base leading-relaxed text-usi-text-muted md:text-lg">
                 ボーカル録音・ナレーション録音・弾き語り録音・音源制作などに対応しています。
               </p>
-              <p className="text-base leading-relaxed text-usi-text-muted md:text-lg">
-                声優オーディション・ボイスサンプル・歌唱オーディション提出用の録音については、専用ページでも詳しくご案内しています。
+            </div>
+          </div>
+
+          <div className="mt-12 border-t border-usi-hairline pt-8 md:mt-16">
+            <p className="text-sm font-medium tracking-wide text-usi-text-muted">
+              録音の目的に合わせた詳しいご案内
+            </p>
+            <div className="mt-6 grid gap-8 md:grid-cols-2 md:gap-12">
+              <div className="flex min-w-0 flex-col border-b border-usi-hairline pb-8">
+                <h3 className="text-xl font-bold leading-relaxed tracking-tight text-usi-text md:text-2xl">
+                  声優・歌唱オーディション
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-usi-text-muted">
+                  オーディション提出用の音源から、ボイスサンプル・ナレーションまで。収録の準備や進め方を専用ページでご案内しています。
+                </p>
                 <a
                   href="https://studio.united-studio.com/audition-recording"
-                  className="mt-2 inline-block py-2 font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent"
+                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
                 >
-                  声優・歌唱オーディションの録音についてはこちら
+                  <span>声優・歌唱オーディションの録音について</span>
+                  <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
                 </a>
-              </p>
-              <p className="text-base leading-relaxed text-usi-text-muted md:text-lg">
-                歌ってみた録音をご検討の方は、
+              </div>
+              <div className="flex min-w-0 flex-col border-b border-usi-hairline pb-8">
+                <h3 className="text-xl font-bold leading-relaxed tracking-tight text-usi-text md:text-2xl">
+                  歌ってみた・カバー
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-usi-text-muted">
+                  はじめての歌録りも、作品づくりも。録音からミックス・仕上げまでの流れを専用ページでご確認いただけます。
+                </p>
                 <a
                   href="https://utattemita.united-studio.com/"
-                  className="font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent"
+                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
                 >
-                  歌ってみた録音の流れを見る
+                  <span>歌ってみた録音の流れを見る</span>
+                  <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
                 </a>
-                から、録音から仕上げまでの流れをご確認いただけます。
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -278,7 +297,7 @@ export default function GuidePage() {
             料金
           </h2>
 
-          <div className="mt-12 grid gap-14 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
+          <div className="mt-12 grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Price rows */}
             <div>
               <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream-muted">
@@ -317,24 +336,28 @@ export default function GuidePage() {
               </p>
             </div>
 
-            {/* Included */}
-            <div className="flex flex-col justify-end">
-              <div className="border border-usi-hairline-dark p-6 md:p-7">
-                <p className="text-sm font-semibold text-usi-cream md:text-base">
-                  料金には基本的に以下が含まれます。
-                </p>
-                <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3">
-                  {['レコーディング', 'ピッチ修正', 'リズム修正', 'ミックス', 'マスタリング', '撮影'].map((item) => (
-                    <li key={item} className="flex items-center gap-2.5">
-                      <Check className="h-4 w-4 flex-shrink-0 text-usi-accent" strokeWidth={2} />
-                      <span className="text-sm text-usi-cream md:text-base">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="mt-6 border-t border-usi-hairline-dark pt-5 text-xs leading-relaxed text-usi-cream-muted md:text-sm">
-                  そのほかのご要望にも可能な限り対応しておりますので、お気軽にご相談ください。
-                </p>
-              </div>
+            {/* Included — a primary part of the pricing information */}
+            <div className="border-t-2 border-usi-accent bg-white/[0.04] px-6 pb-8 pt-7 md:px-8 md:pb-10 md:pt-8">
+              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-accent">
+                Included Services
+              </p>
+              <h3 className="mt-4 text-2xl font-bold leading-snug tracking-tight text-usi-cream md:text-3xl">
+                料金に含まれるサービス
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-usi-cream-muted">
+                料金には基本的に以下が含まれます。
+              </p>
+              <ul className="mt-7 grid grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                {['レコーディング', 'ピッチ修正', 'リズム修正', 'ミックス', 'マスタリング', '撮影'].map((item) => (
+                  <li key={item} className="flex items-center gap-3 border-t border-usi-hairline-dark py-4">
+                    <Check className="h-5 w-5 flex-shrink-0 text-usi-accent" strokeWidth={2} />
+                    <span className="text-lg font-semibold leading-relaxed text-usi-cream">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 border-t border-usi-hairline-dark pt-6 text-base leading-relaxed text-usi-cream-muted">
+                そのほかのご要望にも可能な限り対応しておりますので、お気軽にご相談ください。
+              </p>
             </div>
           </div>
         </div>
