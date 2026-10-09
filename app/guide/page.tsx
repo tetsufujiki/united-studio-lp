@@ -170,8 +170,8 @@ export default function GuidePage() {
                 label: '予約変更・キャンセル',
                 value: 'キャンセル料 ¥0',
                 notes: [
-                  '変更は2日前まで・キャンセルは当日まで',
-                  '当日・無断キャンセルは、次回の事前支払いまたは利用制限の対象となる場合があります',
+                  '変更・キャンセルは2日前までマイページから。前日・当日は直接ご連絡ください',
+                  '当日キャンセル累計2回で、次回以降のご予約は事前支払いが必要です',
                 ],
               },
             ].map((item) => (
@@ -482,7 +482,7 @@ export default function GuidePage() {
           <div className="mt-10 max-w-3xl">
             <div className="border-l-2 border-usi-accent pl-5 md:pl-6">
               <p className="text-lg font-bold leading-relaxed text-usi-text md:text-xl">
-                予約内容の変更はご利用日の2日前まで、キャンセルはご利用当日まで、予約サイトのマイページからお手続きいただけます。
+                予約の変更・キャンセルは、ご予約日の2日前までマイページからお手続きいただけます。前日・当日は直接ご連絡ください。
               </p>
             </div>
             <div className="mt-8 border-t border-usi-hairline pt-6">
@@ -490,9 +490,9 @@ export default function GuidePage() {
                 キャンセル料金はいただいておりません。
               </p>
               <p className="mt-4 text-sm leading-relaxed text-usi-text-muted md:text-base">
-                ご利用当日のキャンセルや、連絡のないキャンセルは利用履歴として記録されます。
+                前日のご連絡には当日キャンセルの記録は付きません。当日の変更・キャンセルは、管理者がキャンセル処理を行い、1回につき当日キャンセルの記録が1件追加されます。
                 <br />
-                ご利用状況によっては、次回のご予約時に事前のお支払いをお願いする場合があります。また、同様のキャンセルが繰り返された場合は、新しいご予約をお受けできないことがあります。
+                当日キャンセルが累計2回に達した場合、次回以降のご予約は事前のお支払いが必要です。支払い確認後に管理者が予約を承認します。
               </p>
               <p className="mt-4 text-sm leading-relaxed text-usi-text-muted md:text-base">
                 詳しい取り扱いは「キャンセルポリシー」をご確認ください。

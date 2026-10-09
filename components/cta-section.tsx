@@ -116,7 +116,7 @@ export function CtaSection() {
                 空き状況の確認から、利用時間の選択、料金確認、予約のお申し込みまでオンラインで。予約はスタジオの承認後に確定します。
               </p>
               <p className="mt-3 text-sm leading-relaxed text-usi-cream-muted">
-                ご予約の確認・変更はマイページから。変更はご利用日の2日前まで、キャンセルは当日までお手続きいただけます。
+                予約の変更・キャンセルは2日前までマイページから。前日・当日は直接ご連絡ください。
               </p>
 
               <a
@@ -133,7 +133,7 @@ export function CtaSection() {
               </a>
 
               <p className="mt-3 text-center text-xs font-medium text-usi-cream-muted">
-                当日・無断キャンセルは事前支払い・利用制限の対象となる場合があります
+                当日キャンセル累計2回の方は、次回以降は事前支払い・確認後の承認となります
               </p>
             </div>
 
