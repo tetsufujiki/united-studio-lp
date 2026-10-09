@@ -1,4 +1,4 @@
-import { Gift, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, Banknote, CreditCard, Smartphone } from "lucide-react";
 
 export function CtaSection() {
   return (
@@ -11,7 +11,7 @@ export function CtaSection() {
               Plan
             </span>
             <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted">
-              The Only Plan You Need
+              Recording & Production
             </span>
             <span className="h-px flex-1 bg-usi-hairline-dark" />
           </div>
@@ -82,67 +82,88 @@ export function CtaSection() {
                 </div>
               </div>
 
-              <p className="mt-5 text-sm leading-relaxed text-usi-cream-muted">
+              <div className="mt-7 border-l-2 border-usi-accent bg-white/[0.06] px-5 py-5 md:px-6">
+                <p className="text-base font-semibold leading-relaxed text-usi-cream md:text-lg">
+                  詳しい料金・空き状況は、
+                  <a
+                    href="https://reserve.united-studio.com/"
+                    className="group inline-flex min-h-11 items-center gap-2 text-usi-accent underline underline-offset-4 transition-colors hover:text-usi-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
+                  >
+                    予約ページ
+                    <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                  </a>
+                  でご確認ください。
+                </p>
+              </div>
+              <p className="mt-6 text-sm leading-relaxed text-usi-cream-muted">
                 13:00〜16:30開始は平日14,000円・土日祝18,000円、17:00以降開始は平日16,000円・土日祝20,000円です。料金は予約の開始時刻を基準に適用されます。
               </p>
               <p className="mt-3 text-sm leading-relaxed text-usi-cream-muted">
                 2026年10月31日ご利用分までは、2時間 平日14,000円・土日祝18,000円です。3時間以上のコースを含む最新の料金・空き状況は予約ページでご確認ください。
               </p>
-              <div className="mt-8 border-l-2 border-usi-accent pl-5 md:mt-10">
-                <p className="text-xl font-bold text-usi-cream md:text-2xl">
-                  録音・ミックス・撮影込み
-                </p>
-                <p className="mt-1.5 text-base font-medium text-usi-cream-muted md:text-lg">
-                  作品完成までワンストップ
-                </p>
-              </div>
             </div>
           </div>
 
-          {/* Right — first-visit offer & actions */}
-          <div className="flex flex-col justify-end">
-            {/* First visit offer */}
-            <div className="border border-usi-hairline-dark p-6 md:p-7">
-              <div className="flex items-center gap-2.5">
-                <Gift className="h-4 w-4 text-[#06C755]" strokeWidth={1.5} />
-                <span className="text-sm font-semibold text-usi-cream">ご利用前の確認</span>
-                <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted">
-                  LINEクーポン
-                </span>
-              </div>
-              <p className="mt-4 text-3xl font-black tracking-tight text-[#06C755] md:text-4xl">
-                LINEでご確認ください
-              </p>
-
-              <a
-                href="https://page.line.me/568repew"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mt-6 inline-flex h-12 w-full items-center justify-center gap-2.5 bg-[#06C755] px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#05b34c] md:h-[52px] md:text-base"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.064-.022.135-.033.201-.033.209 0 .389.09.51.249l2.439 3.315V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-                </svg>
-                クーポンについて確認する
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
-
-              <p className="mt-3 text-center text-xs font-medium text-usi-cream-muted">
-                クーポンの有無・金額・適用条件はLINEでご確認ください
-              </p>
-            </div>
-
-            {/* Secondary booking link */}
-            <a
-              href="https://reserve.united-studio.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-4 inline-flex h-12 items-center justify-center gap-2 border border-usi-cream/30 px-6 text-sm font-medium text-usi-cream transition-colors duration-200 hover:border-usi-cream/60 hover:bg-white/5 md:h-[52px]"
-            >
-              空き状況と料金を確認する
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
+          {/* Included production, separated from booking instructions */}
+          <div className="flex flex-col justify-center border-t border-usi-hairline-dark pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-usi-cream-muted">Included</p>
+            <h3 className="mt-4 text-2xl font-bold leading-snug text-usi-cream md:text-3xl">
+              録音から完成まで、<br />必要な工程をひとつに。
+            </h3>
+            <ul className="mt-7 divide-y divide-usi-hairline-dark border-y border-usi-hairline-dark">
+              {['エンジニア付き', 'レコーディング', '編集・ピッチ補正・リズム修正', 'ミックス', 'マスタリング', '撮影対応'].map((item) => (
+                <li key={item} className="flex items-center gap-3 py-3.5 text-base font-medium text-usi-cream">
+                  <Check className="h-4 w-4 shrink-0 text-usi-accent" aria-hidden="true" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm leading-relaxed text-usi-cream-muted">
+              撮影はご予約時間内で、ご希望に応じて時間を配分します。その他のご要望もお気軽にご相談ください。
+            </p>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function OnlineBookingSection() {
+  return (
+    <section aria-labelledby="online-booking-heading" className="bg-usi-sand-soft py-16 md:py-20">
+      <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
+        <div>
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-usi-text-muted">Online Booking</p>
+          <h2 id="online-booking-heading" className="mt-5 text-2xl font-bold leading-snug tracking-tight text-usi-text md:text-3xl">
+            予約も、スタジオ体験の一部です。
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-usi-text-muted md:text-base">
+            空き状況も、料金も、その場で確認。<br />
+            日時を選んで、そのままオンライン予約。
+          </p>
+        </div>
+        <div className="lg:justify-self-end">
+          <a href="https://reserve.united-studio.com/" target="_blank" rel="noopener noreferrer" className="group inline-flex min-h-12 w-full items-center justify-center gap-3 bg-usi-accent px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-usi-accent-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-usi-accent md:text-base lg:w-auto">
+            空き状況・料金を確認する
+            <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+          </a>
+        </div>
+        </div>
+        <div className="mt-10 border-t border-usi-hairline pt-7 md:mt-12 md:flex md:items-center md:justify-between md:gap-8">
+          <h3 className="text-lg font-semibold text-usi-text md:text-xl">お支払い方法</h3>
+          <ul className="mt-4 flex flex-wrap gap-3 md:mt-0">
+            {[
+              { label: '現金', icon: Banknote },
+              { label: 'クレジットカード', icon: CreditCard },
+              { label: '電子マネー', icon: Smartphone },
+            ].map(({ label, icon: Icon }) => (
+              <li key={label} className="inline-flex min-h-12 items-center gap-2.5 border border-usi-hairline bg-white/60 px-4 py-3 text-sm font-semibold text-usi-text md:text-base">
+                <Icon className="h-5 w-5 shrink-0 text-usi-accent" strokeWidth={1.5} aria-hidden="true" />
+                {label}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

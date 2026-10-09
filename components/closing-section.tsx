@@ -28,12 +28,12 @@ export function ClosingSection() {
             <span className="h-px flex-1 bg-usi-hairline" />
           </div>
 
-          <h3
+          <h2
             id="equipment-pro-section"
             className="mt-8 max-w-2xl scroll-mt-24 text-balance text-2xl font-light leading-relaxed tracking-tight text-usi-text sm:text-3xl md:text-4xl"
           >
             プロフェッショナル基準の機材と環境をご提供します
-          </h3>
+          </h2>
         </div>
 
         {/* Equipment category strip — hairline-framed grid */}
@@ -68,7 +68,7 @@ export function ClosingSection() {
             href="https://studio.united-studio.com/studio"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 border border-usi-text/25 px-6 py-3 text-sm font-semibold text-usi-text transition-colors duration-200 hover:border-usi-text hover:bg-usi-text hover:text-usi-sand"
+            className="group inline-flex max-w-full flex-wrap items-center gap-3 border border-usi-text/25 px-6 py-3 text-sm font-semibold text-usi-text transition-colors duration-200 hover:border-usi-text hover:bg-usi-text hover:text-usi-sand"
           >
             <span>詳しいスタジオ環境・機材を見る</span>
             <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-0.5">

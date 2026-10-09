@@ -31,10 +31,13 @@ const notoSansJP = localFont({
   fallback: ['system-ui', 'sans-serif'],
 });
 
+const siteTitle = '東京・板橋のレコーディングスタジオ｜当日完成・ミックス込み｜USI新河岸音楽工務所'
+const siteDescription = '東京・板橋でボーカル録音・歌ってみた制作を。録音から編集・ミックス・マスタリングまで一人のエンジニアが一貫担当し、通常の2時間で当日完成を目指します。初心者歓迎・完全予約制。利用日時・開始時刻別の料金と空き状況をオンラインで確認・予約できます。'
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://rec.united-studio.com'),
-  title: '1000組+利用・高評価レビュー・即日納品対応のレコーディングスタジオ｜USI新河岸音楽工務所',
-  description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様、料金はご利用日時・コース・開始時刻により異なります。最新の料金は予約ページでご確認ください。',
+  title: siteTitle,
+  description: siteDescription,
   generator: 'v0.app',
 
   alternates: {
@@ -44,8 +47,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    title: '1000組+利用・高評価レビュー・即日納品対応のレコーディングスタジオ｜USI新河岸音楽工務所',
-    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様、料金はご利用日時・コース・開始時刻により異なります。最新の料金は予約ページでご確認ください。',
+    title: siteTitle,
+    description: siteDescription,
     url: 'https://rec.united-studio.com',
     siteName: 'USI新河岸音楽工務所',
     images: [
@@ -60,8 +63,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: '1000組+利用・高評価レビュー・即日納品対応のレコーディングスタジオ｜USI新河岸音楽工務所',
-    description: '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様、料金はご利用日時・コース・開始時刻により異なります。最新の料金は予約ページでご確認ください。',
+    title: siteTitle,
+    description: siteDescription,
     images: ['https://rec.united-studio.com/ogp.jpg'],
   },
 
