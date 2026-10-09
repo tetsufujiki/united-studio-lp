@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, Train, Bus, ParkingCircle, ExternalLink, ArrowRight, Check } from "lucide-react";
+import { MapPin, Train, Bus, ParkingCircle, ExternalLink, ArrowRight, Check, Mic, Headphones, Wallet, SlidersHorizontal, Download, Smile, CalendarDays } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { FooterSection } from "@/components/footer-section";
@@ -81,6 +81,10 @@ export default function GuidePage() {
               目的に合わせて。
             </h2>
             <div className="space-y-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-usi-hairline bg-usi-sand-soft px-3 py-1.5 text-xs font-semibold text-usi-text-muted">
+                <MapPin aria-hidden="true" className="h-3.5 w-3.5 text-usi-accent" />
+                東京・板橋
+              </span>
               <p className="text-base font-medium leading-relaxed text-usi-text md:text-lg">
                 USI新河岸音楽工務所は東京都板橋区のレコーディングスタジオです。
               </p>
@@ -94,8 +98,11 @@ export default function GuidePage() {
             <p className="text-sm font-medium tracking-wide text-usi-text-muted">
               録音の目的に合わせた詳しいご案内
             </p>
-            <div className="mt-6 grid gap-8 md:grid-cols-2 md:gap-12">
-              <div className="flex min-w-0 flex-col border-b border-usi-hairline pb-8">
+            <div className="mt-6 grid gap-5 md:grid-cols-2 md:gap-6">
+              <div className="flex min-w-0 flex-col rounded-sm border border-usi-hairline bg-usi-sand-soft p-6 md:p-8">
+                <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-usi-accent/10 text-usi-accent">
+                  <Mic aria-hidden="true" className="h-5 w-5" strokeWidth={1.5} />
+                </span>
                 <h3 className="text-xl font-bold leading-relaxed tracking-tight text-usi-text md:text-2xl">
                   声優・歌唱オーディション
                 </h3>
@@ -110,7 +117,10 @@ export default function GuidePage() {
                   <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
-              <div className="flex min-w-0 flex-col border-b border-usi-hairline pb-8">
+              <div className="flex min-w-0 flex-col rounded-sm border border-usi-hairline bg-white/40 p-6 md:p-8">
+                <span className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-usi-ink/5 text-usi-text">
+                  <Headphones aria-hidden="true" className="h-5 w-5" strokeWidth={1.5} />
+                </span>
                 <h3 className="text-xl font-bold leading-relaxed tracking-tight text-usi-text md:text-2xl">
                   歌ってみた・カバー
                 </h3>
@@ -149,13 +159,14 @@ export default function GuidePage() {
             ひと目でわかるスタジオ概要
           </h2>
 
-          <div className="mt-10 border-t border-usi-hairline">
+          <div className="mt-10 rounded-sm border border-usi-hairline bg-white/40 px-5 md:px-8">
             {[
-              { label: '料金', value: '2時間 14,000円〜（日時・開始時刻により異なります）' },
-              { label: 'サービス', value: 'ミックス・マスタリング込み' },
-              { label: '受取', value: '当日データ持ち帰り' },
-              { label: '対象', value: '初心者歓迎' },
+              { icon: Wallet, label: '料金', value: '2時間 14,000円〜（日時・開始時刻により異なります）' },
+              { icon: SlidersHorizontal, label: 'サービス', value: 'ミックス・マスタリング込み' },
+              { icon: Download, label: '受取', value: '当日データ持ち帰り' },
+              { icon: Smile, label: '対象', value: '初心者歓迎' },
               {
+                icon: CalendarDays,
                 label: '予約変更・キャンセル',
                 value: 'キャンセル料 ¥0',
                 notes: [
@@ -166,15 +177,16 @@ export default function GuidePage() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex flex-col gap-1 border-b border-usi-hairline py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 md:py-6"
+                className="flex flex-col gap-2 border-b border-usi-hairline py-5 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 md:py-6"
               >
                 <span
-                  className={`text-sm font-semibold tracking-wide text-usi-text-muted sm:flex-shrink-0 ${
+                  className={`inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-usi-text-muted sm:flex-shrink-0 ${
                     item.label === '予約変更・キャンセル'
-                      ? 'sm:w-40 sm:whitespace-nowrap'
+                      ? 'sm:w-48 sm:whitespace-nowrap'
                       : 'sm:w-32'
                   }`}
                 >
+                  <item.icon aria-hidden="true" className="h-4 w-4 shrink-0 text-usi-accent" strokeWidth={1.5} />
                   {item.label}
                 </span>
                 <div className="flex-1 sm:text-right">
@@ -326,13 +338,24 @@ export default function GuidePage() {
                   </span>
                 </div>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-usi-cream-muted">
+              <div className="mt-7 border-l-2 border-usi-accent bg-white/[0.06] px-5 py-5 md:px-6">
+                <p className="text-base font-semibold leading-relaxed text-usi-cream md:text-lg">
+                  詳しい料金・空き状況は、
+                  <a
+                    href="https://reserve.united-studio.com/"
+                    className="group inline-flex min-h-11 items-center gap-2 text-usi-accent underline underline-offset-4 transition-colors hover:text-usi-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
+                  >
+                    予約ページ
+                    <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
+                  </a>
+                  でご確認ください。
+                </p>
+              </div>
+              <p className="mt-6 text-sm leading-relaxed text-usi-cream-muted">
                 13:00〜16:30開始は平日14,000円・土日祝18,000円、17:00以降開始は平日16,000円・土日祝20,000円です。料金は予約の開始時刻を基準に適用されます。
               </p>
               <p className="mt-3 text-sm leading-relaxed text-usi-cream-muted">
-                2026年10月31日ご利用分までは、2時間 平日14,000円・土日祝18,000円です。3時間以上のコースを含む詳しい料金・空き状況は、
-                <a href="https://reserve.united-studio.com" className="underline underline-offset-4 hover:text-usi-cream">予約ページ</a>
-                でご確認ください。
+                2026年10月31日ご利用分までは、2時間 平日14,000円・土日祝18,000円です。3時間以上のコースの料金も予約ページに掲載しています。
               </p>
             </div>
 
