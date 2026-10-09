@@ -88,6 +88,15 @@ export default function GuidePage() {
                 ボーカル録音・ナレーション録音・弾き語り録音・音源制作などに対応しています。
               </p>
               <p className="text-base leading-relaxed text-usi-text-muted md:text-lg">
+                声優オーディション・ボイスサンプル・歌唱オーディション提出用の録音については、専用ページでも詳しくご案内しています。
+                <a
+                  href="https://studio.united-studio.com/audition-recording"
+                  className="mt-2 inline-block py-2 font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent"
+                >
+                  声優・歌唱オーディションの録音についてはこちら
+                </a>
+              </p>
+              <p className="text-base leading-relaxed text-usi-text-muted md:text-lg">
                 歌ってみた録音をご検討の方は、
                 <a
                   href="https://utattemita.united-studio.com/"
@@ -123,7 +132,7 @@ export default function GuidePage() {
 
           <div className="mt-10 border-t border-usi-hairline">
             {[
-              { label: '料金', value: '2時間　平日 14,000円／土日祝日 18,000円' },
+              { label: '料金', value: '2時間 14,000円〜（日時・開始時刻により異なります）' },
               { label: 'サービス', value: 'ミックス・マスタリング込み' },
               { label: '受取', value: '当日データ持ち帰り' },
               { label: '対象', value: '初心者歓迎' },
@@ -276,28 +285,36 @@ export default function GuidePage() {
                 2-Hour Session（税込）
               </p>
               <p className="mt-1.5 text-sm font-medium text-usi-cream-muted">
-                2時間
+                2026年11月1日ご利用分から・2時間
               </p>
               <div className="mt-5 border-t border-usi-hairline-dark">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
                   <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">
-                    平日
+                    平日（開始時刻別）
                   </span>
-                  <span className="text-4xl font-black leading-none tracking-tight text-usi-cream sm:text-5xl md:text-6xl">
-                    ¥14,000
+                  <span className="text-3xl font-black leading-none tracking-tight text-usi-cream sm:text-4xl">
+                    ¥14,000〜16,000
                     <span className="font-light text-usi-accent">-</span>
                   </span>
                 </div>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
                   <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">
-                    土日祝日
+                    土日祝日（開始時刻別）
                   </span>
-                  <span className="text-4xl font-black leading-none tracking-tight text-usi-cream sm:text-5xl md:text-6xl">
-                    ¥18,000
+                  <span className="text-3xl font-black leading-none tracking-tight text-usi-cream sm:text-4xl">
+                    ¥18,000〜20,000
                     <span className="font-light text-usi-accent">-</span>
                   </span>
                 </div>
               </div>
+              <p className="mt-5 text-sm leading-relaxed text-usi-cream-muted">
+                13:00〜16:30開始は平日14,000円・土日祝18,000円、17:00以降開始は平日16,000円・土日祝20,000円です。料金は予約の開始時刻を基準に適用されます。
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-usi-cream-muted">
+                2026年10月31日ご利用分までは、2時間 平日14,000円・土日祝18,000円です。3時間以上のコースを含む詳しい料金・空き状況は、
+                <a href="https://reserve.united-studio.com" className="underline underline-offset-4 hover:text-usi-cream">予約ページ</a>
+                でご確認ください。
+              </p>
             </div>
 
             {/* Included */}
