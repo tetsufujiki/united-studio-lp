@@ -163,14 +163,14 @@ export default function GuidePage() {
             {[
               { icon: Wallet, label: '料金', value: '2時間 14,000円〜（日時・開始時刻により異なります）' },
               { icon: SlidersHorizontal, label: 'サービス', value: 'ミックス・マスタリング込み' },
-              { icon: Download, label: '受取', value: '当日データ持ち帰り' },
+              { icon: Download, label: '受取', value: '通常のボーカル収録は当日完成' },
               { icon: Smile, label: '対象', value: '初心者歓迎' },
               {
                 icon: CalendarDays,
                 label: '予約変更・キャンセル',
                 value: 'キャンセル料 ¥0',
                 notes: [
-                  '変更・キャンセルは2日前まで',
+                  '変更は2日前まで・キャンセルは当日まで',
                   '当日・無断キャンセルは、次回の事前支払いまたは利用制限の対象となる場合があります',
                 ],
               },
@@ -228,10 +228,10 @@ export default function GuidePage() {
 
           <div className="mt-10 border-t border-usi-hairline">
             {[
-              { step: '01', title: 'ご予約', description: '予約専用サイトから24時間いつでも受け付けております。' },
+              { step: '01', title: 'ご予約', description: '空き状況・利用時間・料金を確認して、オンラインでお申し込み。スタジオの承認後に予約が確定します。' },
               { step: '02', title: 'ご来店', description: 'ご予約時間までにスタジオへお越しください。' },
-              { step: '03', title: 'レコーディング', description: 'スタッフが進行をサポートいたします。' },
-              { step: '04', title: '完成データお渡し', description: 'ミックス・マスタリング後、完成した音源をその場でお渡しします。' },
+              { step: '03', title: 'レコーディング', description: 'エンジニアが進行をサポート。声の表情を活かすテイクを選び、必要な編集・ピッチ修正を行います。' },
+              { step: '04', title: '完成データお渡し', description: '同じエンジニアが、提出・公開目的に合わせてミックス・マスタリングまで担当。通常のボーカル収録は2時間で当日完成まで進めます。複雑な制作などは追加セッションをご相談します。' },
             ].map((item) => (
               <div
                 key={item.step}
@@ -482,7 +482,7 @@ export default function GuidePage() {
           <div className="mt-10 max-w-3xl">
             <div className="border-l-2 border-usi-accent pl-5 md:pl-6">
               <p className="text-lg font-bold leading-relaxed text-usi-text md:text-xl">
-                予約日の2日前までは、予約サイトから変更・キャンセルが可能です。
+                予約内容の変更はご利用日の2日前まで、キャンセルはご利用当日まで、予約サイトのマイページからお手続きいただけます。
               </p>
             </div>
             <div className="mt-8 border-t border-usi-hairline pt-6">

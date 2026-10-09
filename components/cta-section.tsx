@@ -1,4 +1,4 @@
-import { Gift, ArrowRight } from "lucide-react";
+import { CalendarDays, ArrowRight } from "lucide-react";
 
 export function CtaSection() {
   return (
@@ -11,7 +11,7 @@ export function CtaSection() {
               Plan
             </span>
             <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted">
-              The Only Plan You Need
+              Recording & Production
             </span>
             <span className="h-px flex-1 bg-usi-hairline-dark" />
           </div>
@@ -99,47 +99,52 @@ export function CtaSection() {
             </div>
           </div>
 
-          {/* Right — first-visit offer & actions */}
+          {/* Right — online booking and consultation */}
           <div className="flex flex-col justify-end">
-            {/* First visit offer */}
+            {/* Booking value, without adding another section */}
             <div className="border border-usi-hairline-dark p-6 md:p-7">
               <div className="flex items-center gap-2.5">
-                <Gift className="h-4 w-4 text-[#06C755]" strokeWidth={1.5} />
-                <span className="text-sm font-semibold text-usi-cream">ご利用前の確認</span>
+                <CalendarDays className="h-4 w-4 text-usi-accent" strokeWidth={1.5} aria-hidden="true" />
                 <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted">
-                  LINEクーポン
+                  Online Booking
                 </span>
               </div>
-              <p className="mt-4 text-3xl font-black tracking-tight text-[#06C755] md:text-4xl">
-                LINEでご確認ください
+              <h3 className="mt-4 text-2xl font-bold leading-snug tracking-tight text-usi-cream md:text-3xl">
+                予約も、<br />スタジオ体験の一部です。
+              </h3>
+              <p className="mt-5 text-sm leading-relaxed text-usi-cream-muted md:text-base">
+                空き状況の確認から、利用時間の選択、料金確認、予約のお申し込みまでオンラインで。予約はスタジオの承認後に確定します。
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-usi-cream-muted">
+                ご予約の確認・変更はマイページから。変更はご利用日の2日前まで、キャンセルは当日までお手続きいただけます。
               </p>
 
               <a
                 href="https://page.line.me/568repew"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-6 inline-flex h-12 w-full items-center justify-center gap-2.5 bg-[#06C755] px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#05b34c] md:h-[52px] md:text-base"
+                className="group mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2.5 border border-usi-cream/30 px-6 py-3 text-sm font-medium text-usi-cream transition-colors duration-200 hover:border-usi-cream/60 hover:bg-white/5 md:min-h-[52px]"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.064-.022.135-.033.201-.033.209 0 .389.09.51.249l2.439 3.315V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
                 </svg>
-                クーポンについて確認する
+                相談したい方はLINEへ
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
 
               <p className="mt-3 text-center text-xs font-medium text-usi-cream-muted">
-                クーポンの有無・金額・適用条件はLINEでご確認ください
+                当日・無断キャンセルは事前支払い・利用制限の対象となる場合があります
               </p>
             </div>
 
-            {/* Secondary booking link */}
+            {/* Primary booking action */}
             <a
               href="https://reserve.united-studio.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-4 inline-flex h-12 items-center justify-center gap-2 border border-usi-cream/30 px-6 text-sm font-medium text-usi-cream transition-colors duration-200 hover:border-usi-cream/60 hover:bg-white/5 md:h-[52px]"
+              className="group mt-4 inline-flex min-h-12 items-center justify-center gap-2 bg-usi-accent px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-usi-accent-strong md:min-h-[52px] md:text-base"
             >
-              空き状況と料金を確認する
+              空き状況・料金確認・予約
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </div>

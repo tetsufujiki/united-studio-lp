@@ -52,19 +52,19 @@ export function getStaticPages(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date('2025-06-30'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'weekly' as const,
       priority: 1.0,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date('2026-08-25'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
       url: `${baseUrl}/guide`,
-      lastModified: new Date('2026-08-25'),
+      lastModified: new Date('2026-10-09'),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },

@@ -4,16 +4,19 @@ import Image from "next/image";
 
 const heroFeatures = [
   {
-    title: "プロ仕様機材完備",
-    description: "業界標準のハイクオリティ機材",
+    label: "RECORD TO MASTER",
+    title: "録音から完成まで、その日に。",
+    description: "通常の2時間で、仕上げまで進めます。",
   },
   {
-    title: "初心者歓迎",
-    description: "丁寧サポートで安心",
+    label: "SAME ENGINEER",
+    title: "録る人が、仕上げる人。",
+    description: "録音・編集・Mix・Masteringを一貫担当。",
   },
   {
-    title: "完全予約制",
-    description: "集中できる制作環境",
+    label: "ONLINE BOOKING",
+    title: "空き状況から予約まで、オンラインで。",
+    description: "利用時間と料金を確認して申し込み。",
   },
 ];
 
@@ -69,15 +72,17 @@ export function HeroSection() {
           </a>
 
           {/* Main Headline — editorial left alignment */}
-          <h1 className="mt-8 text-balance text-[2.5rem] font-bold leading-[1.18] tracking-tight text-usi-cream sm:text-5xl md:mt-10 md:text-6xl lg:text-7xl">
-            秘密基地のような
-            <br className="sm:hidden" />
-            スタジオへ
+          <p className="mt-7 text-sm tracking-wide text-usi-cream/75 md:mt-9">
+            東京・板橋の、秘密基地のようなスタジオへ。
+          </p>
+          <h1 className="mt-4 text-balance text-[clamp(1.8rem,5.2vw,3.5rem)] font-bold leading-[1.3] tracking-tight text-usi-cream">
+            録るだけで終わらない。<br />
+            完成まで、その日に。
           </h1>
 
           {/* Sub Headline */}
-          <p className="mt-5 max-w-xl text-pretty text-base font-light leading-relaxed tracking-wide text-usi-cream/85 md:mt-6 md:text-xl">
-            プロ品質のスタジオを、想像より身近に。
+          <p className="mt-5 max-w-2xl text-pretty text-sm leading-relaxed text-usi-cream/85 md:mt-6 md:text-base">
+            録音から編集・ミックス・マスタリングまで、一人のエンジニアが一貫して担当。
           </p>
 
           {/* Primary CTA row — booking action carries the campaign orange */}
@@ -88,7 +93,7 @@ export function HeroSection() {
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center gap-2.5 bg-usi-accent px-7 text-sm font-semibold text-white transition-colors duration-200 hover:bg-usi-accent-strong md:h-[52px] md:text-base"
             >
-              空き状況・料金確認
+              空き状況・料金確認・予約
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
@@ -107,12 +112,12 @@ export function HeroSection() {
           {/* Guide link — beginner reassurance */}
           <Link
             href="/guide"
-            className="group mt-5 inline-flex items-center gap-3 border-b border-usi-hairline-dark pb-2 text-sm text-usi-cream/75 transition-colors duration-200 hover:border-usi-cream/50 hover:text-usi-cream"
+            className="group mt-5 inline-flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-usi-hairline-dark pb-2 text-sm text-usi-cream/75 transition-colors duration-200 hover:border-usi-cream/50 hover:text-usi-cream"
           >
             <span className="font-mono text-[10px] font-medium uppercase tracking-[0.2em] text-usi-cream/55">
               初めての方へ
             </span>
-            <span>ご利用の流れ・準備・当日の進め方をまとめています</span>
+            <span>準備から当日の流れまで</span>
             <span className="inline-flex items-center gap-1 text-xs text-usi-cream/55 transition-colors duration-200 group-hover:text-usi-cream/85">
               読む（約3分）
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -120,7 +125,7 @@ export function HeroSection() {
           </Link>
 
           {/* Bottom rail — feature indicators + trust stats, hairline structure */}
-          <div className="mt-14 border-t border-usi-hairline-dark pt-7 md:mt-20 md:pt-8">
+          <div className="mt-10 border-t border-usi-hairline-dark pt-6 md:mt-14 md:pt-7">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 md:gap-8">
               {heroFeatures.map((feature, index) => (
                 <div key={feature.title} className="flex items-start gap-4">
@@ -128,24 +133,15 @@ export function HeroSection() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
+                    <p className="mb-2 font-mono text-[10px] tracking-[0.12em] text-usi-cream/55">
+                      {feature.label}
+                    </p>
                     <h3 className="text-sm font-semibold text-usi-cream md:text-base">
                       {feature.title}
                     </h3>
                     <p className="mt-1 text-xs leading-relaxed text-usi-cream/65 md:text-sm">
                       {feature.description}
                     </p>
-                    {index === 0 && (
-                      <a
-                        href="https://studio.united-studio.com/studio"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group mt-2 inline-flex items-center gap-1.5 border-b border-usi-cream/25 pb-0.5 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-usi-cream/60 transition-colors duration-200 hover:border-usi-cream/60 hover:text-usi-cream"
-                      >
-                        Studio Details
-                        <ArrowRight className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true" />
-                        <span className="sr-only">（新しいタブで開く）</span>
-                      </a>
-                    )}
                   </div>
                 </div>
               ))}
@@ -155,13 +151,24 @@ export function HeroSection() {
             <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-usi-hairline-dark pt-6 md:mt-8">
               <div className="flex items-baseline gap-2.5">
                 <span className="text-xl font-bold tracking-tight text-usi-cream md:text-2xl">
-                  1000+
+                  約99%
                 </span>
                 <span className="text-xs text-usi-cream/65 md:text-sm">
-                  クリエイター利用中
+                  通常の2時間セッションで当日完成
                 </span>
               </div>
               <span className="hidden h-4 w-px bg-usi-hairline-dark sm:inline-block" />
+              <p className="text-xs leading-relaxed text-usi-cream/65">
+                当スタジオの運営実績に基づく概数。
+                <Link href="/faq#time" className="underline underline-offset-4 hover:text-usi-cream">制作内容による例外はFAQへ</Link>
+              </p>
+              <p className="text-xs leading-relaxed text-usi-cream/65">
+                初心者歓迎・完全予約制。プロ品質を、想像より身近に。
+              </p>
+              <a href="https://studio.united-studio.com/studio" className="min-h-11 inline-flex items-center gap-1 text-xs text-usi-cream/75 underline underline-offset-4 hover:text-usi-cream">
+                プロ仕様の機材・スタジオ環境を見る
+                <ArrowRight className="h-3 w-3" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>

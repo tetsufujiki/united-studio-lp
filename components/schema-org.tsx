@@ -6,7 +6,7 @@ export function SchemaOrg() {
     name: 'USI新河岸音楽工務所',
     image: 'https://rec.united-studio.com/ogp.jpg',
     description:
-      '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。',
+      '東京・板橋の完全予約制レコーディングスタジオ。初心者のボーカル録音から歌ってみた制作まで、エンジニアが完成までサポート。',
     address: {
       '@type': 'PostalAddress',
       postalCode: '174-0042',
@@ -27,12 +27,12 @@ export function SchemaOrg() {
       '@type': 'Organization',
       '@id': 'https://united-studio.com/#organization',
     },
-    priceRange: '¥14,000-',
+    priceRange: '2時間 ¥14,000〜（利用日時・開始時刻による）',
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '00:00',
-      closes: '23:59',
+      opens: '13:00',
+      closes: '22:00',
     },
   };
 
@@ -42,7 +42,7 @@ export function SchemaOrg() {
     '@id': 'https://rec.united-studio.com/#service',
     name: 'Recording Studio',
     description:
-      'ボーカル収録からミックス・マスタリング、撮影まで一括対応するレコーディングスタジオ。当日完成納品が基本仕様。',
+      '録音から編集・ミックス・マスタリングまで一人のエンジニアが一貫担当。通常のボーカル収録は2時間で当日完成を目指します。多人数や複雑な制作では追加セッションをご相談する場合があります。',
     serviceType: 'Recording Studio',
     provider: {
       '@type': 'Organization',
@@ -63,7 +63,7 @@ export function SchemaOrg() {
       '@id': 'https://united-studio.com/#organization',
     },
     description:
-      '1000組+利用・高評価レビュー・即日納品対応のレコーディングスタジオ。',
+      '東京・板橋で録音から当日完成まで。料金・空き状況をオンラインで確認できるUSI新河岸音楽工務所のご利用案内。',
   };
 
   const webpageSchema = {
@@ -71,9 +71,9 @@ export function SchemaOrg() {
     '@type': 'WebPage',
     '@id': 'https://rec.united-studio.com/#webpage',
     url: 'https://rec.united-studio.com',
-    name: '1000組+利用・高評価レビュー・即日納品対応のレコーディングスタジオ｜USI新河岸音楽工務所',
+    name: '東京・板橋のレコーディングスタジオ｜当日完成・ミックス込み｜USI新河岸音楽工務所',
     description:
-      '歌ってみたからHIPHOPまで対応、1000組以上の利用実績。高評価レビューが集まる予約サイトで24時間予約受付。',
+      '録音から編集・ミックス・マスタリングまで一人のエンジニアが一貫担当。通常の2時間で当日完成を目指します。利用日時・開始時刻別の料金と空き状況をオンラインで確認・予約できます。',
     isPartOf: {
       '@type': 'WebSite',
       '@id': 'https://rec.united-studio.com/#website',
