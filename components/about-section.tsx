@@ -13,7 +13,7 @@ export function AboutSection() {
             <span className="h-px flex-1 bg-usi-hairline" />
           </div>
           <h2 className="mt-8 text-3xl font-light tracking-tight text-usi-text md:text-4xl">
-            録る人が、<span className="font-medium">仕上げる人。</span>
+            あなたの音を、<span className="font-medium">担当する人。</span>
           </h2>
         </div>
 

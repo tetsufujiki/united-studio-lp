@@ -49,12 +49,21 @@ export function ClosingCTASection() {
             <span className="block">大切にしています。</span>
           </p>
 
-          {/* LINE CTA */}
+          {/* Booking first; LINE remains a consultation route */}
+          <div className="mt-12 flex flex-col items-stretch gap-3 sm:mt-14 sm:flex-row sm:items-center">
+          <a
+            href="https://reserve.united-studio.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 items-center justify-center gap-2.5 bg-usi-accent px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-usi-accent-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-usi-cream sm:text-base"
+          >
+            空き状況・料金確認・予約 <span aria-hidden="true">→</span>
+          </a>
           <a
             href="https://page.line.me/568repew"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-12 inline-flex items-center justify-center gap-2.5 bg-[#06C755] px-8 py-4 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#05b04c] sm:mt-14 sm:px-10 sm:text-base"
+            className="inline-flex min-h-12 items-center justify-center gap-2.5 border border-usi-cream/30 px-6 py-4 text-sm font-medium text-usi-cream transition-colors duration-200 hover:border-usi-cream/60 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-usi-cream sm:text-base"
           >
             <svg
               className="h-5 w-5"
@@ -66,6 +75,7 @@ export function ClosingCTASection() {
             </svg>
             <span>LINEで相談する</span>
           </a>
+          </div>
         </div>
       </div>
     </section>
