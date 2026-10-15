@@ -10,6 +10,7 @@ type Props = {
  * Intentionally has no interactive state; interaction is handled by the parent.
  */
 export function ReviewCard({ review }: Props) {
+  const hasComment = Boolean(review.comment?.trim())
   const date = new Date(review.created_at).toLocaleDateString('ja-JP', {
     year: 'numeric',
     month: 'long',
@@ -34,8 +35,8 @@ export function ReviewCard({ review }: Props) {
       </div>
 
       {/* Comment */}
-      <p className="flex-1 text-sm leading-relaxed text-usi-cream/90 md:text-base">
-        {review.comment}
+      <p className={`min-w-0 flex-1 break-words [overflow-wrap:anywhere] ${hasComment ? 'text-sm leading-relaxed text-usi-cream/90 md:text-base' : 'text-xs italic leading-relaxed text-usi-cream-muted md:text-sm'}`}>
+        {hasComment ? review.comment : '星評価のみ'}
       </p>
 
       {/* Footer: name + date */}

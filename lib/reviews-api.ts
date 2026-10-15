@@ -16,7 +16,9 @@ const RESERVE_BASE_URL =
   process.env.NEXT_PUBLIC_RESERVE_URL || 'https://reserve.united-studio.com'
 
 /**
- * Fetch approved reviews from the reserve site public API.
+ * Fetch public reviews in the API's text-first, newest-within-group order.
+ * The API fills remaining slots with rating-only reviews and computes stats
+ * across all public reviews. Older APIs safely ignore prefer_text.
  *
  * @param limit  Number of reviews to fetch (max 12). Default 3.
  *
@@ -25,7 +27,7 @@ const RESERVE_BASE_URL =
  * - On error returns a safe empty fallback so the LP is never broken.
  */
 export async function fetchReviews(limit = 3): Promise<ReviewsResponse> {
-  const url = `${RESERVE_BASE_URL}/api/public/reviews?limit=${limit}`
+  const url = `${RESERVE_BASE_URL}/api/public/reviews?limit=${limit}&prefer_text=true`
   const fallback: ReviewsResponse = { reviews: [], average_rating: 5.0, total_count: 0 }
 
   try {
