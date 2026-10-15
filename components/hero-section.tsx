@@ -20,6 +20,7 @@ export function HeroSection() {
             完成まで、その日に。
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-sm leading-relaxed text-usi-cream/85 md:text-base">
+            ボーカルのみのレコーディングも、初めての歌ってみたも。<br />
             録音からミックス・マスタリングまで、一人のエンジニアが担当。
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-10">
