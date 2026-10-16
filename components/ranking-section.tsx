@@ -69,17 +69,22 @@ export function RankingSection() {
           {services.map((service) => {
             const isFirst = service.rank === 1;
             const isAudition = service.rank === 2;
-            const isLinked = isFirst || isAudition;
+            const isVocal = service.rank === 4;
+            const isLinked = isFirst || isAudition || isVocal;
             const Wrapper = isLinked ? "a" : "article";
             const wrapperProps = isLinked
               ? {
                   href: isFirst
                     ? "https://utattemita.united-studio.com"
-                    : "https://studio.united-studio.com/audition-recording",
+                    : isAudition
+                      ? "https://studio.united-studio.com/audition-recording"
+                      : "https://studio.united-studio.com/vocal-recording",
                   rel: "noopener noreferrer",
                   "aria-label": isFirst
                     ? "歌ってみた・カバー 歌ってみた制作の詳細を見る"
-                    : "声優オーディション・ボイスサンプル収録の詳細を見る",
+                    : isAudition
+                      ? "声優オーディション・ボイスサンプル収録の詳細を見る"
+                      : "オリジナル楽曲 ボーカルのみレコーディングの詳細を見る",
                 }
               : {};
 
@@ -142,7 +147,9 @@ export function RankingSection() {
                         <span>
                           {isFirst
                             ? "歌ってみた制作を見る"
-                            : "声優オーディション収録を見る"}
+                            : isAudition
+                              ? "声優オーディション収録を見る"
+                              : "ボーカルのみレコーディングを見る"}
                         </span>
                         <ArrowUpRight className="h-4 w-4 flex-shrink-0" />
                       </span>
