@@ -6,6 +6,10 @@
 export interface FAQItem {
   question: string;
   answer: string;
+  supportingLink?: {
+    label: string;
+    href: string;
+  };
   link?: {
     label: string;
     href: string;
@@ -53,6 +57,10 @@ export const faqSections: FAQSection[] = [
       },
       {
         question: 'ボーカル録音だけでも利用できますか？',
+        supportingLink: {
+          label: 'ボーカルのみのレコーディングについて詳しく見る →',
+          href: 'https://studio.united-studio.com/vocal-recording',
+        },
         answer: 'はい、ボーカル録音だけでもご利用いただけます。\n\nお客様の9割以上が、ボーカル録音・歌ってみた・カバー曲などの歌録りです。安心してお任せください。\n\n声優・歌唱オーディション提出用の録音や、ボイスサンプル、ナレーション収録については、専用ページのFAQでも詳しくご案内しています。',
         link: {
           label: '声優・歌唱オーディション録音のFAQを見る',

@@ -199,6 +199,14 @@ export default function FAQPage() {
                       >
                         <p className="whitespace-pre-line pb-6 pr-4 text-base leading-relaxed text-usi-text-muted md:pb-7 md:text-lg">
                           {renderAnswer(item.answer)}
+                          {item.supportingLink && (
+                            <a
+                              href={item.supportingLink.href}
+                              className="mt-4 block w-fit font-semibold text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-2 focus-visible:outline-offset-4"
+                            >
+                              {item.supportingLink.label}
+                            </a>
+                          )}
                           {item.link && (
                             <>
                               <a
