@@ -101,8 +101,8 @@ export function RankingSection() {
                   <span
                     className={`font-mono text-4xl font-bold leading-none tracking-tight md:text-6xl ${
                       isFirst
-                        ? "text-usi-accent underline decoration-current/40 underline-offset-4 group-has-[>a:nth-child(2):hover]/ranking:text-usi-text/25"
-                        : isAudition
+                        ? "text-usi-accent underline decoration-current/40 underline-offset-4 group-has-[>a:not(:first-child):hover]/ranking:text-usi-text/25 group-has-[>a:not(:first-child):focus-visible]/ranking:text-usi-text/25 group-has-[>a:not(:first-child):active]/ranking:text-usi-text/25"
+                        : isAudition || isVocal
                           ? "text-usi-text/25 group-hover/row:text-usi-accent group-focus-visible/row:text-usi-accent group-active/row:text-usi-accent"
                         : "text-usi-text/25"
                     }`}
