@@ -531,7 +531,7 @@ export default function GuidePage() {
       {/* =========================================================
           08 — アクセス
          ========================================================= */}
-      <section className="bg-usi-sand-soft py-20 md:py-28">
+      <section id="access" className="bg-usi-sand-soft py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
           <div className="flex items-center gap-4">
             <span className="font-mono text-[11px] font-medium tracking-[0.2em] text-usi-text-muted">
