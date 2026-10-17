@@ -104,14 +104,14 @@ export default function GuidePage() {
                   <Mic aria-hidden="true" className="h-5 w-5" strokeWidth={1.5} />
                 </span>
                 <h3 className="text-xl font-bold leading-relaxed tracking-tight text-usi-text md:text-2xl">
-                  声優・歌唱オーディション
+                  オーディション録音
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-usi-text-muted">
                   オーディション提出用の音源から、ボイスサンプル・ナレーションまで。収録の準備や進め方を専用ページでご案内しています。
                 </p>
                 <a
                   href="https://studio.united-studio.com/audition-recording"
-                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
+                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent lg:min-h-[4.5rem] lg:items-start"
                 >
                   <span>声優・歌唱オーディションの録音について</span>
                   <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
@@ -129,7 +129,7 @@ export default function GuidePage() {
                 </p>
                 <a
                   href="https://utattemita.united-studio.com/"
-                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
+                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent lg:min-h-[4.5rem] lg:items-start"
                 >
                   <span>歌ってみた録音の流れを見る</span>
                   <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
@@ -142,12 +142,13 @@ export default function GuidePage() {
                 <h3 className="text-xl font-bold leading-relaxed tracking-tight text-usi-text md:text-2xl">
                   ボーカルのみ録音
                 </h3>
-                <p className="mt-3 text-base leading-relaxed text-usi-text-muted">
-                  オリジナル楽曲の歌入れや、ボーカルだけのレコーディングにも対応。録音の準備や収録の進め方を専用ページでご案内しています。
-                </p>
+                <div className="mt-3 space-y-3 text-base leading-relaxed text-usi-text-muted">
+                  <p>オリジナル楽曲の歌入れや、ボーカルだけのレコーディング。</p>
+                  <p>録音の準備や収録の進め方を専用ページでご案内しています。</p>
+                </div>
                 <a
                   href="https://studio.united-studio.com/vocal-recording"
-                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
+                  className="group mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-5 text-sm font-semibold leading-relaxed text-usi-text underline underline-offset-4 transition-colors duration-200 hover:text-usi-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent lg:min-h-[4.5rem] lg:items-start"
                 >
                   <span>ボーカルのみのレコーディングについて詳しく見る</span>
                   <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
