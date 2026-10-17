@@ -207,6 +207,9 @@ export default function FAQPage() {
                               {item.supportingLink.label}
                             </a>
                           )}
+                          {item.followUpAnswer && (
+                            <>{'\n\n'}{renderAnswer(item.followUpAnswer)}</>
+                          )}
                           {item.link && (
                             <>
                               <a

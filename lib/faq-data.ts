@@ -6,6 +6,7 @@
 export interface FAQItem {
   question: string;
   answer: string;
+  followUpAnswer?: string;
   supportingLink?: {
     label: string;
     href: string;
@@ -61,9 +62,10 @@ export const faqSections: FAQSection[] = [
           label: 'ボーカルのみのレコーディングについて詳しく見る →',
           href: 'https://studio.united-studio.com/vocal-recording',
         },
-        answer: 'はい、ボーカル録音だけでもご利用いただけます。\n\nお客様の9割以上が、ボーカル録音・歌ってみた・カバー曲などの歌録りです。安心してお任せください。\n\n声優・歌唱オーディション提出用の録音や、ボイスサンプル、ナレーション収録については、専用ページのFAQでも詳しくご案内しています。',
+        answer: 'はい、ボーカル録音だけでもご利用いただけます。\n\nお客様の9割以上が、ボーカル録音・歌ってみた・カバー曲などの歌録りです。安心してお任せください。',
+        followUpAnswer: '声優・歌唱オーディション提出用の録音や、ボイスサンプル、ナレーション収録については、専用ページのFAQでも詳しくご案内しています。',
         link: {
-          label: '声優・歌唱オーディション録音のFAQを見る',
+          label: '声優・歌唱オーディション録音について詳しく見る →',
           href: 'https://studio.united-studio.com/audition-recording',
           newTab: false,
           separateLine: true,
@@ -79,7 +81,7 @@ export const faqSections: FAQSection[] = [
     items: [
       {
         question: '録音からMix・Masteringまで当日中に完成しますか？',
-        answer: '通常のボーカル収録では、約99%のお客様がその日のうちに完成音源をお持ち帰りいただいています。録音から編集・Mix・Masteringまで、2時間のセッション内で対応しています。この数値は当スタジオの運営実績に基づく概数です。\n\n多人数での収録や制作内容が特に複雑な場合などは、追加時間や別日のセッションをご相談することがあります。その場合も、制作途中にエンジニアが状況をご説明します。すべてのご依頼の当日完成を保証するものではありません。',
+        answer: '通常のボーカル収録では、録音から編集・Mix・Masteringまで、2時間のセッション内で完了し、99%のお客様が、その日のうちに完成音源をお持ち帰りいただいています。\n\n多人数での収録や制作内容が複雑な場合などは、制作途中にエンジニアが状況をご説明し、追加時間や別日のセッションをご相談することがあります。',
       },
       {
         question: '1曲にどのくらいの時間がかかりますか？',
@@ -95,7 +97,7 @@ export const faqSections: FAQSection[] = [
       },
       {
         question: '予約の変更・キャンセルはできますか？',
-        answer: '予約の変更・キャンセルは、ご予約日の2日前までマイページからお手続きいただけます。キャンセル料はいただいておりません。\n\n前日・当日に変更やキャンセルが必要になった場合は、直接ご連絡ください。お客様ご自身では操作できないため、管理者が個別に処理します。前日のご連絡については当日キャンセルの記録は付きません。当日の日程変更希望も当日キャンセルとして処理し、1回につき記録が1件追加されます。\n\n当日キャンセルが累計2回に達した場合、次回以降のご予約には事前のお支払いが必要です。お支払い確認後に管理者が予約を承認し、予約が確定します。累計2回で永久に予約できなくなるわけではありません。通常のお客様にこの事前支払い条件は適用されません。',
+        answer: '予約の変更・キャンセルは、ご予約日の2日前までマイページからお手続きいただけます。キャンセル料はいただいておりません。\n\n前日・当日に変更やキャンセルが必要になった場合は、直接ご連絡ください。当日キャンセルが累計2回に達した場合、次回以降のご予約には事前のお支払いが必要です。',
       },
     ],
   },
@@ -106,7 +108,7 @@ export const faqSections: FAQSection[] = [
     items: [
       {
         question: 'カラオケ音源はどうやって持っていったら良いですか？',
-        answer: '音源は、事前にお送りいただくことをおすすめしています。ご来店前に再生確認と録音準備を行えるため、当日の収録をスムーズに始められます。送付には[[LINE]]をご利用いただくのが簡単です。当日、USBメモリでお持ちいただいても構いません。',
+        answer: '音源は、事前にお送りいただければ、あらかじめ録音準備を行えるため、当日の収録をスムーズに始められます。送付には[[LINE]]をご利用いただくのが簡単です。当日、USBメモリでお持ちいただいても構いません。',
       },
       {
         question: 'カラオケ音源はどこで入手できますか？',
@@ -211,10 +213,12 @@ export function generateFAQPageSchema() {
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text:
-          item.link?.includeInStructuredData
-            ? `${item.answer}\n\n${item.link.label}: ${item.link.href}`
-            : item.answer,
+        text: [
+          item.answer,
+          item.supportingLink && `${item.supportingLink.label}: ${item.supportingLink.href}`,
+          item.followUpAnswer,
+          item.link?.includeInStructuredData && `${item.link.label}: ${item.link.href}`,
+        ].filter(Boolean).join('\n\n').replace('[[LINE]]', 'LINE: https://page.line.me/568repew'),
       },
     }))
   );
