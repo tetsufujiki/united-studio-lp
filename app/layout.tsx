@@ -1,3 +1,4 @@
+import { AnalyticsJourney } from '@/components/analytics-journey'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import localFont from 'next/font/local'
@@ -91,14 +92,7 @@ export default function RootLayout({
         <SchemaOrg />
       </head>
       <body className={`${notoSansJP.variable} font-sans antialiased`}>
- <noscript>
-    <iframe
-      src="https://www.googletagmanager.com/ns.html?id=GTM-MKJ484H"
-      height="0"
-      width="0"
-      style={{ display: 'none', visibility: 'hidden' }}
-    />
-  </noscript>
+        <AnalyticsJourney />
 
   {/* GTM */}
   <Script
@@ -107,6 +101,7 @@ export default function RootLayout({
     dangerouslySetInnerHTML={{
       __html: `
         (function(w,d,s,l,i){
+          if(!w.__usiAnalyticsAllowed || !w.__usiAnalyticsAllowed())return;
           w[l]=w[l]||[];
           w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
           var f=d.getElementsByTagName(s)[0],

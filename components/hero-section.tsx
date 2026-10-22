@@ -24,7 +24,7 @@ export function HeroSection() {
             録音からミックス・マスタリングまで、一人のエンジニアが担当。
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-10">
-            <a href="https://reserve.united-studio.com" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2.5 bg-usi-accent px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-usi-accent-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-usi-cream md:min-h-[52px] md:text-base">
+            <a data-booking-position="hero" href="https://reserve.united-studio.com" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2.5 bg-usi-accent px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-usi-accent-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-usi-cream md:min-h-[52px] md:text-base">
               空き状況・料金確認・予約
               <ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
             </a>

@@ -55,7 +55,7 @@ export function StickyCTABar() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4">
           {/* Label — hidden on very small screens to keep the bar unobtrusive */}
           <a
-            href="https://reserve.united-studio.com"
+            data-booking-position="sticky" href="https://reserve.united-studio.com"
             target="_blank"
             rel="noopener noreferrer"
             className="group hidden items-center gap-1 font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted transition-colors duration-200 hover:text-usi-cream sm:flex"
@@ -65,7 +65,7 @@ export function StickyCTABar() {
           </a>
 
           <a
-            href="https://reserve.united-studio.com"
+            data-booking-position="sticky" href="https://reserve.united-studio.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-11 w-full items-center justify-center bg-usi-accent px-6 text-sm font-semibold text-white transition-colors duration-200 hover:bg-usi-accent-strong sm:w-auto sm:min-w-[220px] md:h-12 md:text-base"
