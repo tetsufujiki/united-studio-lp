@@ -26,6 +26,20 @@ const renderAt = time => renderToStaticMarkup(React.createElement(exports.CtaSec
 const html = renderAt('2026-10-31T02:05:00+09:00')
 const text = html.replace(/<[^>]*>/g, '')
 
+test('booking and FAQ tones share the pricing switch without changing booking links', () => {
+  for (const newTone of [false, true]) {
+    const booking = renderToStaticMarkup(React.createElement(exports.OnlineBookingSection, { newTone }))
+    assert.match(booking, newTone ? /class="bg-white py-16/ : /class="bg-usi-sand-soft py-16/)
+    assert.match(booking, /href="https:\/\/reserve.united-studio.com\/"/)
+  }
+  const page = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8')
+  assert.match(page, /const newTone = isNewPricingVisible\(now\)/)
+  assert.match(page, /<OnlineBookingSection newTone=\{newTone\}/)
+  assert.match(page, /<FAQSection newTone=\{newTone\}/)
+  const faq = readFileSync(new URL('../components/faq-section.tsx', import.meta.url), 'utf8')
+  assert.match(faq, /newTone \? 'bg-usi-sand' : 'bg-usi-sand-soft'/)
+})
+
 test('keeps legacy pricing up to one millisecond before the JST boundary', () => {
   const before = renderAt('2026-10-31T02:04:59.999+09:00')
   assert.match(before, /ALL-INCLUSIVE/)

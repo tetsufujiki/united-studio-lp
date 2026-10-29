@@ -116,14 +116,14 @@ function NewPricingSection() {
   );
 }
 
-export function OnlineBookingSection() {
+export function OnlineBookingSection({ newTone = false }: { newTone?: boolean } = {}) {
   return (
-    <section aria-labelledby="online-booking-heading" className="bg-usi-sand-soft py-16 md:py-20">
+    <section aria-labelledby="online-booking-heading" className={`${newTone ? 'bg-white' : 'bg-usi-sand-soft'} py-16 md:py-20`}>
       <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
         <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
         <div>
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-usi-text-muted">Online Booking</p>
-          <h2 id="online-booking-heading" className="mt-5 text-2xl font-bold leading-snug tracking-tight text-usi-text md:text-3xl">
+          <h2 id="online-booking-heading" className={`mt-5 text-2xl font-bold leading-snug tracking-tight ${newTone ? 'text-usi-ink' : 'text-usi-text'} md:text-3xl`}>
             予約も、スタジオ体験の一部です。
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-usi-text-muted md:text-base">
@@ -146,7 +146,7 @@ export function OnlineBookingSection() {
               { label: 'クレジットカード', icon: CreditCard },
               { label: '電子マネー', icon: Smartphone },
             ].map(({ label, icon: Icon }) => (
-              <li key={label} className="inline-flex min-h-12 items-center gap-2.5 border border-usi-hairline bg-white/60 px-4 py-3 text-sm font-semibold text-usi-text md:text-base">
+              <li key={label} className={`inline-flex min-h-12 items-center gap-2.5 border border-usi-hairline ${newTone ? 'bg-usi-sand-soft' : 'bg-white/60'} px-4 py-3 text-sm font-semibold text-usi-text md:text-base`}>
                 <Icon className="h-5 w-5 shrink-0 text-usi-accent" strokeWidth={1.5} aria-hidden="true" />
                 {label}
               </li>
