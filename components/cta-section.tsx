@@ -36,7 +36,7 @@ function NewPricingSection() {
                 <Check aria-hidden="true" className="h-4 w-4 text-usi-accent" />
                 エンジニア付き
               </p>
-              <p className="mt-6 text-lg font-semibold text-usi-cream">2時間のレコーディング</p>
+              <p className="mt-6 text-lg font-semibold text-usi-cream">2時間の予約</p>
               <p className="mt-3 flex flex-wrap items-baseline gap-x-1 font-bold leading-none tracking-tight text-usi-cream">
                 <span className="text-3xl font-medium text-usi-accent md:text-4xl">¥</span>
                 <span className="text-[clamp(3.5rem,8vw,5rem)] tabular-nums">14,000</span>
