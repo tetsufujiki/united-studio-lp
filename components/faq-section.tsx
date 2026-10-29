@@ -22,11 +22,11 @@ const faqs = [
   },
 ];
 
-export function FAQSection() {
+export function FAQSection({ newTone = false }: { newTone?: boolean } = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative bg-usi-sand-soft py-24 md:py-32">
+    <section className={`relative ${newTone ? 'bg-usi-sand' : 'bg-usi-sand-soft'} py-24 md:py-32`}>
       <div className="mx-auto max-w-3xl px-6 md:px-12">
         {/* Section header */}
         <div className="mb-12 md:mb-16">
