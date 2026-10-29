@@ -1,126 +1,114 @@
 import { Check, ArrowRight, Banknote, CreditCard, Smartphone } from "lucide-react";
+import { LegacyPricingSection } from "./legacy-pricing-section";
 
-export function CtaSection() {
+export const PRICING_SWITCH_AT = "2026-10-31T02:05:00+09:00";
+
+export function isNewPricingVisible(now: Date = new Date()) {
+  return now.getTime() >= Date.parse(PRICING_SWITCH_AT);
+}
+
+export function CtaSection({ now = new Date() }: { now?: Date } = {}) {
+  return isNewPricingVisible(now) ? <NewPricingSection /> : <LegacyPricingSection />;
+}
+
+function NewPricingSection() {
   return (
-    <section className="relative bg-usi-ink py-24 md:py-32">
+    <section aria-labelledby="all-inclusive-heading" className="relative bg-usi-ink py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
-        {/* Section header */}
-        <div className="mb-14 md:mb-20">
-          <div className="flex items-center gap-4">
-            <span className="bg-usi-accent px-2 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
-              Plan
-            </span>
-            <span className="font-mono text-[11px] font-medium uppercase tracking-[0.2em] text-usi-cream-muted">
-              Recording & Production
-            </span>
-            <span className="h-px flex-1 bg-usi-hairline-dark" />
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-end gap-x-8 gap-y-3">
-            <h2
-              id="all-inclusive-heading"
-              className="scroll-mt-24 text-4xl font-black uppercase tracking-[0.08em] text-usi-cream md:text-6xl"
-            >
-              ALL-INCLUSIVE
-            </h2>
-            <p className="pb-1 text-lg font-semibold tracking-widest text-usi-cream-muted md:pb-2 md:text-xl">
-              全部入りプラン
-            </p>
-          </div>
+        <div className="mb-9 md:mb-12">
+          <p className="flex items-center gap-4 text-xs font-semibold tracking-widest text-usi-cream-muted">
+            <span className="h-px w-8 bg-usi-accent" aria-hidden="true" />
+            料金・サービス
+          </p>
+          <h2 id="all-inclusive-heading" className="mt-6 scroll-mt-24 text-3xl font-bold leading-[1.4] tracking-tight text-usi-cream sm:text-4xl md:text-5xl">
+            録音も、仕上げも、撮影も。<br />
+            この料金に。
+          </h2>
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-usi-cream-muted md:text-base">
+            はじめての歌録りも、作品づくりも。エンジニアと完成まで進める、2時間のセッション。
+          </p>
         </div>
 
-        {/* Price editorial layout */}
-        <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
-          {/* Left — price hero */}
-          <div>
-            {/* Spec rows */}
-            <div className="border-t border-usi-hairline-dark">
-              <div className="flex items-baseline justify-between gap-6 border-b border-usi-hairline-dark py-4">
-                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream-muted">
-                  Pro Standard
-                </span>
-                <span className="text-sm font-semibold tracking-wide text-usi-cream md:text-base">
-                  プロ基準
-                </span>
-              </div>
-              <div className="flex items-baseline justify-between gap-6 border-b border-usi-hairline-dark py-4">
-                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream-muted">
-                  Duration
-                </span>
-                <span className="text-sm font-semibold tracking-wide text-usi-cream md:text-base">
-                  2時間
-                </span>
-              </div>
+        <div className="border border-usi-cream/20 bg-white/[0.03]">
+          <div className="grid gap-8 px-5 py-8 sm:px-8 md:gap-10 md:py-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
+            <div>
+              <p className="inline-flex items-center gap-2 border border-usi-accent/40 bg-usi-accent/10 px-3 py-1.5 text-sm font-semibold text-usi-cream">
+                <Check aria-hidden="true" className="h-4 w-4 text-usi-accent" />
+                エンジニア付き
+              </p>
+              <p className="mt-6 text-lg font-semibold text-usi-cream">2時間のレコーディング</p>
+              <p className="mt-3 flex flex-wrap items-baseline gap-x-1 font-bold leading-none tracking-tight text-usi-cream">
+                <span className="text-3xl font-medium text-usi-accent md:text-4xl">¥</span>
+                <span className="text-[clamp(3.5rem,8vw,5rem)] tabular-nums">14,000</span>
+                <span className="ml-1 text-2xl font-medium">〜</span>
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-usi-cream-muted">
+                平日・17時前開始の場合
+              </p>
             </div>
 
-            {/* Price hero — weekday / weekend split, 2-hour rate */}
-            <div className="mt-10 md:mt-14">
-              <p className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-usi-cream-muted">
-                2-Hour Session
-              </p>
-              <p className="mt-1.5 text-sm font-medium text-usi-cream-muted">
-                2026年11月1日ご利用分から・2時間
-              </p>
-              <div className="mt-5 border-t border-usi-hairline-dark">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
-                  <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">
-                    平日（開始時刻別）
-                  </span>
-                  <span className="text-3xl font-black leading-none tracking-tight text-usi-cream sm:text-4xl">
-                    ¥14,000〜16,000
-                    <span className="font-light text-usi-accent">-</span>
-                  </span>
-                </div>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-b border-usi-hairline-dark py-5 md:py-6">
-                  <span className="text-base font-semibold tracking-wide text-usi-cream md:text-lg">
-                    土日祝日（開始時刻別）
-                  </span>
-                  <span className="text-3xl font-black leading-none tracking-tight text-usi-cream sm:text-4xl">
-                    ¥18,000〜20,000
-                    <span className="font-light text-usi-accent">-</span>
-                  </span>
-                </div>
-              </div>
-
-              <div className="mt-7 border-l-2 border-usi-accent bg-white/[0.06] px-5 py-5 md:px-6">
-                <p className="text-base font-semibold leading-relaxed text-usi-cream md:text-lg">
-                  詳しい料金・空き状況は、
-                  <a
-                    href="https://reserve.united-studio.com/"
-                    className="group inline-flex min-h-11 items-center gap-2 text-usi-accent underline underline-offset-4 transition-colors hover:text-usi-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-usi-accent"
-                  >
-                    予約ページ
-                    <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1" />
-                  </a>
-                  でご確認ください。
-                </p>
-              </div>
+            <div className="min-w-0 border-t border-usi-hairline-dark pt-7 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+              <h3 className="text-base font-semibold text-usi-cream md:text-lg">
+                この料金に、ここまで含まれます。
+              </h3>
+              <ul className="mt-5 grid grid-cols-1 gap-x-5 gap-y-3 min-[375px]:grid-cols-2">
+                {['レコーディング', '編集', 'ピッチ・リズム修正', 'ミックス', 'マスタリング', '撮影'].map((item) => (
+                  <li key={item} className="flex min-w-0 items-center gap-2.5 text-sm font-medium leading-relaxed text-usi-cream md:text-base">
+                    <Check className="h-4 w-4 shrink-0 text-usi-accent" strokeWidth={2} aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
               <p className="mt-6 text-sm leading-relaxed text-usi-cream-muted">
-                13:00〜16:30開始は平日14,000円・土日祝18,000円、17:00以降開始は平日16,000円・土日祝20,000円です。料金は予約の開始時刻を基準に適用されます。
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-usi-cream-muted">
-                2026年10月31日ご利用分までは、2時間 平日14,000円・土日祝18,000円です。3時間以上のコースを含む最新の料金・空き状況は予約ページでご確認ください。
+                ご予約時間内で、録音から仕上げ・撮影まで、ご希望に合わせて時間を配分します。
               </p>
             </div>
           </div>
 
-          {/* Included production, separated from booking instructions */}
-          <div className="flex flex-col justify-center border-t border-usi-hairline-dark pt-10 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
-            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-usi-cream-muted">Included</p>
-            <h3 className="mt-4 text-2xl font-bold leading-snug text-usi-cream md:text-3xl">
-              録音から完成まで、<br />必要な工程をひとつに。
-            </h3>
-            <ul className="mt-7 divide-y divide-usi-hairline-dark border-y border-usi-hairline-dark">
-              {['エンジニア付き', 'レコーディング', '編集・ピッチ補正・リズム修正', 'ミックス', 'マスタリング', '撮影対応'].map((item) => (
-                <li key={item} className="flex items-center gap-3 py-3.5 text-base font-medium text-usi-cream">
-                  <Check className="h-4 w-4 shrink-0 text-usi-accent" aria-hidden="true" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-5 text-sm leading-relaxed text-usi-cream-muted">
-              撮影はご予約時間内で、ご希望に応じて時間を配分します。その他のご要望もお気軽にご相談ください。
-            </p>
+          <div className="grid gap-8 border-t border-usi-cream/20 px-5 py-7 sm:px-8 md:py-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 lg:px-10">
+            <div className="min-w-0">
+              <table className="w-full table-fixed border-collapse text-left text-sm">
+                <caption className="mb-3 text-left text-xs font-medium leading-relaxed text-usi-cream-muted">
+                  2時間料金 · ご予約の開始時刻が基準です
+                </caption>
+                <thead>
+                  <tr className="border-b border-usi-hairline-dark text-xs text-usi-cream-muted">
+                    <th scope="col" className="w-[30%] py-3 font-medium">開始時刻</th>
+                    <th scope="col" className="py-3 text-right font-semibold text-[#bac5cc]">平日</th>
+                    <th scope="col" className="py-3 text-right font-semibold text-[#c9c1b8]">土日祝</th>
+                  </tr>
+                </thead>
+                <tbody className="tabular-nums text-usi-cream">
+                  <tr className="border-b border-usi-hairline-dark">
+                    <th scope="row" className="py-3 font-normal text-usi-cream-muted">17時前</th>
+                    <td className="py-3 text-right font-semibold text-[#bac5cc]">¥14,000</td>
+                    <td className="py-3 text-right font-semibold text-[#c9c1b8]">¥18,000</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" className="py-3 font-normal text-usi-cream-muted">17時以降</th>
+                    <td className="py-3 text-right font-semibold text-[#bac5cc]">¥16,000</td>
+                    <td className="py-3 text-right font-semibold text-[#c9c1b8]">¥20,000</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="flex min-w-0 flex-col justify-center border-t border-usi-hairline-dark pt-7 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+              <p className="text-base font-semibold leading-relaxed text-usi-cream md:text-lg">
+                詳しい料金・空き状況は、<br className="hidden sm:block" />
+                予約ページでご確認ください。
+              </p>
+              <a
+                href="https://reserve.united-studio.com/"
+                className="group mt-5 inline-flex min-h-14 w-full items-center justify-between gap-3 bg-usi-accent px-5 py-4 text-sm font-semibold leading-relaxed text-white transition-colors hover:bg-usi-accent-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-usi-cream md:text-base"
+              >
+                詳しい料金・空き状況を見る
+                <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0 transition-transform group-hover:translate-x-1" />
+              </a>
+              <p className="mt-3 text-xs leading-relaxed text-usi-cream-muted">
+                3時間以上のコースも、予約ページから。
+              </p>
+            </div>
           </div>
         </div>
       </div>
