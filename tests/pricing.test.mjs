@@ -55,6 +55,8 @@ test('shows engineer and all included services next to the session price', () =>
     assert(text.includes(label))
   }
   assert.match(text, /ご予約時間内/)
+  assert.match(text, /2時間の予約/)
+  assert.doesNotMatch(text, /2時間のレコーディング/)
   assert(!text.includes('追加料金なし'))
 })
 
