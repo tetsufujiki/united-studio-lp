@@ -1,7 +1,7 @@
 import { Check, ArrowRight, Banknote, CreditCard, Smartphone } from "lucide-react";
 import { LegacyPricingSection } from "./legacy-pricing-section";
 
-export const PRICING_SWITCH_AT = "2026-10-31T02:05:00+09:00";
+export const PRICING_SWITCH_AT = "2026-10-30T19:10:00+09:00";
 
 export function isNewPricingVisible(now: Date = new Date()) {
   return now.getTime() >= Date.parse(PRICING_SWITCH_AT);
