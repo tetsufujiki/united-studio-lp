@@ -23,7 +23,7 @@ function load(sourceUrl) {
 }
 const exports = load(url)
 const renderAt = time => renderToStaticMarkup(React.createElement(exports.CtaSection, { now: new Date(time) }))
-const html = renderAt('2026-10-31T02:05:00+09:00')
+const html = renderAt('2026-10-30T19:10:00+09:00')
 const text = html.replace(/<[^>]*>/g, '')
 
 test('booking and FAQ tones share the pricing switch without changing booking links', () => {
@@ -41,14 +41,14 @@ test('booking and FAQ tones share the pricing switch without changing booking li
 })
 
 test('keeps legacy pricing up to one millisecond before the JST boundary', () => {
-  const before = renderAt('2026-10-31T02:04:59.999+09:00')
+  const before = renderAt('2026-10-30T19:09:59.999+09:00')
   assert.match(before, /ALL-INCLUSIVE/)
   assert.match(before, /2026年10月31日/)
   assert.doesNotMatch(before, /録音も、仕上げも、撮影も。/)
 })
 
-test('switches at exactly 02:05 JST, including equivalent UTC and later dates', () => {
-  for (const time of ['2026-10-30T17:05:00Z', '2026-10-31T02:05:00+09:00', '2026-11-01T00:00:00+09:00']) {
+test('switches at exactly 19:10 JST, including equivalent UTC and later dates', () => {
+  for (const time of ['2026-10-30T10:10:00Z', '2026-10-30T19:10:00+09:00', '2026-11-01T00:00:00+09:00']) {
     const rendered = renderAt(time)
     assert.match(rendered, /録音も、仕上げも、撮影も。/)
     assert.doesNotMatch(rendered, /ALL-INCLUSIVE|2026年10月31日/)
