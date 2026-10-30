@@ -1,4 +1,4 @@
-import { Check, ArrowRight, Banknote, CreditCard, Smartphone } from "lucide-react";
+import { Check, ArrowRight, Banknote, CreditCard, Smartphone, Sun, Moon } from "lucide-react";
 import { LegacyPricingSection } from "./legacy-pricing-section";
 
 export const PRICING_SWITCH_AT = "2026-10-30T19:10:00+09:00";
@@ -80,12 +80,22 @@ function NewPricingSection() {
                 </thead>
                 <tbody className="tabular-nums text-usi-cream">
                   <tr className="border-b border-usi-hairline-dark">
-                    <th scope="row" className="py-3 font-normal text-usi-cream-muted">17時前</th>
+                    <th scope="row" className="py-3 font-normal text-[#c2c3c2]">
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+                        <Sun aria-hidden="true" className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+                        17時前
+                      </span>
+                    </th>
                     <td className="py-3 text-right font-semibold text-[#bac5cc]">¥14,000</td>
                     <td className="py-3 text-right font-semibold text-[#c9c1b8]">¥18,000</td>
                   </tr>
                   <tr>
-                    <th scope="row" className="py-3 font-normal text-usi-cream-muted">17時以降</th>
+                    <th scope="row" className="py-3 font-normal text-[#c2c3c2]">
+                      <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+                        <Moon aria-hidden="true" className="h-4 w-4 shrink-0" strokeWidth={1.5} />
+                        17時以降
+                      </span>
+                    </th>
                     <td className="py-3 text-right font-semibold text-[#bac5cc]">¥16,000</td>
                     <td className="py-3 text-right font-semibold text-[#c9c1b8]">¥20,000</td>
                   </tr>
