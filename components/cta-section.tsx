@@ -1,17 +1,5 @@
 import { Check, ArrowRight, Banknote, CreditCard, Smartphone, Sun, Moon } from "lucide-react";
-import { LegacyPricingSection } from "./legacy-pricing-section";
-
-export const PRICING_SWITCH_AT = "2026-10-30T19:10:00+09:00";
-
-export function isNewPricingVisible(now: Date = new Date()) {
-  return now.getTime() >= Date.parse(PRICING_SWITCH_AT);
-}
-
-export function CtaSection({ now = new Date() }: { now?: Date } = {}) {
-  return isNewPricingVisible(now) ? <NewPricingSection /> : <LegacyPricingSection />;
-}
-
-function NewPricingSection() {
+export function CtaSection() {
   return (
     <section aria-labelledby="all-inclusive-heading" className="relative bg-usi-ink py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-16">
