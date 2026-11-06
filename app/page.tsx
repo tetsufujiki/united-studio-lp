@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/hero-section";
-import { connection } from "next/server";
 import { RankingSection } from "@/components/ranking-section";
-import { CtaSection, OnlineBookingSection, isNewPricingVisible } from "@/components/cta-section";
+import { CtaSection, OnlineBookingSection } from "@/components/cta-section";
 import { TrustSection } from "@/components/trust-section";
 import { PhilosophySection } from "@/components/philosophy-section";
 import { AboutSection } from "@/components/about-section";
@@ -12,25 +11,23 @@ import { FAQSection } from "@/components/faq-section";
 import { ClosingCTASection } from "@/components/closing-cta-section";
 import { FooterSection } from "@/components/footer-section";
 
-export default async function Home() {
-  // Use the server's request time, not a build/ISR timestamp, for the scheduled
-  // pricing rollout. Reviews retain their explicit fetch revalidate: 600.
-  await connection();
-  const now = new Date();
-  const newTone = isNewPricingVisible(now);
+// Serve prerendered HTML and regenerate it alongside the review data.
+export const revalidate = 600;
+
+export default function Home() {
   return (
     <main>
       <HeroSection />
       <TrustSection />
-      <CtaSection now={now} />
+      <CtaSection />
       <ClosingSection />
       <AboutSection />
       <PhilosophySection />
       <RankingSection />
       <ReviewsSection />
       <LocationSection />
-      <OnlineBookingSection newTone={newTone} />
-      <FAQSection newTone={newTone} />
+      <OnlineBookingSection newTone />
+      <FAQSection newTone />
       <ClosingCTASection />
       <FooterSection />
     </main>

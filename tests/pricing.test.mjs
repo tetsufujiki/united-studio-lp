@@ -8,61 +8,31 @@ import React from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 
 const url = new URL('../components/cta-section.tsx', import.meta.url)
-function load(sourceUrl) {
-  const exports = {}
-  const require = createRequire(sourceUrl)
-  vm.runInNewContext(ts.transpileModule(readFileSync(sourceUrl, 'utf8'), {
-    compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
-  }).outputText, {
-    exports,
-    require: id => id === './legacy-pricing-section'
-      ? load(new URL('../components/legacy-pricing-section.tsx', import.meta.url))
-      : require(id),
-  })
-  return exports
-}
-const exports = load(url)
-const renderAt = time => renderToStaticMarkup(React.createElement(exports.CtaSection, { now: new Date(time) }))
-const html = renderAt('2026-10-30T19:10:00+09:00')
+const exports = {}
+vm.runInNewContext(ts.transpileModule(readFileSync(url, 'utf8'), {
+  compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
+}).outputText, { exports, require: createRequire(url) })
+
+const html = renderToStaticMarkup(React.createElement(exports.CtaSection))
 const text = html.replace(/<[^>]*>/g, '')
 
-test('booking and FAQ tones share the pricing switch without changing booking links', () => {
-  for (const newTone of [false, true]) {
-    const booking = renderToStaticMarkup(React.createElement(exports.OnlineBookingSection, { newTone }))
-    assert.match(booking, newTone ? /class="bg-white py-16/ : /class="bg-usi-sand-soft py-16/)
-    assert.match(booking, /href="https:\/\/reserve.united-studio.com\/"/)
-  }
+test('fixes the current booking and FAQ tones without changing the booking link', () => {
+  const booking = renderToStaticMarkup(React.createElement(exports.OnlineBookingSection, { newTone: true }))
+  assert.match(booking, /class="bg-white py-16/)
+  assert.match(booking, /href="https:\/\/reserve.united-studio.com\/"/)
   const page = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8')
-  assert.match(page, /const newTone = isNewPricingVisible\(now\)/)
-  assert.match(page, /<OnlineBookingSection newTone=\{newTone\}/)
-  assert.match(page, /<FAQSection newTone=\{newTone\}/)
-  const faq = readFileSync(new URL('../components/faq-section.tsx', import.meta.url), 'utf8')
-  assert.match(faq, /newTone \? 'bg-usi-sand' : 'bg-usi-sand-soft'/)
+  assert.match(page, /<CtaSection \/>/)
+  assert.match(page, /<OnlineBookingSection newTone \/>/)
+  assert.match(page, /<FAQSection newTone \/>/)
 })
 
-test('keeps legacy pricing up to one millisecond before the JST boundary', () => {
-  const before = renderAt('2026-10-30T19:09:59.999+09:00')
-  assert.match(before, /ALL-INCLUSIVE/)
-  assert.match(before, /2026年10月31日/)
-  assert.doesNotMatch(before, /録音も、仕上げも、撮影も。/)
-})
-
-test('switches at exactly 19:10 JST, including equivalent UTC and later dates', () => {
-  for (const time of ['2026-10-30T10:10:00Z', '2026-10-30T19:10:00+09:00', '2026-11-01T00:00:00+09:00']) {
-    const rendered = renderAt(time)
-    assert.match(rendered, /録音も、仕上げも、撮影も。/)
-    assert.doesNotMatch(rendered, /ALL-INCLUSIVE|2026年10月31日/)
-    assert.equal((rendered.match(/id="all-inclusive-heading"/g) || []).length, 1)
-  }
-})
-
-test('uses request-time rendering while retaining the explicit review cache', () => {
+test('uses 600-second revalidation without a request-time pricing switch', () => {
   const page = readFileSync(new URL('../app/page.tsx', import.meta.url), 'utf8')
-  assert.match(page, /await connection\(\)/)
+  assert.doesNotMatch(page, /connection\(|new Date\(|isNewPricingVisible/)
+  assert.match(page, /export const revalidate = 600/)
   const reviews = readFileSync(new URL('../lib/reviews-api.ts', import.meta.url), 'utf8')
   assert.match(reviews, /revalidate: 600/)
 })
-
 test('shows engineer and all included services next to the session price', () => {
   assert.match(text, /録音も、仕上げも、撮影も。この料金に。/)
   for (const label of ['エンジニア付き', 'レコーディング', '編集', 'ピッチ・リズム修正', 'ミックス', 'マスタリング', '撮影']) {
