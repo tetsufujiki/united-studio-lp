@@ -23,7 +23,7 @@ const RESERVE_BASE_URL =
  * @param limit  Number of reviews to fetch (max 12). Default 3.
  *
  * Uses Next.js fetch caching:
- * - Cached at the edge and revalidated every 10 minutes.
+ * - Cached and eligible for revalidation after 24 hours.
  * - On error returns a safe empty fallback so the LP is never broken.
  */
 export async function fetchReviews(limit = 3): Promise<ReviewsResponse> {
@@ -32,7 +32,7 @@ export async function fetchReviews(limit = 3): Promise<ReviewsResponse> {
 
   try {
     const res = await fetch(url, {
-      next: { revalidate: 600 }, // revalidate every 10 minutes
+      next: { revalidate: 86400 }
     })
 
     if (!res.ok) {
