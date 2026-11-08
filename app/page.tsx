@@ -12,7 +12,7 @@ import { ClosingCTASection } from "@/components/closing-cta-section";
 import { FooterSection } from "@/components/footer-section";
 
 // Serve prerendered HTML and regenerate it alongside the review data.
-export const revalidate = 600;
+export const revalidate = 86400;
 
 export default function Home() {
   return (
